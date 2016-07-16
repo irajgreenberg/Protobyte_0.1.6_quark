@@ -1,0 +1,112 @@
+﻿Build started 7/16/2016 2:32:06 PM.
+     1>Project "C:\Users\C3\Dev\glfw_vs2015_test\glfw_vs2015_test\glfw_vs2015_test.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /IC:\Users\C3\Dev\glfw_vs2015_test\glad\include /I"C:\Users\C3\Dev\glfw_vs2015_test\glfw-3.2.bin.WIN64\include" /IC:\Users\C3\Dev\glfw_vs2015_test /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt myMain.cpp
+         myMain.cpp
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(5): error C2059: syntax error: '<'
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(6): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(8): error C2015: too many characters in constant
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(64): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(96): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(97): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(98): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(106): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(107): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(109): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(110): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(114): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(115): error C2001: newline in constant
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(115): error C2015: too many characters in constant
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(116): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(117): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(119): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(132): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(133): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(134): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(137): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(138): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(141): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(142): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(147): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(148): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(150): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(151): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(152): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(156): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(157): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(160): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(161): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(164): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(165): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(167): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(171): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(176): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(182): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(183): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(186): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(194): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(195): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(198): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(199): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(202): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(203): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(204): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(205): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(208): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(210): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(213): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(216): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(219): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(222): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(227): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(229): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(233): error C2001: newline in constant
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(233): error C2015: too many characters in constant
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(234): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(251): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(261): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(262): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(266): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(269): error C2001: newline in constant
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(269): error C2015: too many characters in constant
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(271): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(273): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(275): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(276): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(280): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(284): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(285): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(286): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(287): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(288): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(291): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(293): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(294): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(295): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(297): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(298): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(298): error C2018: unknown character '0x40'
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(299): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(300): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(306): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(307): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(308): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(310): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(311): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(312): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(313): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(319): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(320): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(321): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(323): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(324): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(325): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(326): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(342): error C2332: 'class': missing tag name
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(344): error C2001: newline in constant
+     1>c:\users\c3\dev\glfw_vs2015_test\linmath.h(344): fatal error C1003: error count exceeds 100; stopping compilation
+     1>Done Building Project "C:\Users\C3\Dev\glfw_vs2015_test\glfw_vs2015_test\glfw_vs2015_test.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.38
