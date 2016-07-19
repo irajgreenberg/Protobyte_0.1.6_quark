@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ProtoMain.cpp">
+    <ClCompile Include="..\..\..\OtherLibs\glad\src\glad.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\OtherLibs\glad\src\glad.c">
+    <ClCompile Include="ProtoMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
