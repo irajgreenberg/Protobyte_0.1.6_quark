@@ -1,20 +1,29 @@
-﻿Build started 7/19/2016 1:45:53 PM.
-     1>Project "C:\Users\C3\Dev\glfw_vs2015_test\Protobyte\Projects\protobyteTestApp01\protobyteTestApp01\protobyteTestApp01.vcxproj" on node 2 (Build target(s)).
+﻿Build started 7/20/2016 2:29:00 PM.
+     1>Project "C:\Users\C3\Dev\Protobyte_0.1.6_quark\Protobyte\Projects\protobyteTestApp01\protobyteTestApp01\protobyteTestApp01.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /I..\..\..\OtherLibs\glad\include /I"..\..\..\OtherLibs\glfw-3.2.bin.WIN64\include" /I"..\..\..\OtherLibs\glm-0.9.7.6\glm" /ZI /nologo /W3 /WX- /sdl /Od /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TC /errorReport:prompt ..\..\..\OtherLibs\glad\src\glad.c
-         glad.c
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /I..\..\..\OtherLibs\glad\include /I"..\..\..\OtherLibs\glfw-3.2.bin.WIN64\include" /I"..\..\..\OtherLibs\glm-0.9.7.6\glm" /ZI /nologo /W3 /WX- /sdl /Od /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt ProtoMain.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /I..\..\..\OtherLibs\glad\include /I"..\..\..\OtherLibs\glfw-3.2.bin.WIN64\include" /I"..\..\..\OtherLibs\glm-0.9.7.6\glm" /I..\..\..\ProtoInclude /ZI /nologo /W3 /WX- /sdl /Od /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt "-ProtoMain.cpp" ..\..\..\ProtoSrc\ProtoBaseApp.cpp ..\..\..\ProtoSrc\ProtoBlock.cpp ..\..\..\ProtoSrc\ProtoContext.cpp ..\..\..\ProtoSrc\ProtoPlasm.cpp ..\..\..\ProtoSrc\_ProtoContext.cpp ProtoController.cpp ProtoMain.cpp
+     1>cl : Command line warning D9002: ignoring unknown option '-ProtoMain.cpp'
          ProtoMain.cpp
-     1>c:\users\c3\dev\glfw_vs2015_test\protobyte\projects\protobytetestapp01\protobytetestapp01\protomain.cpp(106): warning C4305: '+=': truncation from 'double' to 'float'
-     1>c:\users\c3\dev\glfw_vs2015_test\protobyte\projects\protobytetestapp01\protobytetestapp01\protomain.cpp(107): warning C4305: '+=': truncation from 'double' to 'float'
-     1>c:\users\c3\dev\glfw_vs2015_test\protobyte\projects\protobytetestapp01\protobytetestapp01\protomain.cpp(97): warning C4101: 'ratio': unreferenced local variable
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\C3\Dev\glfw_vs2015_test\Protobyte\Projects\protobyteTestApp01\x64\Debug\protobyteTestApp01.exe" /INCREMENTAL /NOLOGO /LIBPATH:"..\..\..\OtherLibs\glfw-3.2.bin.WIN64\lib-vc2015" opengl32.lib glfw3.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\C3\Dev\glfw_vs2015_test\Protobyte\Projects\protobyteTestApp01\x64\Debug\protobyteTestApp01.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\C3\Dev\glfw_vs2015_test\Protobyte\Projects\protobyteTestApp01\x64\Debug\protobyteTestApp01.lib" /MACHINE:X64 x64\Debug\glad.obj
-         x64\Debug\ProtoMain.obj
-     1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-         protobyteTestApp01.vcxproj -> C:\Users\C3\Dev\glfw_vs2015_test\Protobyte\Projects\protobyteTestApp01\x64\Debug\protobyteTestApp01.exe
-     1>Done Building Project "C:\Users\C3\Dev\glfw_vs2015_test\Protobyte\Projects\protobyteTestApp01\protobyteTestApp01\protobyteTestApp01.vcxproj" (Build target(s)).
+     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(39): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(29): fatal error C1083: Cannot open include file: 'GL/glew.h': No such file or directory
+         ProtoController.cpp
+     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(39): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(29): fatal error C1083: Cannot open include file: 'GL/glew.h': No such file or directory
+         _ProtoContext.cpp
+     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(29): fatal error C1083: Cannot open include file: 'GL/glew.h': No such file or directory
+         ProtoPlasm.cpp
+     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(39): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(29): fatal error C1083: Cannot open include file: 'GL/glew.h': No such file or directory
+         ProtoContext.cpp
+     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(29): fatal error C1083: Cannot open include file: 'GL/glew.h': No such file or directory
+         ProtoBlock.cpp
+     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protogeom3.h(30): fatal error C1083: Cannot open include file: 'GL/glew.h': No such file or directory
+         ProtoBaseApp.cpp
+     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(39): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(29): fatal error C1083: Cannot open include file: 'GL/glew.h': No such file or directory
+         Generating Code...
+     1>Done Building Project "C:\Users\C3\Dev\Protobyte_0.1.6_quark\Protobyte\Projects\protobyteTestApp01\protobyteTestApp01\protobyteTestApp01.vcxproj" (Build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:02.36
+Time Elapsed 00:00:02.81

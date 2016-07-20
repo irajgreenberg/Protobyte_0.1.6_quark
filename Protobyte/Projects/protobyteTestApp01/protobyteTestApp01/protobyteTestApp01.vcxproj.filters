@@ -13,13 +13,231 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="ProtoLib">
+      <UniqueIdentifier>{4fea499f-a139-414f-a411-3c91784c6547}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ProtoLib\include">
+      <UniqueIdentifier>{b1037c66-aec1-4808-aee2-b6206bf8f5bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ProtoLib\src">
+      <UniqueIdentifier>{55e6f5e5-be7c-463d-afbe-948aad9d76df}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\OtherLibs\glad\src\glad.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ProtoMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="-ProtoMain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProtoController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoBaseApp.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoBlock.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoPlasm.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoContext.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ProtoController.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\_ProtoContext.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoBaseApp.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoBlock.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoBounds.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoCamera.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoCephalopod.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoCilia.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoColor3.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoColor4.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoContext.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoCore.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoCurve3.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoCylinder.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoDimension2.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoDimension3.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoEllipse.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoException.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoFace3.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoFrenetFrame.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoGeom2.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoGeom3.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoGeomComposite.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoGeomSet.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoGeosphere.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoGroundPlane.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoJuncusEffusus.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoLight.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoMath.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoMatrix2.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoMatrix3.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoMatrix4.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoPath2.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoPath3.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoPlane.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoPlasm.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoPoint2.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoPoint3.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoQuaternion.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoRectangle.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoRenderer.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoRootBall.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoShader.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoShape3.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoSphere.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoSpline3.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoTentacle.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoTessellator.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoTetrahedron.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoTexture.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoToroid.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoTransformFunction.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoTube.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoTuple2.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoTuple3.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoTuple4.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoUtility.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoVector2.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoVector3.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoVector4.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoVerletBall.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoVerletStick.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoVertex3.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoWorld.h">
+      <Filter>ProtoLib\include</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
