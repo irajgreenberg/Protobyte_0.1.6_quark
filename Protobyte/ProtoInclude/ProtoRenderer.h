@@ -25,10 +25,10 @@
 #define PROTO_RENDERER_H
 
 
-#if defined(_WIN32) || defined(__linux__)
-#define GLEW_STATIC
-#include <GL/glew.h>
-#endif
+//#if defined(_WIN32) || defined(__linux__)
+//#define GLEW_STATIC
+//#include <GL/glew.h>
+//#endif
 
 //#include <SFML/OpenGL.hpp>
 #include <iostream>

@@ -24,12 +24,12 @@ This class is part of the group common (update)
 #define __PROTO_CONTEXT_H__
 
 // OpenGL drivers
-#if defined (_WIN32) || defined(_WIN64)
-#define GLEW_STATIC // link to glew32s instead of including dll
-#include <GL/glew.h>
-#endif
+//#if defined (_WIN32) || defined(_WIN64)
+//#define GLEW_STATIC // link to glew32s instead of including dll
+//#include <GL/glew.h>
+//#endif
 
-#include <GLFW/glfw3.h> // brings in OpenGL
+//#include <GLFW/glfw3.h> // brings in OpenGL
 
 #include <iostream>
 #include <stack>

@@ -1,29 +1,1300 @@
-﻿Build started 7/20/2016 2:29:00 PM.
-     1>Project "C:\Users\C3\Dev\Protobyte_0.1.6_quark\Protobyte\Projects\protobyteTestApp01\protobyteTestApp01\protobyteTestApp01.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /I..\..\..\OtherLibs\glad\include /I"..\..\..\OtherLibs\glfw-3.2.bin.WIN64\include" /I"..\..\..\OtherLibs\glm-0.9.7.6\glm" /I..\..\..\ProtoInclude /ZI /nologo /W3 /WX- /sdl /Od /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt "-ProtoMain.cpp" ..\..\..\ProtoSrc\ProtoBaseApp.cpp ..\..\..\ProtoSrc\ProtoBlock.cpp ..\..\..\ProtoSrc\ProtoContext.cpp ..\..\..\ProtoSrc\ProtoPlasm.cpp ..\..\..\ProtoSrc\_ProtoContext.cpp ProtoController.cpp ProtoMain.cpp
-     1>cl : Command line warning D9002: ignoring unknown option '-ProtoMain.cpp'
-         ProtoMain.cpp
-     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(39): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(29): fatal error C1083: Cannot open include file: 'GL/glew.h': No such file or directory
-         ProtoController.cpp
-     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(39): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(29): fatal error C1083: Cannot open include file: 'GL/glew.h': No such file or directory
-         _ProtoContext.cpp
-     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(29): fatal error C1083: Cannot open include file: 'GL/glew.h': No such file or directory
-         ProtoPlasm.cpp
-     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(39): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(29): fatal error C1083: Cannot open include file: 'GL/glew.h': No such file or directory
-         ProtoContext.cpp
-     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(29): fatal error C1083: Cannot open include file: 'GL/glew.h': No such file or directory
-         ProtoBlock.cpp
-     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protogeom3.h(30): fatal error C1083: Cannot open include file: 'GL/glew.h': No such file or directory
-         ProtoBaseApp.cpp
-     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(39): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(29): fatal error C1083: Cannot open include file: 'GL/glew.h': No such file or directory
-         Generating Code...
-     1>Done Building Project "C:\Users\C3\Dev\Protobyte_0.1.6_quark\Protobyte\Projects\protobyteTestApp01\protobyteTestApp01\protobyteTestApp01.vcxproj" (Build target(s)) -- FAILED.
-
-Build FAILED.
-
-Time Elapsed 00:00:02.81
+﻿cl : Command line warning D9002: ignoring unknown option '-ProtoMain.cpp'
+  ProtoMain.cpp
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(42): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protolight.h(93): warning C4305: '=': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(59): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoworld.h(324): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototoroid.h(60): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocephalopod.h(128): warning C4244: 'return': conversion from 'time_t' to 'long', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(490): error C2059: syntax error: 'export'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(490): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(493): error C2059: syntax error: 'export'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(493): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(494): error C2059: syntax error: 'export'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(494): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(495): error C2059: syntax error: 'export'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(495): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(496): error C2059: syntax error: 'export'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(496): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(499): error C2988: unrecognizable template declaration/definition
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(499): error C2059: syntax error: 'export'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(520): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(588): error C3203: 'PathPrims': unspecialized class template can't be used as a template argument for template parameter '_Ty', expected a real type
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(589): error C3203: 'PathPrims': unspecialized class template can't be used as a template argument for template parameter '_Ty', expected a real type
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(599): error C2143: syntax error: missing ';' before 'identifier'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(599): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(610): fatal error C1903: unable to recover from previous error(s); stopping compilation
+  ProtoController.cpp
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(42): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protolight.h(93): warning C4305: '=': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(59): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoworld.h(324): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototoroid.h(60): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocephalopod.h(128): warning C4244: 'return': conversion from 'time_t' to 'long', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(490): error C2059: syntax error: 'export'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(490): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(493): error C2059: syntax error: 'export'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(493): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(494): error C2059: syntax error: 'export'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(494): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(495): error C2059: syntax error: 'export'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(495): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(496): error C2059: syntax error: 'export'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(496): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(499): error C2988: unrecognizable template declaration/definition
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(499): error C2059: syntax error: 'export'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(520): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(588): error C3203: 'PathPrims': unspecialized class template can't be used as a template argument for template parameter '_Ty', expected a real type
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(589): error C3203: 'PathPrims': unspecialized class template can't be used as a template argument for template parameter '_Ty', expected a real type
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(599): error C2143: syntax error: missing ';' before 'identifier'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(599): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(610): fatal error C1903: unable to recover from previous error(s); stopping compilation
+  ProtoWorld.cpp
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protolight.h(93): warning C4305: '=': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(59): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoworld.h(324): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoworld.cpp(79): error C2065: 'GL_LIGHT0': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoworld.cpp(80): error C2065: 'GL_LIGHT1': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoworld.cpp(81): error C2065: 'GL_LIGHT2': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoworld.cpp(82): error C2065: 'GL_LIGHT3': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoworld.cpp(83): error C2065: 'GL_LIGHT4': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoworld.cpp(84): error C2065: 'GL_LIGHT5': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoworld.cpp(85): error C2065: 'GL_LIGHT6': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoworld.cpp(86): error C2065: 'GL_LIGHT7': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoworld.cpp(186): error C3861: 'glPushMatrix': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoworld.cpp(216): error C3861: 'glPopMatrix': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoworld.cpp(220): error C3861: 'glPushMatrix': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoworld.cpp(277): error C3861: 'glPopMatrix': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoworld.cpp(281): error C3861: 'glPushMatrix': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoworld.cpp(337): error C3861: 'glPopMatrix': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoworld.cpp(456): error C2065: 'GL_POSITION': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoworld.cpp(456): error C3861: 'glLightfv': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoworld.cpp(459): error C2065: 'GL_AMBIENT': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoworld.cpp(459): error C3861: 'glLightfv': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoworld.cpp(460): error C2065: 'GL_DIFFUSE': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoworld.cpp(460): error C3861: 'glLightfv': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoworld.cpp(461): error C2065: 'GL_SPECULAR': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoworld.cpp(461): error C3861: 'glLightfv': identifier not found
+  ProtoVerletStick.cpp
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoverletstick.cpp(87): error C2065: 'GL_LINE_STRIP': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoverletstick.cpp(87): error C3861: 'glBegin': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoverletstick.cpp(88): error C3861: 'glVertex3f': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoverletstick.cpp(89): error C3861: 'glVertex3f': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoverletstick.cpp(90): error C3861: 'glEnd': identifier not found
+  ProtoTexture.cpp
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(79): error C3646: 'image_format': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(79): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(80): error C3646: 'internal_format': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(80): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(81): error C3646: 'level': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(81): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(82): error C3646: 'border': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(82): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(84): error C3646: 'w': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(84): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(85): error C3646: 'h': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(85): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(87): error C3646: 'textureID': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(87): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(117): error C2061: syntax error: identifier 'GLenum'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(125): error C2061: syntax error: identifier 'GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(126): error C3646: 'getH': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(126): error C2059: syntax error: '('
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(126): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(127): error C2061: syntax error: identifier 'GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(128): error C3646: 'getW': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(128): error C2059: syntax error: '('
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(128): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(131): error C2061: syntax error: identifier 'GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(132): error C3646: 'getTextureID': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(132): error C2059: syntax error: '('
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(132): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(141): error C2065: 'GLuint': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(141): error C2146: syntax error: missing ')' before identifier 'h'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(141): error C2143: syntax error: missing ';' before '{'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(141): error C2447: '{': missing function header (old-style formal list?)
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(145): error C2039: 'getH': is not a member of 'ijg::ProtoTexture'
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(61): note: see declaration of 'ijg::ProtoTexture'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(145): error C2433: 'GLuint': 'inline' not permitted on data declarations
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(145): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(145): error C2146: syntax error: missing ';' before identifier 'getH'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(145): error C2270: 'getH': modifiers not allowed on nonmember functions
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(146): error C2065: 'h': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(149): error C2146: syntax error: missing ')' before identifier 'w'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(149): error C2143: syntax error: missing ';' before '{'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(149): error C2447: '{': missing function header (old-style formal list?)
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(153): error C2039: 'getW': is not a member of 'ijg::ProtoTexture'
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(61): note: see declaration of 'ijg::ProtoTexture'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(153): error C2433: 'GLuint': 'inline' not permitted on data declarations
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(153): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(153): error C2086: 'int ijg::GLuint': redefinition
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(145): note: see declaration of 'ijg::GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(153): error C2146: syntax error: missing ';' before identifier 'getW'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(153): error C2270: 'getW': modifiers not allowed on nonmember functions
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(154): error C2065: 'w': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(165): error C2146: syntax error: missing ')' before identifier 'textureID'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(165): error C2143: syntax error: missing ';' before '{'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(165): error C2447: '{': missing function header (old-style formal list?)
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(169): error C2039: 'getTextureID': is not a member of 'ijg::ProtoTexture'
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(61): note: see declaration of 'ijg::ProtoTexture'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(169): error C2433: 'GLuint': 'inline' not permitted on data declarations
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(169): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(169): error C2086: 'int ijg::GLuint': redefinition
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(145): note: see declaration of 'ijg::GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(169): error C2146: syntax error: missing ';' before identifier 'getTextureID'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(169): error C2270: 'getTextureID': modifiers not allowed on nonmember functions
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(170): error C2065: 'textureID': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(35): error C2039: 'w': is not a member of 'ijg::ProtoTexture'
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(61): note: see declaration of 'ijg::ProtoTexture'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(36): error C2039: 'h': is not a member of 'ijg::ProtoTexture'
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(61): note: see declaration of 'ijg::ProtoTexture'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(37): error C2039: 'textureID': is not a member of 'ijg::ProtoTexture'
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototexture.h(61): note: see declaration of 'ijg::ProtoTexture'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(56): error C2061: syntax error: identifier 'GLenum'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(57): error C2065: 'image_format': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(57): error C2065: 'internal_format': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(57): error C2065: 'level': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(57): error C2065: 'border': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(57): error C2614: 'ijg::ProtoTexture': illegal member initialization: 'image_format' is not a base or member
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(57): error C2614: 'ijg::ProtoTexture': illegal member initialization: 'internal_format' is not a base or member
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(57): error C2614: 'ijg::ProtoTexture': illegal member initialization: 'level' is not a base or member
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(57): error C2614: 'ijg::ProtoTexture': illegal member initialization: 'border' is not a base or member
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(128): error C2065: 'textureID': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(128): error C3861: 'glGenTextures': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(130): error C2065: 'GL_TEXTURE0': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(130): error C3861: 'glActiveTexture': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(131): error C2065: 'GL_TEXTURE_2D': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(131): error C2065: 'textureID': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(131): error C3861: 'glBindTexture': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(173): error C2065: 'GL_TEXTURE_2D': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(173): error C2065: 'GL_TEXTURE_WRAP_S': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(173): error C2065: 'GL_REPEAT': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(173): error C3861: 'glTexParameteri': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(174): error C2065: 'GL_TEXTURE_2D': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(174): error C2065: 'GL_TEXTURE_WRAP_T': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(174): error C2065: 'GL_REPEAT': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(174): error C3861: 'glTexParameteri': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(175): error C2065: 'GL_TEXTURE_2D': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(175): error C2065: 'GL_TEXTURE_MAG_FILTER': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(175): error C2065: 'GL_LINEAR': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(175): error C3861: 'glTexParameteri': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(176): error C2065: 'GL_TEXTURE_2D': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(176): error C2065: 'GL_TEXTURE_MIN_FILTER': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(176): error C2065: 'GL_LINEAR': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(176): error C3861: 'glTexParameteri': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(183): error C2065: 'GL_TEXTURE_2D': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(183): error C2065: 'GL_RGB': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(183): error C2065: 'GL_BGR': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(183): error C2065: 'GL_UNSIGNED_BYTE': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(183): error C3861: 'gluBuild2DMipmaps': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(191): error C2065: 'textureID': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(191): error C3861: 'glGenTextures': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(193): error C2065: 'GL_TEXTURE1': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(193): error C3861: 'glActiveTexture': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(194): error C2065: 'GL_TEXTURE_2D': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(194): error C2065: 'textureID': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(194): error C3861: 'glBindTexture': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(251): error C2065: 'GL_TEXTURE_2D': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(251): error C2065: 'GL_TEXTURE_WRAP_S': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(251): error C2065: 'GL_REPEAT': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(251): error C3861: 'glTexParameteri': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(252): error C2065: 'GL_TEXTURE_2D': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(252): error C2065: 'GL_TEXTURE_WRAP_T': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(252): error C2065: 'GL_REPEAT': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(252): fatal error C1003: error count exceeds 100; stopping compilation
+  ProtoTetrahedron.cpp
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(59): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototetrahedron.cpp(4): error C2653: 'ProtoTetrahedron': is not a class or namespace name
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototetrahedron.cpp(5): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototetrahedron.cpp(6): warning C4508: 'ProtoTetrahedron': function should return a value; 'void' return type assumed
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototetrahedron.cpp(9): error C2653: 'ProtoTetrahedron': is not a class or namespace name
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototetrahedron.cpp(10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototetrahedron.cpp(10): error C2084: function 'int ProtoTetrahedron(void)' already has a body
+  d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\prototetrahedron.cpp(4): note: see previous definition of 'ProtoTetrahedron'
+  ProtoTessellator.cpp
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): error C2144: syntax error: 'void' should be preceded by ';'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): error C2182: 'APIENTRY': illegal use of type 'void'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): error C2146: syntax error: missing ';' before identifier 'glAccum'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1158): error C2144: syntax error: 'void' should be preceded by ';'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1158): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1158): error C2086: 'int WINGDIAPI': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'WINGDIAPI'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1158): error C2182: 'APIENTRY': illegal use of type 'void'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1158): error C2086: 'int APIENTRY': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'APIENTRY'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1158): error C2146: syntax error: missing ';' before identifier 'glAlphaFunc'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1159): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1159): error C2086: 'int WINGDIAPI': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'WINGDIAPI'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1159): error C2146: syntax error: missing ';' before identifier 'GLboolean'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1160): error C2144: syntax error: 'void' should be preceded by ';'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1160): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1160): error C2086: 'int WINGDIAPI': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'WINGDIAPI'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1160): error C2182: 'APIENTRY': illegal use of type 'void'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1160): error C2086: 'int APIENTRY': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'APIENTRY'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1160): error C2146: syntax error: missing ';' before identifier 'glArrayElement'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1161): error C2144: syntax error: 'void' should be preceded by ';'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1161): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1161): error C2086: 'int WINGDIAPI': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'WINGDIAPI'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1161): error C2182: 'APIENTRY': illegal use of type 'void'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1161): error C2086: 'int APIENTRY': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'APIENTRY'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1161): error C2146: syntax error: missing ';' before identifier 'glBegin'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1162): error C2144: syntax error: 'void' should be preceded by ';'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1162): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1162): error C2086: 'int WINGDIAPI': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'WINGDIAPI'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1162): error C2182: 'APIENTRY': illegal use of type 'void'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1162): error C2086: 'int APIENTRY': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'APIENTRY'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1162): error C2146: syntax error: missing ';' before identifier 'glBindTexture'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1163): error C2144: syntax error: 'void' should be preceded by ';'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1163): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1163): error C2086: 'int WINGDIAPI': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'WINGDIAPI'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1163): error C2182: 'APIENTRY': illegal use of type 'void'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1163): error C2086: 'int APIENTRY': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'APIENTRY'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1163): error C2146: syntax error: missing ';' before identifier 'glBitmap'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1164): error C2144: syntax error: 'void' should be preceded by ';'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1164): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1164): error C2086: 'int WINGDIAPI': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'WINGDIAPI'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1164): error C2182: 'APIENTRY': illegal use of type 'void'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1164): error C2086: 'int APIENTRY': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'APIENTRY'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1164): error C2146: syntax error: missing ';' before identifier 'glBlendFunc'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1165): error C2144: syntax error: 'void' should be preceded by ';'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1165): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1165): error C2086: 'int WINGDIAPI': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'WINGDIAPI'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1165): error C2182: 'APIENTRY': illegal use of type 'void'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1165): error C2086: 'int APIENTRY': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'APIENTRY'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1165): error C2146: syntax error: missing ';' before identifier 'glCallList'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1166): error C2144: syntax error: 'void' should be preceded by ';'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1166): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1166): error C2086: 'int WINGDIAPI': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'WINGDIAPI'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1166): error C2182: 'APIENTRY': illegal use of type 'void'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1166): error C2086: 'int APIENTRY': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'APIENTRY'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1166): error C2146: syntax error: missing ';' before identifier 'glCallLists'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1167): error C2144: syntax error: 'void' should be preceded by ';'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1167): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1167): error C2086: 'int WINGDIAPI': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'WINGDIAPI'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1167): error C2182: 'APIENTRY': illegal use of type 'void'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1167): error C2086: 'int APIENTRY': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'APIENTRY'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1167): error C2146: syntax error: missing ';' before identifier 'glClear'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1168): error C2144: syntax error: 'void' should be preceded by ';'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1168): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1168): error C2086: 'int WINGDIAPI': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'WINGDIAPI'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1168): error C2182: 'APIENTRY': illegal use of type 'void'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1168): error C2086: 'int APIENTRY': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'APIENTRY'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1168): error C2146: syntax error: missing ';' before identifier 'glClearAccum'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1169): error C2144: syntax error: 'void' should be preceded by ';'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1169): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1169): error C2086: 'int WINGDIAPI': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'WINGDIAPI'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1169): error C2182: 'APIENTRY': illegal use of type 'void'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1169): error C2086: 'int APIENTRY': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'APIENTRY'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1169): error C2146: syntax error: missing ';' before identifier 'glClearColor'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1170): error C2144: syntax error: 'void' should be preceded by ';'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1170): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1170): error C2086: 'int WINGDIAPI': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'WINGDIAPI'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1170): error C2182: 'APIENTRY': illegal use of type 'void'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1170): error C2086: 'int APIENTRY': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'APIENTRY'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1170): error C2146: syntax error: missing ';' before identifier 'glClearDepth'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1171): error C2144: syntax error: 'void' should be preceded by ';'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1171): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1171): error C2086: 'int WINGDIAPI': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'WINGDIAPI'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1171): error C2182: 'APIENTRY': illegal use of type 'void'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1171): error C2086: 'int APIENTRY': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'APIENTRY'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1171): error C2146: syntax error: missing ';' before identifier 'glClearIndex'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1172): error C2144: syntax error: 'void' should be preceded by ';'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1172): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1172): error C2086: 'int WINGDIAPI': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'WINGDIAPI'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1172): error C2182: 'APIENTRY': illegal use of type 'void'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1172): error C2086: 'int APIENTRY': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'APIENTRY'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1172): error C2146: syntax error: missing ';' before identifier 'glClearStencil'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1173): error C2144: syntax error: 'void' should be preceded by ';'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1173): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1173): error C2086: 'int WINGDIAPI': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'WINGDIAPI'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1173): error C2182: 'APIENTRY': illegal use of type 'void'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1173): error C2086: 'int APIENTRY': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'APIENTRY'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1173): error C2146: syntax error: missing ';' before identifier 'glClipPlane'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1174): error C2144: syntax error: 'void' should be preceded by ';'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1174): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1174): error C2086: 'int WINGDIAPI': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'WINGDIAPI'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1174): error C2182: 'APIENTRY': illegal use of type 'void'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1174): error C2086: 'int APIENTRY': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'APIENTRY'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1174): error C2146: syntax error: missing ';' before identifier 'glColor3b'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1175): error C2144: syntax error: 'void' should be preceded by ';'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1175): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1175): error C2086: 'int WINGDIAPI': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'WINGDIAPI'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1175): error C2182: 'APIENTRY': illegal use of type 'void'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1175): error C2086: 'int APIENTRY': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'APIENTRY'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1175): error C2146: syntax error: missing ';' before identifier 'glColor3bv'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1176): error C2144: syntax error: 'void' should be preceded by ';'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1176): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1176): error C2086: 'int WINGDIAPI': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'WINGDIAPI'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1176): error C2182: 'APIENTRY': illegal use of type 'void'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1176): error C2086: 'int APIENTRY': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'APIENTRY'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1176): error C2146: syntax error: missing ';' before identifier 'glColor3d'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1177): error C2144: syntax error: 'void' should be preceded by ';'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1177): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1177): error C2086: 'int WINGDIAPI': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'WINGDIAPI'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1177): error C2182: 'APIENTRY': illegal use of type 'void'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1177): error C2086: 'int APIENTRY': redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1157): note: see declaration of 'APIENTRY'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1177): error C2146: syntax error: missing ';' before identifier 'glColor3dv'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1178): error C2144: syntax error: 'void' should be preceded by ';'
+c:\program files (x86)\windows kits\8.1\include\um\gl\gl.h(1178): fatal error C1003: error count exceeds 100; stopping compilation
+  ProtoSpline3.cpp
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(67): error C3646: 'getID': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(67): error C2059: syntax error: '('
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(67): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(68): error C3646: 'shader_id': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(68): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(75): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(75): error C2144: syntax error: 'int' should be preceded by ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(87): error C2061: syntax error: identifier 'GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(88): error C2061: syntax error: identifier 'GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(107): error C3646: 'shader_vp': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(107): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(108): error C3646: 'shader_fp': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(108): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(109): error C3646: 'shader_gp': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(109): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(110): error C2061: syntax error: identifier 'GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(113): error C2327: 'ijg::ProtoShader::GLuint': is not a type name, static, or enumerator
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(113): error C2065: 'GLuint': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(113): error C2923: 'std::vector': 'GLuint' is not a valid template type argument for parameter '_Ty'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(113): error C3203: 'allocator': unspecialized class template can't be used as a template argument for template parameter '_Alloc', expected a real type
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(117): error C3646: 'shader_id_2': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(117): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(117): error C2373: 'ijg::ProtoShader::GLuint': redefinition; different type modifiers
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(75): note: see declaration of 'ijg::ProtoShader::GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(121): error C2039: 'getID': is not a member of 'ijg::ProtoShader'
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(54): note: see declaration of 'ijg::ProtoShader'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(121): error C2433: 'GLuint': 'inline' not permitted on data declarations
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(121): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(121): error C2146: syntax error: missing ';' before identifier 'getID'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(122): error C2065: 'shader_id': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(125): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(125): error C2143: syntax error: missing ';' before 'ijg::ProtoShader::getID_2'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(125): error C2433: 'GLuint': 'inline' not permitted on data declarations
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(125): error C2373: 'ijg::GLuint': redefinition; different type modifiers
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(121): note: see declaration of 'ijg::GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(126): error C2065: 'shader_id_2': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(131): error C2065: 'shader_id': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(131): error C3861: 'glUseProgram': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(136): error C3861: 'glUseProgram': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocurve3.h(135): error C3646: 'vaoVertsID': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocurve3.h(135): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocurve3.h(140): error C3646: 'vboVertsID': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocurve3.h(140): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocurve3.h(150): error C3646: 'lightRenderingFactors_U': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocurve3.h(150): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(70): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(186): error C2065: 'vaoVertsID': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(186): error C3861: 'glBindVertexArray': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(188): error C2065: 'GL_ARRAY_BUFFER': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(188): error C2065: 'vboVertsID': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(188): error C3861: 'glBindBuffer': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(189): error C2065: 'GLfloat': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(189): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(190): error C2065: 'GL_ARRAY_BUFFER': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(190): error C2065: 'GL_STREAM_DRAW': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(190): error C3861: 'glBufferData': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(191): error C2065: 'GL_ARRAY_BUFFER': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(191): error C3861: 'glBufferSubData': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(193): error C3861: 'glLineWidth': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(208): error C2065: 'lightRenderingFactors_U': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(208): error C3861: 'glUniform4fv': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(210): error C2065: 'GL_FRONT_AND_BACK': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(210): error C2065: 'GL_LINE': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(210): error C3861: 'glPolygonMode': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(211): error C2065: 'GL_LINE_STRIP': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(211): error C3861: 'glDrawArrays': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(215): error C2065: 'lightRenderingFactors_U': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(215): error C3861: 'glUniform4fv': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(222): error C3861: 'glBindVertexArray': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(230): error C2065: 'GL_CULL_FACE': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(230): error C3861: 'glDisable': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(231): error C2065: 'GL_LIGHTING': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(231): error C3861: 'glDisable': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(232): error C3861: 'glPointSize': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(233): error C3861: 'glColor3f': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(235): error C2065: 'GL_POINTS': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(235): error C3861: 'glBegin': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(237): error C3861: 'glVertex3f': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(239): error C3861: 'glEnd': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(248): error C2065: 'vaoVertsID': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(248): error C3861: 'glBindVertexArray': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(250): error C2065: 'GL_ARRAY_BUFFER': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(250): error C2065: 'vboVertsID': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(250): error C3861: 'glBindBuffer': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(251): error C2065: 'GLfloat': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(251): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(252): error C2065: 'GL_ARRAY_BUFFER': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(252): error C2065: 'GL_STREAM_DRAW': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(252): error C3861: 'glBufferData': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(253): error C2065: 'GL_ARRAY_BUFFER': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(253): error C3861: 'glBufferSubData': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(255): error C3861: 'glPointSize': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(256): error C2065: 'GL_FRONT_AND_BACK': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(256): error C2065: 'GL_POINT': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(256): error C3861: 'glPolygonMode': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(260): error C2065: 'lightRenderingFactors_U': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(260): error C3861: 'glUniform4fv': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(262): error C2065: 'GL_POINTS': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(262): error C3861: 'glDrawArrays': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(266): error C2065: 'lightRenderingFactors_U': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(266): error C3861: 'glUniform4fv': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(269): error C3861: 'glBindVertexArray': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(289): error C3861: 'glColor3f': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(290): error C2065: 'GL_POLYGON': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(290): error C3861: 'glBegin': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(299): error C3861: 'glVertex3f': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(300): warning C4305: '+=': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(302): error C3861: 'glEnd': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(305): error C3861: 'glPointSize': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(308): error C2065: 'GL_POINTS': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(308): error C3861: 'glBegin': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(317): error C3861: 'glColor3f': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(318): error C3861: 'glVertex3f': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(319): warning C4305: '+=': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(321): error C3861: 'glEnd': identifier not found
+  ProtoShader.cpp
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(67): error C3646: 'getID': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(67): error C2059: syntax error: '('
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(67): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(68): error C3646: 'shader_id': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(68): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(75): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(75): error C2144: syntax error: 'int' should be preceded by ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(87): error C2061: syntax error: identifier 'GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(88): error C2061: syntax error: identifier 'GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(107): error C3646: 'shader_vp': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(107): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(108): error C3646: 'shader_fp': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(108): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(109): error C3646: 'shader_gp': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(109): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(110): error C2061: syntax error: identifier 'GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(113): error C2327: 'ijg::ProtoShader::GLuint': is not a type name, static, or enumerator
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(113): error C2065: 'GLuint': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(113): error C2923: 'std::vector': 'GLuint' is not a valid template type argument for parameter '_Ty'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(113): error C3203: 'allocator': unspecialized class template can't be used as a template argument for template parameter '_Alloc', expected a real type
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(117): error C3646: 'shader_id_2': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(117): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(117): error C2373: 'ijg::ProtoShader::GLuint': redefinition; different type modifiers
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(75): note: see declaration of 'ijg::ProtoShader::GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(121): error C2039: 'getID': is not a member of 'ijg::ProtoShader'
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(54): note: see declaration of 'ijg::ProtoShader'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(121): error C2433: 'GLuint': 'inline' not permitted on data declarations
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(121): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(121): error C2146: syntax error: missing ';' before identifier 'getID'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(122): error C2065: 'shader_id': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(125): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(125): error C2143: syntax error: missing ';' before 'ijg::ProtoShader::getID_2'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(125): error C2433: 'GLuint': 'inline' not permitted on data declarations
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(125): error C2373: 'ijg::GLuint': redefinition; different type modifiers
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(121): note: see declaration of 'ijg::GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(126): error C2065: 'shader_id_2': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(131): error C2065: 'shader_id': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(131): error C3861: 'glUseProgram': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(136): error C3861: 'glUseProgram': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(34): error C2039: 'shader_id_2': is not a member of 'ijg::ProtoShader'
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(54): note: see declaration of 'ijg::ProtoShader'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(34): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(34): error C2146: syntax error: missing ';' before identifier 'shader_id_2'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(36): error C2789: 'ijg::ProtoShader::GLuint': an object of const-qualified type must be initialized
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(75): note: see declaration of 'ijg::ProtoShader::GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(36): error C2512: 'std::vector': no appropriate default constructor available
+  c:\visualstudio2015\vc\include\vector(679): note: see declaration of 'std::vector'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(41): error C2789: 'ijg::ProtoShader::GLuint': an object of const-qualified type must be initialized
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(75): note: see declaration of 'ijg::ProtoShader::GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(41): error C2512: 'std::vector': no appropriate default constructor available
+  c:\visualstudio2015\vc\include\vector(679): note: see declaration of 'std::vector'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(46): error C2789: 'ijg::ProtoShader::GLuint': an object of const-qualified type must be initialized
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(75): note: see declaration of 'ijg::ProtoShader::GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(46): error C2512: 'std::vector': no appropriate default constructor available
+  c:\visualstudio2015\vc\include\vector(679): note: see declaration of 'std::vector'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(49): error C2039: 'shader_vp': is not a member of 'ijg::ProtoShader'
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(54): note: see declaration of 'ijg::ProtoShader'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(50): error C2039: 'shader_fp': is not a member of 'ijg::ProtoShader'
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(54): note: see declaration of 'ijg::ProtoShader'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(56): error C2065: 'shader_id': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(56): error C2065: 'shader_fp': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(56): error C3861: 'glDetachShader': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(57): error C2065: 'shader_id': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(57): error C2065: 'shader_vp': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(57): error C3861: 'glDetachShader': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(59): error C2065: 'shader_fp': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(59): error C3861: 'glDeleteShader': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(60): error C2065: 'shader_vp': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(60): error C3861: 'glDeleteShader': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(61): error C2065: 'shader_id': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(61): error C3861: 'glDeleteProgram': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(65): error C2039: 'shader_vp': is not a member of 'ijg::ProtoShader'
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(54): note: see declaration of 'ijg::ProtoShader'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(66): error C2039: 'shader_fp': is not a member of 'ijg::ProtoShader'
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(54): note: see declaration of 'ijg::ProtoShader'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(77): error C2065: 'GLenum': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(77): error C2146: syntax error: missing ';' before identifier 'err'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(77): error C2065: 'err': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(77): error C3861: 'glewInit': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(78): error C2065: 'GLEW_OK': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(78): error C2065: 'err': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(81): error C2065: 'err': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(81): error C3861: 'glewGetErrorString': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(83): error C2065: 'GLEW_VERSION': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(83): error C3861: 'glewGetString': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(108): error C2065: 'shader_vp': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(109): error C2065: 'shader_fp': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(110): error C2065: 'shader_id': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(113): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(113): error C2143: syntax error: missing ';' before '*'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(113): error C2065: 'vShaderCode': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(114): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(114): error C2143: syntax error: missing ';' before '*'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(114): error C2086: 'const int GLchar': redefinition
+  d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(113): note: see declaration of 'GLchar'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(114): error C2065: 'fShaderCode': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(117): error C2065: 'vShaderCode': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(117): error C2065: 'fShaderCode': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(122): error C2065: 'shader_vp': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(122): error C2065: 'GL_VERTEX_SHADER': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(122): error C3861: 'glCreateShader': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(123): error C2065: 'shader_vp': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(128): error C2065: 'shader_fp': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(128): error C2065: 'GL_FRAGMENT_SHADER': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(128): error C3861: 'glCreateShader': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(129): error C2065: 'shader_fp': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(134): error C2065: 'shader_vp': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(134): error C2065: 'vShaderCode': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(134): error C3861: 'glShaderSource': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(135): error C2065: 'shader_fp': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(135): error C2065: 'fShaderCode': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(135): error C3861: 'glShaderSource': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(138): error C2065: 'shader_vp': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(138): error C3861: 'glCompileShader': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(139): error C2065: 'shader_fp': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(139): error C3861: 'glCompileShader': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(142): error C2065: 'GLint': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(142): error C2146: syntax error: missing ';' before identifier 'shaderCompiled'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(142): error C2065: 'shaderCompiled': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(142): error C2065: 'GL_FALSE': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(143): error C2065: 'shader_vp': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(143): error C2065: 'GL_COMPILE_STATUS': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(143): error C2065: 'shaderCompiled': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(143): error C3861: 'glGetShaderiv': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(144): error C2065: 'shaderCompiled': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(144): error C2065: 'GL_TRUE': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(146): error C2065: 'shader_vp': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoshader.cpp(146): fatal error C1003: error count exceeds 100; stopping compilation
+  ProtoRenderer.cpp
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(59): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protorenderer.cpp(52): error C3861: 'glewInit': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protorenderer.cpp(53): error C2065: 'GLEW_OK': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protorenderer.cpp(56): error C3861: 'glewGetErrorString': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protorenderer.cpp(58): error C2065: 'GLEW_VERSION': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protorenderer.cpp(58): error C3861: 'glewGetString': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protorenderer.cpp(73): error C3861: 'glPushMatrix': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protorenderer.cpp(74): error C3861: 'glTranslatef': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protorenderer.cpp(76): error C3861: 'glRotatef': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protorenderer.cpp(77): error C3861: 'glRotatef': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protorenderer.cpp(78): error C3861: 'glRotatef': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protorenderer.cpp(79): error C3861: 'glScalef': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protorenderer.cpp(88): error C3861: 'glEnableClientState': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protorenderer.cpp(89): error C2065: 'GL_NORMAL_ARRAY': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protorenderer.cpp(89): error C3861: 'glEnableClientState': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protorenderer.cpp(90): error C2065: 'GL_COLOR_ARRAY': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protorenderer.cpp(90): error C3861: 'glEnableClientState': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protorenderer.cpp(91): error C2065: 'GL_TEXTURE_COORD_ARRAY': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protorenderer.cpp(91): error C3861: 'glEnableClientState': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protorenderer.cpp(95): error C3861: 'glVertexPointer': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protorenderer.cpp(96): error C3861: 'glNormalPointer': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protorenderer.cpp(97): error C3861: 'glColorPointer': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protorenderer.cpp(98): error C3861: 'glTexCoordPointer': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protorenderer.cpp(106): error C2065: 'GL_NORMAL_ARRAY': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protorenderer.cpp(106): error C3861: 'glDisableClientState': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protorenderer.cpp(107): error C2065: 'GL_COLOR_ARRAY': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protorenderer.cpp(107): error C3861: 'glDisableClientState': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protorenderer.cpp(108): error C3861: 'glDisableClientState': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protorenderer.cpp(109): error C2065: 'GL_TEXTURE_COORD_ARRAY': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protorenderer.cpp(109): error C3861: 'glDisableClientState': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protorenderer.cpp(114): error C3861: 'glPopMatrix': identifier not found
+  ProtoPlasm.cpp
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(42): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protolight.h(93): warning C4305: '=': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(59): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoworld.h(324): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototoroid.h(60): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocephalopod.h(128): warning C4244: 'return': conversion from 'time_t' to 'long', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(490): error C2059: syntax error: 'export'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(490): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(493): error C2059: syntax error: 'export'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(493): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(494): error C2059: syntax error: 'export'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(494): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(495): error C2059: syntax error: 'export'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(495): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(496): error C2059: syntax error: 'export'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(496): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(499): error C2988: unrecognizable template declaration/definition
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(499): error C2059: syntax error: 'export'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(520): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(588): error C3203: 'PathPrims': unspecialized class template can't be used as a template argument for template parameter '_Ty', expected a real type
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(589): error C3203: 'PathPrims': unspecialized class template can't be used as a template argument for template parameter '_Ty', expected a real type
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(599): error C2143: syntax error: missing ';' before 'identifier'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(599): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(610): fatal error C1903: unable to recover from previous error(s); stopping compilation
+  ProtoPath3.cpp
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(59): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protopath3.cpp(63): error C3861: 'glewInit': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protopath3.cpp(64): error C2065: 'GLEW_OK': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protopath3.cpp(67): error C3861: 'glewGetErrorString': identifier not found
+  ProtoPath2.cpp
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protopath2.h(58): error C3646: 'vaoPathID': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protopath2.h(58): error C2059: syntax error: ','
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protopath2.h(58): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(42): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protolight.h(93): warning C4305: '=': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(59): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoworld.h(324): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototoroid.h(60): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocephalopod.h(128): warning C4244: 'return': conversion from 'time_t' to 'long', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(490): error C2059: syntax error: 'export'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(490): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(493): error C2059: syntax error: 'export'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(493): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(494): error C2059: syntax error: 'export'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(494): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(495): error C2059: syntax error: 'export'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(495): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(496): error C2059: syntax error: 'export'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(496): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(499): error C2988: unrecognizable template declaration/definition
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(499): error C2059: syntax error: 'export'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(520): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(588): error C3203: 'PathPrims': unspecialized class template can't be used as a template argument for template parameter '_Ty', expected a real type
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(589): error C3203: 'PathPrims': unspecialized class template can't be used as a template argument for template parameter '_Ty', expected a real type
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(599): error C2143: syntax error: missing ';' before 'identifier'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(599): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(610): fatal error C1903: unable to recover from previous error(s); stopping compilation
+  ProtoGeomComposite.cpp
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(67): error C3646: 'getID': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(67): error C2059: syntax error: '('
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(67): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(68): error C3646: 'shader_id': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(68): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(75): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(75): error C2144: syntax error: 'int' should be preceded by ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(87): error C2061: syntax error: identifier 'GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(88): error C2061: syntax error: identifier 'GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(107): error C3646: 'shader_vp': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(107): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(108): error C3646: 'shader_fp': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(108): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(109): error C3646: 'shader_gp': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(109): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(110): error C2061: syntax error: identifier 'GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(113): error C2327: 'ijg::ProtoShader::GLuint': is not a type name, static, or enumerator
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(113): error C2065: 'GLuint': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(113): error C2923: 'std::vector': 'GLuint' is not a valid template type argument for parameter '_Ty'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(113): error C3203: 'allocator': unspecialized class template can't be used as a template argument for template parameter '_Alloc', expected a real type
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(117): error C3646: 'shader_id_2': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(117): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(117): error C2373: 'ijg::ProtoShader::GLuint': redefinition; different type modifiers
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(75): note: see declaration of 'ijg::ProtoShader::GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(121): error C2039: 'getID': is not a member of 'ijg::ProtoShader'
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(54): note: see declaration of 'ijg::ProtoShader'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(121): error C2433: 'GLuint': 'inline' not permitted on data declarations
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(121): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(121): error C2146: syntax error: missing ';' before identifier 'getID'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(122): error C2065: 'shader_id': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(125): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(125): error C2143: syntax error: missing ';' before 'ijg::ProtoShader::getID_2'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(125): error C2433: 'GLuint': 'inline' not permitted on data declarations
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(125): error C2373: 'ijg::GLuint': redefinition; different type modifiers
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(121): note: see declaration of 'ijg::GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(126): error C2065: 'shader_id_2': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(131): error C2065: 'shader_id': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(131): error C3861: 'glUseProgram': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(136): error C3861: 'glUseProgram': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protolight.h(93): warning C4305: '=': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(67): error C3646: 'glLights': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(67): error C2143: syntax error: missing ',' before '['
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(67): error C2143: syntax error: missing ')' before ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(67): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(144): error C3646: 'globalAmbient_U': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(144): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(145): error C3646: 'model_U': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(145): error C2059: syntax error: ','
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(145): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(147): error C3646: 'getModel_U': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(147): error C2059: syntax error: '('
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(147): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(148): error C3646: 'getView_U': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(148): error C2059: syntax error: '('
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(148): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(149): error C3646: 'getModelView_U': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(149): error C2059: syntax error: '('
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(149): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(150): error C3646: 'getProjection_U': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(150): error C2059: syntax error: '('
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(150): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(151): error C3646: 'getModelViewProjection_U': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(151): error C2059: syntax error: '('
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(151): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(152): error C3646: 'getNormal_U': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(152): error C2059: syntax error: '('
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(152): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(154): error C3646: 'L_MVBP_U': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(154): error C2059: syntax error: ','
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(154): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(155): error C3646: 'shaderPassFlag_U': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(155): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(156): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(156): error C2143: syntax error: missing ';' before '&'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(156): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(157): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(157): error C2143: syntax error: missing ',' before '&'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(160): error C3646: 'shadowMap_U': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(160): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(161): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(161): error C2143: syntax error: missing ';' before '&'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(161): error C2086: 'const int ijg::ProtoContext::GLuint': redefinition
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(156): note: see declaration of 'ijg::ProtoContext::GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(161): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(162): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(162): error C2143: syntax error: missing ',' before '&'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(167): error C3646: 'lightRenderingFactors_U': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(167): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(170): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(170): error C2143: syntax error: missing ';' before '&'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(170): error C2086: 'const int ijg::ProtoContext::GLuint': redefinition
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(156): note: see declaration of 'ijg::ProtoContext::GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(170): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(171): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(171): error C2143: syntax error: missing ',' before '&'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(175): error C3646: 'shadowBuffer_U': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(175): error C2059: syntax error: ','
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(175): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(176): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(176): error C2143: syntax error: missing ',' before '&'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(178): error C2143: syntax error: missing ';' before '&'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(178): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(178): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(179): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(179): error C2143: syntax error: missing ',' before '&'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(180): error C2143: syntax error: missing ';' before '&'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(180): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(180): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(221): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(221): error C2143: syntax error: missing ';' before '&'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(221): error C2086: 'const int ijg::ProtoContext::GLuint': redefinition
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(156): note: see declaration of 'ijg::ProtoContext::GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(221): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(227): error C3646: 'position': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(227): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(228): error C3646: 'intensity': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(228): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(229): error C3646: 'diffuse': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(229): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(230): error C3646: 'ambient': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(230): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(231): error C3646: 'specular': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(231): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(238): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(238): error C3646: 'getLightModelViewBiasProjection_U': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(238): error C2059: syntax error: ')'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(238): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(61): error C2789: 'ijg::ProtoContext::GLuint': an object of const-qualified type must be initialized
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(156): note: see declaration of 'ijg::ProtoContext::GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(275): error C2065: 'model_U': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(275): error C2065: 'GL_FALSE': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(275): error C3861: 'glUniformMatrix4fv': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(280): error C2065: 'view_U': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(280): error C2065: 'GL_FALSE': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(280): error C3861: 'glUniformMatrix4fv': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(285): error C2065: 'projection_U': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(285): error C2065: 'GL_FALSE': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(285): error C3861: 'glUniformMatrix4fv': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(285): fatal error C1003: error count exceeds 100; stopping compilation
+  ProtoGeom2.cpp
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protogeom2.h(30): fatal error C1083: Cannot open include file: 'GL/glew.h': No such file or directory
+  ProtoFrenetFrame.cpp
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protofrenetframe.cpp(72): error C2065: 'GL_LINES': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protofrenetframe.cpp(72): error C3861: 'glBegin': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protofrenetframe.cpp(75): error C3861: 'glColor3f': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protofrenetframe.cpp(76): error C3861: 'glVertex3f': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protofrenetframe.cpp(77): error C3861: 'glVertex3f': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protofrenetframe.cpp(80): error C3861: 'glColor3f': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protofrenetframe.cpp(81): error C3861: 'glVertex3f': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protofrenetframe.cpp(82): error C3861: 'glVertex3f': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protofrenetframe.cpp(86): error C3861: 'glColor3f': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protofrenetframe.cpp(87): error C3861: 'glVertex3f': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protofrenetframe.cpp(88): error C3861: 'glVertex3f': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protofrenetframe.cpp(93): error C3861: 'glEnd': identifier not found
+  ProtoFace3.cpp
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoface3.cpp(78): error C2065: 'GL_TRIANGLES': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoface3.cpp(78): error C3861: 'glBegin': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoface3.cpp(79): error C3861: 'glColor3f': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoface3.cpp(80): error C3861: 'glNormal3f': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoface3.cpp(81): error C3861: 'glVertex3f': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoface3.cpp(82): error C3861: 'glColor3f': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoface3.cpp(83): error C3861: 'glNormal3f': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoface3.cpp(84): error C3861: 'glVertex3f': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoface3.cpp(85): error C3861: 'glColor3f': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoface3.cpp(86): error C3861: 'glNormal3f': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoface3.cpp(87): error C3861: 'glVertex3f': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoface3.cpp(88): error C3861: 'glEnd': identifier not found
+  ProtoCurve3.cpp
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(67): error C3646: 'getID': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(67): error C2059: syntax error: '('
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(67): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(68): error C3646: 'shader_id': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(68): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(75): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(75): error C2144: syntax error: 'int' should be preceded by ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(87): error C2061: syntax error: identifier 'GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(88): error C2061: syntax error: identifier 'GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(107): error C3646: 'shader_vp': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(107): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(108): error C3646: 'shader_fp': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(108): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(109): error C3646: 'shader_gp': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(109): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(110): error C2061: syntax error: identifier 'GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(113): error C2327: 'ijg::ProtoShader::GLuint': is not a type name, static, or enumerator
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(113): error C2065: 'GLuint': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(113): error C2923: 'std::vector': 'GLuint' is not a valid template type argument for parameter '_Ty'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(113): error C3203: 'allocator': unspecialized class template can't be used as a template argument for template parameter '_Alloc', expected a real type
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(117): error C3646: 'shader_id_2': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(117): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(117): error C2373: 'ijg::ProtoShader::GLuint': redefinition; different type modifiers
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(75): note: see declaration of 'ijg::ProtoShader::GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(121): error C2039: 'getID': is not a member of 'ijg::ProtoShader'
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(54): note: see declaration of 'ijg::ProtoShader'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(121): error C2433: 'GLuint': 'inline' not permitted on data declarations
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(121): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(121): error C2146: syntax error: missing ';' before identifier 'getID'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(122): error C2065: 'shader_id': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(125): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(125): error C2143: syntax error: missing ';' before 'ijg::ProtoShader::getID_2'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(125): error C2433: 'GLuint': 'inline' not permitted on data declarations
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(125): error C2373: 'ijg::GLuint': redefinition; different type modifiers
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(121): note: see declaration of 'ijg::GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(126): error C2065: 'shader_id_2': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(131): error C2065: 'shader_id': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(131): error C3861: 'glUseProgram': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(136): error C3861: 'glUseProgram': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocurve3.h(135): error C3646: 'vaoVertsID': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocurve3.h(135): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocurve3.h(140): error C3646: 'vboVertsID': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocurve3.h(140): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocurve3.h(150): error C3646: 'lightRenderingFactors_U': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocurve3.h(150): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocurve3.cpp(45): error C2065: 'vaoVertsID': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocurve3.cpp(45): error C3861: 'glGenVertexArrays': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocurve3.cpp(46): error C2065: 'vaoVertsID': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocurve3.cpp(46): error C3861: 'glBindVertexArray': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocurve3.cpp(50): error C2065: 'vboVertsID': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocurve3.cpp(50): error C3861: 'glGenBuffers': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocurve3.cpp(51): error C2065: 'GL_ARRAY_BUFFER': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocurve3.cpp(51): error C2065: 'vboVertsID': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocurve3.cpp(51): error C3861: 'glBindBuffer': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocurve3.cpp(53): error C2065: 'GL_ARRAY_BUFFER': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocurve3.cpp(53): error C2065: 'GL_DYNAMIC_DRAW': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocurve3.cpp(53): error C3861: 'glBufferData': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocurve3.cpp(59): error C3861: 'glEnableVertexAttribArray': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocurve3.cpp(60): error C3861: 'glEnableVertexAttribArray': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocurve3.cpp(62): error C2065: 'GL_FLOAT': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocurve3.cpp(62): error C2065: 'GL_FALSE': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocurve3.cpp(62): error C2065: 'GLfloat': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocurve3.cpp(62): error C3861: 'glVertexAttribPointer': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocurve3.cpp(63): error C2065: 'GL_FLOAT': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocurve3.cpp(63): error C2065: 'GL_FALSE': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocurve3.cpp(63): error C2065: 'GLfloat': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocurve3.cpp(63): error C3861: 'glVertexAttribPointer': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocurve3.cpp(66): error C2065: 'GL_ARRAY_BUFFER': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocurve3.cpp(66): error C3861: 'glBindBuffer': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocurve3.cpp(67): error C3861: 'glBindVertexArray': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocurve3.cpp(71): error C2065: 'lightRenderingFactors_U': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocurve3.cpp(71): error C3861: 'glGetUniformLocation': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocurve3.cpp(171): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocurve3.cpp(172): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocurve3.cpp(173): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  ProtoContext.cpp
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(67): error C3646: 'getID': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(67): error C2059: syntax error: '('
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(67): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(68): error C3646: 'shader_id': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(68): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(75): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(75): error C2144: syntax error: 'int' should be preceded by ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(87): error C2061: syntax error: identifier 'GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(88): error C2061: syntax error: identifier 'GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(107): error C3646: 'shader_vp': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(107): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(108): error C3646: 'shader_fp': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(108): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(109): error C3646: 'shader_gp': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(109): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(110): error C2061: syntax error: identifier 'GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(113): error C2327: 'ijg::ProtoShader::GLuint': is not a type name, static, or enumerator
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(113): error C2065: 'GLuint': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(113): error C2923: 'std::vector': 'GLuint' is not a valid template type argument for parameter '_Ty'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(113): error C3203: 'allocator': unspecialized class template can't be used as a template argument for template parameter '_Alloc', expected a real type
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(117): error C3646: 'shader_id_2': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(117): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(117): error C2373: 'ijg::ProtoShader::GLuint': redefinition; different type modifiers
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(75): note: see declaration of 'ijg::ProtoShader::GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(121): error C2039: 'getID': is not a member of 'ijg::ProtoShader'
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(54): note: see declaration of 'ijg::ProtoShader'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(121): error C2433: 'GLuint': 'inline' not permitted on data declarations
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(121): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(121): error C2146: syntax error: missing ';' before identifier 'getID'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(122): error C2065: 'shader_id': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(125): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(125): error C2143: syntax error: missing ';' before 'ijg::ProtoShader::getID_2'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(125): error C2433: 'GLuint': 'inline' not permitted on data declarations
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(125): error C2373: 'ijg::GLuint': redefinition; different type modifiers
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(121): note: see declaration of 'ijg::GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(126): error C2065: 'shader_id_2': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(131): error C2065: 'shader_id': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(131): error C3861: 'glUseProgram': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(136): error C3861: 'glUseProgram': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protolight.h(93): warning C4305: '=': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(67): error C3646: 'glLights': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(67): error C2143: syntax error: missing ',' before '['
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(67): error C2143: syntax error: missing ')' before ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(67): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(144): error C3646: 'globalAmbient_U': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(144): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(145): error C3646: 'model_U': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(145): error C2059: syntax error: ','
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(145): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(147): error C3646: 'getModel_U': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(147): error C2059: syntax error: '('
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(147): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(148): error C3646: 'getView_U': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(148): error C2059: syntax error: '('
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(148): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(149): error C3646: 'getModelView_U': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(149): error C2059: syntax error: '('
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(149): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(150): error C3646: 'getProjection_U': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(150): error C2059: syntax error: '('
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(150): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(151): error C3646: 'getModelViewProjection_U': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(151): error C2059: syntax error: '('
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(151): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(152): error C3646: 'getNormal_U': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(152): error C2059: syntax error: '('
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(152): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(154): error C3646: 'L_MVBP_U': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(154): error C2059: syntax error: ','
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(154): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(155): error C3646: 'shaderPassFlag_U': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(155): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(156): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(156): error C2143: syntax error: missing ';' before '&'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(156): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(157): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(157): error C2143: syntax error: missing ',' before '&'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(160): error C3646: 'shadowMap_U': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(160): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(161): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(161): error C2143: syntax error: missing ';' before '&'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(161): error C2086: 'const int ijg::ProtoContext::GLuint': redefinition
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(156): note: see declaration of 'ijg::ProtoContext::GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(161): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(162): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(162): error C2143: syntax error: missing ',' before '&'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(167): error C3646: 'lightRenderingFactors_U': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(167): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(170): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(170): error C2143: syntax error: missing ';' before '&'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(170): error C2086: 'const int ijg::ProtoContext::GLuint': redefinition
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(156): note: see declaration of 'ijg::ProtoContext::GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(170): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(171): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(171): error C2143: syntax error: missing ',' before '&'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(175): error C3646: 'shadowBuffer_U': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(175): error C2059: syntax error: ','
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(175): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(176): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(176): error C2143: syntax error: missing ',' before '&'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(178): error C2143: syntax error: missing ';' before '&'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(178): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(178): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(179): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(179): error C2143: syntax error: missing ',' before '&'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(180): error C2143: syntax error: missing ';' before '&'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(180): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(180): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(221): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(221): error C2143: syntax error: missing ';' before '&'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(221): error C2086: 'const int ijg::ProtoContext::GLuint': redefinition
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(156): note: see declaration of 'ijg::ProtoContext::GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(221): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(227): error C3646: 'position': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(227): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(228): error C3646: 'intensity': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(228): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(229): error C3646: 'diffuse': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(229): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(230): error C3646: 'ambient': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(230): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(231): error C3646: 'specular': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(231): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(238): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(238): error C3646: 'getLightModelViewBiasProjection_U': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(238): error C2059: syntax error: ')'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(238): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(61): error C2789: 'ijg::ProtoContext::GLuint': an object of const-qualified type must be initialized
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(156): note: see declaration of 'ijg::ProtoContext::GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(275): error C2065: 'model_U': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(275): error C2065: 'GL_FALSE': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(275): error C3861: 'glUniformMatrix4fv': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(280): error C2065: 'view_U': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(280): error C2065: 'GL_FALSE': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(280): error C3861: 'glUniformMatrix4fv': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(285): error C2065: 'projection_U': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(285): error C2065: 'GL_FALSE': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(285): error C3861: 'glUniformMatrix4fv': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(285): fatal error C1003: error count exceeds 100; stopping compilation
+  ProtoCilia.cpp
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(67): error C3646: 'getID': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(67): error C2059: syntax error: '('
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(67): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(68): error C3646: 'shader_id': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(68): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(75): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(75): error C2144: syntax error: 'int' should be preceded by ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(87): error C2061: syntax error: identifier 'GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(88): error C2061: syntax error: identifier 'GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(107): error C3646: 'shader_vp': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(107): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(108): error C3646: 'shader_fp': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(108): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(109): error C3646: 'shader_gp': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(109): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(110): error C2061: syntax error: identifier 'GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(113): error C2327: 'ijg::ProtoShader::GLuint': is not a type name, static, or enumerator
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(113): error C2065: 'GLuint': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(113): error C2923: 'std::vector': 'GLuint' is not a valid template type argument for parameter '_Ty'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(113): error C3203: 'allocator': unspecialized class template can't be used as a template argument for template parameter '_Alloc', expected a real type
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(117): error C3646: 'shader_id_2': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(117): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(117): error C2373: 'ijg::ProtoShader::GLuint': redefinition; different type modifiers
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(75): note: see declaration of 'ijg::ProtoShader::GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(121): error C2039: 'getID': is not a member of 'ijg::ProtoShader'
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(54): note: see declaration of 'ijg::ProtoShader'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(121): error C2433: 'GLuint': 'inline' not permitted on data declarations
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(121): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(121): error C2146: syntax error: missing ';' before identifier 'getID'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(122): error C2065: 'shader_id': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(125): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(125): error C2143: syntax error: missing ';' before 'ijg::ProtoShader::getID_2'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(125): error C2433: 'GLuint': 'inline' not permitted on data declarations
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(125): error C2373: 'ijg::GLuint': redefinition; different type modifiers
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(121): note: see declaration of 'ijg::GLuint'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(126): error C2065: 'shader_id_2': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(131): error C2065: 'shader_id': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(131): error C3861: 'glUseProgram': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshader.h(136): error C3861: 'glUseProgram': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocurve3.h(135): error C3646: 'vaoVertsID': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocurve3.h(135): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocurve3.h(140): error C3646: 'vboVertsID': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocurve3.h(140): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocurve3.h(150): error C3646: 'lightRenderingFactors_U': unknown override specifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocurve3.h(150): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocilia.cpp(148): error C2065: 'GL_LIGHTING': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocilia.cpp(148): error C3861: 'glDisable': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocilia.cpp(149): error C2065: 'GL_TEXTURE_2D': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocilia.cpp(149): error C3861: 'glDisable': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocilia.cpp(150): error C3861: 'glColor4f': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocilia.cpp(156): error C2065: 'GL_LIGHTING': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocilia.cpp(156): error C3861: 'glEnable': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocilia.cpp(157): error C2065: 'GL_TEXTURE_2D': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocilia.cpp(157): error C3861: 'glEnable': identifier not found
+  Generating Code...
+  Compiling...
+  ProtoCephalopod.cpp
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(59): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocephalopod.h(128): warning C4244: 'return': conversion from 'time_t' to 'long', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(31): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(63): warning C4244: 'argument': conversion from 'time_t' to 'long', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(75): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(78): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(88): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(92): warning C4305: '+=': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(93): warning C4305: '-=': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(97): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(98): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(99): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(102): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(102): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(102): warning C4244: 'argument': conversion from 'float' to 'short', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(103): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(103): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(103): warning C4244: 'argument': conversion from 'float' to 'short', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(162): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(163): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(168): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(169): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(171): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(175): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(179): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(187): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(191): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(195): warning C4305: '+=': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(196): warning C4305: '-=': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(200): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(201): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(202): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(207): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(208): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(213): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(214): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(226): warning C4244: 'argument': conversion from 'float' to 'short', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(226): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(227): warning C4244: 'argument': conversion from 'float' to 'short', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(227): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(256): error C2065: 'GL_SMOOTH': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(256): error C3861: 'glShadeModel': identifier not found
+  ProtoCamera.cpp
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocamera.cpp(35): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocamera.cpp(91): error C2065: 'GL_PROJECTION': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocamera.cpp(91): error C3861: 'glMatrixMode': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocamera.cpp(92): error C3861: 'glLoadIdentity': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocamera.cpp(96): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocamera.cpp(99): error C3861: 'glFrustum': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocamera.cpp(101): error C2065: 'GL_MODELVIEW': undeclared identifier
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocamera.cpp(101): error C3861: 'glMatrixMode': identifier not found
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protocamera.cpp(102): error C3861: 'glLoadIdentity': identifier not found
+  ProtoBaseApp.cpp
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(42): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protolight.h(93): warning C4305: '=': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(59): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoworld.h(324): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototoroid.h(60): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocephalopod.h(128): warning C4244: 'return': conversion from 'time_t' to 'long', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(490): error C2059: syntax error: 'export'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(490): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(493): error C2059: syntax error: 'export'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(493): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(494): error C2059: syntax error: 'export'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(494): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(495): error C2059: syntax error: 'export'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(495): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(496): error C2059: syntax error: 'export'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(496): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(499): error C2988: unrecognizable template declaration/definition
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(499): error C2059: syntax error: 'export'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(520): error C2238: unexpected token(s) preceding ';'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(588): error C3203: 'PathPrims': unspecialized class template can't be used as a template argument for template parameter '_Ty', expected a real type
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(589): error C3203: 'PathPrims': unspecialized class template can't be used as a template argument for template parameter '_Ty', expected a real type
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(599): error C2143: syntax error: missing ';' before 'identifier'
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(599): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(610): fatal error C1903: unable to recover from previous error(s); stopping compilation
+  Generating Code...
+  Compiling...
+  ProtoBlock.cpp
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(59): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(97): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(98): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(101): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(102): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(106): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(107): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(110): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(111): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(115): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(116): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(119): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(120): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(124): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(125): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(128): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(129): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(133): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(134): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(137): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(138): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(142): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(143): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(146): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(147): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  ProtoUtility.cpp
+  ProtoTube.cpp
+  ProtoToroid.cpp
+  ProtoTentacle.cpp
+  ProtoSphere.cpp
+  ProtoShape3.cpp
+  ProtoRootBall.cpp
+  ProtoRectangle.cpp
+  ProtoPlane.cpp
+  ProtoJuncusEffusus.cpp
+  ProtoGroundPlane.cpp
+  ProtoGeosphere.cpp
+  ProtoGeom3.cpp
+  ProtoEllipse.cpp
+  ProtoCylinder.cpp

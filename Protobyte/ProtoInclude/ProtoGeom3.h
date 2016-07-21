@@ -24,11 +24,12 @@
 #ifndef PROTO_GEOM3_H
 #define PROTO_GEOM3_H
 
-
-#if defined(_WIN32) || defined(__linux__)
-#define GLEW_STATIC // link to glew32s instead of including dll
-#include <GL/glew.h>
-#endif
+#include "glad/glad.h"
+//#include "GLFW/glfw3.h"
+//#if defined(_WIN32) || defined(__linux__)
+//#define GLEW_STATIC // link to glew32s instead of including dll
+//#include <GL/glew.h>
+//#endif
 
 // for image path to texture
 #if defined(__APPLE__) || defined(__linux__)

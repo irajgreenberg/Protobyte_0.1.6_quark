@@ -41,7 +41,11 @@
 //#include <GL/glew.h>
 //#include <Windows.h>
 //#endif
-//#include <memory>
+
+#include "glad/glad.h"
+#include <memory>
+
+
 
 #include <sstream>
 

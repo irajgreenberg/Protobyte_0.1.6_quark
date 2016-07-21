@@ -33,10 +33,10 @@ This class is part of the group common (update)
 #include <vector>
 #include <iostream>
 
-#if defined(_WIN32) || defined(_WIN64) || defined(__linux__)
-#define GLEW_STATIC
-#include <GL/glew.h>
-#endif
+//#if defined(_WIN32) || defined(_WIN64) || defined(__linux__)
+//#define GLEW_STATIC
+//#include <GL/glew.h>
+//#endif
 
 // from OF documentation
 // OSX link with " " instead of < > to avoid putting in defualt include path

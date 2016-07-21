@@ -24,12 +24,12 @@ This class is part of the group common (update)
 #ifndef PROTO_VERLETSTICK_H
 #define PROTO_VERLETSTICK_H
 
-#if defined(_WIN32) || defined(__linux__)
-#define GLEW_STATIC
-#include <GL/glew.h>
-#else
-#include <OpenGL/gl.h>
-#endif
+//#if defined(_WIN32) || defined(__linux__)
+//#define GLEW_STATIC
+//#include <GL/glew.h>
+//#else
+//#include <OpenGL/gl.h>
+//#endif
 
 #include "ProtoVerletBall.h"
 #include "ProtoTuple2.h"

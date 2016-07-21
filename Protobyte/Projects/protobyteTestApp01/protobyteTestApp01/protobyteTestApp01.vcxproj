@@ -69,28 +69,28 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(UniversalCRT_LibraryPath_arm);$(UniversalCRT_LibraryPath_x64);$(UniversalCRT_LibraryPath_x86);$(UniversalCRT_IncludePath);$(IncludePath)</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>$(UniversalCRT_LibraryPath_arm);$(UniversalCRT_LibraryPath_x64);$(UniversalCRT_LibraryPath_x86);$(UniversalCRT_IncludePath);$(IncludePath)</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(UniversalCRT_LibraryPath_arm);$(UniversalCRT_LibraryPath_x64);$(UniversalCRT_LibraryPath_x86);$(UniversalCRT_IncludePath);$(IncludePath)</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(UniversalCRT_LibraryPath_arm);$(UniversalCRT_LibraryPath_x64);$(UniversalCRT_LibraryPath_x86);$(UniversalCRT_IncludePath);$(IncludePath)</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\..\..\OtherLibs\glad\include;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\include;..\..\..\OtherLibs\glm-0.9.7.6\glm;..\..\..\ProtoInclude;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\OtherLibs\glad\include;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\include;..\..\..\OtherLibs\glm-0.9.7.6\glm;..\..\..\OtherLibs\FreeImage\Dist\x64;..\..\..\ProtoInclude;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\..\..\OtherLibs\glad\src;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\lib-vc2015;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glad64.lib;opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\OtherLibs\glad\src;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\lib-vc2015;..\..\..\OtherLibs\FreeImage\Dist\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glad64.lib;opengl32.lib;glfw3.lib;FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -98,12 +98,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\..\..\OtherLibs\glad\include;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\include;..\..\..\OtherLibs\glm-0.9.7.6\glm;..\..\..\ProtoInclude;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\OtherLibs\glad\include;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\include;..\..\..\OtherLibs\glm-0.9.7.6\glm;..\..\..\OtherLibs\FreeImage\Dist\x64;..\..\..\ProtoInclude;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\..\..\OtherLibs\glad\src;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\lib-vc2015;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glad64.lib;opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\OtherLibs\glad\src;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\lib-vc2015;..\..\..\OtherLibs\FreeImage\Dist\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glad64.lib;opengl32.lib;glfw3.lib;FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -113,14 +113,14 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\..\..\OtherLibs\glad\include;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\include;..\..\..\OtherLibs\glm-0.9.7.6\glm;..\..\..\ProtoInclude;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\OtherLibs\glad\include;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\include;..\..\..\OtherLibs\glm-0.9.7.6\glm;..\..\..\OtherLibs\FreeImage\Dist\x64;..\..\..\ProtoInclude;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>..\..\..\OtherLibs\glad\src;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\lib-vc2015;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glad64.lib;opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\OtherLibs\glad\src;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\lib-vc2015;..\..\..\OtherLibs\FreeImage\Dist\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glad64.lib;opengl32.lib;glfw3.lib;FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -130,22 +130,62 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\..\..\OtherLibs\glad\include;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\include;..\..\..\OtherLibs\glm-0.9.7.6\glm;..\..\..\ProtoInclude;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\OtherLibs\glad\include;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\include;..\..\..\OtherLibs\glm-0.9.7.6\glm;..\..\..\OtherLibs\FreeImage\Dist\x64;..\..\..\ProtoInclude;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>..\..\..\OtherLibs\glad\src;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\lib-vc2015;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glad64.lib;opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\OtherLibs\glad\src;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\lib-vc2015;..\..\..\OtherLibs\FreeImage\Dist\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glad64.lib;opengl32.lib;glfw3.lib;FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="-ProtoMain.cpp" />
     <ClCompile Include="..\..\..\ProtoSrc\ProtoBaseApp.cpp" />
     <ClCompile Include="..\..\..\ProtoSrc\ProtoBlock.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoCamera.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoCephalopod.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoCilia.cpp" />
     <ClCompile Include="..\..\..\ProtoSrc\ProtoContext.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoCurve3.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoCylinder.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoEllipse.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoException.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoFace3.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoFrenetFrame.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoGeom2.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoGeom3.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoGeomComposite.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoGeosphere.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoGroundPlane.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoJuncusEffusus.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoLight.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoMath.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoPath2.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoPath3.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoPlane.cpp" />
     <ClCompile Include="..\..\..\ProtoSrc\ProtoPlasm.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoQuaternion.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoRectangle.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoRenderer.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoRootBall.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoShader.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoShape3.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoSphere.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoSpline3.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoTentacle.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoTessellator.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoTetrahedron.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoTexture.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoToroid.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoTransformFunction.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoTube.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoUtility.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoVerletBall.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoVerletStick.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoVertex3.cpp" />
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoWorld.cpp" />
     <ClCompile Include="ProtoController.cpp" />
     <ClCompile Include="ProtoMain.cpp" />
   </ItemGroup>
@@ -212,7 +252,6 @@
     <ClInclude Include="..\..\..\ProtoInclude\ProtoVerletStick.h" />
     <ClInclude Include="..\..\..\ProtoInclude\ProtoVertex3.h" />
     <ClInclude Include="..\..\..\ProtoInclude\ProtoWorld.h" />
-    <ClInclude Include="..\..\..\ProtoInclude\_ProtoContext.h" />
     <ClInclude Include="ProtoController.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

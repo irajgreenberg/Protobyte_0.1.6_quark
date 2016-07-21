@@ -26,12 +26,12 @@ This class is part of the group common (update)
 #ifndef PROTO_SHADER_H
 #define PROTO_SHADER_H
 
-#if defined(_WIN32) || defined(__linux__)
-#define GLEW_STATIC
-#include <GL/glew.h>
-#else
-#include <OpenGL/gl.h>
-#endif
+//#if defined(_WIN32) || defined(__linux__)
+//#define GLEW_STATIC
+//#include <GL/glew.h>
+//#else
+//#include <OpenGL/gl.h>
+//#endif
 
 #include <stdlib.h>
 #include <string>

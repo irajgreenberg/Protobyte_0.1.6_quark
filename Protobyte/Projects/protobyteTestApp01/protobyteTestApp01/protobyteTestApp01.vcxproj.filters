@@ -45,13 +45,130 @@
     <ClCompile Include="..\..\..\ProtoSrc\ProtoContext.cpp">
       <Filter>ProtoLib\src</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoCamera.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoCephalopod.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoCilia.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoCurve3.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoCylinder.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoEllipse.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoException.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoFace3.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoFrenetFrame.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoGeom2.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoGeom3.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoGeomComposite.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoGeosphere.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoGroundPlane.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoJuncusEffusus.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoLight.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoMath.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoPath2.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoPath3.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoPlane.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoQuaternion.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoRectangle.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoRenderer.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoRootBall.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoShader.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoShape3.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoSphere.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoSpline3.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoTentacle.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoTessellator.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoTetrahedron.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoTexture.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoToroid.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoTransformFunction.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoTube.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoUtility.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoVerletBall.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoVerletStick.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoVertex3.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoWorld.cpp">
+      <Filter>ProtoLib\src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ProtoController.h">
       <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\ProtoInclude\_ProtoContext.h">
-      <Filter>ProtoLib\include</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\ProtoInclude\ProtoBaseApp.h">
       <Filter>ProtoLib\include</Filter>

@@ -34,12 +34,12 @@
 
 
 
-#ifdef _WIN32
-#define GLEW_STATIC
-#include <GL/glew.h>
-#else
-#include <OpenGL/gl.h>
-#endif
+//#ifdef _WIN32
+//#define GLEW_STATIC
+//#include <GL/glew.h>
+//#else
+//#include <OpenGL/gl.h>
+//#endif
 
 //thanks http://stackoverflow.com/questions/16186300/linking-freeimage-as-a-static-library-in-vs2010
 //#define  FREEIMAGE_LIB

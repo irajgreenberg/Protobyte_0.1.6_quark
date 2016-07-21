@@ -24,10 +24,10 @@ This class is part of the group common (update)
 #ifndef PROTO_PATH2_H
 #define PROTO_PATH2_H
 
-#if defined(_WIN32) || defined(__linux__)
-#define GLEW_STATIC
-#include <GL/glew.h>
-#endif
+//#if defined(_WIN32) || defined(__linux__)
+//#define GLEW_STATIC
+//#include <GL/glew.h>
+//#endif
 
 #include "ProtoColor4.h"
 #include "ProtoVector2.h"
