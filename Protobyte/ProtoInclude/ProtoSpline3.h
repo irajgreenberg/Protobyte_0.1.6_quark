@@ -29,6 +29,8 @@
 //#include <GL/glew.h>
 //#endif
 
+#include "glad/glad.h"
+
 #include "ProtoCurve3.h"
 
 /**

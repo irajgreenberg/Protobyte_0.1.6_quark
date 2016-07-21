@@ -31,6 +31,8 @@ This class is part of the group common (update)
 
 //#include <GLFW/glfw3.h> // brings in OpenGL
 
+#include "glad/glad.h"
+
 #include <iostream>
 #include <stack>
 #include <memory>

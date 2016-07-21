@@ -39,6 +39,8 @@
 //#include <OpenGL/gl.h>
 //#endif
 
+#include "glad/glad.h"
+
 //#include <SFML/OpenGL.hpp>
 #include <vector>
 #include "ProtoVertex3.h"

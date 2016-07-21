@@ -31,6 +31,8 @@
 //#include <GL/glew.h>
 //#endif
 
+#include "glad/glad.h"
+
 #include <iostream>
 #include <vector>
 #include <memory>

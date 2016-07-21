@@ -31,6 +31,8 @@
 //#include <OpenGL/gl.h>
 //#endif
 
+#include "glad/glad.h"
+
 #include <iostream>
 //#include <SFML/OpenGL.hpp>
 #include <stdio.h>

@@ -145,7 +145,12 @@ void ProtoPlasm::initGLFW(){
 	glfwMakeContextCurrent(window);
 
 	// load GL extensions via glad
-	gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+
+	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+	{
+		std::cout << "Failed to initialize OpenGL context" << std::endl;
+	}
+	//gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 	// end GLFW/window setup
 
 	// set gl states

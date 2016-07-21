@@ -30,6 +30,8 @@
 //#include <GL/glew.h>
 //#endif
 
+#include "glad/glad.h"
+
 //#include <SFML/OpenGL.hpp>
 #include <iostream>
 #include "ProtoGeom3.h"

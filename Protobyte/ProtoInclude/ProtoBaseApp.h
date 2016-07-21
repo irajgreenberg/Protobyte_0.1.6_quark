@@ -37,11 +37,10 @@
 
 //#include <iostream>
 //#include "ProtoPlasm.h"
-
 //#include "ProtoOSC.h"
+
+
 #include "ProtoContext.h";
-
-
 #include "ProtoDimension2.h"
 #include "ProtoDimension3.h"
 #include "ProtoPlane.h"

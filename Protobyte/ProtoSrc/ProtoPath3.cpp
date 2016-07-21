@@ -57,17 +57,17 @@ void ProtoPath3::init() {
 	colorLoc_U = glGetUniformLocation(ProtoShader::getID_2(), "pathColor");
 
 
-
-	// initialize glew for Windows
-#if defined(_WIN32) || defined(__linux__)
-	GLenum err = glewInit();
-	if (GLEW_OK != err)
-	{
-		/* Problem: glewInit failed, something is seriously wrong. */
-		fprintf(stderr, "Error: %s\n", glewGetErrorString(err));
-	}
-	//fprintf(stdout, "Status: Using GLEW %s\n", glewGetString(GLEW_VERSION));
-#endif
+//
+//	// initialize glew for Windows
+//#if defined(_WIN32) || defined(__linux__)
+//	GLenum err = glewInit();
+//	if (GLEW_OK != err)
+//	{
+//		/* Problem: glewInit failed, something is seriously wrong. */
+//		fprintf(stderr, "Error: %s\n", glewGetErrorString(err));
+//	}
+//	//fprintf(stdout, "Status: Using GLEW %s\n", glewGetString(GLEW_VERSION));
+//#endif
 
 	// Special thanks to:
 	// http://stackoverflow.com/questions/8704801/glvertexattribpointer-clarification

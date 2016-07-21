@@ -41,6 +41,8 @@
 //#include <OpenGL/gl.h>
 //#endif
 
+#include "glad/glad.h"
+
 //thanks http://stackoverflow.com/questions/16186300/linking-freeimage-as-a-static-library-in-vs2010
 //#define  FREEIMAGE_LIB
 #include "FreeImage.h"

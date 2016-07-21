@@ -29,6 +29,8 @@ This class is part of the group common (update)
 //#include <GL/glew.h>
 //#endif
 
+#include "glad/glad.h"
+
 #include "ProtoColor4.h"
 #include "ProtoVector2.h"
 //#include "ProtoShader.h""

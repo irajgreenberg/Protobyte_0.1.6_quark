@@ -38,6 +38,8 @@ This class is part of the group common (update)
 //#include <GL/glew.h>
 //#endif
 
+#include "glad/glad.h"
+
 // from OF documentation
 // OSX link with " " instead of < > to avoid putting in defualt include path
 #if defined(_WIN32) || defined(_WIN64)

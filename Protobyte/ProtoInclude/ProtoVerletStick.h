@@ -31,6 +31,8 @@ This class is part of the group common (update)
 //#include <OpenGL/gl.h>
 //#endif
 
+#include "glad/glad.h"
+
 #include "ProtoVerletBall.h"
 #include "ProtoTuple2.h"
 #include <memory>

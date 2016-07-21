@@ -40,6 +40,8 @@
 //#include <OpenGL/gl.h>
 //#endif
 
+#include "glad/glad.h"
+
 #include "ProtoVector3.h"
 #include <iostream>
 
