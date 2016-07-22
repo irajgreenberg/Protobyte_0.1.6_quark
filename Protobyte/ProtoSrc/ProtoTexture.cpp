@@ -92,7 +92,7 @@ bool ProtoTexture::init() {
 		std::string cp = cCurrentPath; //cast char[] to string
 #if defined(_WIN32) || (_WIN64)
 		// need to escape backslashes with themselves, ick
-		std::string pathExtension = "\\..\\..\\Resources\\imgs\\";
+		std::string pathExtension = "..\\..\\..\\Resources\\imgs\\";
 #else
 		// osx/posix use "normal" directory dividers
 		std::string pathExtension = "/Resources/imgs/";
@@ -100,7 +100,7 @@ bool ProtoTexture::init() {
 #endif
 
 		std::string textureURL = cp + pathExtension + textureMapImage;
-
+		//trace("cp=", cp);
 
 		// initialize some locals
 		//image format
@@ -116,21 +116,26 @@ bool ProtoTexture::init() {
 
 		//check the file signature and deduce its format
 		const char* fileURL = textureURL.c_str();
-
+		//trace("fileURL =", fileURL);
 		// allocate a unique texture name
 		//glGenTextures(1, &textureID);
 		//// bind the texture
 		//glBindTexture(GL_TEXTURE_2D, textureID);
 		//trace("textureID=", textureID);
-
+		//fileURL = "D:\\Dev\\Protobyte_0.1.6_quark\\Protobyte\\Resources\\imgs\\corroded_red.jpg";
+		
 		switch (textureMapType){
 		case DIFFUSE_MAP:
-			glGenTextures(1, &textureID);
+			//trace("fileURL =", fileURL);
+			// requires gl context created
+			glGenTextures(1, &textureID); // STUCK HERE
+			
 			// bind the texture
 			glActiveTexture(GL_TEXTURE0);
 			glBindTexture(GL_TEXTURE_2D, textureID);
-
+		
 			fif = FreeImage_GetFileType(fileURL, 0);
+			
 			//if still unknown, try to guess the file format from the file extension
 			if (fif == FIF_UNKNOWN)
 				fif = FreeImage_GetFIFFromFilename(fileURL);

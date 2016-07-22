@@ -2146,45 +2146,52 @@ void ProtoBaseApp::box(float w, float h, float d, Registration reg) {
 
 
 //void ProtoBaseApp::render(int scaleFactor){}; // "should be" overridden in derived classes
-void ProtoBaseApp::export(std::vector<Tup4v> vs, Format type){
-#if defined (_WIN32) || defined(_WIN64)
-	time_t now = time(0);
-	tm ltm;
-	localtime_s(&ltm, &now);
-#else // os x uses localtime instead of localtime_s
-	time_t now = time(0);
-	tm* ltm = localtime(&now);
-#endif
 
-	//trace("geomData.size() =", faces.size());
+// was working
+//void ProtoBaseApp::export(std::vector<Tup4v> vs, Format type){
+//#if defined (_WIN32) || defined(_WIN64)
+//	time_t now = time(0);
+//	tm ltm;
+//	localtime_s(&ltm, &now);
+//#else // os x uses localtime instead of localtime_s
+//	time_t now = time(0);
+//	tm* ltm = localtime(&now);
+//#endif
+//
+//	//trace("geomData.size() =", faces.size());
+//
+//	std::stringstream stream;
+//	stream << (ltm.tm_year + 1900) << "_" << (ltm.tm_mon + 1) << "_" << ltm.tm_mday << "_" << ltm.tm_hour << "_" << ltm.tm_min << "_" << ltm.tm_sec;
+//
+//	std::string url = ProtoUtility::getPathToOutput();
+//	std::string directory = url + "data" + "_" + stream.str();
+//	CreateDirectory(directory.c_str(), 0);
+//
+//	std::ofstream myfile;
+//	myfile.open(directory + "/geomdata" + stream.str() + ".stl");
+//
+//	myfile << "solid protobyte\n";
+//	for (int i = 0; i < vs.size() - 4; i++) {
+//		//trace("allFaces.at(i).v0_p->pos =", allFaces.at(i).getVert0_ptr()->pos);
+//		myfile << "\tfacet normal " <<
+//			vs.at(i).elem0.x << " " << vs.at(i).elem0.y << " " << vs.at(i).elem0.z << "\n" <<
+//			"\t\touter loop\n" <<
+//			"\t\t\tvertex " << vs.at(i).elem1.x << " " << vs.at(i).elem1.y << " " << vs.at(i).elem1.z << "\n" <<
+//			"\t\t\tvertex " << vs.at(i).elem2.x << " " << vs.at(i).elem2.y << " " << vs.at(i).elem2.z << "\n" <<
+//			"\t\t\tvertex " << vs.at(i).elem3.x << " " << vs.at(i).elem3.y << " " << vs.at(i).elem3.z << "\n" <<
+//			"\t\tendloop\n" <<
+//			"\tendfacet\n";
+//	}
+//	myfile << "endsolid protobyte\n";
+//
+//	myfile.close();
+//	std::cout << "stl file successfully written" << std::endl;
+//}
 
-	std::stringstream stream;
-	stream << (ltm.tm_year + 1900) << "_" << (ltm.tm_mon + 1) << "_" << ltm.tm_mday << "_" << ltm.tm_hour << "_" << ltm.tm_min << "_" << ltm.tm_sec;
 
-	std::string url = ProtoUtility::getPathToOutput();
-	std::string directory = url + "data" + "_" + stream.str();
-	CreateDirectory(directory.c_str(), 0);
 
-	std::ofstream myfile;
-	myfile.open(directory + "/geomdata" + stream.str() + ".stl");
 
-	myfile << "solid protobyte\n";
-	for (int i = 0; i < vs.size() - 4; i++) {
-		//trace("allFaces.at(i).v0_p->pos =", allFaces.at(i).getVert0_ptr()->pos);
-		myfile << "\tfacet normal " <<
-			vs.at(i).elem0.x << " " << vs.at(i).elem0.y << " " << vs.at(i).elem0.z << "\n" <<
-			"\t\touter loop\n" <<
-			"\t\t\tvertex " << vs.at(i).elem1.x << " " << vs.at(i).elem1.y << " " << vs.at(i).elem1.z << "\n" <<
-			"\t\t\tvertex " << vs.at(i).elem2.x << " " << vs.at(i).elem2.y << " " << vs.at(i).elem2.z << "\n" <<
-			"\t\t\tvertex " << vs.at(i).elem3.x << " " << vs.at(i).elem3.y << " " << vs.at(i).elem3.z << "\n" <<
-			"\t\tendloop\n" <<
-			"\tendfacet\n";
-	}
-	myfile << "endsolid protobyte\n";
 
-	myfile.close();
-	std::cout << "stl file successfully written" << std::endl;
-}
 
 //template<typename First, typename ... Rest>
 //void ProtoBaseApp::export(Format type, First first, Rest ... rest) {

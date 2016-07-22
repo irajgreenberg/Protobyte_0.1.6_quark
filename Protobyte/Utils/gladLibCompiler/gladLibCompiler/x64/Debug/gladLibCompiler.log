@@ -1,13 +1,2 @@
-﻿Build started 7/21/2016 2:54:13 PM.
-     1>Project "C:\Users\C3\Dev\Protobyte_0.1.6_quark\Protobyte\Utils\gladLibCompiler\gladLibCompiler\gladLibCompiler.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /I..\include /ZI /nologo /W3 /WX- /sdl /Od /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\gladLibCompiler.pdb" /Gd /TC /errorReport:prompt ..\glad.c
-         glad.c
-       Lib:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\Lib.exe /OUT:"C:\Users\C3\Dev\Protobyte_0.1.6_quark\Protobyte\Utils\gladLibCompiler\x64\Debug\gladLibCompiler.lib" /NOLOGO /MACHINE:X64 x64\Debug\glad.obj
-         gladLibCompiler.vcxproj -> C:\Users\C3\Dev\Protobyte_0.1.6_quark\Protobyte\Utils\gladLibCompiler\x64\Debug\gladLibCompiler.lib
-     1>Done Building Project "C:\Users\C3\Dev\Protobyte_0.1.6_quark\Protobyte\Utils\gladLibCompiler\gladLibCompiler\gladLibCompiler.vcxproj" (Build target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:00.90
+﻿  glad.c
+  gladLibCompiler.vcxproj -> D:\Dev\Protobyte_0.1.6_quark\Protobyte\Utils\gladLibCompiler\x64\Debug\gladLibCompiler.lib

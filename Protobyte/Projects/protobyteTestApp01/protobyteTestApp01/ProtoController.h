@@ -6,7 +6,7 @@
 #include "ProtoBaseApp.h"
 #include "ProtoGeomComposite.h" // new class to test - integrate in PBA eventually
 
-
+using namespace ijg;
 
 class ProtoController : public ProtoBaseApp {
 
@@ -28,8 +28,9 @@ public:
 	void onResized();
 	void onClosed();
 
-private:
-
+	ProtoPlane plane;
+	ProtoGeomComposite pcg;
+	Toroid t;
 
 };
 

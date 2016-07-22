@@ -17,6 +17,7 @@
 
 
 //
+
 #include "glad/glad.h"
 #include "GLFW/glfw3.h"
 
@@ -65,7 +66,7 @@
 #include "ProtoTuple4.h"
 #include "ProtoEllipse.h"
 #include "ProtoPath3.h"
-#include "ProtoTessellator.h"
+//#include "ProtoTessellator.h"
 #include "ProtoPath2.h"
 #include "ProtoRectangle.h"
 #include "ProtoException.h"
@@ -422,17 +423,17 @@ namespace ijg {
 
 		// Add content to world
 		// NOT USED - REMOVE
-		void add(std::unique_ptr<ProtoGeom3> geom);
+		//void add(std::unique_ptr<ProtoGeom3> geom);
 		//void add(std::unique_ptr<ProtoLight> lt);
 		//void add(std::shared_ptr<ProtoLight> lt);
-		void add(std::unique_ptr<ProtoCamera> cam);
+		//void add(std::unique_ptr<ProtoCamera> cam);
 		//void initWorld();
 
 		// set background color
 		void setBackground(float r, float g, float b);
 		void setBackground(float c);
 		void setBackground(const Col3f& col);
-		void setBackground(const ProtoColor4<float>& col);
+		void setBackground(const Col4f& col);
 
 		bool areShadowsOn;
 		void setShadowsOn(bool areShadowsOn);
@@ -485,17 +486,17 @@ namespace ijg {
 		//void perspective(float viewAngle, float aspect, float nearDist, float farDist);
 
 
-		// exporting 
-		void export(std::vector<Tup4v> vs, Format type); // bucket of Vecs
+		// was working
+		//void export(std::vector<Tup4v> vs, Format type); // bucket of Vecs
 
 		// not using export option below yet
-		void export(std::vector<Shape3> shapes, Format type); // ProtoShapes
-		void export(std::vector<Geom3> geoms, Format type); // ProtoGeoms
-		void export(std::vector<Geom3> geoms, std::vector<Shape3> shapes, Format type); // geoms & shapes
-		void export(std::vector<Shape3> shapes, std::vector<Geom3> geoms, Format type); // shapes & geoms
+		//void export(std::vector<Shape3> shapes, Format type); // ProtoShapes
+		//void export(std::vector<Geom3> geoms, Format type); // ProtoGeoms
+		//void export(std::vector<Geom3> geoms, std::vector<Shape3> shapes, Format type); // geoms & shapes
+		//void export(std::vector<Shape3> shapes, std::vector<Geom3> geoms, Format type); // shapes & geoms
 
-		template<typename T, typename U>
-		void export(T objType1, U objType2, Format type);
+		//template<typename T, typename U>
+		//void export(T objType1, U objType2, Format type);
 
 		// pass multiple objs
 		//template<typename First, typename ... Rest>
@@ -522,7 +523,7 @@ namespace ijg {
 		void enable2DRendering();
 		void disable2DRendering();
 
-		void calculate2DBuffers(float prims[], int inds[], int primsCount, int indsCount);
+		//void calculate2DBuffers(float prims[], int inds[], int primsCount, int indsCount);
 
 		// Styles API
 		void fill(const Col4f& col);
@@ -633,8 +634,8 @@ namespace ijg {
 		// 3D Primitives
 		void box(float sz, Registration reg = CENTER);
 		void box(float w, float h, float d, Registration reg = CENTER);
-		void sphere(float sz);
-		void sphere(float w, float h, float d);
+		//void sphere(float sz);
+		//void sphere(float w, float h, float d);
 
 
 		// Drawing Methods API
@@ -653,7 +654,7 @@ namespace ijg {
 		void line(float x1, float y1, float z1, float x2, float y2, float z2);
 
 		void point(float x, float y);
-		void point(float x, float y, float z); // not implemented
+		//void point(float x, float y, float z); // not implemented
 
 		// Catmull-Rom spline curve
 		void curveVertex(const Vec2f& vec);
@@ -690,7 +691,7 @@ namespace ijg {
 		// saving stuff
 		virtual void render(int x = 0, int y = 0, int scaleFactor = 1); // eventually maybe make pure virtual (ehhh, maybe not)
 		void save(std::string name = "img", int scaleFactor = 1);
-		void threadSave(std::string name, int scaleFactor); // thread safe save with mutex locking
+		//void threadSave(std::string name, int scaleFactor); // thread safe save with mutex locking
 		std::mutex mtx;
 		//void saveTiles(int rows, int columns);
 		bool stitchTiles(std::string url, int tiles);

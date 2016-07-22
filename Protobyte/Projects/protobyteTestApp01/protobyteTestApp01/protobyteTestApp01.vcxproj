@@ -85,12 +85,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\..\..\OtherLibs\glad_4.5_compatability\include;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\include;..\..\..\OtherLibs\glm-0.9.7.6\glm;..\..\..\OtherLibs\FreeImage\Dist;C:\Users\C3\Dev\Protobyte_0.1.6_quark\Protobyte\ProtoInclude;..\..\..\ProtoInclude;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\ProtoInclude;..\..\..\OtherLibs\glad-4.5.compatibility\include;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\include;..\..\..\OtherLibs\glm-0.9.7.6\glm;..\..\..\OtherLibs\FreeImage\Dist\x64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\..\..\OtherLibs\glad_4.5_compatability\src;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\lib-vc2015;..\..\..\OtherLibs\FreeImage\Dist;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glad64_4.5_compatibility.lib;opengl32.lib;glfw3.lib;FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\OtherLibs\glad-4.5.compatibility\src;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\lib-vc2015;..\..\..\OtherLibs\FreeImage\Dist\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glad64.lib;opengl32.lib;glfw3.lib;FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -98,12 +98,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\..\..\OtherLibs\glad_4.5_compatability\include;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\include;..\..\..\OtherLibs\glm-0.9.7.6\glm;..\..\..\OtherLibs\FreeImage\Dist;C:\Users\C3\Dev\Protobyte_0.1.6_quark\Protobyte\ProtoInclude;..\..\..\ProtoInclude;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\ProtoInclude;..\..\..\OtherLibs\glad-4.5.compatibility\include;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\include;..\..\..\OtherLibs\glm-0.9.7.6\glm;..\..\..\OtherLibs\FreeImage\Dist\x64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\..\..\OtherLibs\glad_4.5_compatability\src;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\lib-vc2015;..\..\..\OtherLibs\FreeImage\Dist;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glad64_4.5_compatibility.lib;opengl32.lib;glfw3.lib;FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\OtherLibs\glad-4.5.compatibility\src;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\lib-vc2015;..\..\..\OtherLibs\FreeImage\Dist\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glad64.lib;opengl32.lib;glfw3.lib;FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -113,14 +113,14 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\..\..\OtherLibs\glad_4.5_compatability\include;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\include;..\..\..\OtherLibs\glm-0.9.7.6\glm;..\..\..\OtherLibs\FreeImage\Dist;C:\Users\C3\Dev\Protobyte_0.1.6_quark\Protobyte\ProtoInclude;..\..\..\ProtoInclude;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\ProtoInclude;..\..\..\OtherLibs\glad-4.5.compatibility\include;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\include;..\..\..\OtherLibs\glm-0.9.7.6\glm;..\..\..\OtherLibs\FreeImage\Dist\x64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>..\..\..\OtherLibs\glad_4.5_compatability\src;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\lib-vc2015;..\..\..\OtherLibs\FreeImage\Dist;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glad64_4.5_compatibility.lib;opengl32.lib;glfw3.lib;FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\OtherLibs\glad-4.5.compatibility\src;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\lib-vc2015;..\..\..\OtherLibs\FreeImage\Dist\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glad64.lib;opengl32.lib;glfw3.lib;FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -130,14 +130,14 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\..\..\OtherLibs\glad_4.5_compatability\include;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\include;..\..\..\OtherLibs\glm-0.9.7.6\glm;..\..\..\OtherLibs\FreeImage\Dist;C:\Users\C3\Dev\Protobyte_0.1.6_quark\Protobyte\ProtoInclude;..\..\..\ProtoInclude;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\ProtoInclude;..\..\..\OtherLibs\glad-4.5.compatibility\include;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\include;..\..\..\OtherLibs\glm-0.9.7.6\glm;..\..\..\OtherLibs\FreeImage\Dist\x64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>..\..\..\OtherLibs\glad_4.5_compatability\src;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\lib-vc2015;..\..\..\OtherLibs\FreeImage\Dist;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glad64_4.5_compatibility.lib;opengl32.lib;glfw3.lib;FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\OtherLibs\glad-4.5.compatibility\src;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\lib-vc2015;..\..\..\OtherLibs\FreeImage\Dist\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glad64.lib;opengl32.lib;glfw3.lib;FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -174,7 +174,6 @@
     <ClCompile Include="..\..\..\ProtoSrc\ProtoSphere.cpp" />
     <ClCompile Include="..\..\..\ProtoSrc\ProtoSpline3.cpp" />
     <ClCompile Include="..\..\..\ProtoSrc\ProtoTentacle.cpp" />
-    <ClCompile Include="..\..\..\ProtoSrc\ProtoTessellator.cpp" />
     <ClCompile Include="..\..\..\ProtoSrc\ProtoTexture.cpp" />
     <ClCompile Include="..\..\..\ProtoSrc\ProtoToroid.cpp" />
     <ClCompile Include="..\..\..\ProtoSrc\ProtoTransformFunction.cpp" />
@@ -233,7 +232,6 @@
     <ClInclude Include="..\..\..\ProtoInclude\ProtoSphere.h" />
     <ClInclude Include="..\..\..\ProtoInclude\ProtoSpline3.h" />
     <ClInclude Include="..\..\..\ProtoInclude\ProtoTentacle.h" />
-    <ClInclude Include="..\..\..\ProtoInclude\ProtoTessellator.h" />
     <ClInclude Include="..\..\..\ProtoInclude\ProtoTexture.h" />
     <ClInclude Include="..\..\..\ProtoInclude\ProtoToroid.h" />
     <ClInclude Include="..\..\..\ProtoInclude\ProtoTransformFunction.h" />

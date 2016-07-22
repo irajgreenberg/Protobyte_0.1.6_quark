@@ -129,9 +129,6 @@
     <ClCompile Include="..\..\..\ProtoSrc\ProtoTentacle.cpp">
       <Filter>ProtoLib\src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\ProtoSrc\ProtoTessellator.cpp">
-      <Filter>ProtoLib\src</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\ProtoSrc\ProtoTexture.cpp">
       <Filter>ProtoLib\src</Filter>
     </ClCompile>
@@ -297,9 +294,6 @@
       <Filter>ProtoLib\include</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\ProtoInclude\ProtoTentacle.h">
-      <Filter>ProtoLib\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\ProtoInclude\ProtoTessellator.h">
       <Filter>ProtoLib\include</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\ProtoInclude\ProtoTexture.h">

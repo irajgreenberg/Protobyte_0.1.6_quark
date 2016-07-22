@@ -121,7 +121,8 @@ void ProtoPlasm::initGLFW(){
 		break;
 	case 4:
 		//glfwSetWindowPos(window, (mode->width - appWidth) / 2, -mode->height + (mode->height-appHeight) / 2);
-		glfwSetWindowPos(window, mode->width+(mode->width - appWidth) / 2, -mode->height + (mode->height - appHeight) / 2);
+		//glfwSetWindowPos(window, mode->width+(mode->width - appWidth) / 2, -mode->height + (mode->height - appHeight) / 2);
+		glfwSetWindowPos(window, 150, 150);
 		break;
 	case 6:
 		glfwSetWindowPos(window, (mode->width - appWidth) / 2, (mode->height - appHeight) / 2);
@@ -199,12 +200,12 @@ void ProtoPlasm::initGLFW(){
 	baseApp->_init(); // base class
 
 	// get version of GL and hardware
-	//char *GL_version = (char *)glGetString(GL_VERSION);
-	//char *GL_vendor = (char *)glGetString(GL_VENDOR);
-	//char *GL_renderer = (char *)glGetString(GL_RENDERER);
-	//trace(GL_version);
-	//trace(GL_vendor);
-	//trace(GL_renderer);
+	char *GL_version = (char *)glGetString(GL_VERSION);
+	char *GL_vendor = (char *)glGetString(GL_VENDOR);
+	char *GL_renderer = (char *)glGetString(GL_RENDERER);
+	trace(GL_version);
+	trace(GL_vendor);
+	trace(GL_renderer);
 }
 
 // activate animation thread and run() function in user defined BaseApp derived class
