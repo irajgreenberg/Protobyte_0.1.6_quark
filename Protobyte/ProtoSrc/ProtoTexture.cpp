@@ -1,27 +1,27 @@
 /*!  \brief  ProtoProtoTexture.cpp: 2D texture class with w,h fields
- ProtoProtoTexture.cpp
- Protobyte Library v02
+ProtoProtoTexture.cpp
+Protobyte Library v02
 
- Created by Ira on 7/23/13.
- Copyright (c) 2013 Ira Greenberg. All rights reserved.
+Created by Ira on 7/23/13.
+Copyright (c) 2013 Ira Greenberg. All rights reserved.
 
- Library Usage:
- This work is licensed under the Creative Commons
- Attribution-NonCommercial-ShareAlike 3.0 Unported License.
- To view a copy of this license, visit
- http://creativecommons.org/licenses/by-nc-sa/3.0/
- or send a letter to Creative Commons,
- 444 Castro Street, Suite 900,
- Mountain View, California, 94041, USA.
+Library Usage:
+This work is licensed under the Creative Commons
+Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+To view a copy of this license, visit
+http://creativecommons.org/licenses/by-nc-sa/3.0/
+or send a letter to Creative Commons,
+444 Castro Street, Suite 900,
+Mountain View, California, 94041, USA.
 
- This notice must be retained any source distribution.
+This notice must be retained any source distribution.
 
- \ingroup common
- This class is templated to allow for varied single collection types
- This class is part of the group common (update)
- Inspiration and assistance from: http://subversion.assembla.com/svn/184/src/LoadImage.cpp, http://www.opengl.org/discussion_boards/showthread.php/168864-HeightMap-to-NormalMap (Stephen A)
- \sa NO LINK
- */
+\ingroup common
+This class is templated to allow for varied single collection types
+This class is part of the group common (update)
+Inspiration and assistance from: http://subversion.assembla.com/svn/184/src/LoadImage.cpp, http://www.opengl.org/discussion_boards/showthread.php/168864-HeightMap-to-NormalMap (Stephen A)
+\sa NO LINK
+*/
 
 #include "ProtoTexture.h"
 
@@ -54,7 +54,7 @@ ProtoTexture::ProtoTexture() {
 
 // one being used
 ProtoTexture::ProtoTexture(const std::string& textureMapImage, TextureMapType textureMapType, GLenum image_format, GLint internal_format, GLint level, GLint border) :
-textureMapImage(textureMapImage), textureMapType(textureMapType), image_format(image_format), internal_format(internal_format), level(level), border(border) {
+	textureMapImage(textureMapImage), textureMapType(textureMapType), image_format(image_format), internal_format(internal_format), level(level), border(border) {
 	// std::cout << "in ProtoTexture class, ProtoTexture::textureID = " <<  ProtoTexture::textureID << std::endl;
 	//trace("textureMapImage =", textureMapImage);
 	init();
@@ -88,19 +88,19 @@ bool ProtoTexture::init() {
 
 		// NOTE - make workspace project relative instead of using default derivedData path in Library
 		//std::cout << "cCurrentPath = " << cCurrentPath << std::endl;
-		cCurrentPath[sizeof(cCurrentPath)-1] = '\0'; /* not really required */
+		cCurrentPath[sizeof(cCurrentPath) - 1] = '\0'; /* not really required */
 		std::string cp = cCurrentPath; //cast char[] to string
 #if defined(_WIN32) || (_WIN64)
-		// need to escape backslashes with themselves, ick
-		std::string pathExtension = "..\\..\\..\\Resources\\imgs\\";
+									   // need to escape backslashes with themselves, ick
+		std::string pathExtension = "\\..\\..\\..\\Resources\\imgs\\";
 #else
-		// osx/posix use "normal" directory dividers
+									   // osx/posix use "normal" directory dividers
 		std::string pathExtension = "/Resources/imgs/";
 
 #endif
 
 		std::string textureURL = cp + pathExtension + textureMapImage;
-		//trace("cp=", cp);
+
 
 		// initialize some locals
 		//image format
@@ -116,26 +116,21 @@ bool ProtoTexture::init() {
 
 		//check the file signature and deduce its format
 		const char* fileURL = textureURL.c_str();
-		//trace("fileURL =", fileURL);
+
 		// allocate a unique texture name
 		//glGenTextures(1, &textureID);
 		//// bind the texture
 		//glBindTexture(GL_TEXTURE_2D, textureID);
 		//trace("textureID=", textureID);
-		//fileURL = "D:\\Dev\\Protobyte_0.1.6_quark\\Protobyte\\Resources\\imgs\\corroded_red.jpg";
-		
-		switch (textureMapType){
+
+		switch (textureMapType) {
 		case DIFFUSE_MAP:
-			//trace("fileURL =", fileURL);
-			// requires gl context created
-			glGenTextures(1, &textureID); // STUCK HERE
-			
+			glGenTextures(1, &textureID);
 			// bind the texture
 			glActiveTexture(GL_TEXTURE0);
 			glBindTexture(GL_TEXTURE_2D, textureID);
-		
+
 			fif = FreeImage_GetFileType(fileURL, 0);
-			
 			//if still unknown, try to guess the file format from the file extension
 			if (fif == FIF_UNKNOWN)
 				fif = FreeImage_GetFIFFromFilename(fileURL);
@@ -171,9 +166,9 @@ bool ProtoTexture::init() {
 			// if wrap is true, the texture wraps over at the edges (repeat)
 			//       ... false, the texture ends at the edges (clamp)
 			/*	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S,
-					isWrap ? GL_REPEAT : GL_CLAMP);
-					glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T,
-					isWrap ? GL_REPEAT : GL_CLAMP);*/
+			isWrap ? GL_REPEAT : GL_CLAMP);
+			glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T,
+			isWrap ? GL_REPEAT : GL_CLAMP);*/
 
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
@@ -184,14 +179,14 @@ bool ProtoTexture::init() {
 			// give opengl the texture
 			// glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_BGR, GL_UNSIGNED_BYTE, imageData);
 
-			//glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_BGR, GL_UNSIGNED_BYTE, imageData);
+			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_BGR, GL_UNSIGNED_BYTE, imageData);
 			//gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGB, width, height, GL_BGR, GL_UNSIGNED_BYTE, imageData);
 
 			//Free FreeImage's copy of the data
 			FreeImage_Unload(dib);
 
 			break; // end Diffuse Map
-			// load existing normal map
+				   // load existing normal map
 		case NORMAL_MAP:
 			glGenTextures(1, &textureID);
 			// bind the texture
@@ -242,7 +237,7 @@ bool ProtoTexture::init() {
 			//glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
 
 			// when texture area is small, bilinear filter the closest MIP map
-			
+
 			// when texture area is large, bilinear filter the first MIP map
 			//glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
@@ -263,14 +258,14 @@ bool ProtoTexture::init() {
 			// give opengl the texture
 			// glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_BGR, GL_UNSIGNED_BYTE, imageData);
 
-			//glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_BGR, GL_UNSIGNED_BYTE, imageData);
+			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_BGR, GL_UNSIGNED_BYTE, imageData);
 			//gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGB, width, height, GL_BGR, GL_UNSIGNED_BYTE, imageData);
 
 			//Free FreeImage's copy of the data
 			FreeImage_Unload(dib);
 
 			break; // end Normal Map
-			// dynamically generate Normal Map
+				   // dynamically generate Normal Map
 		case BUMP_MAP:
 			glGenTextures(1, &textureID);
 			// bind the texture
@@ -298,9 +293,9 @@ bool ProtoTexture::init() {
 			unsigned height = FreeImage_GetHeight(dib);
 			float* greyVals = new float[width*height]; // rmember to clean up (near line 400)
 
-			//manual conversion to greyscale
-			for (int i = 0; i < height; ++i){
-				for (int j = 0; j < width; ++j){
+													   //manual conversion to greyscale
+			for (int i = 0; i < height; ++i) {
+				for (int j = 0; j < width; ++j) {
 					RGBQUAD col;
 					FreeImage_GetPixelColor(dib, j, i, &col);
 					float r = col.rgbRed;
@@ -338,28 +333,28 @@ bool ProtoTexture::init() {
 				BL, B, BR;
 			RGBQUAD color;
 
-			for (int i = 0, k = 0; i < height; ++i){
-				for (int j = 0; j < width; ++j){
+			for (int i = 0, k = 0; i < height; ++i) {
+				for (int j = 0; j < width; ++j) {
 					int iMin, iMax, jMin, jMax;
 					// within edge safety limit
 					//if (i>0 && i<height - 1 && j>0 && j < width - 1){
-						iMin = i - 1;
-						iMax = i + 1;
-						jMin = j - 1;
-						jMax = j + 1;
+					iMin = i - 1;
+					iMax = i + 1;
+					jMin = j - 1;
+					jMax = j + 1;
 					//}
 
-					if (i == 0){ // top edge
+					if (i == 0) { // top edge
 						iMin = height - 1;
 					}
-					else if (i == height - 1){ // bottom edge
+					else if (i == height - 1) { // bottom edge
 						iMax = 0;
 					}
 
-					if (j == 0){ // left edge
+					if (j == 0) { // left edge
 						jMin = width - 1;
 					}
-					else if (j == width - 1){ // right edge
+					else if (j == width - 1) { // right edge
 						jMax = 0;
 					}
 
@@ -394,10 +389,10 @@ bool ProtoTexture::init() {
 					color.rgbGreen = (v.y * 0.5f + .5f) * 255;
 					color.rgbBlue = (v.z * 0.5f + .5f) * 255;
 					/*					if (i < 10 && j < 5) {
-											trace("v.x * 0.5f + .5f =", v.x * 0.5f + .5f);
-											trace("v.y * 0.5f + .5f =", v.y * 0.5f + .5f);
-											trace("v.z * 0.5f + .5f =", v.z * 0.5f + .5f);
-											}*/
+					trace("v.x * 0.5f + .5f =", v.x * 0.5f + .5f);
+					trace("v.y * 0.5f + .5f =", v.y * 0.5f + .5f);
+					trace("v.z * 0.5f + .5f =", v.z * 0.5f + .5f);
+					}*/
 					FreeImage_SetPixelColor(normalMap, j, i, &color);
 				}
 			}
@@ -437,14 +432,14 @@ bool ProtoTexture::init() {
 			//	// glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_BGR, GL_UNSIGNED_BYTE, imageData);
 
 			//gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGB, width, height, GL_BGR, GL_UNSIGNED_BYTE, normalMapData);
-			//glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_BGR, GL_UNSIGNED_BYTE, normalMapData);
+			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_BGR, GL_UNSIGNED_BYTE, normalMapData);
 
 			// deallocate
 			FreeImage_Unload(normalMap);
 			break; // end bump map
 		} // end switch
 
-		//return success
+		  //return success
 		return true;
 	}
 	return false;

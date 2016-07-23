@@ -62,17 +62,15 @@ void ProtoBaseApp::_init(){
 
 
 	//areShadowsEnabled = true;
-
-
 	//shader = ProtoShader("shader1.vert", "shader1.frag");
 	//shader = ProtoShader("protoShader.vert", "protoShader.frag");
 	//shader2D = ProtoShader("colorOnlyShader.vert.glsl", "colorOnlyShader.frag.glsl");
 	shader3D = ProtoShader("bumpmapping.vs.glsl", "bumpmapping.fs.glsl");
 	shader3D.bind();
+
 	// create context and initialize
 	ctx = ProtoContext::getContext(width, height);
 	ctx->init();
-
 
 	// default global ambient
 	ctx->setGlobalAmbient({ .45f, .45f, .45f });
@@ -1021,8 +1019,8 @@ void ProtoBaseApp::setKeyEvent(int key, int scancode, int action, int mods) {
 void ProtoBaseApp::arcballBegin(){
 	//isArcballOn = true;
 	push();
-	rotate(arcballRotX, 1, 0, 0);
-	rotate(arcballRotY, 0, 1, 0);
+	rotate(arcballRotX*PI / 180.0f, 1, 0, 0);
+	rotate(arcballRotY*PI / 180.0f, 0, 1, 0);
 }
 
 void ProtoBaseApp::arcballEnd(){

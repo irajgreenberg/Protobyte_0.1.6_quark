@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "ProtoBaseApp.h"
+#include "ProtoRootBall.h"
 #include "ProtoGeomComposite.h" // new class to test - integrate in PBA eventually
 
 using namespace ijg;
@@ -29,8 +30,9 @@ public:
 	void onClosed();
 
 	ProtoPlane plane;
-	ProtoGeomComposite pcg;
+	//ProtoGeomComposite pcg;
 	Toroid t;
+	ProtoRootBall* pBall;
 
 };
 

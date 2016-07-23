@@ -101,7 +101,7 @@ void ProtoFace3::calcNorm() {
 	Vec3f v0 = v1_p->pos - v0_p->pos;
 	Vec3f v1 = v2_p->pos - v0_p->pos;
 	// maybe reverse
-	norm = v0.cross(v1);
+	norm = v1.cross(v0);
 	norm.normalize();
 }
 
@@ -121,7 +121,9 @@ Vec3f ProtoFace3::getTangentBM(){
 
 
 	float r = 1.0f / (uv0.x * uv1.y - uv0.y *uv1.x);
+	//float r = 1.0f / (uv1.x * uv0.y - uv1.y *uv0.x);
 	Vec3f tangent = (v0 * uv1.y - v1 * uv0.y)*r;
+	//Vec3f tangent = (v1 * uv0.y - v0 * uv1.y)*r;
 
 	return tangent;
 
