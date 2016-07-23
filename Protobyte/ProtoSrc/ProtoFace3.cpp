@@ -102,6 +102,7 @@ void ProtoFace3::calcNorm() {
 	Vec3f v1 = v2_p->pos - v0_p->pos;
 	// maybe reverse
 	norm = v1.cross(v0);
+	//norm = v0.cross(v1);
 	norm.normalize();
 }
 

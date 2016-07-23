@@ -22,7 +22,7 @@ void ProtoController::init() {
 	plane.setShininess(39);
 
 
-	int roots = 1;
+	int roots = 8;
 	std::string urls[] = { "corroded_red.jpg", "gold_foil.jpg", "bronze_fans.jpg", "rust02.jpg", "meat01.jpg" };
 	std::vector<std::string> textureURLs;
 	std::vector<Vec2f> textureScales;
@@ -32,7 +32,7 @@ void ProtoController::init() {
 		textureScales.push_back({ random(1.2, 3), random(3.2, 7) });
 		cols.push_back({ random(1.0), random(1.0), random(1.0) });
 	}
-	pBall = new ProtoRootBall({}, {}, { 1, 1, 1 }, cols, roots, 50, 2.4f, { 10.5f, 160.5f }, textureURLs, textureScales);
+	pBall = new ProtoRootBall({}, {}, { 1, 1, 1 }, cols, roots, 50, 9.4f, { 70.5f, 90.5f }, textureURLs, textureScales);
 }
 
 void ProtoController::run() {
@@ -48,7 +48,7 @@ void ProtoController::display() {
 	t.display();
 	pop();
 
-	scale(425);
+	scale(495);
 	pBall->display();
 	arcBallEnd();
 }
