@@ -29,10 +29,10 @@ public:
 	void onResized();
 	void onClosed();
 
-	ProtoPlane plane;
-	//ProtoGeomComposite pcg;
+	//ProtoPlane plane;
+	//ProtoGeomComposite* pcg;
 	Toroid t;
-	ProtoRootBall* pBall;
+	//ProtoRootBall* pBall;
 
 };
 

@@ -1,46 +1,21 @@
 #ifndef _PROTO_BASEAPP_H_
 #define _PROTO_BASEAPP_H_
 
-//#if defined (_WIN32) || defined(_WIN64)
-//#define GLEW_STATIC // link to glew32s instead of including dll
-//#include <GL/glew.h>
-//#include <Windows.h>
-//#include <stdio.h>
-//#endif
-
-
-//#if defined(__APPLE__)
-//// eventually remove for GL core >3.2 
-//#include <OpenGL/glu.h>
-//#endif
-
-
-
-//
-
 #include "glad/glad.h"
 #include "GLFW/glfw3.h"
-
-
 #include <thread>
 #include <mutex>
 #include <memory>
 #include <stdexcept>
 
 // include GLM
-//#include "glm/vec3.hpp" // glm::vec3
+#include "glm/vec3.hpp" // glm::vec3
 #include "glm/vec4.hpp" // glm::vec4
 #include "glm/mat4x4.hpp" // glm::mat4
 #include "glm/gtc/matrix_transform.hpp" // glm::translate, glm::rotate, glm::scale, glm::perspective
 #include <glm/gtc/type_ptr.hpp> // glm::value_ptr
 
-
-
-//#include <iostream>
-//#include "ProtoPlasm.h"
-//#include "ProtoOSC.h"
-
-
+// add Protobyte core classes
 #include "ProtoContext.h";
 #include "ProtoDimension2.h"
 #include "ProtoDimension3.h"
@@ -66,7 +41,6 @@
 #include "ProtoTuple4.h"
 #include "ProtoEllipse.h"
 #include "ProtoPath3.h"
-//#include "ProtoTessellator.h"
 #include "ProtoPath2.h"
 #include "ProtoRectangle.h"
 #include "ProtoException.h"
@@ -76,45 +50,23 @@
 // preproc dir for relative resource loading
 // from http://stackoverflow.com/questions/143174/how-do-i-get-the-directory-that-a-program-is-running-from
 // http://www.daniweb.com/software-development/cpp/threads/202937/ifdef-with-boolean-and-or
-#include <stdio.h>  /* defines FILENAME_MAX */
-#if defined (_WIN32) || defined (_WIN64)
-#include <direct.h>
-#define GetCurrentDir _getcwd
-#else
-#include <unistd.h>
-#define GetCurrentDir getcwd
-#endif
+//#include <stdio.h>  /* defines FILENAME_MAX */
+//#if defined (_WIN32) || defined (_WIN64)
+//#include <direct.h>
+//#define GetCurrentDir _getcwd
+//#else
+//#include <unistd.h>
+//#define GetCurrentDir getcwd
+//#endif
 // end relative loading proproc dir
 
 
 // for offset into the FBO interleaved buffer (ugly I know!)
 #define BUFFER_OFFSET(i) ((void*)(i))
 
-#include <iostream>
-#include <stack>
-
-
-// for triangle.c tessellation
-#ifdef SINGLE
-#define REAL float
-#else /* not SINGLE */
-#define REAL double
-#endif /* not SINGLE */
-//#include <stdio.h>
-//#include <stdlib.h>
-//#include <math.h>
-//#include "triangle.h"
-
-//extern "C" void triangulate(char *, struct triangulateio *, struct triangulateio *,
-//struct triangulateio *);
-
 namespace ijg {
 
-
-
-	// non-member functions
-
-	// forward declares
+	// forward declare
 	class Protoplasm;
 
 	class ProtoBaseApp {
@@ -125,9 +77,7 @@ namespace ijg {
 
 	public:
 		ProtoBaseApp();
-		//ProtoBaseApp(const ProtoOSC& listener);
-		// void setAppWindowDetails(int appWidth, int appHeight, std::string appTitle);
-
+		
 		// GLFW Mouse events
 		void setMouseButton(int mouseAction, int mouseButton, int mouseMods);
 
@@ -137,82 +87,27 @@ namespace ijg {
 		// GLFW Window events
 		void setWindowFrameSize(const Dim2i& windowFrameSize);
 
-
 		static ProtoBaseApp* baseApp;
 		static ProtoBaseApp* getBaseApp();
-
 		std::shared_ptr<ProtoContext> ctx;
 
 	private:
-		// only needed to be called by ProtoPlasm class - a friend
-		//void setWorld(std::unique_ptr<ProtoWorld> world);
-		//void runWorld();
-		// don't let users touch this after context is created
 		void setWidth(int canvasWidth);
 		void setHeight(int canvasHeight);
 		void setSize(const Dim2i& canvasSize);
-
 		void _init();
-		//void _resetBuffers();
-		//void _initUniforms();
-		//void _run(const Vec2f& mousePos/*, int mouseBtn, int key*/);
 		void _run(const Vec2f& mousePos, const Vec4i& windowCoords = Vec4i(0, 0, 1, 1)/*, int mouseBtn, int key*/);
-		//void setViewport(int width, int height);
-		// void concat(); moved down for testing
-
-		//void pathTessellate(struct triangulateio *io, int markers, int reporttriangles, int reportneighbors, int reportsegments,
-		//	int reportedges, int reportnorms);
-
 		void setFrameCount(float frameCount);
-
-		int canvasWidth;
-		int canvasHeight;
+		int canvasWidth, canvasHeight;
 		int width, height;
 		Dim2i canvasSize;
 		Dim2i windowFrameSize;
-
 		int frameCount;
 		float frameRate;
-
 		Col3f bgColor;
 
-
-		// TEMPORARY Shader vars to test shadow map
-		GLuint frameBufferName = 0;
-		GLuint depthTexture;
-
-
-
-
-
-
-		//protected:
 	public:
 		void _initUniforms(ProtoShader* shader_ptr); // temporarily here. put back in private eventually
-		//void concat();
-		/************************************
-		 **********     FIELDS     **********
-		 ***********************************/
-		//std::unique_ptr<ProtoWorld> world;
-		//int appWidth;
-		//int appHeight;
-		//std::string appTitle;
-
-		//made private -bw 
-		//int canvasWidth;
-		//int canvasHeight;
-		//int width, height;
-		//Dim2i canvasSize;
-		//Dim2i windowFrameSize;
-
-		//made private -bw
-		//int frameCount;
-		//float frameRate;
-
-		// background color
-		//made private -bw
-		//Col3f bgColor;
-
 		// Mouse fields
 		float mouseX, mouseY, mouseLastFrameX, mouseLastFrameY;
 		// 1, 2, or 3
@@ -232,31 +127,6 @@ namespace ijg {
 		int scancode;
 		int action;
 
-
-		// CAMERAS
-		// 5 cameras (for now) accessible in world
-		//ProtoCamera camera0, camera1, camera2, camera3, camera4;
-
-		// LIGHTS
-		// per GL limits 8 lights accessible in world
-		// light0 enabled by default
-		//std::shared_ptr<ProtoLight> light0, light1, light2, light3, light4, light5, light6, light7;
-
-		//Col3f globalAmbient;
-
-		//GLint glLights[8];
-
-		//enum Light {
-		//	LIGHT_0,
-		//	LIGHT_1,
-		//	LIGHT_2,
-		//	LIGHT_3,
-		//	LIGHT_4,
-		//	LIGHT_5,
-		//	LIGHT_6,
-		//	LIGHT_7
-		//};
-
 		enum Format {
 			STL,
 			TXT,
@@ -267,24 +137,10 @@ namespace ijg {
 		ProtoShader shader;
 		ProtoShader shader3D, shader2D;
 
-		//ProtoLight light0, light1, light2, light3, light4, light5, light6, light7;
-		//std::shared_ptr<ProtoLight> lights[8];
-
-		//std::vector<ProtoLight> lights;
-		/*enum Matrix {
-			MODEL_VIEW,
-			PROJECTION
-			};*/
-
-		//float viewAngle, aspect, nearDist, farDist;
-
 		void setViewAngle(float viewAngle);
 		void setAspect(float aspect);
 		void setNearDist(float nearDist);
 		void setFarDist(float farDist);
-
-		//float left, right, bottom, top;
-
 		void setLeft(float left);
 		void setRight(float right);
 		void setBottom(float bottom);
@@ -307,80 +163,15 @@ namespace ijg {
 		***********************************/
 		std::vector<Vec3f> path;
 
-		// new approach
-		//ProtoPath2 path;
-
-		/***************END****************/
-
-		/***********************************
-		*           GLSL UNIFORMS          *
-		***********************************/
-		// using initials ONLY for matrices
-		// Uniform Camera Matrices
-		//glm::mat4 M, V, MV, P, MVP;
-		//glm::mat4 V, MV, P, MVP;
-
-		// Uniform Transformation Matrices
-		//glm::mat4 T, R, S;
-
-		// Uniform Shadow Map Matrices
-		//glm::mat4 L_V, L_MV, L_P, L_B, L_BP, L_MVBP;
-
-		//glm::mat4 L_MVS[8];
-		//glm::mat4 shadM[8];
-
-		// Uniform Normal Matrix
-		//glm::mat3 N;
-
-		// flags for shader locations
-		//GLuint M_U, V_U, MV_U, P_U, MVP_U, N_U;
-		//GLuint T_U, R_U, S_U;
-		//GLuint L_MVBP_U; // only for Light perspective
-		//GLuint shaderPassFlag_U;
-
-		// Uniform Shadow Map
-		//GLuint shadowMap_U;
-
-		// Uniform Lighting factors
-		// enable/disable lighting factors for 2D rendering
-		//Vec4f ltRenderingFactors;
-		//GLuint lightRenderingFactors_U;
-
 		// color flags/fields for immediate mode drawing
 		bool isStroke, isFill;
 		Col4f fillColor, strokeColor;
 		float lineWidth;
 
-
-		// shadow mapping texture id's
-		//GLuint shadowBufferID, shadowTextureID;
-
 		// flag for shadowing
 		bool areShadowsEnabled;
 
 		const int SHADOWMAP_WIDTH = 1024, SHADOWMAP_HEIGHT = 1024;
-
-		//std::stack <glm::mat4> matrixStack;
-
-
-
-		// Uniform Lighting location vars
-		/*struct Light_U {
-			GLuint position;
-			GLuint intensity;
-			GLuint diffuse;
-			GLuint ambient;
-			GLuint specular;;
-			};
-			Light_U lights_U[8];
-
-			GLuint globalAmbient_U;*/
-
-
-
-		// OSC obj 
-		//ProtoOSC listener;
-
 
 		/************************************
 		 **********   FUNCTIONS   ***********
@@ -389,10 +180,6 @@ namespace ijg {
 		virtual void init() = 0;
 		virtual void run() = 0;
 		virtual void display() = 0;
-
-		// switched from pure virtual above to enable thread to call member functions
-		/*	virtual void init(){}
-			virtual void run(){}*/
 
 		virtual bool ProtoBaseApp::createShadowMap();
 
@@ -420,14 +207,6 @@ namespace ijg {
 		//setFrameCount() moved to private - bw
 		//void setFrameCount(float frameCount);
 		int getFrameCount() const;
-
-		// Add content to world
-		// NOT USED - REMOVE
-		//void add(std::unique_ptr<ProtoGeom3> geom);
-		//void add(std::unique_ptr<ProtoLight> lt);
-		//void add(std::shared_ptr<ProtoLight> lt);
-		//void add(std::unique_ptr<ProtoCamera> cam);
-		//void initWorld();
 
 		// set background color
 		void setBackground(float r, float g, float b);
@@ -461,7 +240,6 @@ namespace ijg {
 		// shaders stuff
 		void GLSLInfo(ProtoShader* shader);
 
-
 		// LIGHTS
 		void lightsOn();
 		void lightsOff();
@@ -477,35 +255,6 @@ namespace ijg {
 		//implements transform matrix stack
 		void push();
 		void pop();
-
-
-
-
-
-		//void lookAt(const Vec3f& eye, const Vec3f& center, const Vec3f& up);
-		//void perspective(float viewAngle, float aspect, float nearDist, float farDist);
-
-
-		// was working
-		//void export(std::vector<Tup4v> vs, Format type); // bucket of Vecs
-
-		// not using export option below yet
-		//void export(std::vector<Shape3> shapes, Format type); // ProtoShapes
-		//void export(std::vector<Geom3> geoms, Format type); // ProtoGeoms
-		//void export(std::vector<Geom3> geoms, std::vector<Shape3> shapes, Format type); // geoms & shapes
-		//void export(std::vector<Shape3> shapes, std::vector<Geom3> geoms, Format type); // shapes & geoms
-
-		//template<typename T, typename U>
-		//void export(T objType1, U objType2, Format type);
-
-		// pass multiple objs
-		//template<typename First, typename ... Rest>
-		//void export(Format type, First first, Rest ... rest);
-
-		// CAMERAS
-
-		// WORLD
-		//void printMatrix(Matrix m);
 
 		/***********BEGIN************
 		 2D Automatic Procedural API
@@ -712,6 +461,12 @@ namespace ijg {
 		void diffuseTexture(const ProtoTexture& diffuseTexture);
 		void bumpTexture(const ProtoTexture& bumpTexture);
 
+		void printModelMatrix();
+		void printViewMatrix();
+		void printProjectionMatrix();
+		void printModelViewMatrix();
+		void printModelViewProjectionMatrix();
+
 	};
 
 	// inline methods
@@ -815,6 +570,21 @@ namespace ijg {
 		areShadowsEnabled = false;
 	}
 
+	inline void ProtoBaseApp::printModelMatrix() {
+		ctx->printModelMatrix();
+	}
+	inline void ProtoBaseApp::printViewMatrix() {
+		ctx->printViewMatrix();
+	}
+	inline void ProtoBaseApp::printProjectionMatrix() {
+		ctx->printProjectionMatrix();
+	}
+	inline void ProtoBaseApp::printModelViewMatrix() {
+		ctx->printModelViewMatrix();
+	}
+	inline void ProtoBaseApp::printModelViewProjectionMatrix() {
+		ctx->printModelViewProjectionMatrix();
+	}
 
 	// Rendering display() switches
 #define POINTS ProtoGeom3::POINTS

@@ -237,4 +237,36 @@ void ProtoContext::pop(){
 	concat();
 }
 
+void ProtoContext::printModelMatrix() {
+	trace("Model: \n[", model[0][0], model[0][1], model[0][2], model[0][3], "\n",
+		model[1][0], model[1][1], model[1][2], model[1][3], "\n",
+		model[2][0], model[2][1], model[2][2], model[2][3], "\n",
+		model[3][0], model[3][1], model[3][2], model[3][3], "]");
+}
+void ProtoContext::printViewMatrix() {
+	trace("View: \n[", view[0][0], view[0][1], view[0][2], view[0][3], "\n",
+		view[1][0], view[1][1], view[1][2], view[1][3], "\n",
+		view[2][0], view[2][1], view[2][2], view[2][3], "\n",
+		view[3][0], view[3][1], view[3][2], view[3][3], "]");
+}
+void ProtoContext::printProjectionMatrix() {
+	trace("Projection: \n[", projection[0][0], projection[0][1], projection[0][2], projection[0][3], "\n",
+		projection[1][0], projection[1][1], projection[1][2], projection[1][3], "\n",
+		projection[2][0], projection[2][1], projection[2][2], projection[2][3], "\n",
+		projection[3][0], projection[3][1], projection[3][2], projection[3][3], "]");
+}
+void ProtoContext::printModelViewMatrix() {
+	trace("ModelView: \n[",modelView[0][0], modelView[0][1], modelView[0][2], modelView[0][3],"\n",
+		modelView[1][0], modelView[1][1], modelView[1][2], modelView[1][3], "\n", 
+		modelView[2][0], modelView[2][1], modelView[2][2], modelView[2][3], "\n",
+		modelView[3][0], modelView[3][1], modelView[3][2], modelView[3][3], "]");
+
+}
+void ProtoContext::printModelViewProjectionMatrix() {
+	trace("ModelViewProjection: \n[", modelViewProjection[0][0], modelViewProjection[0][1], modelViewProjection[0][2], modelViewProjection[0][3], "\n",
+		modelViewProjection[1][0], modelViewProjection[1][1], modelViewProjection[1][2], modelViewProjection[1][3], "\n",
+		modelViewProjection[2][0], modelViewProjection[2][1], modelViewProjection[2][2], modelViewProjection[2][3], "\n",
+		modelViewProjection[3][0], modelViewProjection[3][1], modelViewProjection[3][2], modelViewProjection[3][3], "]");
+}
+
 

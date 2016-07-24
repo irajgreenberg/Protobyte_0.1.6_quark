@@ -127,6 +127,13 @@ namespace ijg {
 		const glm::mat4& getModelViewProjection();
 		const glm::mat3& getNormal();
 
+		// print info about matrices
+		void printModelMatrix();
+		void printViewMatrix();
+		void printProjectionMatrix();
+		void printModelViewMatrix();
+		void printModelViewProjectionMatrix();
+
 
 
 		/*** Shadow Map Matrices ***/
@@ -293,6 +300,7 @@ namespace ijg {
 		modelView = view * model;
 		glUniformMatrix4fv(modelView_U, 1, GL_FALSE, &modelView[0][0]);
 	}
+
 	// MVP Mat4
 	inline void ProtoContext::concatModelViewProjection() {
 		modelViewProjection = projection * modelView;

@@ -158,6 +158,7 @@ void ProtoPlasm::initGLFW(){
 	glClearColor(.46f, .485f, .575f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glFrontFace(GL_CCW); // default
+	//glFrontFace(GL_CW);
 	glEnable(GL_CULL_FACE);
 	glCullFace(GL_BACK);
 	glDisable(GL_CULL_FACE);

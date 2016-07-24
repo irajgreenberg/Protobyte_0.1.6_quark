@@ -29,8 +29,8 @@ using namespace ijg;
 
 
 ProtoGeomComposite::ProtoGeomComposite() {
-	ctx = ProtoContext::getContext();
-	//trace("ctx =", ctx);
+	
+	////trace("ctx =", ctx);
 	t = Toroid(12, 12, 125, 45);
 	t.setSpecularMaterial({ 1, 0.75, 1, 1 });
 	t.setShininess(9);
@@ -40,6 +40,7 @@ ProtoGeomComposite::ProtoGeomComposite() {
 }
 
 void ProtoGeomComposite::init() {
+	ctx = ProtoContext::getContext();
 	ctx->init();
 }
 

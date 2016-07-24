@@ -100,7 +100,7 @@ void ProtoBaseApp::_init(){
 
 	// START standard transformation matrices: ModelView / Projection / Normal
 	ctx->setModel(glm::mat4(1.0f));
-	ctx->setView(glm::lookAt(glm::vec3(0.0, 0.0, 5), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0)));
+	ctx->setView(glm::lookAt(glm::vec3(0.0, 0.0, 0), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0)));
 	ctx->concatModelView();
 	//ctx->createNormalMatrix();
 

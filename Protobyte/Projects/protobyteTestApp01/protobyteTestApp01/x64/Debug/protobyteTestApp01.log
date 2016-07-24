@@ -1,5 +1,5 @@
 ﻿  ProtoController.cpp
-d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(44): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(19): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protolight.h(93): warning C4305: '=': truncation from 'double' to 'float'
 d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(59): warning C4005: 'GetCurrentDir': macro redefinition
@@ -7,13 +7,8 @@ d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(59): warning C
 d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoworld.h(326): warning C4305: 'argument': truncation from 'double' to 'float'
 d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototoroid.h(60): warning C4305: 'initializing': truncation from 'double' to 'float'
 d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocephalopod.h(128): warning C4244: 'return': conversion from 'time_t' to 'long', possible loss of data
-d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(723): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-d:\dev\protobyte_0.1.6_quark\protobyte\projects\protobytetestapp01\protobytetestapp01\protocontroller.cpp(32): warning C4305: 'argument': truncation from 'double' to 'float'
-d:\dev\protobyte_0.1.6_quark\protobyte\projects\protobytetestapp01\protobytetestapp01\protocontroller.cpp(46): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  ProtoFace3.cpp
-d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoface3.cpp(79): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoface3.cpp(82): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-d:\dev\protobyte_0.1.6_quark\protobyte\protosrc\protoface3.cpp(85): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-  Generating Code...
+d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(478): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\dev\protobyte_0.1.6_quark\protobyte\projects\protobytetestapp01\protobytetestapp01\protocontroller.cpp(49): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte_0.1.6_quark\protobyte\projects\protobytetestapp01\protobytetestapp01\protocontroller.cpp(54): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   protobyteTestApp01.vcxproj -> D:\Dev\Protobyte_0.1.6_quark\Protobyte\Projects\protobyteTestApp01\x64\Debug\protobyteTestApp01.exe
   protobyteTestApp01.vcxproj -> D:\Dev\Protobyte_0.1.6_quark\Protobyte\Projects\protobyteTestApp01\x64\Debug\protobyteTestApp01.pdb (Full PDB)

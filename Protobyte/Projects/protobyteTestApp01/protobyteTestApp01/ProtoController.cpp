@@ -1,10 +1,10 @@
 #include "ProtoController.h"
 
 void ProtoController::init() {
-	//setLight(0, { 0, 0, 600 }, { 1, 1, 1 });
+	setLight(0, { 0, 0, 600 }, { 1, 1, 1 });
 	shadowsOn();
-	//t = Toroid({ 0, 0, 0 }, { 0, 0, 0 }, { 1, 1, 1 }, { 1, 1, 1, .75f }, 12, 12, 125, 45);
-	t = Toroid(36, 36, 425, 145);
+	////t = Toroid({ 0, 0, 0 }, { 0, 0, 0 }, { 1, 1, 1 }, { 1, 1, 1, .75f }, 12, 12, 125, 45);
+	t = Toroid(16, 16, 425, 145);
 	t.setDiffuseMaterial({ 1, 1, 1, 1 });
 	t.setDiffuseMap("ship_plate_rainbow.jpg");
 	t.setBumpMap("ship_plate_rainbow.jpg");
@@ -14,15 +14,15 @@ void ProtoController::init() {
 	//pcg = new ProtoGeomComposite();
 	//pcg->init();
 
-	plane = ProtoPlane({ 0 }, { 0 }, { 500, 500 }, { 1, 1, 1, 1 }, 1, 1);
-	plane.setDiffuseMap("ship_plate.jpg");
-	plane.setTextureScale({ .2f, .2f });
-	plane.setBumpMap("ship_plate.jpg");
-	plane.setSpecularMaterial({ 1, 1, 1, 1 });
-	plane.setShininess(39);
+	//plane = ProtoPlane({ 0 }, { 0 }, { 500, 500 }, { 1, 1, 1, 1 }, 1, 1);
+	//plane.setDiffuseMap("ship_plate.jpg");
+	//plane.setTextureScale({ .2f, .2f });
+	//plane.setBumpMap("ship_plate.jpg");
+	//plane.setSpecularMaterial({ 1, 1, 1, 1 });
+	//plane.setShininess(39);
 
 
-	int roots = 8;
+	/*int roots = 1;
 	std::string urls[] = { "corroded_red.jpg", "gold_foil.jpg", "bronze_fans.jpg", "rust02.jpg", "meat01.jpg" };
 	std::vector<std::string> textureURLs;
 	std::vector<Vec2f> textureScales;
@@ -32,7 +32,11 @@ void ProtoController::init() {
 		textureScales.push_back({ random(1.2, 3), random(3.2, 7) });
 		cols.push_back({ random(1.0), random(1.0), random(1.0) });
 	}
-	pBall = new ProtoRootBall({}, {}, { 1, 1, 1 }, cols, roots, 50, 9.4f, { 70.5f, 90.5f }, textureURLs, textureScales);
+	pBall = new ProtoRootBall({}, {}, { 1, 1, 1 }, cols, roots, 50, 9.4f, { 70.5f, 90.5f }, textureURLs, textureScales);*/
+	printModelMatrix();
+	printViewMatrix();
+	printModelViewMatrix();
+	printProjectionMatrix();
 }
 
 void ProtoController::run() {
@@ -40,16 +44,21 @@ void ProtoController::run() {
 
 void ProtoController::display() {
 	arcBallBegin();
-	
+	push();
+	scale(5); 
+	fill(.5, .1, .2);
+	//star(6, 100, 400);
+	pop();
 	push();
 	translate(-300, 200, 0);
 	rotate(getFrameCount()*PI/180.0f, { 1, .2f, 0 });
-	plane.display();
+	//plane.display();
 	t.display();
 	pop();
 
-	scale(495);
-	pBall->display();
+	/*scale(495);
+	pBall->display();*/
+	
 	arcBallEnd();
 }
 
