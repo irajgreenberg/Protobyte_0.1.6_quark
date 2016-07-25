@@ -55,6 +55,8 @@ namespace ijg {
         void setRingCount(int ringCount);
         int getRingCount() const;
 
+		void update();
+
     private:
         int ringCount = 12, ringDetail = 24;
         float ringRadius = 1.0, ringThickness = .345;
@@ -68,6 +70,7 @@ namespace ijg {
 
     inline void ProtoToroid::setRingThickness(float ringThickness) {
         this->ringThickness = ringThickness;
+		update();
     }
 
     inline float ProtoToroid::getRingThickness() const {
@@ -76,6 +79,7 @@ namespace ijg {
 
     inline void ProtoToroid::setRingRadius(float ringRadius) {
 		this->ringRadius = ringRadius; 
+		update();
     }
 
     inline float ProtoToroid::getRingRadius() const {
@@ -84,6 +88,7 @@ namespace ijg {
 
     inline void ProtoToroid::setRingDetail(int ringDetail) {
         this->ringDetail = ringDetail;
+		update();
     }
 
     inline int ProtoToroid::getRingDetail() const {
@@ -92,6 +97,7 @@ namespace ijg {
 
     inline void ProtoToroid::setRingCount(int ringCount) {
         this->ringCount = ringCount;
+		update();
     }
 
     inline int ProtoToroid::getRingCount() const {

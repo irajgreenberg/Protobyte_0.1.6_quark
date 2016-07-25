@@ -1,8 +1,9 @@
 #ifndef _PROTO_BASEAPP_H_
 #define _PROTO_BASEAPP_H_
 
-#include "glad/glad.h"
-#include "GLFW/glfw3.h"
+#include "glad/glad.h" // Gl extenion loader
+#include "GLFW/glfw3.h" // windowing
+#include "poly2tri.h" // tesselator
 #include <thread>
 #include <mutex>
 #include <memory>
@@ -377,7 +378,7 @@ namespace ijg {
 		void triangle(float x0, float y0, float x1, float y1, float x2, float y2);
 		void poly(int sides, float radius);
 		void poly(int sides, float radius1, float radius2);
-		void star(int sides, float innerRadius, float outerRadius);
+		void star(int sides, float innerRadius, float outerRadius, Registration reg = CENTER);
 		void star(int sides, const Vec2& radiusAndRatio);
 
 		// 3D Primitives

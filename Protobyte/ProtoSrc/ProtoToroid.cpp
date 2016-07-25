@@ -26,8 +26,8 @@
 
 using namespace ijg;
 
-ProtoToroid::ProtoToroid()
-{
+ProtoToroid::ProtoToroid():
+	ProtoGeom3(Vec3f(), Vec3f(), Dim3f(1, 1, 1), Col4f(0, 0, 0, 1)), ringCount(12), ringDetail(12), ringRadius(1), ringThickness(.65f) {
 }
 
 ProtoToroid::ProtoToroid(int ringCount, int ringDetail, float ringRadius, float ringThickness) :
@@ -44,6 +44,15 @@ ProtoToroid::ProtoToroid(const Vec3f& pos, const Vec3f& rot, const ProtoDimensio
 	int ringCount, int ringDetail, float ringRadius, float ringThickness, const std::string& textureImageURL, const Vec2f& textureScale) :
 ProtoGeom3(pos, rot, size, col4, textureImageURL, textureScale), ringCount(ringCount), ringDetail(ringDetail), ringRadius(ringRadius), ringThickness(ringThickness) {
     init();
+}
+
+// TEST to allow declared Toroid var to be used without invoking assignment op
+void ProtoToroid::update() {
+	if (verts.size() > 1 && inds.size()>1) {
+		verts.clear();
+		inds.clear();
+	}
+	init();
 }
 
 

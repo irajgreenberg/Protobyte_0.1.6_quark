@@ -49,9 +49,9 @@ void ProtoBaseApp::setWindowFrameSize(const Dim2i& windowFrameSize) {
 }
 
 
-void ProtoBaseApp::_init(){
+void ProtoBaseApp::_init() {
 	// get context (shared pointer)
-	
+
 
 	//GLint range[2];
 	//glGetIntegerv(GL_ALIASED_LINE_WIDTH_RANGE, range);
@@ -76,7 +76,7 @@ void ProtoBaseApp::_init(){
 	ctx->setGlobalAmbient({ .45f, .45f, .45f });
 
 	// default inital light
-	ctx->setLight(0, {0, 0, 600}, { 1, 1, 1 });
+	ctx->setLight(0, { 0, 0, 600 }, { 1, 1, 1 });
 	ctx->setLight(1, { 0, 0, 1 }, { 0, 0, 0 });
 	ctx->setLight(2, { 0, 0, 1 }, { 0, 0, 0 });
 	ctx->setLight(3, { 0, 0, 1 }, { 0, 0, 0 });
@@ -87,7 +87,7 @@ void ProtoBaseApp::_init(){
 
 	// initialize mouse vars
 	mouseX = mouseY = mouseLastFrameX = mouseLastFrameY = 0;
-	
+
 	//  initialize arcball vars
 	arcballRotX = arcballRotY = arcballRotXLast, arcballRotYLast = mouseXIn = mouseYIn = 0;
 	//isArcballOn = false;
@@ -113,9 +113,9 @@ void ProtoBaseApp::_init(){
 	bottom = -height / 2;
 	top = height / 2;*/
 
-	float viewAngle = 65.0f; 
-	float aspect = float(width) / float(height); 
-	float nearDist = 0.1f; 
+	float viewAngle = 65.0f;
+	float aspect = float(width) / float(height);
+	float nearDist = 0.1f;
 	float farDist = 3000.0f;
 	// perspective
 	ctx->setProjection(glm::perspective(viewAngle, aspect, nearDist, farDist));
@@ -125,7 +125,7 @@ void ProtoBaseApp::_init(){
 
 	// END Model / View / Projection data
 
-	
+
 	// START Shadow Map Matrices
 	//ctx->setLightViewMatrix(glm::lookAt(glm::vec3(ctx->getLight(0).getPosition().x, ctx->getLight(0).getPosition().y, ctx->getLight(0).getPosition().z), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0)));
 
@@ -138,14 +138,14 @@ void ProtoBaseApp::_init(){
 	//ctx->setLightProjectionMatrix(glm::frustum(-.1f, .1f, -.1f, .1f, .1f, 2000.0f));
 	ctx->setLightProjection(glm::perspective(viewAngle, aspect, nearDist, 5.0f));
 	//ctx->setLightProjection(glm::ortho(-2000.0f, 2000.0f, -2000.0f, 2000.0f, .1f, 2000.0f));
-	
+
 	//ctx->concatLightModelViewProjection();
 	ctx->setLightBias(glm::mat4(
 		glm::vec4(0.5, 0.0f, 0.0f, 0.0f),
 		glm::vec4(0.0f, 0.5, 0.0f, 0.0f),
 		glm::vec4(0.0f, 0.0f, 0.5, 0.0f),
 		glm::vec4(0.5f, 0.5f, 0.5f, 1.0f)
-		));
+	));
 	//ctx->concatLightModelViewBiasProjection();
 	//ctx->setLightProjectionMatrix(glm::frustum(-.1f, .1f, -.1f, .1f, .1f, 2000.0f));
 
@@ -202,6 +202,7 @@ void ProtoBaseApp::_init(){
 	_createQuad();
 	_createEllipse();
 	_createPath();
+	_createStar();
 
 	//3D
 	_createBox();
@@ -233,7 +234,7 @@ void ProtoBaseApp::setUpAxis(const Vec3& axis) {
 
 
 // create default buffers for rect function
-void ProtoBaseApp::_createRect(){
+void ProtoBaseApp::_createRect() {
 
 	// interleaved float[] (x, y, 0, r, g, b, a) 7*4 pts
 	float prims[] = {
@@ -242,7 +243,7 @@ void ProtoBaseApp::_createRect(){
 		0 + 1, 0 - 1, 0, fillColor.r, fillColor.g, fillColor.b, fillColor.a,
 		0 + 1, 0, 0, fillColor.r, fillColor.g, fillColor.b, fillColor.a
 	};
-	for (int i = 0; i < 28; ++i){
+	for (int i = 0; i < 28; ++i) {
 		rectPrims[i] = prims[i];
 	}
 
@@ -256,7 +257,7 @@ void ProtoBaseApp::_createRect(){
 	//GLuint vboID;
 	glGenBuffers(1, &vboRectID); // Create the buffer ID
 	glBindBuffer(GL_ARRAY_BUFFER, vboRectID); // Bind the buffer (vertex array data)
-	int vertsDataSize = sizeof (GLfloat)* 28;
+	int vertsDataSize = sizeof(GLfloat) * 28;
 	glBufferData(GL_ARRAY_BUFFER, vertsDataSize, NULL, GL_STREAM_DRAW);// allocate space
 	glBufferSubData(GL_ARRAY_BUFFER, 0, vertsDataSize, &rectPrims[0]); // upload the data
 
@@ -272,8 +273,8 @@ void ProtoBaseApp::_createRect(){
 	// stride is 7: pos(3) + col(4)
 	// (x, y, z, r, g, b, a)
 	int stride = 7;
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, stride * sizeof (GLfloat), BUFFER_OFFSET(0)); // pos
-	glVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, stride * sizeof (GLfloat), BUFFER_OFFSET(12)); // col
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, stride * sizeof(GLfloat), BUFFER_OFFSET(0)); // pos
+	glVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, stride * sizeof(GLfloat), BUFFER_OFFSET(12)); // col
 
 	// Disable buffers
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -281,7 +282,7 @@ void ProtoBaseApp::_createRect(){
 }
 
 // create default buffers for rect function
-void ProtoBaseApp::_createQuad(){
+void ProtoBaseApp::_createQuad() {
 
 	// interleaved float[] (x, y, 0, r, g, b, a) 7*4 pts
 	float prims[] = {
@@ -290,7 +291,7 @@ void ProtoBaseApp::_createQuad(){
 		0 + 1, 0 - 1, 0, fillColor.r, fillColor.g, fillColor.b, fillColor.a,
 		0 + 1, 0, 0, fillColor.r, fillColor.g, fillColor.b, fillColor.a
 	};
-	for (int i = 0; i < 28; ++i){
+	for (int i = 0; i < 28; ++i) {
 		quadPrims[i] = prims[i];
 	}
 
@@ -304,7 +305,7 @@ void ProtoBaseApp::_createQuad(){
 	//GLuint vboID;
 	glGenBuffers(1, &vboQuadID); // Create the buffer ID
 	glBindBuffer(GL_ARRAY_BUFFER, vboQuadID); // Bind the buffer (vertex array data)
-	int vertsDataSize = sizeof (GLfloat)* 28;
+	int vertsDataSize = sizeof(GLfloat) * 28;
 	glBufferData(GL_ARRAY_BUFFER, vertsDataSize, NULL, GL_STREAM_DRAW);// allocate space
 	glBufferSubData(GL_ARRAY_BUFFER, 0, vertsDataSize, &quadPrims[0]); // upload the data
 
@@ -320,8 +321,8 @@ void ProtoBaseApp::_createQuad(){
 	// stride is 7: pos(3) + col(4)
 	// (x, y, z, r, g, b, a)
 	int stride = 7;
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, stride * sizeof (GLfloat), BUFFER_OFFSET(0)); // pos
-	glVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, stride * sizeof (GLfloat), BUFFER_OFFSET(12)); // col
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, stride * sizeof(GLfloat), BUFFER_OFFSET(0)); // pos
+	glVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, stride * sizeof(GLfloat), BUFFER_OFFSET(12)); // col
 
 
 	// Disable buffers
@@ -333,7 +334,7 @@ void ProtoBaseApp::_createQuad(){
 // create default buffers for ellipse function
 void ProtoBaseApp::_createEllipse() {
 	float theta = 0.0;
-	for (int i = 0; i < ellipseDetail; i++){
+	for (int i = 0; i < ellipseDetail; i++) {
 		ellipsePrims.push_back(0 + cos(theta));
 		ellipsePrims.push_back(0 + sin(theta));
 		ellipsePrims.push_back(0);
@@ -353,7 +354,7 @@ void ProtoBaseApp::_createEllipse() {
 	// a. Vertex attributes vboID;
 	glGenBuffers(1, &vboEllipseID); // Create the buffer ID
 	glBindBuffer(GL_ARRAY_BUFFER, vboEllipseID); // Bind the buffer (vertex array data)
-	int vertsDataSize = sizeof (GLfloat)* ellipsePrims.size();
+	int vertsDataSize = sizeof(GLfloat)* ellipsePrims.size();
 	glBufferData(GL_ARRAY_BUFFER, vertsDataSize, NULL, GL_STREAM_DRAW);// allocate space
 	glBufferSubData(GL_ARRAY_BUFFER, 0, vertsDataSize, &ellipsePrims[0]); // upload the data
 
@@ -366,8 +367,8 @@ void ProtoBaseApp::_createEllipse() {
 	// stride is 7: pos(3) + col(4)
 	// (x, y, z, r, g, b, a)
 	int stride = 7;
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, stride * sizeof (GLfloat), BUFFER_OFFSET(0)); // pos
-	glVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, stride * sizeof (GLfloat), BUFFER_OFFSET(12)); // col
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, stride * sizeof(GLfloat), BUFFER_OFFSET(0)); // pos
+	glVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, stride * sizeof(GLfloat), BUFFER_OFFSET(12)); // col
 
 	// Disable buffers
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -381,15 +382,24 @@ void ProtoBaseApp::_createEllipse() {
 void ProtoBaseApp::_createStar() {
 	int starDetail = 3;
 	float theta = 0.0;
-	for (int i = 0; i < starDetail; i++){
-		starPrims.push_back(0 + cos(theta));
-		starPrims.push_back(0 + sin(theta));
+	float innerRadius = .65f;
+	float outerRadius = 1.0f;
+	int pts = starDetail * 2;
+	for (int i = 0; i < pts; i++) {
+		if (i % 2 == 0) {
+			starPrims.push_back(cos(theta)*outerRadius);
+			starPrims.push_back(sin(theta)*outerRadius);
+		}
+		else {
+			starPrims.push_back(cos(theta)*innerRadius);
+			starPrims.push_back(sin(theta)*innerRadius);
+		}
 		starPrims.push_back(0);
 		starPrims.push_back(fillColor.r);
 		starPrims.push_back(fillColor.g);
 		starPrims.push_back(fillColor.b);
 		starPrims.push_back(fillColor.a);
-		theta += TWO_PI / starDetail;
+		theta += TWO_PI / pts;
 	}
 
 	// vert data
@@ -401,7 +411,7 @@ void ProtoBaseApp::_createStar() {
 	// a. Vertex attributes vboID;
 	glGenBuffers(1, &vboStarID); // Create the buffer ID
 	glBindBuffer(GL_ARRAY_BUFFER, vboStarID); // Bind the buffer (vertex array data)
-	int vertsDataSize = sizeof (GLfloat)* starPrims.size();
+	int vertsDataSize = sizeof(GLfloat)* starPrims.size();
 	glBufferData(GL_ARRAY_BUFFER, vertsDataSize, NULL, GL_STREAM_DRAW);// allocate space
 	glBufferSubData(GL_ARRAY_BUFFER, 0, vertsDataSize, &starPrims[0]); // upload the data
 
@@ -414,8 +424,8 @@ void ProtoBaseApp::_createStar() {
 	// stride is 7: pos(3) + col(4)
 	// (x, y, z, r, g, b, a)
 	int stride = 7;
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, stride * sizeof (GLfloat), BUFFER_OFFSET(0)); // pos
-	glVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, stride * sizeof (GLfloat), BUFFER_OFFSET(12)); // col
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, stride * sizeof(GLfloat), BUFFER_OFFSET(0)); // pos
+	glVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, stride * sizeof(GLfloat), BUFFER_OFFSET(12)); // col
 
 	// Disable buffers
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -427,7 +437,7 @@ void ProtoBaseApp::_createStar() {
 // create default buffers for easy path
 // Enables begin/vertex/end immediate mode drawing
 // Use ProtoPath2 for higher performance path drawing
-void ProtoBaseApp::_createPath(){
+void ProtoBaseApp::_createPath() {
 	/*int pathDetail = 1;
 	float theta = 0.0;
 	for (int i = 0; i < pathDetail; i++){
@@ -463,8 +473,8 @@ void ProtoBaseApp::_createPath(){
 	// stride is 7: pos(3) + col(4)
 	// (x, y, z, r, g, b, a)
 	int stride = 7;
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, stride * sizeof (GLfloat), BUFFER_OFFSET(0)); // pos
-	glVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, stride * sizeof (GLfloat), BUFFER_OFFSET(12)); // col
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, stride * sizeof(GLfloat), BUFFER_OFFSET(0)); // pos
+	glVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, stride * sizeof(GLfloat), BUFFER_OFFSET(12)); // col
 
 	// Disable buffers
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -535,14 +545,14 @@ void ProtoBaseApp::_createBox() {
 	verts[23] = ProtoVertex3(boxVecs[2], fillColor, Tup2f(1.0 * textureScale.x, 0.0));
 
 	// calc normals and tangents and add to box vertices
-	for (int i = 0; i < 6; ++i){
+	for (int i = 0; i < 6; ++i) {
 		Face3 f = Face3(&verts[0 + i * 4], &verts[1 + i * 4], &verts[2 + i * 4]);
 		norms[i] = f.getNorm();
 		norms[i].normalize();
 		tans[i] = f.getTangent();
 		tans[i].normalize();
 
-		for (int j = 0; j < 4; ++j){
+		for (int j = 0; j < 4; ++j) {
 			int k = i * 4 + j;
 			verts[k].setNormal(norms[i]);
 			verts[k].setTangent(tans[i]);
@@ -552,7 +562,7 @@ void ProtoBaseApp::_createBox() {
 
 	// calc prims
 	// (x, y, z, nx, ny, nz, r, g, b, a, u, v, tx, ty, tz)
-	for (int i = 0, j = 0; i < 24; i++, j += 15){
+	for (int i = 0, j = 0; i < 24; i++, j += 15) {
 		boxPrims[j] = verts[i].pos.x;
 		boxPrims[j + 1] = verts[i].pos.y;
 		boxPrims[j + 2] = verts[i].pos.z;
@@ -570,7 +580,7 @@ void ProtoBaseApp::_createBox() {
 		boxPrims[j + 14] = verts[i].getTangent().z;
 	}
 
-	for (int i = 0; i < boxPrimCount; ++i){
+	for (int i = 0; i < boxPrimCount; ++i) {
 		boxPrimsOrig[i] = boxPrims[i];
 	}
 
@@ -583,7 +593,7 @@ void ProtoBaseApp::_createBox() {
 	// a. Vertex attributes vboID;
 	glGenBuffers(1, &vboBoxID); // Create the buffer ID
 	glBindBuffer(GL_ARRAY_BUFFER, vboBoxID); // Bind the buffer (vertex array data)
-	int vertsDataSize = sizeof (GLfloat)* boxPrimCount;
+	int vertsDataSize = sizeof(GLfloat)* boxPrimCount;
 	glBufferData(GL_ARRAY_BUFFER, vertsDataSize, NULL, GL_STREAM_DRAW);// allocate space
 	glBufferSubData(GL_ARRAY_BUFFER, 0, vertsDataSize, &boxPrims[0]); // upload the data
 
@@ -598,11 +608,11 @@ void ProtoBaseApp::_createBox() {
 
 	// (x, y, z, nx, ny, nz, r, g, b, a, u, v, tx, ty, tz)
 	const int STRIDE = 15;
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, STRIDE * sizeof (GLfloat), BUFFER_OFFSET(0)); // pos
-	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, STRIDE * sizeof (GLfloat), BUFFER_OFFSET(12)); // norm
-	glVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, STRIDE * sizeof (GLfloat), BUFFER_OFFSET(24)); // col
-	glVertexAttribPointer(3, 2, GL_FLOAT, GL_FALSE, STRIDE * sizeof (GLfloat), BUFFER_OFFSET(40)); // uv
-	glVertexAttribPointer(4, 3, GL_FLOAT, GL_FALSE, STRIDE * sizeof (GLfloat), BUFFER_OFFSET(48)); // tangent
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, STRIDE * sizeof(GLfloat), BUFFER_OFFSET(0)); // pos
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, STRIDE * sizeof(GLfloat), BUFFER_OFFSET(12)); // norm
+	glVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, STRIDE * sizeof(GLfloat), BUFFER_OFFSET(24)); // col
+	glVertexAttribPointer(3, 2, GL_FLOAT, GL_FALSE, STRIDE * sizeof(GLfloat), BUFFER_OFFSET(40)); // uv
+	glVertexAttribPointer(4, 3, GL_FLOAT, GL_FALSE, STRIDE * sizeof(GLfloat), BUFFER_OFFSET(48)); // tangent
 
 	// Disable buffers
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -656,7 +666,7 @@ void ProtoBaseApp::setAmbientMaterial(const Col4f& amb) {
 //		return false;
 //}
 
-bool ProtoBaseApp::createShadowMap(){
+bool ProtoBaseApp::createShadowMap() {
 
 	//set up shadow texture object
 	glGenTextures(1, &ctx->getShadowTexture_U());
@@ -692,7 +702,7 @@ bool ProtoBaseApp::createShadowMap(){
 	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, ctx->getShadowTexture_U(), 0);
 	//glFramebufferTexture(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, ctx->getShadowTexture_U(), 0);
 
-	if (glCheckFramebufferStatus(GL_FRAMEBUFFER) == GL_FRAMEBUFFER_COMPLETE){
+	if (glCheckFramebufferStatus(GL_FRAMEBUFFER) == GL_FRAMEBUFFER_COMPLETE) {
 		// unbind fbo
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 		return true;
@@ -709,7 +719,7 @@ bool ProtoBaseApp::createShadowMap(){
 //	
 //}
 
-void ProtoBaseApp::_initUniforms(ProtoShader* shader_ptr){
+void ProtoBaseApp::_initUniforms(ProtoShader* shader_ptr) {
 	//shader = _shader;
 	//bind shaders
 	//shader_ptr->bind();
@@ -763,9 +773,9 @@ void ProtoBaseApp::_initUniforms(ProtoShader* shader_ptr){
 	//shader_ptr->unbind();
 }
 
-void ProtoBaseApp::_run(const Vec2f& mousePos, const Vec4i& windowCoords/*, int mouseBtn, int key*/){
+void ProtoBaseApp::_run(const Vec2f& mousePos, const Vec4i& windowCoords/*, int mouseBtn, int key*/) {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	
+
 	// reset state
 	fillColor = Col4f(1, 1, 1, 1); // white fill
 	strokeColor = Col4f(0, 0, 0, 1); // black stroke
@@ -775,8 +785,8 @@ void ProtoBaseApp::_run(const Vec2f& mousePos, const Vec4i& windowCoords/*, int 
 	mouseX = mousePos.x;
 	mouseY = mousePos.y;
 	// mouse is moving/dragging
-	if (Vec2(mouseX, mouseY) - Vec2(mouseLastFrameX, mouseLastFrameY) != Vec2(0, 0)){
-		if (isMousePressed){
+	if (Vec2(mouseX, mouseY) - Vec2(mouseLastFrameX, mouseLastFrameY) != Vec2(0, 0)) {
+		if (isMousePressed) {
 
 			// arcball
 			//if (isArcballOn){
@@ -795,7 +805,7 @@ void ProtoBaseApp::_run(const Vec2f& mousePos, const Vec4i& windowCoords/*, int 
 	glUniform3fv(ctx->getGlobalAmbient_U(), 1, &ctx->getGlobalAmbient().r);
 
 	// update all 8 lights in shaders
-	for (int i = 0; i < 1; ++i){
+	for (int i = 0; i < 1; ++i) {
 		glUniform3fv(ctx->getLight_U(i).position, 1, &ctx->getLight(i).getPosition().x);
 		/*trace("ctx->getLight(",i,").getPosition().x =", ctx->getLight(i).getPosition().x);
 		trace("ctx->getLight(", i, ").getPosition().y =", ctx->getLight(i).getPosition().y);
@@ -831,7 +841,7 @@ void ProtoBaseApp::_run(const Vec2f& mousePos, const Vec4i& windowCoords/*, int 
 		glm::vec4(0.0f, .5, 0.0f, 0.0f),
 		glm::vec4(0.0f, 0.0f, .5, 0.0f),
 		glm::vec4(0.5f, 0.5f, 0.5f, 1.0f)
-		));
+	));
 	//ctx->concatLightModelViewBiasProjection();
 
 	//glUniformMatrix4fv(ctx->getLightModelViewDepthBiasProjection_U(), 1, GL_FALSE, &ctx->getShadowMatrix()[0][0]);
@@ -840,7 +850,7 @@ void ProtoBaseApp::_run(const Vec2f& mousePos, const Vec4i& windowCoords/*, int 
 	// some help from:http://www.opengl.org/discussion_boards/showthread.php/171184-GLM-to-create-gl_NormalMatrix
 	// update normals
 
-	
+
 
 	// enable  /disable lighting effects ofr 2D rendering
 	//ltRenderingFactors = Vec4f(1.0, 1.0, 1.0, 1.0); // default lighting
@@ -862,7 +872,7 @@ void ProtoBaseApp::_run(const Vec2f& mousePos, const Vec4i& windowCoords/*, int 
 
 	run();
 	push();
-   // display(); //Is this necessary??
+	// display(); //Is this necessary??
 	pop();
 	render();
 	mouseLastFrameX = mouseX;
@@ -878,7 +888,7 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 
 
 	// if shadowing is enabled do double pass with shadow map framebuffer
-	if (areShadowsEnabled){
+	if (areShadowsEnabled) {
 		//glEnable(GL_CULL_FACE);
 		//trace("shadows enabled");
 		// bind shadow map framebuffer
@@ -961,7 +971,7 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 		////glViewport(-i*width, -j*height, scaleFactor * width, scaleFactor * height);
 		glViewport(0, 0, getWidth(), getHeight());
 		//glViewport(x*width, y*height, scaleFactor * width, scaleFactor * height);
-		
+
 
 		// reset backface culling
 		glCullFace(GL_BACK);
@@ -984,7 +994,7 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 
 // Mouse event behavior
 void ProtoBaseApp::setMouseButton(int mouseAction, int mouseButton, int mouseMods) {
-	if (mouseAction == 1){
+	if (mouseAction == 1) {
 		isMousePressed = true;
 
 		// arcball
@@ -993,7 +1003,7 @@ void ProtoBaseApp::setMouseButton(int mouseAction, int mouseButton, int mouseMod
 
 		mousePressed();
 	}
-	else if (mouseAction == 0){
+	else if (mouseAction == 0) {
 		isMousePressed = false;
 
 		// arcball
@@ -1016,21 +1026,21 @@ void ProtoBaseApp::setKeyEvent(int key, int scancode, int action, int mods) {
 }
 
 //arcball
-void ProtoBaseApp::arcballBegin(){
+void ProtoBaseApp::arcballBegin() {
 	//isArcballOn = true;
 	push();
 	rotate(arcballRotX*PI / 180.0f, 1, 0, 0);
 	rotate(arcballRotY*PI / 180.0f, 0, 1, 0);
 }
 
-void ProtoBaseApp::arcballEnd(){
+void ProtoBaseApp::arcballEnd() {
 	//isArcballOn = false;
 	pop();
 }
 
 // gen funcs
 // overloaded background
-void ProtoBaseApp::setBackground(float r, float g, float b){
+void ProtoBaseApp::setBackground(float r, float g, float b) {
 	bgColor.setR(r);
 	bgColor.setG(g);
 	bgColor.setB(b);
@@ -1038,53 +1048,53 @@ void ProtoBaseApp::setBackground(float r, float g, float b){
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 }
 
-void ProtoBaseApp::setBackground(float c){
+void ProtoBaseApp::setBackground(float c) {
 	setBackground(c, c, c);
 }
 
-void ProtoBaseApp::setBackground(const Col3f& col){
+void ProtoBaseApp::setBackground(const Col3f& col) {
 	setBackground(col.getR(), col.getG(), col.getB());
 }
 
-void ProtoBaseApp::setBackground(const Col4f& col){
+void ProtoBaseApp::setBackground(const Col4f& col) {
 	setBackground(col.getR(), col.getG(), col.getB());
 }
 
 // END background
 
 //LIGHTS
-void ProtoBaseApp::lightsOn(){
+void ProtoBaseApp::lightsOn() {
 	//	glEnable(GL_LIGHTING);
 
 }
-void ProtoBaseApp::lightsOff(){
+void ProtoBaseApp::lightsOff() {
 	//	glDisable(GL_LIGHTING);
 }
 //END LIGHTS
 
 // window details
-void ProtoBaseApp::setWidth(int canvasWidth){
+void ProtoBaseApp::setWidth(int canvasWidth) {
 	this->canvasWidth = canvasWidth;
 	width = canvasWidth;
 	windowFrameSize.w = width;
 }
 
-void ProtoBaseApp::setHeight(int canvasHeight){
+void ProtoBaseApp::setHeight(int canvasHeight) {
 	this->canvasHeight = canvasHeight;
 	height = canvasHeight;
 	windowFrameSize.h = height;
 }
 
-void ProtoBaseApp::setSize(const Dim2i& canvasSize){
+void ProtoBaseApp::setSize(const Dim2i& canvasSize) {
 	this->canvasSize = canvasSize;
 }
 
 
-int ProtoBaseApp::getWidth() const{
+int ProtoBaseApp::getWidth() const {
 	return width;
 }
 
-int ProtoBaseApp::getHeight() const{
+int ProtoBaseApp::getHeight() const {
 	return height;
 }
 
@@ -1109,7 +1119,7 @@ Dim2i ProtoBaseApp::getWindowFrameSize() const {
 }
 
 // Load Image
-void ProtoBaseApp::loadImage(std::string imageName){
+void ProtoBaseApp::loadImage(std::string imageName) {
 	// START for relative resource loading
 	char cCurrentPath[FILENAME_MAX];
 
@@ -1119,7 +1129,7 @@ void ProtoBaseApp::loadImage(std::string imageName){
 		//return errno;
 	}
 	// NOTE - workspace project relative instead of using default derivedData path in Library
-	cCurrentPath[sizeof(cCurrentPath)-1] = '\0'; /* not really required */
+	cCurrentPath[sizeof(cCurrentPath) - 1] = '\0'; /* not really required */
 	std::string cp = cCurrentPath; //cast char[] to string
 	std::cout << "current path = " << cp << std::endl;
 	std::string pathExtension = "/resources/imgs";
@@ -1148,7 +1158,7 @@ void ProtoBaseApp::loadImage(std::string imageName){
 
 
 
-void ProtoBaseApp::GLSLInfo(ProtoShader* shader){
+void ProtoBaseApp::GLSLInfo(ProtoShader* shader) {
 	// START get all uniform shaders
 	GLint nUniforms, maxLen;
 	glGetProgramiv(shader->getID(), GL_ACTIVE_UNIFORM_MAX_LENGTH, &maxLen);
@@ -1161,7 +1171,7 @@ void ProtoBaseApp::GLSLInfo(ProtoShader* shader){
 	GLenum type;
 	printf("\n Location | Name\n");
 	printf("--------------------------------------------------\n");
-	for (int i = 0; i < nUniforms; ++i){
+	for (int i = 0; i < nUniforms; ++i) {
 		glGetActiveUniform(shader->getID(), i, maxLen, &written, &size, &type, name);
 		location = glGetUniformLocation(shader->getID(), name);
 		printf(" %-8d | %s\n", location, name);
@@ -1194,7 +1204,7 @@ void ProtoBaseApp::enable2DRendering() {
 	ctx->setLightRenderingFactors({ 0.0, 0.0, 0.0, 1.0 });
 	glUniform4fv(ctx->getLightRenderingFactors_U(), 1, &ctx->getLightRenderingFactors().x);
 }
-void ProtoBaseApp::disable2DRendering(){
+void ProtoBaseApp::disable2DRendering() {
 	//ltRenderingFactors = Vec4f(1.0, 1.0, 1.0, 0.0);
 	//glUniform4fv(lightRenderingFactors_U, 1, &ltRenderingFactors.x);
 
@@ -1308,11 +1318,11 @@ void ProtoBaseApp::bumpTexture(const ProtoTexture& bumpTexture) {
 
 
 //PRIMITIVES
-void ProtoBaseApp::rect(float x, float y, float w, float h, Registration reg){
+void ProtoBaseApp::rect(float x, float y, float w, float h, Registration reg) {
 
 	float _x = 0, _y = 0;
 
-	switch (reg){
+	switch (reg) {
 	case CENTER:
 		_x = x - w / 2;
 		_y = y + h / 2;
@@ -1371,8 +1381,8 @@ void ProtoBaseApp::rect(float x, float y, float w, float h, Registration reg){
 	int stride = 7;
 	int rectPrimCount = 28;
 
-	if (isFill){
-		for (int i = 0; i < rectPrimCount; i += stride){
+	if (isFill) {
+		for (int i = 0; i < rectPrimCount; i += stride) {
 			rectPrims[i + 3] = fillColor.r;
 			rectPrims[i + 4] = fillColor.g;
 			rectPrims[i + 5] = fillColor.b;
@@ -1383,7 +1393,7 @@ void ProtoBaseApp::rect(float x, float y, float w, float h, Registration reg){
 		glBindVertexArray(vaoRectID);
 		// NOTE::this may not be most efficient - eventually refactor
 		glBindBuffer(GL_ARRAY_BUFFER, vboRectID); // Bind the buffer (vertex array data)
-		int vertsDataSize = sizeof (GLfloat)* rectPrimCount;
+		int vertsDataSize = sizeof(GLfloat)* rectPrimCount;
 		glBufferData(GL_ARRAY_BUFFER, vertsDataSize, NULL, GL_STREAM_DRAW);// allocate space
 		glBufferSubData(GL_ARRAY_BUFFER, 0, vertsDataSize, &rectPrims[0]); // upload the data
 
@@ -1393,8 +1403,8 @@ void ProtoBaseApp::rect(float x, float y, float w, float h, Registration reg){
 		// Disable VAO
 		glBindVertexArray(0);
 	}
-	if (isStroke){
-		for (int i = 0; i < rectPrimCount; i += stride){
+	if (isStroke) {
+		for (int i = 0; i < rectPrimCount; i += stride) {
 			rectPrims[i + 3] = strokeColor.r;
 			rectPrims[i + 4] = strokeColor.g;
 			rectPrims[i + 5] = strokeColor.b;
@@ -1405,7 +1415,7 @@ void ProtoBaseApp::rect(float x, float y, float w, float h, Registration reg){
 		glBindVertexArray(vaoRectID);
 		// NOTE::this may not be most efficient - eventually refactor
 		glBindBuffer(GL_ARRAY_BUFFER, vboRectID); // Bind the buffer (vertex array data)
-		int vertsDataSize = sizeof (GLfloat)* rectPrimCount;
+		int vertsDataSize = sizeof(GLfloat)* rectPrimCount;
 		glBufferData(GL_ARRAY_BUFFER, vertsDataSize, NULL, GL_STREAM_DRAW);// allocate space
 		glBufferSubData(GL_ARRAY_BUFFER, 0, vertsDataSize, &rectPrims[0]); // upload the data
 
@@ -1428,9 +1438,9 @@ void ProtoBaseApp::rect(float radius1, float radius2, Registration reg) {
 }
 
 // point order: tl, bl, br, tr
-void ProtoBaseApp::quad(float x0, float y0, float x1, float y1, float x2, float y2, float x3, float y3, Registration reg){
+void ProtoBaseApp::quad(float x0, float y0, float x1, float y1, float x2, float y2, float x3, float y3, Registration reg) {
 	Vec2f sz = Vec2f(getMax(x3, x2) - getMin(x1, y0), getMax(y0, y3) - getMin(y1, y2));
-	switch (reg){
+	switch (reg) {
 	case CENTER:
 		quadPrims[0] = x0 - sz.x / 2;
 		quadPrims[1] = y0 + sz.y / 2;
@@ -1509,8 +1519,8 @@ void ProtoBaseApp::quad(float x0, float y0, float x1, float y1, float x2, float 
 	int stride = 7;
 	int quadPrimCount = 28;
 
-	if (isFill){
-		for (int i = 0; i < quadPrimCount; i += stride){
+	if (isFill) {
+		for (int i = 0; i < quadPrimCount; i += stride) {
 			quadPrims[i + 3] = fillColor.r;
 			quadPrims[i + 4] = fillColor.g;
 			quadPrims[i + 5] = fillColor.b;
@@ -1521,7 +1531,7 @@ void ProtoBaseApp::quad(float x0, float y0, float x1, float y1, float x2, float 
 		glBindVertexArray(vaoQuadID);
 		// NOTE::this may not be most efficient - eventually refactor
 		glBindBuffer(GL_ARRAY_BUFFER, vboQuadID); // Bind the buffer (vertex array data)
-		int vertsDataSize = sizeof (GLfloat)* quadPrimCount;
+		int vertsDataSize = sizeof(GLfloat)* quadPrimCount;
 		glBufferData(GL_ARRAY_BUFFER, vertsDataSize, NULL, GL_STREAM_DRAW);// allocate space
 		glBufferSubData(GL_ARRAY_BUFFER, 0, vertsDataSize, &quadPrims[0]); // upload the data
 
@@ -1531,8 +1541,8 @@ void ProtoBaseApp::quad(float x0, float y0, float x1, float y1, float x2, float 
 		// Disable VAO
 		glBindVertexArray(0);
 	}
-	if (isStroke){
-		for (int i = 0; i < quadPrimCount; i += stride){
+	if (isStroke) {
+		for (int i = 0; i < quadPrimCount; i += stride) {
 			quadPrims[i + 3] = strokeColor.r;
 			quadPrims[i + 4] = strokeColor.g;
 			quadPrims[i + 5] = strokeColor.b;
@@ -1543,7 +1553,7 @@ void ProtoBaseApp::quad(float x0, float y0, float x1, float y1, float x2, float 
 		glBindVertexArray(vaoQuadID);
 		// NOTE::this may not be most efficient - eventually refactor
 		glBindBuffer(GL_ARRAY_BUFFER, vboQuadID); // Bind the buffer (vertex array data)
-		int vertsDataSize = sizeof (GLfloat)* quadPrimCount;
+		int vertsDataSize = sizeof(GLfloat)* quadPrimCount;
 		glBufferData(GL_ARRAY_BUFFER, vertsDataSize, NULL, GL_STREAM_DRAW);// allocate space
 		glBufferSubData(GL_ARRAY_BUFFER, 0, vertsDataSize, &quadPrims[0]); // upload the data
 
@@ -1563,10 +1573,10 @@ void ProtoBaseApp::quad(const Vec2& pt0, const Vec2& pt1, const Vec2& pt2, const
 
 
 void ProtoBaseApp::ellipse(float x, float y, float w, float h, Registration reg) {
-	if (ellipsePrims.size() > 0){
+	if (ellipsePrims.size() > 0) {
 		ellipsePrims.clear();
 	}
-	
+
 	float _x = 0, _y = 0;
 
 	/* CENTER,
@@ -1577,7 +1587,7 @@ void ProtoBaseApp::ellipse(float x, float y, float w, float h, Registration reg)
 	RANDOM
 	*/
 
-	switch (reg){
+	switch (reg) {
 	case CENTER:
 		_x = x;
 		_y = y;
@@ -1606,7 +1616,7 @@ void ProtoBaseApp::ellipse(float x, float y, float w, float h, Registration reg)
 
 	int stride = 7;
 	float theta = 0.0;
-	for (int i = 0; i < ellipseDetail; i++){
+	for (int i = 0; i < ellipseDetail; i++) {
 		ellipsePrims.push_back(_x + cos(theta)*w / 2.0);
 		ellipsePrims.push_back(_y + sin(theta)*h / 2.0);
 		ellipsePrims.push_back(0);
@@ -1617,8 +1627,8 @@ void ProtoBaseApp::ellipse(float x, float y, float w, float h, Registration reg)
 		theta += TWO_PI / ellipseDetail;
 	}
 
-	if (isFill){
-		for (int i = 0; i < ellipsePrims.size(); i += stride){
+	if (isFill) {
+		for (int i = 0; i < ellipsePrims.size(); i += stride) {
 			ellipsePrims.at(i + 3) = fillColor.r;
 			ellipsePrims.at(i + 4) = fillColor.g;
 			ellipsePrims.at(i + 5) = fillColor.b;
@@ -1629,7 +1639,7 @@ void ProtoBaseApp::ellipse(float x, float y, float w, float h, Registration reg)
 		glBindVertexArray(vaoEllipseID);
 		// NOTE::this may not be most efficient - eventually refactor
 		glBindBuffer(GL_ARRAY_BUFFER, vboEllipseID); // Bind the buffer (vertex array data)
-		int vertsDataSize = sizeof (GLfloat)* ellipsePrims.size();
+		int vertsDataSize = sizeof(GLfloat)* ellipsePrims.size();
 		glBufferData(GL_ARRAY_BUFFER, vertsDataSize, NULL, GL_STREAM_DRAW);// allocate space
 		glBufferSubData(GL_ARRAY_BUFFER, 0, vertsDataSize, &ellipsePrims[0]); // upload the data
 
@@ -1639,8 +1649,8 @@ void ProtoBaseApp::ellipse(float x, float y, float w, float h, Registration reg)
 		// Disable VAO
 		glBindVertexArray(0);
 	}
-	if (isStroke){
-		for (int i = 0; i < ellipsePrims.size(); i += stride){
+	if (isStroke) {
+		for (int i = 0; i < ellipsePrims.size(); i += stride) {
 			ellipsePrims.at(i + 3) = strokeColor.r;
 			ellipsePrims.at(i + 4) = strokeColor.g;
 			ellipsePrims.at(i + 5) = strokeColor.b;
@@ -1651,7 +1661,7 @@ void ProtoBaseApp::ellipse(float x, float y, float w, float h, Registration reg)
 		glBindVertexArray(vaoEllipseID);
 		// NOTE::this may not be most efficient - eventually refactor
 		glBindBuffer(GL_ARRAY_BUFFER, vboEllipseID); // Bind the buffer (vertex array data)
-		int vertsDataSize = sizeof (GLfloat)* ellipsePrims.size();
+		int vertsDataSize = sizeof(GLfloat)* ellipsePrims.size();
 		glBufferData(GL_ARRAY_BUFFER, vertsDataSize, NULL, GL_STREAM_DRAW);// allocate space
 		glBufferSubData(GL_ARRAY_BUFFER, 0, vertsDataSize, &ellipsePrims[0]); // upload the data
 
@@ -1681,8 +1691,174 @@ void ProtoBaseApp::poly(int sides, float radius) {
 }
 void ProtoBaseApp::poly(int sides, float radius1, float radius2) {
 }
-void ProtoBaseApp::star(int sides, float innerRadius, float outerRadius) {
+void ProtoBaseApp::star(int sides, float innerRadius, float outerRadius, Registration reg) {
+	if (starPrims.size() > 0) {
+		starPrims.clear();
+	}
+
+	float x = 0, y = 0;
+	float _x = 0, _y = 0;
+
+	/* CENTER,
+	CORNER, // assumed top left
+	CORNER_TR,
+	CORNER_BR,
+	CORNER_BL,
+	RANDOM
+	*/
+
+	switch (reg) {
+	case CENTER:
+		_x = x;
+		_y = y;
+		break;
+	case CORNER: // TL
+		_x = x + outerRadius / 2;
+		_y = y - outerRadius / 2;
+		break;
+	case CORNER_TR:
+		_x = x - outerRadius / 2;
+		_y = y - outerRadius / 2;
+		break;
+	case CORNER_BR:
+		_x = x - outerRadius / 2;
+		_y = y + outerRadius / 2;
+		break;
+	case CORNER_BL:
+		_x = x + outerRadius / 2;
+		_y = y + outerRadius / 2;
+		break;
+	case RANDOM:
+		// to do
+		break;
+
+	}
+
+
+	//Calculate p2t points and tessellate:
+	std::vector<p2t::Point*> polyline;
+
+	int stride = 7;
+	float theta = 0.0;
+	int pts = sides * 2;
+
+	for (int i = 0; i < pts; i++) {
+		if (i % 2 == 0) {
+			polyline.push_back(new p2t::Point(_x + cos(theta)*outerRadius, _y + sin(theta)*outerRadius));
+		}
+		else {
+			polyline.push_back(new p2t::Point(_x + cos(theta)*innerRadius, _y + sin(theta)*innerRadius));
+		}
+		theta += TWO_PI / pts;
+	}
+
+	p2t::CDT* cdt = new p2t::CDT(polyline);
+	cdt->Triangulate();
+
+	// Constrained triangles
+	std::vector<p2t::Triangle*> triangles;
+	triangles = cdt->GetTriangles();
+
+	// Triangle map
+	std::list<p2t::Triangle*> map;
+	map = cdt->GetMap(); // not using for now
+
+	////cout << "Number of points = " << num_points << endl;
+	//std::cout << "Number of triangles = " << triangles.size() << std::endl;
+
+
+	for (int i = 0; i < triangles.size(); i++) {
+		for (int j = 0; j <3; j++) {
+			float x = triangles.at(i)->GetPoint(j)->x;
+			float y = triangles.at(i)->GetPoint(j)->y;
+			starPrims.push_back(x);
+			starPrims.push_back(y);
+			starPrims.push_back(0); //z
+			starPrims.push_back(fillColor.r);
+			starPrims.push_back(fillColor.g);
+			starPrims.push_back(fillColor.b);
+			starPrims.push_back(fillColor.a);
+		}
+	}
+
+	
+
+
+
+	//for (int i = 0; i < pts; i++) {
+	//	if (i % 2 == 0) {
+	//		starPrims.push_back(_x + cos(theta)*outerRadius);
+	//		starPrims.push_back(_y + sin(theta)*outerRadius);
+	//	} else {
+	//		starPrims.push_back(_x + cos(theta)*innerRadius);
+	//		starPrims.push_back(_y + sin(theta)*innerRadius);
+	//	}
+	//	starPrims.push_back(0); //z
+	//	starPrims.push_back(fillColor.r);
+	//	starPrims.push_back(fillColor.g);
+	//	starPrims.push_back(fillColor.b);
+	//	starPrims.push_back(fillColor.a);
+	//	theta += TWO_PI / pts;
+	//}
+
+	// TO DO: need to fix stroke
+	// TO DO: refactor
+
+
+
+	if (isFill) {
+		for (int i = 0; i < starPrims.size(); i += stride) {
+			starPrims.at(i + 3) = fillColor.r;
+			starPrims.at(i + 4) = fillColor.g;
+			starPrims.at(i + 5) = fillColor.b;
+			starPrims.at(i + 6) = fillColor.a;
+		}
+
+		enable2DRendering();
+		glBindVertexArray(vaoStarID);
+		// NOTE::this may not be most efficient - eventually refactor
+		glBindBuffer(GL_ARRAY_BUFFER, vboStarID); // Bind the buffer (vertex array data)
+		int vertsDataSize = sizeof(GLfloat)* starPrims.size();
+		glBufferData(GL_ARRAY_BUFFER, vertsDataSize, NULL, GL_STREAM_DRAW);// allocate space
+		glBufferSubData(GL_ARRAY_BUFFER, 0, vertsDataSize, &starPrims[0]); // upload the data
+
+		glDrawArrays(GL_TRIANGLES, 0, starPrims.size() / stride);
+		disable2DRendering();
+
+		// Disable VAO
+		glBindVertexArray(0);
+	}
+	if (isStroke) {
+		for (int i = 0; i < starPrims.size(); i += stride) {
+			starPrims.at(i + 3) = strokeColor.r;
+			starPrims.at(i + 4) = strokeColor.g;
+			starPrims.at(i + 5) = strokeColor.b;
+			starPrims.at(i + 6) = strokeColor.a;
+		}
+
+		enable2DRendering();
+		glBindVertexArray(vaoStarID);
+		// NOTE::this may not be most efficient - eventually refactor
+		glBindBuffer(GL_ARRAY_BUFFER, vboStarID); // Bind the buffer (vertex array data)
+		int vertsDataSize = sizeof(GLfloat)* starPrims.size();
+		glBufferData(GL_ARRAY_BUFFER, vertsDataSize, NULL, GL_STREAM_DRAW);// allocate space
+		glBufferSubData(GL_ARRAY_BUFFER, 0, vertsDataSize, &starPrims[0]); // upload the data
+
+		glLineWidth(lineWidth);
+		glDrawArrays(GL_LINE_LOOP, 0, starPrims.size() / stride);
+
+		disable2DRendering();
+
+		// Disable VAO
+		glBindVertexArray(0);
+	}
+
+	// clean up heap
+	for (int i = 0; i < polyline.size(); i++) {
+		delete polyline.at(i);
+	}
 }
+
 void ProtoBaseApp::star(int sides, const Vec2& radiusAndRatio) {
 }
 
@@ -1690,14 +1866,14 @@ void ProtoBaseApp::star(int sides, const Vec2& radiusAndRatio) {
 void ProtoBaseApp::beginPath(PathRenderMode pathRenderMode) {
 	this->pathRenderMode = pathRenderMode;
 	isPathRecording = true;
-	pathVerticesAll.size()>0 ? pathVerticesAll.clear() : 0;
-	pathPrimsFill.size()>0 ? pathPrimsFill.clear() : 0;
-	pathPrimsStroke.size()>0 ? pathPrimsStroke.clear() : 0;
+	pathVerticesAll.size() > 0 ? pathVerticesAll.clear() : 0;
+	pathPrimsFill.size() > 0 ? pathPrimsFill.clear() : 0;
+	pathPrimsStroke.size() > 0 ? pathPrimsStroke.clear() : 0;
 
-	curveDetails.size()>0 ? curveDetails.clear() : 0;
-	curveTensions.size()>0 ? curveTensions.clear() : 0;
-	curveBiases.size()>0 ? curveBiases.clear() : 0;
-	pathStrokeWeights.size()>0 ? pathStrokeWeights.clear() : 0;
+	curveDetails.size() > 0 ? curveDetails.clear() : 0;
+	curveTensions.size() > 0 ? curveTensions.clear() : 0;
+	curveBiases.size() > 0 ? curveBiases.clear() : 0;
+	pathStrokeWeights.size() > 0 ? pathStrokeWeights.clear() : 0;
 	// keeps track of insertion points of curveVertices in path
 	//curveVertexInsertionIndices.clear();
 	//pathInds.clear();
@@ -1715,7 +1891,7 @@ void ProtoBaseApp::vertex(float x, float y) {
 	vertex(x, y, 0);
 }
 void ProtoBaseApp::vertex(float x, float y, float z) {
-	if (isPathRecording){
+	if (isPathRecording) {
 		pathVerticesAll.push_back(std::tuple<Vec3f, char, Col4f, Col4f, float>(Vec3f(x, y, z), 'v', fillColor, strokeColor, lineWidth));
 		//pathStrokeWeights.push_back(lineWidth);
 	}
@@ -1735,7 +1911,7 @@ void ProtoBaseApp::curveVertex(float x, float y) {
 	curveVertex(x, y, 0);
 }
 void ProtoBaseApp::curveVertex(float x, float y, float z) {
-	if (isPathRecording){
+	if (isPathRecording) {
 		pathVerticesAll.push_back(std::tuple<Vec3f, char, Col4f, Col4f, float>(Vec3f(x, y, z), 'c', fillColor, strokeColor, lineWidth));
 		curveDetails.push_back(_curveDetail);
 		curveTensions.push_back(_curveTension);
@@ -1766,13 +1942,13 @@ void ProtoBaseApp::endPath(bool isClosed) {
 	//int interpDetail = 3;
 	//float smoothness = .7;
 
-	if (pathVerticesAll.size() > 0){
-		if (pathVerticesAll.size() < 3){
-		//	pathRenderMode = LINE_STRIP;
+	if (pathVerticesAll.size() > 0) {
+		if (pathVerticesAll.size() < 3) {
+			//	pathRenderMode = LINE_STRIP;
 		}
-		
+
 		for (int i = 0; i < pathVerticesAll.size(); ++i) {
-			
+
 			// detected curve vertex: create spline segment
 			Col4f c1, c2;
 			float wt1, wt2;
@@ -1782,7 +1958,7 @@ void ProtoBaseApp::endPath(bool isClosed) {
 				Vec3f v0, v1, v2, v3;
 				float t2 = 0, t3 = 0;
 				float step = 1.0 / (curveDetails.at(i) + 1);
-				if (i>0){
+				if (i > 0) {
 					// within bounds
 					auto v = pathVerticesAll.at(i - 1);
 					v0 = std::get<0>(v);
@@ -1800,29 +1976,30 @@ void ProtoBaseApp::endPath(bool isClosed) {
 					wt2 = std::get<4>(v);
 
 				}
-				
+
 				// within bounds
 				auto v = pathVerticesAll.at(i);
-				v1 = std::get<0>(v); 
+				v1 = std::get<0>(v);
 				c2 = std::get<3>(v);
 				wt2 = std::get<4>(v);
-				if (i < pathVerticesAll.size() - 2){
+				if (i < pathVerticesAll.size() - 2) {
 					// still at safe rigt bounds
-					auto v = pathVerticesAll.at(i+1); 
+					auto v = pathVerticesAll.at(i + 1);
 					v2 = std::get<0>(v);
 					//c2 = std::get<3>(v);
 
-					v = pathVerticesAll.at(i+2);
+					v = pathVerticesAll.at(i + 2);
 					v3 = std::get<0>(v);
 				}
-				else if (i < pathVerticesAll.size() - 1){
+				else if (i < pathVerticesAll.size() - 1) {
 					// will exceed right bounds so double up
 					auto v = pathVerticesAll.at(i + 1);
 					v2 = std::get<0>(v);
 					//c2 = std::get<3>(v);
 
 					v3 = std::get<0>(v);
-				} else {
+				}
+				else {
 					// will exceed right bounds so triple up
 					auto v = pathVerticesAll.at(i);
 					v2 = std::get<0>(v);
@@ -1855,7 +2032,7 @@ void ProtoBaseApp::endPath(bool isClosed) {
 					t3 = t*t2;
 					float tf = 1.0f;
 					// from: http://www.mvps.org/directx/articles/catmull/
-					
+
 					// Catmull-Rom (working)
 					//Vec3f v = 0.5f * (
 					//	(2.0f * v1) +
@@ -1870,8 +2047,8 @@ void ProtoBaseApp::endPath(bool isClosed) {
 						(2*tf*v0 + (tf-3)*v1 + (3-2*tf)*v2 - tf*v3) * t2 +
 						(tf*v0 + (2-tf)*v1 + (tf-2)*v2 + tf*v3) * t3;*/
 
-					// Hermite Implementation from Master Bourke (who else?)
-					// http://paulbourke.net/miscellaneous/interpolation/
+						// Hermite Implementation from Master Bourke (who else?)
+						// http://paulbourke.net/miscellaneous/interpolation/
 					m0 = (v1 - v0)*(1 + curveBiases.at(i))*(1 - curveTensions.at(i)) / 2.0f;
 					m0 += (v2 - v1)*(1 - curveBiases.at(i))*(1 - curveTensions.at(i)) / 2.0f;
 					m1 = (v2 - v1)*(1 + curveBiases.at(i))*(1 - curveTensions.at(i)) / 2.0f;
@@ -1896,10 +2073,10 @@ void ProtoBaseApp::endPath(bool isClosed) {
 				}
 			}
 			else {
-				
+
 				// detected linear vertex
-				auto v = pathVerticesAll.at(i); 
-				pathPrimsFill.push_back(PathPrims(std::get<0>(v).x, std::get<0>(v).y, std::get<0>(v).z, 
+				auto v = pathVerticesAll.at(i);
+				pathPrimsFill.push_back(PathPrims(std::get<0>(v).x, std::get<0>(v).y, std::get<0>(v).z,
 					std::get<2>(v).r, std::get<2>(v).g, std::get<2>(v).b, std::get<2>(v).a));
 				pathPrimsStroke.push_back(PathPrims(std::get<0>(v).x, std::get<0>(v).y, std::get<0>(v).z,
 					std::get<3>(v).r, std::get<3>(v).g, std::get<3>(v).b, std::get<3>(v).a));
@@ -1912,9 +2089,9 @@ void ProtoBaseApp::endPath(bool isClosed) {
 		glBindVertexArray(vaoPathID);
 		// NOTE::this may not be most efficient - eventually refactor
 		glBindBuffer(GL_ARRAY_BUFFER, vboPathID); // Bind the buffer (vertex array data)
-		if (isFill){
+		if (isFill) {
 			// using struct prims for coding tersity
-			int vertsDataSize = sizeof (PathPrims)* pathPrimsFill.size();
+			int vertsDataSize = sizeof(PathPrims)* pathPrimsFill.size();
 			glBufferData(GL_ARRAY_BUFFER, vertsDataSize, NULL, GL_STREAM_DRAW);// allocate space
 			glBufferSubData(GL_ARRAY_BUFFER, 0, vertsDataSize, &pathPrimsFill[0].x); // upload the data
 
@@ -1922,17 +2099,17 @@ void ProtoBaseApp::endPath(bool isClosed) {
 			glDrawArrays(GL_TRIANGLE_FAN, 0, pathPrimsFill.size());
 
 		}
-		if (isStroke){
-	
+		if (isStroke) {
+
 			// using struct prims for coding tersity
-			int vertsDataSize = sizeof (PathPrims)* pathPrimsStroke.size();
+			int vertsDataSize = sizeof(PathPrims)* pathPrimsStroke.size();
 			glBufferData(GL_ARRAY_BUFFER, vertsDataSize, NULL, GL_STREAM_DRAW);// allocate space
 			glBufferSubData(GL_ARRAY_BUFFER, 0, vertsDataSize, &pathPrimsStroke[0].x); // upload the data
 
 			glLineWidth(lineWidth);
 
 			// closed path
-			if (isClosed){
+			if (isClosed) {
 				//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 				glDrawArrays(GL_LINE_LOOP, 0, pathPrimsStroke.size());
 			}
@@ -1998,7 +2175,7 @@ void ProtoBaseApp::point(float x, float y) {
 #define GL_MULTISAMPLE_ARB 0x809D
 	glDisable(GL_MULTISAMPLE_ARB);
 	noStroke();
-	if (lineWidth < 2){
+	if (lineWidth < 2) {
 		rect(x, y, 1, 1);
 	}
 	else {
@@ -2066,7 +2243,7 @@ void ProtoBaseApp::box(float w, float h, float d, Registration reg) {
 
 	int stride = 15;
 
-	for (int i = 0; i < boxPrimCount; i += stride){
+	for (int i = 0; i < boxPrimCount; i += stride) {
 		boxPrims[i] = boxPrimsOrig[i] * w;
 		boxPrims[i + 1] = boxPrimsOrig[i + 1] * h;
 		boxPrims[i + 2] = boxPrimsOrig[i + 2] * d;
@@ -2077,7 +2254,7 @@ void ProtoBaseApp::box(float w, float h, float d, Registration reg) {
 	//	boxPrims[i + 2] *= d;
 	//}
 
-	if (isFill){
+	if (isFill) {
 
 		//GLuint diffMap = boxDiffuseMapTexture.getTextureID();
 		//glActiveTexture(GL_TEXTURE0);
@@ -2088,7 +2265,7 @@ void ProtoBaseApp::box(float w, float h, float d, Registration reg) {
 		//glBindTexture(GL_TEXTURE_2D, bumpMap);
 
 
-		for (int i = 0; i < boxPrimCount; i += stride){
+		for (int i = 0; i < boxPrimCount; i += stride) {
 			boxPrims[i + 6] = fillColor.r;
 			boxPrims[i + 7] = fillColor.g;
 			boxPrims[i + 8] = fillColor.b;
@@ -2099,7 +2276,7 @@ void ProtoBaseApp::box(float w, float h, float d, Registration reg) {
 		glBindVertexArray(vaoBoxID);
 		// NOTE::this may not be most efficient - eventually refactor
 		glBindBuffer(GL_ARRAY_BUFFER, vboBoxID); // Bind the buffer (vertex array data)
-		int vertsDataSize = sizeof (GLfloat)* boxPrimCount;
+		int vertsDataSize = sizeof(GLfloat)* boxPrimCount;
 		glBufferData(GL_ARRAY_BUFFER, vertsDataSize, NULL, GL_STREAM_DRAW);// allocate space
 		glBufferSubData(GL_ARRAY_BUFFER, 0, vertsDataSize, &boxPrims[0]); // upload the data
 		glPolygonMode(GL_FRONT, GL_FILL);
@@ -2113,9 +2290,9 @@ void ProtoBaseApp::box(float w, float h, float d, Registration reg) {
 
 
 
-	if (isStroke){
+	if (isStroke) {
 		//trace("in here");
-		for (int i = 0; i < boxPrimCount; i += stride){
+		for (int i = 0; i < boxPrimCount; i += stride) {
 			boxPrims[i + 6] = strokeColor.r;
 			boxPrims[i + 7] = strokeColor.g;
 			boxPrims[i + 8] = strokeColor.b;
@@ -2126,7 +2303,7 @@ void ProtoBaseApp::box(float w, float h, float d, Registration reg) {
 		glBindVertexArray(vaoBoxID);
 		// NOTE::this may not be most efficient - eventually refactor
 		glBindBuffer(GL_ARRAY_BUFFER, vboBoxID); // Bind the buffer (vertex array data)
-		int vertsDataSize = sizeof (GLfloat)* boxPrimCount;
+		int vertsDataSize = sizeof(GLfloat)* boxPrimCount;
 		glBufferData(GL_ARRAY_BUFFER, vertsDataSize, NULL, GL_STREAM_DRAW);// allocate space
 		glBufferSubData(GL_ARRAY_BUFFER, 0, vertsDataSize, &boxPrims[0]); // upload the data
 
@@ -2233,7 +2410,7 @@ void ProtoBaseApp::box(float w, float h, float d, Registration reg) {
 //
 //}
 
-void ProtoBaseApp::save(std::string name, int scaleFactor){
+void ProtoBaseApp::save(std::string name, int scaleFactor) {
 	//trace("ProtoUtility::getPathToOutput() =", ProtoUtility::getPathToOutput());
 	//if (getFrameCount() < 1){
 
@@ -2266,8 +2443,8 @@ void ProtoBaseApp::save(std::string name, int scaleFactor){
 
 	/*trace("width =", width);
 	trace("height =", height);*/
-	for (int i = 0; i < scaleFactor; ++i){
-		for (int j = 0; j < scaleFactor; ++j){
+	for (int i = 0; i < scaleFactor; ++i) {
+		for (int j = 0; j < scaleFactor; ++j) {
 			//trace("in drawToFrameBuffer");
 			//glClearColor(0, 0, 0, 1.0f);
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
@@ -2319,10 +2496,10 @@ void ProtoBaseApp::save(std::string name, int scaleFactor){
 			// ensure no single digit nums, for easy sorting
 			std::string imgNum;
 
-			if (i*scaleFactor + j < 10){
+			if (i*scaleFactor + j < 10) {
 				imgNum = "00" + std::to_string(i*scaleFactor + j);
 			}
-			else if (i*scaleFactor + j < 100){
+			else if (i*scaleFactor + j < 100) {
 				imgNum = "0" + std::to_string(i*scaleFactor + j);
 			}
 			else {
@@ -2456,11 +2633,11 @@ void ProtoBaseApp::save(std::string name, int scaleFactor){
 //	//mtx.unlock();
 //}
 
-bool ProtoBaseApp::stitchTiles(std::string url, int tiles){
+bool ProtoBaseApp::stitchTiles(std::string url, int tiles) {
 	trace(" url =", url);
 	url += "\\";
 	std::vector<std::string> fileNames = ProtoUtility::getFileNames(url);
-	for (size_t i = 0; i < fileNames.size(); ++i){
+	for (size_t i = 0; i < fileNames.size(); ++i) {
 		//trace(fileNames.at(i));
 	}
 	// composite image creation
@@ -2477,8 +2654,8 @@ bool ProtoBaseApp::stitchTiles(std::string url, int tiles){
 
 
 
-	for (int i = 0; i < tiles; ++i){
-		for (int j = 0; j < tiles; ++j){
+	for (int i = 0; i < tiles; ++i) {
+		for (int j = 0; j < tiles; ++j) {
 
 			int id = i*tiles + j;
 
@@ -2564,39 +2741,39 @@ bool ProtoBaseApp::stitchTiles(std::string url, int tiles){
 }
 
 // matrix transformation functions, in style of GL 1.0
-void ProtoBaseApp::translate(float tx, float ty, float tz){
+void ProtoBaseApp::translate(float tx, float ty, float tz) {
 	ctx->translate(tx, ty, tz);
 }
 
-void ProtoBaseApp::translate(const Vec3f& tXYZ){
+void ProtoBaseApp::translate(const Vec3f& tXYZ) {
 	ctx->translate(tXYZ);
 }
 
-void ProtoBaseApp::rotate(float angle, float axisX, float axisY, float axisZ){
+void ProtoBaseApp::rotate(float angle, float axisX, float axisY, float axisZ) {
 	ctx->rotate(angle, axisX, axisY, axisZ);
 }
 
-void ProtoBaseApp::rotate(float angle, const Vec3f& rXYZ){
+void ProtoBaseApp::rotate(float angle, const Vec3f& rXYZ) {
 	ctx->rotate(angle, rXYZ);
 }
 
-void ProtoBaseApp::scale(float s){
+void ProtoBaseApp::scale(float s) {
 	ctx->scale(s);
 }
 
-void ProtoBaseApp::scale(float sx, float sy, float sz){
+void ProtoBaseApp::scale(float sx, float sy, float sz) {
 	ctx->scale(sx, sy, sz);
 }
 
-void ProtoBaseApp::scale(const Vec3f& sXYZ){
+void ProtoBaseApp::scale(const Vec3f& sXYZ) {
 	ctx->scale(sXYZ);
 }
 
-void ProtoBaseApp::push(){
+void ProtoBaseApp::push() {
 	ctx->push();
 }
 
-void ProtoBaseApp::pop(){
+void ProtoBaseApp::pop() {
 	ctx->pop();
 }
 
@@ -2604,15 +2781,15 @@ void ProtoBaseApp::pop(){
 
 
 // Mouse & Key Events
-void ProtoBaseApp::keyPressed(){}
-void ProtoBaseApp::mousePressed(){}
-void ProtoBaseApp::mouseRightPressed(){}
-void ProtoBaseApp::mouseReleased(){}
-void ProtoBaseApp::mouseRightReleased(){}
-void ProtoBaseApp::mouseMoved(){}
-void ProtoBaseApp::mouseDragged(){}
+void ProtoBaseApp::keyPressed() {}
+void ProtoBaseApp::mousePressed() {}
+void ProtoBaseApp::mouseRightPressed() {}
+void ProtoBaseApp::mouseReleased() {}
+void ProtoBaseApp::mouseRightReleased() {}
+void ProtoBaseApp::mouseMoved() {}
+void ProtoBaseApp::mouseDragged() {}
 
 // Window Events
-void ProtoBaseApp::onResized(){}
-void ProtoBaseApp::onClosed(){}
+void ProtoBaseApp::onResized() {}
+void ProtoBaseApp::onClosed() {}
 
