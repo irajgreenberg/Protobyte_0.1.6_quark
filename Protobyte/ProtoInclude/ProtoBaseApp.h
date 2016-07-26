@@ -315,13 +315,12 @@ namespace ijg {
 		void _createEllipse();
 
 		// star buffer ids
-		std::vector<float> starPrims;
+		std::vector<float> starPrims, starStrokePrims;
 		GLuint vaoStarID, vboStarID;
 		void _createStar();
 
 		// path buffer ids (for begin(), vertex(), end())
 		bool isPathRecording;
-		//ProtoTessellator tess;
 
 		//std::vector<float> pathPrims;
 		// class for pathPrims

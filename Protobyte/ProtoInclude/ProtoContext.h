@@ -282,16 +282,19 @@ namespace ijg {
 	inline void ProtoContext::setModel(const glm::mat4& model) {
 		this->model = model;
 		glUniformMatrix4fv(model_U, 1, GL_FALSE, &model[0][0]);
+		concat();
 	}
 
 	inline void ProtoContext::setView(const glm::mat4& view) {
 		this->view = view;
 		glUniformMatrix4fv(view_U, 1, GL_FALSE, &view[0][0]);
+		concat();
 	}
 
 	inline void ProtoContext::setProjection(const glm::mat4& projection) {
 		this->projection = projection;
 		glUniformMatrix4fv(projection_U, 1, GL_FALSE, &projection[0][0]);
+		concat();
 	}
 
 	// Matrix concatenations functions

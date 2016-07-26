@@ -99,8 +99,10 @@ void ProtoBaseApp::_init() {
 	//glViewport(0, 0, width, height);
 
 	// START standard transformation matrices: ModelView / Projection / Normal
+
 	ctx->setModel(glm::mat4(1.0f));
-	ctx->setView(glm::lookAt(glm::vec3(0.0, 0.0, 0), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0)));
+
+	ctx->setView(glm::lookAt(glm::vec3(0.0, 0.0, 100), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0)));
 	ctx->concatModelView();
 	//ctx->createNormalMatrix();
 
@@ -216,6 +218,7 @@ void ProtoBaseApp::_init() {
 
 
 
+	//call init() in derived ProtoController class
 	init();
 
 }
@@ -380,25 +383,25 @@ void ProtoBaseApp::_createEllipse() {
 // create default buffers for ellipse function
 // TO DO: Finish
 void ProtoBaseApp::_createStar() {
-	int starDetail = 3;
+	int sides = 3;
 	float theta = 0.0;
 	float innerRadius = .65f;
 	float outerRadius = 1.0f;
-	int pts = starDetail * 2;
+	int pts = sides * 2;
 	for (int i = 0; i < pts; i++) {
 		if (i % 2 == 0) {
-			starPrims.push_back(cos(theta)*outerRadius);
-			starPrims.push_back(sin(theta)*outerRadius);
+			starStrokePrims.push_back(cos(theta)*outerRadius);
+			starStrokePrims.push_back(sin(theta)*outerRadius);
 		}
 		else {
-			starPrims.push_back(cos(theta)*innerRadius);
-			starPrims.push_back(sin(theta)*innerRadius);
+			starStrokePrims.push_back(cos(theta)*innerRadius);
+			starStrokePrims.push_back(sin(theta)*innerRadius);
 		}
-		starPrims.push_back(0);
-		starPrims.push_back(fillColor.r);
-		starPrims.push_back(fillColor.g);
-		starPrims.push_back(fillColor.b);
-		starPrims.push_back(fillColor.a);
+		starStrokePrims.push_back(0);
+		starStrokePrims.push_back(fillColor.r);
+		starStrokePrims.push_back(fillColor.g);
+		starStrokePrims.push_back(fillColor.b);
+		starStrokePrims.push_back(fillColor.a);
 		theta += TWO_PI / pts;
 	}
 
@@ -411,9 +414,9 @@ void ProtoBaseApp::_createStar() {
 	// a. Vertex attributes vboID;
 	glGenBuffers(1, &vboStarID); // Create the buffer ID
 	glBindBuffer(GL_ARRAY_BUFFER, vboStarID); // Bind the buffer (vertex array data)
-	int vertsDataSize = sizeof(GLfloat)* starPrims.size();
+	int vertsDataSize = sizeof(GLfloat)* starStrokePrims.size();
 	glBufferData(GL_ARRAY_BUFFER, vertsDataSize, NULL, GL_STREAM_DRAW);// allocate space
-	glBufferSubData(GL_ARRAY_BUFFER, 0, vertsDataSize, &starPrims[0]); // upload the data
+	glBufferSubData(GL_ARRAY_BUFFER, 0, vertsDataSize, &starStrokePrims[0]); // upload the data
 
 	// fill state is true - need to create this
 	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
@@ -431,7 +434,7 @@ void ProtoBaseApp::_createStar() {
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glBindVertexArray(0);
 
-	starPrims.clear();
+	starStrokePrims.clear();
 }
 
 // create default buffers for easy path
@@ -819,7 +822,7 @@ void ProtoBaseApp::_run(const Vec2f& mousePos, const Vec4i& windowCoords/*, int 
 	// I thought I needed this to reset matrix each frame?
 	ctx->setModel(glm::mat4(1.0f));
 	// was 18
-	ctx->setView(glm::lookAt(glm::vec3(-50, 0, 1200), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0)));
+	ctx->setView(glm::lookAt(glm::vec3(0, 0, 212), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0)));
 	ctx->concatModelView();
 	ctx->concatModelViewProjection();
 	//ctx->createNormalMatrix();
@@ -1611,7 +1614,6 @@ void ProtoBaseApp::ellipse(float x, float y, float w, float h, Registration reg)
 	case RANDOM:
 		// to do
 		break;
-
 	}
 
 	int stride = 7;
@@ -1696,6 +1698,10 @@ void ProtoBaseApp::star(int sides, float innerRadius, float outerRadius, Registr
 		starPrims.clear();
 	}
 
+	if (starStrokePrims.size() > 0) {
+		starStrokePrims.clear();
+	}
+
 	float x = 0, y = 0;
 	float _x = 0, _y = 0;
 
@@ -1734,7 +1740,6 @@ void ProtoBaseApp::star(int sides, float innerRadius, float outerRadius, Registr
 
 	}
 
-
 	//Calculate p2t points and tessellate:
 	std::vector<p2t::Point*> polyline;
 
@@ -1745,30 +1750,41 @@ void ProtoBaseApp::star(int sides, float innerRadius, float outerRadius, Registr
 	for (int i = 0; i < pts; i++) {
 		if (i % 2 == 0) {
 			polyline.push_back(new p2t::Point(_x + cos(theta)*outerRadius, _y + sin(theta)*outerRadius));
+
+			// Required for outline
+			starStrokePrims.push_back(_x + cos(theta)*outerRadius);
+			starStrokePrims.push_back(_y + sin(theta)*outerRadius);
 		}
 		else {
 			polyline.push_back(new p2t::Point(_x + cos(theta)*innerRadius, _y + sin(theta)*innerRadius));
+
+			// Required for outline
+			starStrokePrims.push_back(_x + cos(theta)*innerRadius);
+			starStrokePrims.push_back(_y + sin(theta)*innerRadius);
 		}
+
+		// Required for outline
+		starStrokePrims.push_back(0); //z
+		starStrokePrims.push_back(fillColor.r);
+		starStrokePrims.push_back(fillColor.g);
+		starStrokePrims.push_back(fillColor.b);
+		starStrokePrims.push_back(fillColor.a);
+
 		theta += TWO_PI / pts;
 	}
 
+	//Tessellate for fill
 	p2t::CDT* cdt = new p2t::CDT(polyline);
 	cdt->Triangulate();
 
-	// Constrained triangles
+	// Get triangles
 	std::vector<p2t::Triangle*> triangles;
 	triangles = cdt->GetTriangles();
 
-	// Triangle map
-	std::list<p2t::Triangle*> map;
-	map = cdt->GetMap(); // not using for now
-
-	////cout << "Number of points = " << num_points << endl;
-	//std::cout << "Number of triangles = " << triangles.size() << std::endl;
-
-
+	// TO DO: refactor (too many loops)
+	// populate primitives arr
 	for (int i = 0; i < triangles.size(); i++) {
-		for (int j = 0; j <3; j++) {
+		for (int j = 0; j < 3; j++) {
 			float x = triangles.at(i)->GetPoint(j)->x;
 			float y = triangles.at(i)->GetPoint(j)->y;
 			starPrims.push_back(x);
@@ -1780,31 +1796,6 @@ void ProtoBaseApp::star(int sides, float innerRadius, float outerRadius, Registr
 			starPrims.push_back(fillColor.a);
 		}
 	}
-
-	
-
-
-
-	//for (int i = 0; i < pts; i++) {
-	//	if (i % 2 == 0) {
-	//		starPrims.push_back(_x + cos(theta)*outerRadius);
-	//		starPrims.push_back(_y + sin(theta)*outerRadius);
-	//	} else {
-	//		starPrims.push_back(_x + cos(theta)*innerRadius);
-	//		starPrims.push_back(_y + sin(theta)*innerRadius);
-	//	}
-	//	starPrims.push_back(0); //z
-	//	starPrims.push_back(fillColor.r);
-	//	starPrims.push_back(fillColor.g);
-	//	starPrims.push_back(fillColor.b);
-	//	starPrims.push_back(fillColor.a);
-	//	theta += TWO_PI / pts;
-	//}
-
-	// TO DO: need to fix stroke
-	// TO DO: refactor
-
-
 
 	if (isFill) {
 		for (int i = 0; i < starPrims.size(); i += stride) {
@@ -1829,23 +1820,23 @@ void ProtoBaseApp::star(int sides, float innerRadius, float outerRadius, Registr
 		glBindVertexArray(0);
 	}
 	if (isStroke) {
-		for (int i = 0; i < starPrims.size(); i += stride) {
-			starPrims.at(i + 3) = strokeColor.r;
-			starPrims.at(i + 4) = strokeColor.g;
-			starPrims.at(i + 5) = strokeColor.b;
-			starPrims.at(i + 6) = strokeColor.a;
+		for (int i = 0; i < starStrokePrims.size(); i += stride) {
+			starStrokePrims.at(i + 3) = strokeColor.r;
+			starStrokePrims.at(i + 4) = strokeColor.g;
+			starStrokePrims.at(i + 5) = strokeColor.b;
+			starStrokePrims.at(i + 6) = strokeColor.a;
 		}
-
+		// note: reusing star id's with different collection of primitives
 		enable2DRendering();
 		glBindVertexArray(vaoStarID);
 		// NOTE::this may not be most efficient - eventually refactor
 		glBindBuffer(GL_ARRAY_BUFFER, vboStarID); // Bind the buffer (vertex array data)
-		int vertsDataSize = sizeof(GLfloat)* starPrims.size();
+		int vertsDataSize = sizeof(GLfloat)* starStrokePrims.size();
 		glBufferData(GL_ARRAY_BUFFER, vertsDataSize, NULL, GL_STREAM_DRAW);// allocate space
-		glBufferSubData(GL_ARRAY_BUFFER, 0, vertsDataSize, &starPrims[0]); // upload the data
+		glBufferSubData(GL_ARRAY_BUFFER, 0, vertsDataSize, &starStrokePrims[0]); // upload the data
 
 		glLineWidth(lineWidth);
-		glDrawArrays(GL_LINE_LOOP, 0, starPrims.size() / stride);
+		glDrawArrays(GL_LINE_LOOP, 0, starStrokePrims.size() / stride);
 
 		disable2DRendering();
 
@@ -1853,10 +1844,11 @@ void ProtoBaseApp::star(int sides, float innerRadius, float outerRadius, Registr
 		glBindVertexArray(0);
 	}
 
-	// clean up heap
+	// clean up heap, from poly2tri tessellation
 	for (int i = 0; i < polyline.size(); i++) {
 		delete polyline.at(i);
 	}
+	delete cdt;
 }
 
 void ProtoBaseApp::star(int sides, const Vec2& radiusAndRatio) {
@@ -1941,6 +1933,10 @@ void ProtoBaseApp::endPath(bool isClosed) {
 	// eventually parameterize these
 	//int interpDetail = 3;
 	//float smoothness = .7;
+
+	//Calculate p2t points and tessellate:
+	std::vector<p2t::Point*> polyline;  // TO DO
+	p2t::CDT* cdt;
 
 	if (pathVerticesAll.size() > 0) {
 		if (pathVerticesAll.size() < 3) {
@@ -2068,6 +2064,10 @@ void ProtoBaseApp::endPath(bool isClosed) {
 					strokeWeight(wt1 + deltaWeight*t);
 					Col4f sc(c1.r + deltaR*t, c1.g + deltaG*t, c1.b + deltaB*t, c1.a + deltaA*t);
 					//trace(sc);
+
+					// for tessellation -problem I think with duplicate points
+					polyline.push_back(new p2t::Point(v.x, v.y));
+
 					pathPrimsFill.push_back(PathPrims(v.x, v.y, v.z, fillColor.r, fillColor.b, fillColor.g, fillColor.a));
 					pathPrimsStroke.push_back(PathPrims(v.x, v.y, v.z, sc.r, sc.g, sc.b, sc.a));
 				}
@@ -2076,6 +2076,10 @@ void ProtoBaseApp::endPath(bool isClosed) {
 
 				// detected linear vertex
 				auto v = pathVerticesAll.at(i);
+
+				// for tessellation
+				polyline.push_back(new p2t::Point((float)std::get<0>(v).x, (float)std::get<0>(v).y));
+
 				pathPrimsFill.push_back(PathPrims(std::get<0>(v).x, std::get<0>(v).y, std::get<0>(v).z,
 					std::get<2>(v).r, std::get<2>(v).g, std::get<2>(v).b, std::get<2>(v).a));
 				pathPrimsStroke.push_back(PathPrims(std::get<0>(v).x, std::get<0>(v).y, std::get<0>(v).z,
@@ -2083,6 +2087,16 @@ void ProtoBaseApp::endPath(bool isClosed) {
 			}
 		}
 	}
+
+	//Tessellate for fill
+	cdt = new p2t::CDT(polyline);
+	cdt->Triangulate();
+
+	//// Get triangles
+	std::vector<p2t::Triangle*> triangles;
+	triangles = cdt->GetTriangles();
+
+
 	switch (pathRenderMode) {
 	case POLYGON:
 		enable2DRendering(); // turn off 3D lighting
@@ -2150,7 +2164,15 @@ void ProtoBaseApp::endPath(bool isClosed) {
 	pathPrimsStroke.clear();
 	pathPrimsFill.clear();
 	pathVerticesAll.clear();
+
+	// clean up heap
+	// clean up heap, from poly2tri tessellation
+	for (int i = 0; i < polyline.size(); i++) {
+		delete polyline.at(i);
+	}
+	delete cdt;
 }
+
 void ProtoBaseApp::line(float x1, float y1, float x2, float y2) {
 	beginShape();
 	vertex(x1, y1);

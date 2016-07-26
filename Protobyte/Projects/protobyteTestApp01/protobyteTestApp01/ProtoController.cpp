@@ -1,14 +1,14 @@
 #include "ProtoController.h"
 
 void ProtoController::init() {
-	setLight(0, { 0, 0, 600 }, { 1, 1, 1 });
+	setLight(0, { -300, 0, 300 }, { 1, .4f, 1 });
 	shadowsOn();
 	// no longer need to call assignment op
 	//t = Toroid({ 0, 0, 0 }, { 0, 0, 0 }, { 1, 1, 1 }, { 1, 1, 1, .75f }, 12, 12, 125, 45);
-	t.setRingCount(42);
-	t.setRingDetail(42);
-	t.setRingThickness(300);
-	t.setRingRadius(500);
+	t.setRingCount(16);
+	t.setRingDetail(16);
+	t.setRingThickness(30);
+	t.setRingRadius(100);
 
 	//t = Toroid(16, 16, 425, 145);
 	t.setDiffuseMaterial({ 1, 1, 1, 1 });
@@ -40,28 +40,56 @@ void ProtoController::init() {
 		cols.push_back({ random(1.0), random(1.0), random(1.0) });
 	}
 	pBall = new ProtoRootBall({}, {}, { 1, 1, 1 }, cols, roots, 50, 9.4f, { 70.5f, 90.5f }, textureURLs, textureScales);*/
-	printModelMatrix();
-	printViewMatrix();
-	printModelViewMatrix();
-	printProjectionMatrix();
+	//printModelMatrix();
+	//printViewMatrix();
+	//printModelViewMatrix();
+	//printProjectionMatrix();
 }
 
 void ProtoController::run() {
 }
 
 void ProtoController::display() {
+	//printViewMatrix();
+	translate(0, 0, 0);
 	arcBallBegin();
 	push();
-	scale(2); 
+	//scale(2); 
 	fill(.5, .1, .2);
 	translate(0, 0, 0);
-	noStroke();
-	star(26, 350, 400);
+	//noStroke();
+	lineWidth = 6;
+	stroke(.85, .3, .9);
+	//star(9, 350, 140);
+
+	lineWidth = 11;
+	fill(.2, .3, .8);
+	int stride = 7;
+	float theta = 0.0;
+	int sides = 3;
+	int pts = sides * 2;
+	float outerRadius = 200;
+	float innerRadius = 70;
+
+	//noFill();
+	beginShape();
+	for (int i = 0; i < pts; i++) {
+		if (i % 2 == 0) {
+			// Required for outline
+			vertex(cos(theta)*outerRadius, sin(theta)*outerRadius);
+		}
+		else {
+			// Required for outline
+			vertex(cos(theta)*innerRadius, sin(theta)*innerRadius);
+		}
+		theta += TWO_PI / pts;
+	}
+	endShape(CLOSE);
 	//ellipse(100, 100, 50, 50);
 	//rect(200, 200, 150, 300);
 	pop();
 	push();
-	translate(-300, 200, 0);
+	translate(100, 0, 0);
 	rotate(getFrameCount()*PI/180.0f, { 1, .2f, 0 });
 	//plane.display();
 	t.display();
