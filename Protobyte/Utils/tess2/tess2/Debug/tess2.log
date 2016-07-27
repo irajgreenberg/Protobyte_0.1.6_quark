@@ -1,0 +1,15 @@
+﻿  tess.c
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\utils\libtess2\source\tess.c : fatal error C1853: 'Debug\tess2.pch' precompiled header file is from a previous version of the compiler, or the precompiled header is C++ and you are using it from C (or vice versa)
+  sweep.c
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\utils\libtess2\source\sweep.c : fatal error C1853: 'Debug\tess2.pch' precompiled header file is from a previous version of the compiler, or the precompiled header is C++ and you are using it from C (or vice versa)
+  priorityq.c
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\utils\libtess2\source\priorityq.c : fatal error C1853: 'Debug\tess2.pch' precompiled header file is from a previous version of the compiler, or the precompiled header is C++ and you are using it from C (or vice versa)
+  mesh.c
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\utils\libtess2\source\mesh.c : fatal error C1853: 'Debug\tess2.pch' precompiled header file is from a previous version of the compiler, or the precompiled header is C++ and you are using it from C (or vice versa)
+  geom.c
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\utils\libtess2\source\geom.c : fatal error C1853: 'Debug\tess2.pch' precompiled header file is from a previous version of the compiler, or the precompiled header is C++ and you are using it from C (or vice versa)
+  dict.c
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\utils\libtess2\source\dict.c : fatal error C1853: 'Debug\tess2.pch' precompiled header file is from a previous version of the compiler, or the precompiled header is C++ and you are using it from C (or vice versa)
+  bucketalloc.c
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\utils\libtess2\source\bucketalloc.c : fatal error C1853: 'Debug\tess2.pch' precompiled header file is from a previous version of the compiler, or the precompiled header is C++ and you are using it from C (or vice versa)
+  Generating Code...

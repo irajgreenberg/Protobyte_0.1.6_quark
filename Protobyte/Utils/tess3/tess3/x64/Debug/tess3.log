@@ -1,0 +1,14 @@
+﻿  tess.c
+  sweep.c
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\utils\libtess2\source\sweep.c(1126): warning C4244: '=': conversion from 'double' to 'TESSreal', possible loss of data
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\utils\libtess2\source\sweep.c(1127): warning C4244: '=': conversion from 'double' to 'TESSreal', possible loss of data
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\utils\libtess2\source\sweep.c(1128): warning C4244: '=': conversion from 'double' to 'TESSreal', possible loss of data
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\utils\libtess2\source\sweep.c(1129): warning C4244: '=': conversion from 'double' to 'TESSreal', possible loss of data
+  priorityq.c
+  mesh.c
+  geom.c
+  dict.c
+  bucketalloc.c
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\utils\libtess2\source\bucketalloc.c(66): warning C4267: 'function': conversion from 'size_t' to 'unsigned int', possible loss of data
+  Generating Code...
+  tess3.vcxproj -> C:\Users\Frys\Dev\Protobyte_0.1.6_quark\Protobyte\Utils\tess3\x64\Debug\tess3.lib
