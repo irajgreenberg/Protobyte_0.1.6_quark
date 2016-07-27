@@ -411,7 +411,7 @@ namespace ijg {
 		void curveVertex(float x, float y);
 		void curveVertex(float x, float y, float z);
 
-		int _curveDetail = 6;
+		int _curveDetail = 4;
 		float _curveTension = 0;
 		float _curveBias = 0;
 		std::vector<int> curveDetails;

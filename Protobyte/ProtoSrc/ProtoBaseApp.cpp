@@ -2067,8 +2067,7 @@ void ProtoBaseApp::endPath(bool isClosed) {
 
 					// for tessellation -problem I think with duplicate points
 					polyline.push_back(new p2t::Point(v.x, v.y));
-
-					pathPrimsFill.push_back(PathPrims(v.x, v.y, v.z, fillColor.r, fillColor.b, fillColor.g, fillColor.a));
+					/*pathPrimsFill.push_back(PathPrims(v.x, v.y, v.z, fillColor.r, fillColor.b, fillColor.g, fillColor.a));*/
 					pathPrimsStroke.push_back(PathPrims(v.x, v.y, v.z, sc.r, sc.g, sc.b, sc.a));
 				}
 			}
@@ -2076,12 +2075,11 @@ void ProtoBaseApp::endPath(bool isClosed) {
 
 				// detected linear vertex
 				auto v = pathVerticesAll.at(i);
-
 				// for tessellation
 				polyline.push_back(new p2t::Point((float)std::get<0>(v).x, (float)std::get<0>(v).y));
 
-				pathPrimsFill.push_back(PathPrims(std::get<0>(v).x, std::get<0>(v).y, std::get<0>(v).z,
-					std::get<2>(v).r, std::get<2>(v).g, std::get<2>(v).b, std::get<2>(v).a));
+				/*pathPrimsFill.push_back(PathPrims(std::get<0>(v).x, std::get<0>(v).y, std::get<0>(v).z,
+					std::get<2>(v).r, std::get<2>(v).g, std::get<2>(v).b, std::get<2>(v).a));*/
 				pathPrimsStroke.push_back(PathPrims(std::get<0>(v).x, std::get<0>(v).y, std::get<0>(v).z,
 					std::get<3>(v).r, std::get<3>(v).g, std::get<3>(v).b, std::get<3>(v).a));
 			}
@@ -2092,9 +2090,15 @@ void ProtoBaseApp::endPath(bool isClosed) {
 	cdt = new p2t::CDT(polyline);
 	cdt->Triangulate();
 
-	//// Get triangles
+	// Get triangles
 	std::vector<p2t::Triangle*> triangles;
 	triangles = cdt->GetTriangles();
+	for (int i = 0; i <  triangles.size(); i++) {
+		for (int j = 0; j < 3; j++) {
+			//trace("triangle:", i, ",pts:", j, " = ", triangles.at(i)->GetPoint(j)->x, ",", triangles.at(i)->GetPoint(j)->y);
+			pathPrimsFill.push_back(PathPrims(triangles.at(i)->GetPoint(j)->x, triangles.at(i)->GetPoint(j)->y, 0, fillColor.r, fillColor.b, fillColor.g, fillColor.a));
+		}
+	}
 
 
 	switch (pathRenderMode) {
@@ -2110,7 +2114,7 @@ void ProtoBaseApp::endPath(bool isClosed) {
 			glBufferSubData(GL_ARRAY_BUFFER, 0, vertsDataSize, &pathPrimsFill[0].x); // upload the data
 
 			glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-			glDrawArrays(GL_TRIANGLE_FAN, 0, pathPrimsFill.size());
+			glDrawArrays(GL_TRIANGLES, 0, pathPrimsFill.size());
 
 		}
 		if (isStroke) {

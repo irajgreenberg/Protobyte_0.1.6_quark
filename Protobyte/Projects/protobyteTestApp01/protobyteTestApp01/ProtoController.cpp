@@ -62,11 +62,11 @@ void ProtoController::display() {
 	stroke(.85, .3, .9);
 	//star(9, 350, 140);
 
-	lineWidth = 11;
+	lineWidth = 3;
 	fill(.2, .3, .8);
 	int stride = 7;
 	float theta = 0.0;
-	int sides = 3;
+	int sides = 9;
 	int pts = sides * 2;
 	float outerRadius = 200;
 	float innerRadius = 70;
@@ -76,14 +76,15 @@ void ProtoController::display() {
 	for (int i = 0; i < pts; i++) {
 		if (i % 2 == 0) {
 			// Required for outline
-			vertex(cos(theta)*outerRadius, sin(theta)*outerRadius);
+			curveVertex(cos(theta)*outerRadius, sin(theta)*outerRadius);
 		}
 		else {
 			// Required for outline
-			vertex(cos(theta)*innerRadius, sin(theta)*innerRadius);
+			curveVertex(cos(theta)*innerRadius, sin(theta)*innerRadius);
 		}
 		theta += TWO_PI / pts;
 	}
+
 	endShape(CLOSE);
 	//ellipse(100, 100, 50, 50);
 	//rect(200, 200, 150, 300);
