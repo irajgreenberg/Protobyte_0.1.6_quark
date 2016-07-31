@@ -33,7 +33,9 @@ This class is part of the group common (update)
 //#include <OpenGL/gl.h>
 //#endif
 
+#if defined(_WIN32) || defined(_WIN64) || defined(__linux__)
 #include "glad/glad.h"
+#endif
 
 #include <stdlib.h>
 #include <string>
@@ -129,12 +131,12 @@ namespace ijg {
 	}
 
 	inline void ProtoShader::bind() {
-		trace("in ProtoShader::bind()");
+		//trace("in ProtoShader::bind()");
 		glUseProgram(shader_id);
 	}
 
 	inline void ProtoShader::unbind() {
-		trace("in ProtoShader::unbind()");
+		//trace("in ProtoShader::unbind()");
 		glUseProgram(0);
 	}
 

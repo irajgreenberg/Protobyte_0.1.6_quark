@@ -3,6 +3,6 @@
 #include <iostream>
 
 int main(int argc, char const** argv) {
-		ijg::ProtoPlasm p(1200, 800, "ProtoController", new ProtoController());
+		new ijg::ProtoPlasm (1200, 800, "ProtoController", new ProtoController());
 		return EXIT_SUCCESS;
 }

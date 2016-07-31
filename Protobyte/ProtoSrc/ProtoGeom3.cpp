@@ -120,16 +120,24 @@ void ProtoGeom3::init() {
 	// diffuse, bump, more soon!
 	//setTextureUniforms();
     
-    // initialize glew for Windows
-//#if defined(_WIN32) || defined(__linux__)
-//	GLenum err = glewInit();
-//	if (GLEW_OK != err)
-//	{
-//		/* Problem: glewInit failed, something is seriously wrong. */
-//		fprintf(stderr, "Error: %s\n", glewGetErrorString(err));
-//	}
-//	//fprintf(stdout, "Status: Using GLEW %s\n", glewGetString(GLEW_VERSION));
-//#endif
+    // initialize glad (not 100% sure I need this)
+#if defined(_WIN32) || defined(_WIN64) ||defined(__linux__)
+	// load GL extensions via glad
+	/*if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+	{
+		std::cout << "Failed to initialize OpenGL context" << std::endl;
+	}*/
+
+	//if (!gladLoadGL()) {
+	//	trace("Something went wrong!\n");
+	//	exit(-1);
+	//}
+#else
+	trace("Something went wrong!\n");
+
+#endif
+
+
 	
 	// Special thanks to:
 	// http://stackoverflow.com/questions/8704801/glvertexattribpointer-clarification

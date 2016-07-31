@@ -40,9 +40,8 @@ const std::shared_ptr<ProtoContext> ProtoContext::getContext(float width, float 
 }
 
 
-// shoudl only be callsed by ProtoBaseApp
+// should only be called by ProtoBaseApp
 void ProtoContext::init(){
-
 	static int counter = 0;
 	if (counter++ == 0) {// just 1 time
 		lights.push_back(ProtoLight());

@@ -29,9 +29,9 @@ This class is part of the group common (update)
 //#include <GL/glew.h>
 //#endif
 
-//#include <GLFW/glfw3.h> // brings in OpenGL
-
+#if defined(_WIN32) || defined(_WIN64) || defined(__linux__)
 #include "glad/glad.h"
+#endif
 
 #include <iostream>
 #include <stack>
@@ -127,13 +127,12 @@ namespace ijg {
 		const glm::mat4& getModelViewProjection();
 		const glm::mat3& getNormal();
 
-		// print info about matrices
+		// Print info about matrices
 		void printModelMatrix();
 		void printViewMatrix();
 		void printProjectionMatrix();
 		void printModelViewMatrix();
 		void printModelViewProjectionMatrix();
-
 
 
 		/*** Shadow Map Matrices ***/
@@ -179,7 +178,6 @@ namespace ijg {
 		const GLuint& getLightRenderingFactors_U();
 		void setLightRenderingFactors_U(const GLuint& lightRenderingFactors_U);
 
-
 		// shadow mapping texture id's
 		GLuint shadowBuffer_U, shadowTexture_U;
 		void setShadowBuffer_U(const GLuint& shadowBuffer_U);
@@ -193,7 +191,6 @@ namespace ijg {
 
 		const int SHADOWMAP_WIDTH = 4096, SHADOWMAP_HEIGHT = 4096;
 
-
 		bool areShadowsOn;
 		void setShadowsOn(bool areShadowsOn);
 		void shadowsOn();
@@ -202,8 +199,6 @@ namespace ijg {
 		Col3f globalAmbient; // make private
 
 		
-
-
 		// Light Matrix Functions (for shadow map)
 		void setLightView(const glm::mat4& lightView);
 		void setLightBias(const glm::mat4& lightBias);
@@ -264,7 +259,7 @@ namespace ijg {
 		void setBottom(float bottom);
 		void setTop(float top);
 
-
+		// transform functions
 		void translate(float tx, float ty, float tz);
 		void translate(const Vec3f& tXYZ);
 		void rotate(float angle, float axisX, float axisY, float axisZ);
@@ -272,6 +267,7 @@ namespace ijg {
 		void scale(float s);
 		void scale(float sx, float sy, float sz);
 		void scale(const Vec3f& sXYZ);
+		
 		//implements transform matrix stack
 		void concat();
 		void push();

@@ -26,12 +26,12 @@
 #ifndef Protobyte_v02_ProtoWorld_cpp
 #define Protobyte_v02_ProtoWorld_cpp
 
-//#if defined(_WIN32) || defined(__linux__)
-//#define GLEW_STATIC // link to glew32s instead of including dll
-//#include <GL/glew.h>
-//#endif
+#if defined(_WIN32) || defined(__linux__)
+#define GLEW_STATIC // link to glew32s instead of including dll
+#include <GL/glew.h>
+#endif
 
-#include "glad/glad.h"
+//#include "glad/glad.h"
 
 #include <iostream>
 #include <vector>

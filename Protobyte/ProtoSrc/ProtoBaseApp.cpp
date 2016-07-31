@@ -11,38 +11,19 @@
 
 using namespace ijg;
 
-//NOTE - maybe pul all flags in context? and access ctx->
+//NOTE - maybe put all flags in context? and access ctx->
 
-ProtoBaseApp* ProtoBaseApp::baseApp = 0;
+//ProtoBaseApp* ProtoBaseApp::baseApp = 0;
 
-
-// for testing only
-//GLdouble myStar[5][6] = {
-//	0.6f, -0.1f, -2.0f, 1.0f, 1.0f, 1.0f,
-//	1.35f, 1.4f, -2.0f, 1.0f, 1.0f, 1.0f,
-//	2.1f, -0.1f, -2.0f, 1.0f, 1.0f, 1.0f,
-//	0.6f, 0.9f, -2.0f, 1.0f, 1.0f, 1.0f,
-//	2.1f, 0.9f, -2.0f, 1.0f, 1.0f, 1.0f };
-//
-//GLdouble quad[4][6] = { 0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f,
-//1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f,
-//1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f,
-//0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f, };
-
-// cstr
+// Default CSTR, implicitly called
 // NOTE: called before GL context created
-ProtoBaseApp::ProtoBaseApp() {
-	ProtoBaseApp::baseApp = this;
-}
-
-//ProtoBaseApp::ProtoBaseApp(const ProtoOSC& listener) :
-//listener(listener){
-// ProtoBaseApp::baseApp = this;
+//ProtoBaseApp::ProtoBaseApp() {
+//	ProtoBaseApp::baseApp = this; // do I need this?
 //}
-
-ProtoBaseApp* ProtoBaseApp::getBaseApp() {
-	return ProtoBaseApp::baseApp;
-}
+//
+//ProtoBaseApp* ProtoBaseApp::getBaseApp() {
+//	return ProtoBaseApp::baseApp;
+//}
 
 void ProtoBaseApp::setWindowFrameSize(const Dim2i& windowFrameSize) {
 	this->windowFrameSize = windowFrameSize;
@@ -50,21 +31,7 @@ void ProtoBaseApp::setWindowFrameSize(const Dim2i& windowFrameSize) {
 
 
 void ProtoBaseApp::_init() {
-	// get context (shared pointer)
 
-
-	//GLint range[2];
-	//glGetIntegerv(GL_ALIASED_LINE_WIDTH_RANGE, range);
-	//trace(range[0], ",", range[1]);
-	//trace("GL_TRIANGLES =", GL_TRIANGLES);
-	//trace("GL_TRIANGLE_FAN =", GL_TRIANGLE_FAN);
-	//trace(ProtoBaseApp::baseApp);
-
-
-	//areShadowsEnabled = true;
-	//shader = ProtoShader("shader1.vert", "shader1.frag");
-	//shader = ProtoShader("protoShader.vert", "protoShader.frag");
-	//shader2D = ProtoShader("colorOnlyShader.vert.glsl", "colorOnlyShader.frag.glsl");
 	shader3D = ProtoShader("bumpmapping.vs.glsl", "bumpmapping.fs.glsl");
 	shader3D.bind();
 
@@ -90,30 +57,13 @@ void ProtoBaseApp::_init() {
 
 	//  initialize arcball vars
 	arcballRotX = arcballRotY = arcballRotXLast, arcballRotYLast = mouseXIn = mouseYIn = 0;
-	//isArcballOn = false;
-
-	// RECONSIDER THIS
-	// is it cool to set this here, versus in context?
-	//trace("width =", width);
-	//trace("height =", height);
-	//glViewport(0, 0, width, height);
+	
 
 	// START standard transformation matrices: ModelView / Projection / Normal
-
 	ctx->setModel(glm::mat4(1.0f));
-
+	// only relavent if draw not invoked
 	ctx->setView(glm::lookAt(glm::vec3(0.0, 0.0, 100), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0)));
 	ctx->concatModelView();
-	//ctx->createNormalMatrix();
-
-	// projection matrix and MVP Matrix
-	/* ortho
-	//trace("width = ", width);
-	//trace("height =", height);
-	left = -width / 2;
-	right = width / 2;
-	bottom = -height / 2;
-	top = height / 2;*/
 
 	float viewAngle = 65.0f;
 	float aspect = float(width) / float(height);
@@ -148,33 +98,9 @@ void ProtoBaseApp::_init() {
 		glm::vec4(0.0f, 0.0f, 0.5, 0.0f),
 		glm::vec4(0.5f, 0.5f, 0.5f, 1.0f)
 	));
-	//ctx->concatLightModelViewBiasProjection();
-	//ctx->setLightProjectionMatrix(glm::frustum(-.1f, .1f, -.1f, .1f, .1f, 2000.0f));
-
-	//float ratio = getWidth() / getHeight();
-	////L_B = glm::mat4(
-	////	glm::vec4(.35, 0.0f, 0.0f, 0.0f),
-	////	glm::vec4(0.0f, .35, 0.0f, 0.0f),
-	////	glm::vec4(0.0f, 0.0f, 1, 0.0f),
-	////	glm::vec4(0.5f, 0.5f, 0.5f, 1.0f)
-	////);
-
-	//ctx->setLightDepthBiasMatrix(glm::mat4(
-	//	glm::vec4(.5, 0.0f, 0.0f, 0.0f),
-	//	glm::vec4(0.0f, .5, 0.0f, 0.0f),
-	//	glm::vec4(0.0f, 0.0f, .5, 0.0f),
-	//	glm::vec4(0.5f, 0.5f, 0.5f, 1.0f)
-	//	));
-
-	//ctx->concatenateDepthBiasProjectionMatrix();
-	//ctx->concatenateLightModelViewDepthBiasProjectionMatrix();
-	//ctx->concatenateLightModelViewDepthBiasProjectionMatrix();
-	//// END Shadow Matrices
-
 	createShadowMap();
 
 	// for 2D rendering - enables/disables lighting effects
-	//ltRenderingFactors = Vec4f(1.0, 1.0, 1.0, 0.0);
 	ctx->setLightRenderingFactors({ 1.0, 1.0, 1.0, 1.0 });
 
 	// default 2D style states
@@ -190,8 +116,6 @@ void ProtoBaseApp::_init() {
 	// drawing methods path
 	isPathRecording = false;
 
-	// create primitives for immediate drawing
-
 	// for primitives
 	textureScale.x = textureScale.y = 1.0;
 
@@ -199,28 +123,18 @@ void ProtoBaseApp::_init() {
 	noDiffuseTexture = Texture("white_tile.jpg", ProtoTexture::DIFFUSE_MAP);
 	noBumpTexture = Texture("white_tile.jpg", ProtoTexture::BUMP_MAP);
 
-	//2D
+	//precalculate 2D geometry
 	_createRect();
 	_createQuad();
 	_createEllipse();
 	_createPath();
 	_createStar();
 
-	//3D
+	//precalculate 3D geometry
 	_createBox();
-	//path2 = ProtoPath2(this);
-	//protoPath2.setBaseApp(this);
 
-	//shader3D.bind();
-
-
-	//_initUniforms(&shader3D);
-
-
-
-	//call init() in derived ProtoController class
+	//calls init() in derived ProtoController class
 	init();
-
 }
 
 
@@ -284,7 +198,7 @@ void ProtoBaseApp::_createRect() {
 	glBindVertexArray(0);
 }
 
-// create default buffers for rect function
+// create default buffers for quad function
 void ProtoBaseApp::_createQuad() {
 
 	// interleaved float[] (x, y, 0, r, g, b, a) 7*4 pts
@@ -380,8 +294,7 @@ void ProtoBaseApp::_createEllipse() {
 	ellipsePrims.clear();
 }
 
-// create default buffers for ellipse function
-// TO DO: Finish
+// create default buffers for star function
 void ProtoBaseApp::_createStar() {
 	int sides = 3;
 	float theta = 0.0;
@@ -718,72 +631,12 @@ bool ProtoBaseApp::createShadowMap() {
 	return false;
 }
 
-//void ProtoBaseApp::_resetBuffers(){
-//	
-//}
-
-void ProtoBaseApp::_initUniforms(ProtoShader* shader_ptr) {
-	//shader = _shader;
-	//bind shaders
-	//shader_ptr->bind();
-
-	// get shader location for default 8 lights
-	//for (int i = 0; i < 8; ++i){
-	//	std::string pos = "lights[" + std::to_string(i) + "].position";
-	//	lights_U[i].position = glGetUniformLocation(shader_ptr->getID(), pos.c_str());
-
-	//	std::string inten = "lights[" + std::to_string(i) + "].intensity";
-	//	lights_U[i].intensity = glGetUniformLocation(shader_ptr->getID(), inten.c_str());
-
-	//	// eventually get rid of these probably
-	//	std::string diff = "lights[" + std::to_string(i) + "].diffuse";
-	//	lights_U[i].diffuse = glGetUniformLocation(shader_ptr->getID(), diff.c_str());
-
-	//	std::string amb = "lights[" + std::to_string(i) + "].ambient";
-	//	lights_U[i].ambient = glGetUniformLocation(shader_ptr->getID(), amb.c_str());
-
-	//	std::string spec = "lights[" + std::to_string(i) + "].specular";
-	//	lights_U[i].specular = glGetUniformLocation(shader_ptr->getID(), spec.c_str());
-	//}
-
-	// global ambient light
-	//globalAmbient_U = glGetUniformLocation(shader_ptr->getID(), "globalAmbientLight");
-
-	// transformation matrices
-	/*M_U = glGetUniformLocation(shader_ptr->getID(), "modelMatrix");
-	MV_U = glGetUniformLocation(shader_ptr->getID(), "modelViewMatrix");
-	MVP_U = glGetUniformLocation(shader_ptr->getID(), "modelViewProjectionMatrix");
-	N_U = glGetUniformLocation(shader_ptr->getID(), "normalMatrix");*/
-
-	// shadow map and light transformation matrix for shadowmapping
-	//shadowMap_U = glGetUniformLocation(shader_ptr->getID(), "shadowMap");
-	//ctx->setShadowMap_U(glGetUniformLocation(shader_ptr->getID(), "shadowMap"));
-	//L_MVBP_U = glGetUniformLocation(shader_ptr->getID(), "shadowModelViewBiasProjectionMatrix");
-
-	//// pass shadow map texture to shader
-	//shaderPassFlag_U = glGetUniformLocation(shader_ptr->getID(), "shadowPassFlag");
-	//ctx->setShaderPassFlag_U(glGetUniformLocation(shader_ptr->getID(), "shadowPassFlag"));
-	//glUniform1i(ctx->getShaderPassFlag_U(), 1); // controls render pass in shader
-	//glUniform1i(ctx->getShadowMap_U(), 5);
-
-	//// enable/disable lighting factors for 2D rendering
-	//// default is all on
-	//lightRenderingFactors_U = glGetUniformLocation(shader_ptr->getID(), "lightRenderingFactors");
-	//ctx->setLightRenderingFactors_U(glGetUniformLocation(shader_ptr->getID(), "lightRenderingFactors"));
-	//glUniform4fv(lightRenderingFactors_U, 1, &ltRenderingFactors.x);
-
-
-	//shader_ptr->unbind();
-}
-
 void ProtoBaseApp::_run(const Vec2f& mousePos, const Vec4i& windowCoords/*, int mouseBtn, int key*/) {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	// reset state
 	fillColor = Col4f(1, 1, 1, 1); // white fill
 	strokeColor = Col4f(0, 0, 0, 1); // black stroke
-
-
 
 	mouseX = mousePos.x;
 	mouseY = mousePos.y;
@@ -874,9 +727,6 @@ void ProtoBaseApp::_run(const Vec2f& mousePos, const Vec4i& windowCoords/*, int 
 	//}
 
 	run();
-	push();
-	// display(); //Is this necessary??
-	pop();
 	render();
 	mouseLastFrameX = mouseX;
 	mouseLastFrameY = mouseY;
@@ -892,9 +742,7 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 
 	// if shadowing is enabled do double pass with shadow map framebuffer
 	if (areShadowsEnabled) {
-		//glEnable(GL_CULL_FACE);
 		//trace("shadows enabled");
-		// bind shadow map framebuffer
 		glBindFramebuffer(GL_FRAMEBUFFER, ctx->getShadowBuffer_U());
 		//trace("ctx->getShadowBuffer_U()=", ctx->getShadowBuffer_U());
 		//clear depth buffer
@@ -1122,6 +970,7 @@ Dim2i ProtoBaseApp::getWindowFrameSize() const {
 }
 
 // Load Image
+// don't think this used??
 void ProtoBaseApp::loadImage(std::string imageName) {
 	// START for relative resource loading
 	char cCurrentPath[FILENAME_MAX];
@@ -1147,20 +996,7 @@ void ProtoBaseApp::loadImage(std::string imageName) {
 
 // END window details
 
-// Note: need to update to GLSL
-//void ProtoBaseApp::printMatrix(){
-//
-//	std::cout << M[0][0] << " | " << matrix[4] << " | " << matrix[8] << " | " << matrix[12] << "\n";
-//	std::cout << matrix[1] << " | " << matrix[5] << " | " << matrix[9] << " | " << matrix[13] << "\n";
-//	std::cout << matrix[2] << " | " << matrix[6] << " | " << matrix[10] << " | " << matrix[14] << "\n";
-//	std::cout << matrix[3] << " | " << matrix[7] << " | " << matrix[11] << " | " << matrix[15] << std::endl;
-//}
-
 // 2D api 
-
-
-
-
 void ProtoBaseApp::GLSLInfo(ProtoShader* shader) {
 	// START get all uniform shaders
 	GLint nUniforms, maxLen;

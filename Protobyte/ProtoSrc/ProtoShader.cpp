@@ -70,20 +70,6 @@ ProtoShader& ProtoShader::operator=(const ProtoShader& shdr){
 }
 
 void ProtoShader::init() {
-	//trace("In Shader init function");
-    
-//	// initialize glew for Windows
-//#if defined(_WIN32) || defined(__linux__)
-//	GLenum err = glewInit();
-//	if (GLEW_OK != err)
-//	{
-//		/* Problem: glewInit failed, something is seriously wrong. */
-//		fprintf(stderr, "Error: %s\n", glewGetErrorString(err));
-//	}
-//    fprintf(stdout, "Status: Using GLEW %s\n", glewGetString(GLEW_VERSION));
-//#endif
-	
-    
     std::string url = ProtoUtility::getBuildPath();
     
   // std::cout << "path to shaders  url = ," << url << std::endl;
@@ -95,7 +81,7 @@ void ProtoShader::init() {
 	// use protobyte resources instead of project resources
 	vShaderURL = url + "\\..\\..\\..\\Resources\\shaders\\"+vShader;
 	fShaderURL = url + "\\..\\..\\..\\Resources\\shaders\\"+fShader;
-	trace("vShaderURL =", vShaderURL);
+	//trace("vShaderURL =", vShaderURL);
 #else
 	vShaderURL = url + "/resources/shaders/" + vShader;
 	fShaderURL = url + "/resources/shaders/" + fShader;

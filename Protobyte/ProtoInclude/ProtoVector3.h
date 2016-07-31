@@ -27,7 +27,6 @@
 #define PROTO_VECTOR3_H
 
 #include "ProtoCore.h"
-//#include <SFML/OpenGL.hpp>
 #include <string.h>
 #include <iostream>
 #include <vector>

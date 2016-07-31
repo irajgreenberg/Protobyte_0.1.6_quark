@@ -32,16 +32,16 @@
 #ifndef TEXTURE_H
 #define	TEXTURE_H
 
-
-
-//#ifdef _WIN32
+// #if defined(_WIN32) || defined(_WIN64) || defined(__linux__)
 //#define GLEW_STATIC
 //#include <GL/glew.h>
 //#else
 //#include <OpenGL/gl.h>
 //#endif
 
-#include "glad/glad.h"
+ #if defined(_WIN32) || defined(_WIN64) || defined(__linux__)
+ #include "glad/glad.h"
+ #endif
 
 //thanks http://stackoverflow.com/questions/16186300/linking-freeimage-as-a-static-library-in-vs2010
 //#define  FREEIMAGE_LIB

@@ -24,12 +24,15 @@ This class is part of the group common (update)
 #ifndef PROTO_PATH2_H
 #define PROTO_PATH2_H
 
-//#if defined(_WIN32) || defined(__linux__)
-//#define GLEW_STATIC
+// brings in GL header
+//#if defined (_WIN32) || defined(_WIN64)
+//#define GLEW_STATIC // link to glew32s instead of including dll
 //#include <GL/glew.h>
 //#endif
 
+#if defined(_WIN32) || defined(_WIN64) || defined(__linux__)
 #include "glad/glad.h"
+#endif
 
 #include "ProtoColor4.h"
 #include "ProtoVector2.h"

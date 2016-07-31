@@ -85,7 +85,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\..\..\OtherLibs\poly2tri\include;..\..\..\ProtoInclude;..\..\..\OtherLibs\glad-4.1.compatibility\include;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\include;..\..\..\OtherLibs\glm-0.9.7.6\glm;..\..\..\OtherLibs\FreeImage\Dist\x64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\OtherLibs\glad-4.1.compatibility\include;..\..\..\OtherLibs\poly2tri\include;..\..\..\ProtoInclude;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\include;..\..\..\OtherLibs\glm-0.9.7.6\glm;..\..\..\OtherLibs\FreeImage\Dist\x64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -98,7 +98,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\..\..\OtherLibs\poly2tri\include;..\..\..\ProtoInclude;..\..\..\OtherLibs\glad-4.1.compatibility\include;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\include;..\..\..\OtherLibs\glm-0.9.7.6\glm;..\..\..\OtherLibs\FreeImage\Dist\x64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\OtherLibs\glad-4.1.compatibility\include;..\..\..\OtherLibs\poly2tri\include;..\..\..\ProtoInclude;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\include;..\..\..\OtherLibs\glm-0.9.7.6\glm;..\..\..\OtherLibs\FreeImage\Dist\x64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -113,7 +113,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\..\..\OtherLibs\poly2tri\include;..\..\..\ProtoInclude;..\..\..\OtherLibs\glad-4.1.compatibility\include;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\include;..\..\..\OtherLibs\glm-0.9.7.6\glm;..\..\..\OtherLibs\FreeImage\Dist\x64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\OtherLibs\glad-4.1.compatibility\include;..\..\..\OtherLibs\poly2tri\include;..\..\..\ProtoInclude;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\include;..\..\..\OtherLibs\glm-0.9.7.6\glm;..\..\..\OtherLibs\FreeImage\Dist\x64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -130,7 +130,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\..\..\OtherLibs\poly2tri\include;..\..\..\ProtoInclude;..\..\..\OtherLibs\glad-4.1.compatibility\include;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\include;..\..\..\OtherLibs\glm-0.9.7.6\glm;..\..\..\OtherLibs\FreeImage\Dist\x64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\OtherLibs\glad-4.1.compatibility\include;..\..\..\OtherLibs\poly2tri\include;..\..\..\ProtoInclude;..\..\..\OtherLibs\glfw-3.2.bin.WIN64\include;..\..\..\OtherLibs\glm-0.9.7.6\glm;..\..\..\OtherLibs\FreeImage\Dist\x64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -143,7 +143,6 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\ProtoSrc\ProtoBaseApp.cpp" />
     <ClCompile Include="..\..\..\ProtoSrc\ProtoBlock.cpp" />
-    <ClCompile Include="..\..\..\ProtoSrc\ProtoCamera.cpp" />
     <ClCompile Include="..\..\..\ProtoSrc\ProtoCephalopod.cpp" />
     <ClCompile Include="..\..\..\ProtoSrc\ProtoCilia.cpp" />
     <ClCompile Include="..\..\..\ProtoSrc\ProtoContext.cpp" />
@@ -182,7 +181,6 @@
     <ClCompile Include="..\..\..\ProtoSrc\ProtoVerletBall.cpp" />
     <ClCompile Include="..\..\..\ProtoSrc\ProtoVerletStick.cpp" />
     <ClCompile Include="..\..\..\ProtoSrc\ProtoVertex3.cpp" />
-    <ClCompile Include="..\..\..\ProtoSrc\ProtoWorld.cpp" />
     <ClCompile Include="ProtoController.cpp" />
     <ClCompile Include="ProtoMain.cpp" />
   </ItemGroup>
@@ -190,7 +188,6 @@
     <ClInclude Include="..\..\..\ProtoInclude\ProtoBaseApp.h" />
     <ClInclude Include="..\..\..\ProtoInclude\ProtoBlock.h" />
     <ClInclude Include="..\..\..\ProtoInclude\ProtoBounds.h" />
-    <ClInclude Include="..\..\..\ProtoInclude\ProtoCamera.h" />
     <ClInclude Include="..\..\..\ProtoInclude\ProtoCephalopod.h" />
     <ClInclude Include="..\..\..\ProtoInclude\ProtoCilia.h" />
     <ClInclude Include="..\..\..\ProtoInclude\ProtoColor3.h" />
@@ -246,7 +243,6 @@
     <ClInclude Include="..\..\..\ProtoInclude\ProtoVerletBall.h" />
     <ClInclude Include="..\..\..\ProtoInclude\ProtoVerletStick.h" />
     <ClInclude Include="..\..\..\ProtoInclude\ProtoVertex3.h" />
-    <ClInclude Include="..\..\..\ProtoInclude\ProtoWorld.h" />
     <ClInclude Include="ProtoController.h" />
   </ItemGroup>
   <ItemGroup>

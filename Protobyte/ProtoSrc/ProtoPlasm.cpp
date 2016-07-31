@@ -89,10 +89,6 @@ void ProtoPlasm::initGLFW(){
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 #endif
 
-	// Don't seem to need to call glewInit() in GLFW 3.1+.
-	//glewExperimental = GL_TRUE; 
-	//glewInit();
-
 	// set anti-aliasing
 	// not sure if this works in Windows
 	glfwWindowHint(GLFW_SAMPLES, 2);
@@ -105,7 +101,7 @@ void ProtoPlasm::initGLFW(){
 	int monitors;
 	GLFWmonitor** mons = glfwGetMonitors(&monitors);
 
-	// position window for different montior configurations
+	// Position window for different montior configurations
 	//  -- primary monitor resolution :
 	const GLFWvidmode* mode = glfwGetVideoMode(glfwGetPrimaryMonitor());
 
@@ -120,9 +116,12 @@ void ProtoPlasm::initGLFW(){
 		glfwSetWindowPos(window, (mode->width - appWidth) / 2, (mode->height - appHeight) / 2);
 		break;
 	case 4:
-		//glfwSetWindowPos(window, (mode->width - appWidth) / 2, -mode->height + (mode->height-appHeight) / 2);
-		//glfwSetWindowPos(window, mode->width+(mode->width - appWidth) / 2, -mode->height + (mode->height - appHeight) / 2);
-		glfwSetWindowPos(window, 150, 150);
+		/* Centers in top monitor
+		   in 1/3 configuration:
+		       [ ]
+		    [ ][ ][ ]
+		*/
+		glfwSetWindowPos(window, (mode->width - appWidth) / 2, -mode->height + (mode->height-appHeight) / 2);
 		break;
 	case 6:
 		glfwSetWindowPos(window, (mode->width - appWidth) / 2, (mode->height - appHeight) / 2);
@@ -146,22 +145,34 @@ void ProtoPlasm::initGLFW(){
 	glfwMakeContextCurrent(window);
 
 	// load GL extensions via glad
-
+#if defined(_WIN32) || defined (_WIN64) || defined(__linux__) 
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 	{
 		std::cout << "Failed to initialize OpenGL context" << std::endl;
 	}
-	//gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+#endif
+
+
+	//#if defined(_WIN32) || defined (_WIN64) 
+	//	glewExperimental = TRUE;
+	//	GLenum err = glewInit();
+	//	if (err != GLEW_OK)
+	//	{
+	//		//Problem: glewInit failed, something is seriously wrong.
+	//		std::cout << "glewInit failed, aborting." << std::endl;
+	//	}
+	//#endif
+
 	// end GLFW/window setup
 
-	// set gl states
+	// Set gl states
 	glClearColor(.46f, .485f, .575f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glFrontFace(GL_CCW); // default
 	//glFrontFace(GL_CW);
 	glEnable(GL_CULL_FACE);
 	glCullFace(GL_BACK);
-	glDisable(GL_CULL_FACE);
+	//glDisable(GL_CULL_FACE);
 	//glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
 	//glEnable(GL_COLOR_MATERIAL); // incorporates per vertex color with lights
 	// let glColor control diffues and ambient material values
@@ -192,21 +203,19 @@ void ProtoPlasm::initGLFW(){
 	glDepthFunc(GL_LEQUAL);
 	glDepthRange(0.0f, 1.0f);
 
-
-	int w = 0;
-	int h = 0;
+	int w = 0, h = 0;
 	glfwGetFramebufferSize(window, &w, &h);
-
-	// Activate init function in user derived class.n.
-	baseApp->_init(); // base class
 
 	// get version of GL and hardware
 	char *GL_version = (char *)glGetString(GL_VERSION);
 	char *GL_vendor = (char *)glGetString(GL_VENDOR);
 	char *GL_renderer = (char *)glGetString(GL_RENDERER);
-	trace(GL_version);
-	trace(GL_vendor);
-	trace(GL_renderer);
+	trace("GL_version =", GL_version);
+	trace("GL_vendor =", GL_vendor);
+	trace("GL_renderer =", GL_renderer);
+
+	// Activate init function in user derived class.n.
+	baseApp->_init(); // base class
 }
 
 // activate animation thread and run() function in user defined BaseApp derived class

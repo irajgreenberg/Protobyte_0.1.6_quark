@@ -25,22 +25,8 @@
 #ifndef PROTO_FRENET_FRAME_H
 #define PROTO_FRENET_FRAME_H
 
-//#ifdef  __APPLE__
-//  #include <OpenGL/gl.h>
-//#elif __linux
-//  #include <GL/gl.h>
-//#elif defined(_WIN32) || defined(_WIN64)
-//  #include <GL/gl.h>
-//#endif
-
-//#if defined(_WIN32) || defined(__linux__)
-//#define GLEW_STATIC
-//#include <GL/glew.h>
-//#else 
-//#include <OpenGL/gl.h>
-//#endif
-
-#include "glad/glad.h"
+// brings in GL header
+#include <GLFW/glfw3.h>
 
 #include "ProtoVector3.h"
 #include <iostream>

@@ -24,13 +24,6 @@
 #ifndef PROTO_GEOM3_H
 #define PROTO_GEOM3_H
 
-#include "glad/glad.h"
-//#include "GLFW/glfw3.h"
-//#if defined(_WIN32) || defined(__linux__)
-//#define GLEW_STATIC // link to glew32s instead of including dll
-//#include <GL/glew.h>
-//#endif
-
 // for image path to texture
 #if defined(__APPLE__) || defined(__linux__)
 #include <unistd.h>
@@ -41,7 +34,7 @@
 #include <iostream>
 #include <vector>
 #include <memory>
-#include "ProtoShader.h"
+#include "ProtoShader.h" // includes GL 4
 #include "ProtoVector2.h"
 #include "ProtoVector3.h"
 #include "ProtoVector4.h"

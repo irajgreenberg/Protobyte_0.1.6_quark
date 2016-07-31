@@ -1,8 +1,6 @@
 #ifndef _PROTO_BASEAPP_H_
 #define _PROTO_BASEAPP_H_
 
-#include "glad/glad.h" // Gl extenion loader
-#include "GLFW/glfw3.h" // windowing
 #include "poly2tri.h" // tesselator
 #include <thread>
 #include <mutex>
@@ -25,7 +23,6 @@
 #include "ProtoTransformFunction.h"
 #include "ProtoTexture.h"
 #include "ProtoShader.h"
-#include "ProtoWorld.h"
 #include "ProtoColor3.h"
 #include "ProtoColor4.h"
 #include "ProtoBlock.h"
@@ -77,7 +74,7 @@ namespace ijg {
 		friend class ProtoPath2;
 
 	public:
-		ProtoBaseApp();
+		//ProtoBaseApp();
 		
 		// GLFW Mouse events
 		void setMouseButton(int mouseAction, int mouseButton, int mouseMods);
@@ -88,8 +85,8 @@ namespace ijg {
 		// GLFW Window events
 		void setWindowFrameSize(const Dim2i& windowFrameSize);
 
-		static ProtoBaseApp* baseApp;
-		static ProtoBaseApp* getBaseApp();
+		//static ProtoBaseApp* baseApp;
+		//static ProtoBaseApp* getBaseApp();
 		std::shared_ptr<ProtoContext> ctx;
 
 	private:

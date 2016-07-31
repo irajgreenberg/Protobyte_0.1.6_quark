@@ -33,6 +33,8 @@ public:
 	//ProtoGeomComposite* pcg;
 	Toroid t;
 	//ProtoRootBall* pBall;
+	ProtoPlane plane;
+	Tube tube;
 
 };
 

@@ -24,13 +24,6 @@
 #ifndef PROTO_SPLINE3_H
 #define PROTO_SPLINE3_H
 
-//#if defined(_WIN32) || defined(__linux__)
-//#define GLEW_STATIC
-//#include <GL/glew.h>
-//#endif
-
-#include "glad/glad.h"
-
 #include "ProtoCurve3.h"
 
 /**

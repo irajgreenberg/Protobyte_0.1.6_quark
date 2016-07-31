@@ -37,16 +37,7 @@
 #include "ProtoMatrix3.h"
 #include "ProtoMatrix4.h"
 
-//#if defined (_WIN32) || defined(_WIN64)
-//#include <GL/glew.h>
-//#include <Windows.h>
-//#endif
-
-#include "glad/glad.h"
 #include <memory>
-
-
-
 #include <sstream>
 
 

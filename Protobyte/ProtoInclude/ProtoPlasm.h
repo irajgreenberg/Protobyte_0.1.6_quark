@@ -25,21 +25,22 @@ This class is part of the group common (update)
 #ifndef __PROTO_PLASM_H__
 #define __PROTO_PLASM_H__
 
-// setup GL on Win/OSX/Linux
-#if defined(_WIN32) || defined(_WIN64) || defined(__linux__)
+// set up GL/GL extensions on Win/OSX/Linux
+
+//#if defined(_WIN32) || defined(_WIN64) || defined(__linux__)
 //#define GLEW_STATIC // link to glew32s instead of including dll
 //#include <GL/glew.h>
+//#endif
+
+#if defined(_WIN32) || defined(_WIN64) || defined(__linux__)
 #include "glad/glad.h"
-#include <GLFW/glfw3.h>
 #else
 #define GLFW_INCLUDE_GLCOREARB
-#include "GLFW/glfw3.h"
 #endif
+#include <GLFW/glfw3.h>
 
 #include <iostream>
 #include "ProtoBaseApp.h"
-
-
 
 namespace ijg {
     
@@ -62,7 +63,6 @@ namespace ijg {
         //cstrs
 		explicit ProtoPlasm(ProtoBaseApp* baseApp);
         ProtoPlasm(int appWidth, int appHeight, std::string appTitle, ProtoBaseApp* baseApp);
-        
         
     private:
         

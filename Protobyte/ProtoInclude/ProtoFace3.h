@@ -24,24 +24,14 @@
 #ifndef PROTO_FACE3_H
 #define PROTO_FACE3_H
 
-//#ifdef __APPLE__
-//#include <OpenGL/gl.h>
-//#elif __linux
-//#include <GL/gl.h>
-//#elif defined(_WIN32) || defined(_WIN64)
-//#include <GL/gl.h>
+// for immediate mode GL
+#include <GLFW/glfw3.h>
+
+// eventually use this
+//#if defined(_WIN32) || defined(_WIN64) || defined(__linux__)
+//#include "glad/glad.h"
 //#endif
 
-//#if defined(_WIN32) || defined(__linux__)
-//#define GLEW_STATIC
-//#include <GL/glew.h>
-//#else
-//#include <OpenGL/gl.h>
-//#endif
-
-#include "glad/glad.h"
-
-//#include <SFML/OpenGL.hpp>
 #include <vector>
 #include "ProtoVertex3.h"
 #include "ProtoVector2.h"

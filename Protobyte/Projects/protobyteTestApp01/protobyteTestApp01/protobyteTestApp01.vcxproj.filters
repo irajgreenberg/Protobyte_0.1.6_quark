@@ -42,9 +42,6 @@
     <ClCompile Include="..\..\..\ProtoSrc\ProtoContext.cpp">
       <Filter>ProtoLib\src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\ProtoSrc\ProtoCamera.cpp">
-      <Filter>ProtoLib\src</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\ProtoSrc\ProtoCephalopod.cpp">
       <Filter>ProtoLib\src</Filter>
     </ClCompile>
@@ -153,9 +150,6 @@
     <ClCompile Include="..\..\..\ProtoSrc\ProtoVertex3.cpp">
       <Filter>ProtoLib\src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\ProtoSrc\ProtoWorld.cpp">
-      <Filter>ProtoLib\src</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ProtoController.h">
@@ -168,9 +162,6 @@
       <Filter>ProtoLib\include</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\ProtoInclude\ProtoBounds.h">
-      <Filter>ProtoLib\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\ProtoInclude\ProtoCamera.h">
       <Filter>ProtoLib\include</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\ProtoInclude\ProtoCephalopod.h">
@@ -336,9 +327,6 @@
       <Filter>ProtoLib\include</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\ProtoInclude\ProtoVertex3.h">
-      <Filter>ProtoLib\include</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\ProtoInclude\ProtoWorld.h">
       <Filter>ProtoLib\include</Filter>
     </ClInclude>
   </ItemGroup>
