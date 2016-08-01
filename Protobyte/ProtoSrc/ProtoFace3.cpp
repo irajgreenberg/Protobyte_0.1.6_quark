@@ -122,10 +122,8 @@ Vec3f ProtoFace3::getTangentBM(){
 
 
 	float r = 1.0f / (uv0.x * uv1.y - uv0.y *uv1.x);
-	//float r = 1.0f / (uv1.x * uv0.y - uv1.y *uv0.x);
 	Vec3f tangent = (v0 * uv1.y - v1 * uv0.y)*r;
-	//Vec3f tangent = (v1 * uv0.y - v0 * uv1.y)*r;
-
+	//trace("tangent", tangent);
 	return tangent;
 
 	/*float v0u = v1_p->getUV().elem0 - v0_p->getUV().elem0;

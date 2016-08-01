@@ -160,9 +160,6 @@ bool ProtoTexture::init() {
 
 			// texture creation/loading code from:
 			// http://www.nullterminator.net/gltexture.html
-
-
-
 			// if wrap is true, the texture wraps over at the edges (repeat)
 			//       ... false, the texture ends at the edges (clamp)
 			/*	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S,
@@ -175,10 +172,7 @@ bool ProtoTexture::init() {
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 
-			//std::cout << "texture width =" << width << std::endl;
 			// give opengl the texture
-			// glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_BGR, GL_UNSIGNED_BYTE, imageData);
-
 			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_BGR, GL_UNSIGNED_BYTE, imageData);
 			//gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGB, width, height, GL_BGR, GL_UNSIGNED_BYTE, imageData);
 
@@ -194,6 +188,7 @@ bool ProtoTexture::init() {
 			glBindTexture(GL_TEXTURE_2D, textureID);
 
 			fif = FreeImage_GetFileType(fileURL, 0);
+			//trace(fileURL);
 			//if still unknown, try to guess the file format from the file extension
 			if (fif == FIF_UNKNOWN)
 				fif = FreeImage_GetFIFFromFilename(fileURL);
@@ -214,32 +209,12 @@ bool ProtoTexture::init() {
 			width = FreeImage_GetWidth(dib);
 			height = FreeImage_GetHeight(dib);
 
-			//std::cout << "image width = " << width << std::endl;
-			//std::cout << "image height = " << height << std::endl;
 			//if this somehow one of these failed (they shouldn't), return failure
 			if ((imageData == 0) || (width == 0) || (height == 0))
 				return false;
 
-
 			// texture creation/loading code from:
 			// http://www.nullterminator.net/gltexture.html
-
-
-
-
-
-			// select our current texture // do I need this
-			//glBindTexture(GL_TEXTURE_2D, textureID);
-			//glActiveTexture(GL_TEXTURE0);
-			//glUniform1i(glGetUniformLocation(ProtoShader::get, "diffuseMap"), 0);
-
-			// select modulate to mix texture with color for shading
-			//glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
-
-			// when texture area is small, bilinear filter the closest MIP map
-
-			// when texture area is large, bilinear filter the first MIP map
-			//glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
 			// if wrap is true, the texture wraps over at the edges (repeat)
 			//       ... false, the texture ends at the edges (clamp)
@@ -250,14 +225,11 @@ bool ProtoTexture::init() {
 
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-			glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+			//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+			//glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 			//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-
-			//std::cout << "texture width =" << width << std::endl;
-			// give opengl the texture
-			// glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_BGR, GL_UNSIGNED_BYTE, imageData);
-
 			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_BGR, GL_UNSIGNED_BYTE, imageData);
 			//gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGB, width, height, GL_BGR, GL_UNSIGNED_BYTE, imageData);
 
@@ -422,16 +394,14 @@ bool ProtoTexture::init() {
 
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-			//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-			//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-			glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+			//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+			//glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 
 			// build our texture mipmaps
 			//gluBuild2DMipmaps(GL_TEXTURE_2D, GL_LUMINANCE, width, height, GL_LUMINANCE, GL_UNSIGNED_BYTE, normalMapData);
 			//	// glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_BGR, GL_UNSIGNED_BYTE, imageData);
-
-			//gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGB, width, height, GL_BGR, GL_UNSIGNED_BYTE, normalMapData);
 			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_BGR, GL_UNSIGNED_BYTE, normalMapData);
 
 			// deallocate

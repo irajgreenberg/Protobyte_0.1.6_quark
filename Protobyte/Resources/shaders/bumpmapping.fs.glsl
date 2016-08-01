@@ -4,17 +4,13 @@ in vec4 vertCol; // orig attribute color set in v. shader
 out vec4 color;
 
 // Texture maps
-//layout (binding = 0) uniform sampler2D shadowMap;
-//layout (binding = 0) uniform sampler2D diffuseMap;
-//layout (binding = 1) uniform sampler2D bumpMap;
-
-// Texture maps
 uniform bool shadowPassFlag;
 uniform sampler2DShadow shadowMap;
 uniform sampler2D diffuseMap;
 uniform sampler2D bumpMap;
 
 in vec4 shadowMapCoords;
+
 
 
 // max 8 lt srcs (fer now...)
@@ -71,6 +67,8 @@ void main(void)
 	
 	vec3 diffuse = vec3(0);
 	vec3 specular = vec3(0);
+	vec3 diffuse_color = vec3(0);
+	vec3 N = vec3(0);
 
 	for(int i=0; i<8; ++i){
 		// Normalize our incomming view and light direction vectors.
@@ -79,7 +77,7 @@ void main(void)
     
 		// Calculate diffuse color with simple N dot L.
 		// Read the normal from the normal map and normalize it.
-		vec3 N = normalize(texture(bumpMap, fs_in.texcoord).rgb * 2.0 - vec3(1.0));
+		 N = normalize(texture(bumpMap, fs_in.texcoord).rgb * 2.0 - vec3(1.0));
     
 		// Uncomment this to use surface normals rather than the normal map
 		// N = vec3(0.0, 0.0, 1.0);
@@ -88,7 +86,7 @@ void main(void)
 		vec3 R = reflect(-L, N); // ***********multi here
 
 		// Fetch the diffuse color from the texture.
-		vec3 diffuse_color = texture(diffuseMap, fs_in.texcoord).rgb;
+		diffuse_color = texture(diffuseMap, fs_in.texcoord).rgb;
 		diffuse += max(dot(N, L), 0.0) * diffuse_color * vec3(diffuseMaterial) * lights[i].intensity; // ***********multi here
 		// Uncomment this to turn off diffuse shading
 		// diffuse = vec3(0.0);
@@ -117,6 +115,8 @@ void main(void)
     // Final color is diffuse + specular + ambient with lightRendering Factors enabling/disabling lighting effects for 2D rendering
 
 	color = vertCol*lightRenderingFactors.w + vec4(diffuse*lightRenderingFactors.x + specular*lightRenderingFactors.y + (vec3(ambientMaterial)*globalAmbientLight)*lightRenderingFactors.z, 1.0);
+
+	//color = vec4(N.x*10.0f, N.y*10.0f, N.z*10.0f,1.0);
 
 	color.a = vertCol.a;
 

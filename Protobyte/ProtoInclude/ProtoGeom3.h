@@ -231,6 +231,8 @@ namespace ijg {
         
         // vertex arrays are implemented by default
         virtual void display(RenderMode render = SURFACE, float pointSize = .5f);
+
+		virtual void displayTBN();
         
         // setters/getters
        // overload Shape3 methods

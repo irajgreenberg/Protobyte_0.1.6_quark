@@ -37,6 +37,10 @@ This class is part of the group common (update)
 #else
 #define GLFW_INCLUDE_GLCOREARB
 #endif
+
+//// bring in GLU (shouldn't need)
+//#define GLFW_INCLUDE_GLU
+
 #include <GLFW/glfw3.h>
 
 #include <iostream>
