@@ -1,4 +1,4 @@
-#version 410
+#version 430
 
 in vec4 vertCol; // orig attribute color set in v. shader
 out vec4 color;
@@ -77,7 +77,7 @@ void main(void)
     
 		// Calculate diffuse color with simple N dot L.
 		// Read the normal from the normal map and normalize it.
-		 N = normalize(texture(bumpMap, fs_in.texcoord).rgb * 2.0 - vec3(1.0));
+		 N = normalize(texture(bumpMap, fs_in.texcoord).rgb * 2.0f - vec3(1.0));
     
 		// Uncomment this to use surface normals rather than the normal map
 		// N = vec3(0.0, 0.0, 1.0);
@@ -116,7 +116,9 @@ void main(void)
 
 	color = vertCol*lightRenderingFactors.w + vec4(diffuse*lightRenderingFactors.x + specular*lightRenderingFactors.y + (vec3(ambientMaterial)*globalAmbientLight)*lightRenderingFactors.z, 1.0);
 
-	//color = vec4(N.x*10.0f, N.y*10.0f, N.z*10.0f,1.0);
+	//vec3 c = texture(bumpMap, fs_in.texcoord).rgb;
+	//color = vec4(c, 1.0);
+	//color = vec4(diffuse_color, 1.0);
 
 	color.a = vertCol.a;
 

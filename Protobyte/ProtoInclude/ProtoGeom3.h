@@ -180,8 +180,6 @@ namespace ijg {
         
     public:
 //     
-		
-
 		// experiment making this public
 		std::vector<float> packedFaces;
 		std::vector<ProtoFace3> faces;

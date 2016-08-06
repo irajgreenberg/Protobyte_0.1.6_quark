@@ -385,7 +385,6 @@ namespace ijg {
 
 
 		// Drawing Methods API
-
 		void beginPath(PathRenderMode pathRenderMode = POLYGON);
 		void endPath(bool isClosed = OPEN);
 
@@ -428,14 +427,14 @@ namespace ijg {
 		void setDiffuseMaterial(const Col4f& diff);
 		void setAmbientMaterial(const Col4f& amb);
 
+		/**
+		* Final function call prior to User defined display call
+		* Includes optional shadowing implementation, using
+		* double pass with shadow map framebuffer.
+		*/
+		virtual void render(int x = 0, int y = 0, int scaleFactor = 1); 
 
-		//ProtoPath2 protoPath2;
-
-		/***********BEGIN************
-			   Save/Thread/Other
-			   ***************************/
-		// saving stuff
-		virtual void render(int x = 0, int y = 0, int scaleFactor = 1); // eventually maybe make pure virtual (ehhh, maybe not)
+		// begin save functions
 		void save(std::string name = "img", int scaleFactor = 1);
 		//void threadSave(std::string name, int scaleFactor); // thread safe save with mutex locking
 		std::mutex mtx;

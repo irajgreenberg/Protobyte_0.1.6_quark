@@ -1,41 +1,18 @@
-﻿  ProtoController.cpp
-d:\dev\protobyte_0.1.6_quark\protobyte\otherlibs\poly2tri\include\sweep\sweep_context.h(161): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(18): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protolight.h(93): warning C4305: '=': truncation from 'double' to 'float'
-d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(50): warning C4005: 'GetCurrentDir': macro redefinition
-  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
-d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototoroid.h(62): warning C4305: 'initializing': truncation from 'double' to 'float'
-d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocephalopod.h(128): warning C4244: 'return': conversion from 'time_t' to 'long', possible loss of data
-d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(475): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-d:\dev\protobyte_0.1.6_quark\protobyte\projects\protobytetestapp01\protobytetestapp01\protocontroller.cpp(9): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-d:\dev\protobyte_0.1.6_quark\protobyte\projects\protobytetestapp01\protobytetestapp01\protocontroller.cpp(10): warning C4305: '+=': truncation from 'double' to 'float'
-d:\dev\protobyte_0.1.6_quark\protobyte\projects\protobytetestapp01\protobytetestapp01\protocontroller.cpp(43): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  ProtoMain.cpp
-  ProtoTube.cpp
-  ProtoToroid.cpp
-  ProtoTexture.cpp
-  ProtoTentacle.cpp
-  ProtoSphere.cpp
-  ProtoRootBall.cpp
-  ProtoRenderer.cpp
-  ProtoRectangle.cpp
-  ProtoPlasm.cpp
-  ProtoPlane.cpp
-  ProtoPath3.cpp
-  ProtoPath2.cpp
-  ProtoJuncusEffusus.cpp
-  ProtoGroundPlane.cpp
-  ProtoGeosphere.cpp
-  ProtoGeomComposite.cpp
-  ProtoGeom3.cpp
-  ProtoGeom2.cpp
-  ProtoEllipse.cpp
-  ProtoCylinder.cpp
-  ProtoCephalopod.cpp
-  ProtoBlock.cpp
-  ProtoBaseApp.cpp
-  protobyteTestApp01.vcxproj -> D:\Dev\Protobyte_0.1.6_quark\Protobyte\Projects\protobyteTestApp01\x64\Debug\protobyteTestApp01.exe
-  protobyteTestApp01.vcxproj -> D:\Dev\Protobyte_0.1.6_quark\Protobyte\Projects\protobyteTestApp01\x64\Debug\protobyteTestApp01.pdb (Full PDB)
+﻿  ProtoGeom3.cpp
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(50): warning C4005: 'GetCurrentDir': macro redefinition
+  c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protogeom3.cpp(35): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protogeom3.cpp(40): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protogeom3.cpp(108): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protogeom3.cpp(163): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protogeom3.cpp(639): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protogeom3.cpp(665): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protogeom3.cpp(674): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protogeom3.cpp(675): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protogeom3.cpp(678): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protogeom3.cpp(687): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protogeom3.cpp(688): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protogeom3.cpp(692): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  protobyteTestApp01.vcxproj -> C:\Users\Frys\Dev\Protobyte_0.1.6_quark\Protobyte\Projects\protobyteTestApp01\x64\Debug\protobyteTestApp01.exe
+  protobyteTestApp01.vcxproj -> C:\Users\Frys\Dev\Protobyte_0.1.6_quark\Protobyte\Projects\protobyteTestApp01\x64\Debug\protobyteTestApp01.pdb (Full PDB)

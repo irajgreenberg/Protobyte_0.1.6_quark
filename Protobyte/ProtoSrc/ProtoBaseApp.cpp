@@ -63,18 +63,13 @@ void ProtoBaseApp::_init() {
 	ctx->setModel(glm::mat4(1.0f));
 	// only relavent if draw not invoked
 	ctx->setView(glm::lookAt(glm::vec3(0.0, 0.0, 100), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0)));
-	ctx->concatModelView();
 
-	float viewAngle = 65.0f;
+	float viewAngle = 65.0f*PI / 180.0f;
 	float aspect = float(width) / float(height);
 	float nearDist = 0.1f;
 	float farDist = 3000.0f;
 	// perspective
 	ctx->setProjection(glm::perspective(viewAngle, aspect, nearDist, farDist));
-	//ctx->setProjection(glm::ortho(-2000.0f, 2000.0f, -2000.0f, 2000.0f, .1f, 3000.0f));
-	//ctx->setProjection(glm::ortho(-float(getWidth() / 2.0), float(getWidth() / 2.0), -float(getWidth() / 2.0) / aspect, float(getWidth() / 2.0) / aspect, .10f, 4000.0f));
-	//ctx->concatModelViewProjection();
-
 	// END Model / View / Projection data
 
 
@@ -82,14 +77,7 @@ void ProtoBaseApp::_init() {
 	//ctx->setLightViewMatrix(glm::lookAt(glm::vec3(ctx->getLight(0).getPosition().x, ctx->getLight(0).getPosition().y, ctx->getLight(0).getPosition().z), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0)));
 
 	ctx->setLightView(glm::lookAt(glm::vec3(ctx->getLight(0).getPosition().x, ctx->getLight(0).getPosition().y, ctx->getLight(0).getPosition().z), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0)));
-
-
-	//L_P = glm::perspective(45.0f, 1.0f, .10f, 1000.0f);
-	//ctx->concatLightModelView();
-	//ctx->setLightProjectionMatrix(glm::ortho<float>(-300, 300, -300, 300, -.1, 3000));
-	//ctx->setLightProjectionMatrix(glm::frustum(-.1f, .1f, -.1f, .1f, .1f, 2000.0f));
 	ctx->setLightProjection(glm::perspective(viewAngle, aspect, nearDist, 5.0f));
-	//ctx->setLightProjection(glm::ortho(-2000.0f, 2000.0f, -2000.0f, 2000.0f, .1f, 2000.0f));
 
 	//ctx->concatLightModelViewProjection();
 	ctx->setLightBias(glm::mat4(
@@ -135,6 +123,9 @@ void ProtoBaseApp::_init() {
 
 	//calls init() in derived ProtoController class
 	init();
+
+	// shows uniform and attribute locations in shader
+	GLSLInfo(&shader3D);
 }
 
 
@@ -661,29 +652,23 @@ void ProtoBaseApp::_run(const Vec2f& mousePos, const Vec4i& windowCoords/*, int 
 	glUniform3fv(ctx->getGlobalAmbient_U(), 1, &ctx->getGlobalAmbient().r);
 
 	// update all 8 lights in shaders
-	for (int i = 0; i < 1; ++i) {
+	for (int i = 0; i < 8; ++i) {
 		glUniform3fv(ctx->getLight_U(i).position, 1, &ctx->getLight(i).getPosition().x);
-		/*trace("ctx->getLight(",i,").getPosition().x =", ctx->getLight(i).getPosition().x);
-		trace("ctx->getLight(", i, ").getPosition().y =", ctx->getLight(i).getPosition().y);
-		trace("ctx->getLight(", i, ").getPosition().z =", ctx->getLight(i).getPosition().z);*/
 		glUniform3fv(ctx->getLight_U(i).intensity, 1, &ctx->getLight(i).getIntensity().x);
-		//glUniform4fv(lights_U[i].diffuse, 1, &lights[i].getDiffuse().r);
-		//glUniform4fv(lights_U[i].ambient, 1, &lights[i].getAmbient().r);
-		//glUniform4fv(lights_U[i].specular, 1, &lights[i].getSpecular().r);
 	}
 
 	// I thought I needed this to reset matrix each frame?
-	ctx->setModel(glm::mat4(1.0f));
+	//ctx->setModel(glm::mat4(1.0f));
 	// was 18
-	ctx->setView(glm::lookAt(glm::vec3(0, 0, 212), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0)));
-	ctx->concatModelView();
-	ctx->concatModelViewProjection();
+	ctx->setView(glm::lookAt(glm::vec3(0, 0, 500), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0)));
+	/*ctx->concatModelView();
+	ctx->concatModelViewProjection();*/
 	//ctx->createNormalMatrix();
 
-	glUniformMatrix4fv(ctx->getModel_U(), 1, GL_FALSE, &ctx->getModel()[0][0]);
+	/*glUniformMatrix4fv(ctx->getModel_U(), 1, GL_FALSE, &ctx->getModel()[0][0]);
 	glUniformMatrix4fv(ctx->getModelView_U(), 1, GL_FALSE, &ctx->getModelView()[0][0]);
 	glUniformMatrix4fv(ctx->getModelViewProjection_U(), 1, GL_FALSE, &ctx->getModelViewProjection()[0][0]);
-	glUniformMatrix3fv(ctx->getNormal_U(), 1, GL_FALSE, &ctx->getNormal()[0][0]);
+	glUniformMatrix3fv(ctx->getNormal_U(), 1, GL_FALSE, &ctx->getNormal()[0][0]);*/
 
 
 
@@ -732,42 +717,30 @@ void ProtoBaseApp::_run(const Vec2f& mousePos, const Vec4i& windowCoords/*, int 
 	mouseLastFrameY = mouseY;
 }
 
-
-
-
-
-
+// Final function call before user defined display() call
 void ProtoBaseApp::render(int x, int y, int scaleFactor) {
-
-
-	// if shadowing is enabled do double pass with shadow map framebuffer
 	if (areShadowsEnabled) {
-		//trace("shadows enabled");
 		glBindFramebuffer(GL_FRAMEBUFFER, ctx->getShadowBuffer_U());
-		//trace("ctx->getShadowBuffer_U()=", ctx->getShadowBuffer_U());
-		//clear depth buffer
 		glClear(GL_DEPTH_BUFFER_BIT);
-
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
 		//set viewport to the shadow map view size
-		//glViewport(-i*width, -j*height, scaleFactor * width, scaleFactor * height);
-		//glViewport(-i*width, -j*height, scaleFactor * width, scaleFactor * height);
-		//trace("SHADOWMAP_WIDTH =", SHADOWMAP_WIDTH);
-		//trace("SHADOWMAP_HEIGHT =", SHADOWMAP_HEIGHT);
 		glViewport(0, 0, SHADOWMAP_WIDTH, SHADOWMAP_HEIGHT);
-		//glViewport(x*SHADOWMAP_WIDTH, y*SHADOWMAP_HEIGHT, scaleFactor * SHADOWMAP_WIDTH, scaleFactor *  SHADOWMAP_HEIGHT);
-		//glViewport(-2 * SHADOWMAP_WIDTH, -2 * SHADOWMAP_WIDTH, 6 * SHADOWMAP_WIDTH, 6 * SHADOWMAP_HEIGHT);
-
+		
 		// enable front face culling for shadowing
 		glEnable(GL_CULL_FACE);
 		glCullFace(GL_FRONT);
 
-		// enables shadow blending in fragment shader
-		//trace("ctx->getShaderPassFlag_U() =", ctx->getShaderPassFlag_U());
-		glUniform1i(ctx->getShaderPassFlag_U(), 1); // controls render pass in shader
+		// shadow blending in fragment shader
+		// controls render pass in shader
+		glUniform1i(ctx->getShaderPassFlag_U(), 1); 
 
 		// render shadow in first pass to FBO
+		ctx->setModel(glm::mat4{ 1.0f }); // reset model matrix to identity
+		ctx->setProjection(glm::ortho<float>(-float(width) / 3, float(width) / 3, -float(height) / 3, float(height) / 3, -0.1f, 3000));
+		//ctx->setLightProjection(glm::ortho<float>(-float(width) / 2, float(width) / 2, -float(height) / 2, float(height) / 2, -0.1f, 3000));
+		
+		// call user defined display
 		display();
 
 		// reset backface culling
@@ -779,68 +752,56 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 
 		// not sure what this does
 		glDrawBuffer(GL_BACK_LEFT);
-		//glDrawBuffer(GL_FRONT_AND_BACK);
-
-		// reset default view
-		////glViewport(-i*width, -j*height, scaleFactor * width, scaleFactor * height);
-		//glViewport(x*width, y*height, scaleFactor * width, scaleFactor * height);
-		//trace("windowFrameSize =", windowFrameSize);
-		//trace("x =",x);
-		//trace("y =", y);
-		//trace("scaleFactor =", scaleFactor);
+		
+		// reset viewport to window view size.
+		// includes optional offset for tiling
 		glViewport(x*windowFrameSize.w, y*windowFrameSize.h, scaleFactor * windowFrameSize.w, scaleFactor * windowFrameSize.h);
-		//trace(x, y);
-		//trace(x*windowFrameSize.w, y*windowFrameSize.h);
-		//windowFrameSize
-
-
-
+		
 		// disable shadowing blending in fragment shader
 		glUniform1i(ctx->getShaderPassFlag_U(), 0); // controls render pass in shader
-		//glUniform1i(shadowMap_U, 0);
-
+		
 		// enable 3D lighting by default
 		enableLights();
 
 		// render scene in second pass
+		ctx->setModel(glm::mat4{ 1.0f }); // reset to identity
+		float viewAngle = 65.0f*PI/180.0f;
+		float aspect = float(width) / float(height);
+		float nearDist = 0.1f;
+		float farDist = 3000.0f;
+		// perspective
+		ctx->setProjection(glm::perspective(viewAngle, aspect, nearDist, farDist));
+		//ctx->setProjection(glm::ortho<float>(-float(width)/2, float(width)/2, -float(height) / 2, float(height) / 2, -0.1f, 3000));
+		
+		// call user defined display
 		display();
 	}
 	else {
-		//trace("shadows not enabled");
-		//glClear(GL_DEPTH_BUFFER_BIT); 
-	//	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		//glUniform1i(shaderPassFlag_U, 0); // controls render pass in shader
-		glUniform1i(ctx->getShaderPassFlag_U(), 0); // controls render pass in shader
+		
+		// flag set to disable shadow implementation in shader
+		glUniform1i(ctx->getShaderPassFlag_U(), 0); 
 
 		// no shadowing use default run
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
-		// not sure what this does
-		//glDrawBuffer(GL_BACK_LEFT);
-
-		// reset default view
-		////glViewport(-i*width, -j*height, scaleFactor * width, scaleFactor * height);
-		glViewport(0, 0, getWidth(), getHeight());
-		//glViewport(x*width, y*height, scaleFactor * width, scaleFactor * height);
-
+		// set viewport to window size.
+		glViewport(x*windowFrameSize.w, y*windowFrameSize.h, scaleFactor * windowFrameSize.w, scaleFactor * windowFrameSize.h);
 
 		// reset backface culling
 		glCullFace(GL_BACK);
-		//
 
-		// disable shadoing blending in fragment shader
-		//glUniform1i(shaderPassFlag_U, 0); // controls render pass in shader
-		glUniform1i(ctx->getShaderPassFlag_U(), 0);
-		//glUniform1i(shadowMap_U, 0);
+		// reset transformation matrix
+		ctx->setModel(glm::mat4{ 1.0f }); 
+		float viewAngle = 65.0f*PI / 180.0f;
+		float aspect = float(width) / float(height);
+		float nearDist = 0.1f;
+		float farDist = 3000.0f;
+		// perspective
+		ctx->setProjection(glm::perspective(viewAngle, aspect, nearDist, farDist));
 
-		// render scene in single pass
-
-
+		// call user defined display
 		display();
 	}
-
-	// see locations of attributes and uniforms
-	// GLSLInfo(&shader3D);
 }
 
 // Mouse event behavior
@@ -1000,8 +961,9 @@ void ProtoBaseApp::loadImage(std::string imageName) {
 void ProtoBaseApp::GLSLInfo(ProtoShader* shader) {
 	// START get all uniform shaders
 	GLint nUniforms, maxLen;
-	glGetProgramiv(shader->getID(), GL_ACTIVE_UNIFORM_MAX_LENGTH, &maxLen);
-	glGetProgramiv(shader->getID(), GL_ACTIVE_UNIFORMS, &nUniforms);
+	
+	glGetProgramiv(shader->getID_2(), GL_ACTIVE_UNIFORM_MAX_LENGTH, &maxLen);
+	glGetProgramiv(shader->getID_2(), GL_ACTIVE_UNIFORMS, &nUniforms);
 
 	GLchar* name = (GLchar*)malloc(maxLen);
 
@@ -1011,8 +973,8 @@ void ProtoBaseApp::GLSLInfo(ProtoShader* shader) {
 	printf("\n Location | Name\n");
 	printf("--------------------------------------------------\n");
 	for (int i = 0; i < nUniforms; ++i) {
-		glGetActiveUniform(shader->getID(), i, maxLen, &written, &size, &type, name);
-		location = glGetUniformLocation(shader->getID(), name);
+		glGetActiveUniform(shader->getID_2(), i, maxLen, &written, &size, &type, name);
+		location = glGetUniformLocation(shader->getID_2(), name);
 		printf(" %-8d | %s\n", location, name);
 	}
 	free(name);
@@ -1024,10 +986,11 @@ void ProtoBaseApp::GLSLInfo(ProtoShader* shader) {
 	trace(" version =", glGetString(GL_VERSION));
 	trace("glslVersion =", glGetString(GL_SHADING_LANGUAGE_VERSION));
 
-	trace("vertexPosition Location =", glGetAttribLocation(shader->getID(), "vertexPosition"));
-	trace("vertexNormal Location =", glGetAttribLocation(shader->getID(), "vertexNormal"));
-	trace("vertexColor Location =", glGetAttribLocation(shader->getID(), "vertexColor"));
-	trace("vertexTexture Location =", glGetAttribLocation(shader->getID(), "vertexTexture"));
+	trace("vertexPosition Location =", glGetAttribLocation(shader->getID_2(), "vertexPosition"));
+	trace("vertexNormal Location =", glGetAttribLocation(shader->getID_2(), "vertexNormal"));
+	trace("vertexColor Location =", glGetAttribLocation(shader->getID_2(), "vertexColor"));
+	trace("vertexTextureCoords Location =", glGetAttribLocation(shader->getID_2(), "vertexTextureCoords"));
+	trace("vertexTangent Location =", glGetAttribLocation(shader->getID_2(), "vertexTangent"));
 }
 
 

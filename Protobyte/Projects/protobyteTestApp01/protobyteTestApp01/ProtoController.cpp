@@ -1,7 +1,7 @@
 #include "ProtoController.h"
 
 void ProtoController::init() {
-	setLight(0, {-10, 10, 100 }, { 1, 1, 1 });
+	setLight(0, {-300, 100, 400 }, { 1, 1, 1 });
 	shadowsOn();
 	std::vector<Vec3> pts;
 	float theta = 0;
@@ -11,20 +11,20 @@ void ProtoController::init() {
 	}
 	Spline3 path(pts, 3, false, 1.0);
 
-	tube = Tube(path, 12, 12, false, "greenCrocSkin.jpg");
+	tube = Tube(path, 18, 12, false, "vascular3.jpg");
 	tube.setDiffuseMaterial({ 1, 1, 1, 1 });
-	tube.setBumpMap("greenCrocSkin.jpg");
+	tube.setBumpMap("vascular3.jpg");
 	//tube.loadBumpMapTexture("stone_normalMap.jpg");
 	tube.setTextureScale({0.3f, 0.05f });
 	tube.setSpecularMaterial({ 1, 1, 1, 1 });
-	tube.setShininess(10);
+	tube.setShininess(5);
 
-	plane = ProtoPlane({}, {}, Dim2f(1000, 800), Col4f(1, 1, 1, 1), 1, 1, "ship_plate_rainbow.jpg");
+	plane = ProtoPlane({}, {}, Dim2f(1000, 800), Col4f(1, 1, 1, 1), 1, 1, "vascular3.jpg");
 	plane.setDiffuseMaterial({ 1, 1, 1, 1 });
-	plane.setBumpMap("ship_plate_rainbow.jpg");
+	plane.loadBumpMapTexture("stone_normalMap.jpg");
 	plane.setTextureScale({ 1.0f, 1.0f });
 	plane.setSpecularMaterial({ 1, 1, 1, 1 });
-	plane.setShininess(10);
+	plane.setShininess(5);
 }
 
 void ProtoController::run() {
@@ -39,15 +39,15 @@ void ProtoController::display() {
 	arcBallBegin();
 	push();
 	translate(0, 0, 300);
-	scale(4.0);
+	scale(1.5);
 	rotate(getFrameCount()*.2*PI / 180, { 0, 1, 0 });
 	tube.display();
 	tube.displayTBN();
 	pop();
 
 	push();
-	translate(0, 0, -800);
-	scale(7000);
+	translate(0, 0, -600);
+	scale({3000, 2500, 1});
 	plane.display();
 	pop();
 
@@ -75,6 +75,7 @@ void ProtoController::keyPressed() {
 }
 
 void ProtoController::mousePressed() {
+	GLSLInfo(&shader3D);
 }
 
 void ProtoController::mouseRightPressed() {

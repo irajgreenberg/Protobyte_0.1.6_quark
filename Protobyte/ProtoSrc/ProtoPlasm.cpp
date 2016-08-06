@@ -152,17 +152,6 @@ void ProtoPlasm::initGLFW(){
 	}
 #endif
 
-
-	//#if defined(_WIN32) || defined (_WIN64) 
-	//	glewExperimental = TRUE;
-	//	GLenum err = glewInit();
-	//	if (err != GLEW_OK)
-	//	{
-	//		//Problem: glewInit failed, something is seriously wrong.
-	//		std::cout << "glewInit failed, aborting." << std::endl;
-	//	}
-	//#endif
-
 	// end GLFW/window setup
 
 	// Set gl states
@@ -210,6 +199,7 @@ void ProtoPlasm::initGLFW(){
 	char *GL_version = (char *)glGetString(GL_VERSION);
 	char *GL_vendor = (char *)glGetString(GL_VENDOR);
 	char *GL_renderer = (char *)glGetString(GL_RENDERER);
+	trace("Thank you for flying Protobyte.");
 	trace("GL_version =", GL_version);
 	trace("GL_vendor =", GL_vendor);
 	trace("GL_renderer =", GL_renderer);
