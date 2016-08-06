@@ -92,7 +92,8 @@ bool ProtoTexture::init() {
 		std::string cp = cCurrentPath; //cast char[] to string
 #if defined(_WIN32) || (_WIN64)
 									   // need to escape backslashes with themselves, ick
-		std::string pathExtension = "\\..\\..\\..\\Resources\\imgs\\";
+		std::string pathExtension = "\\..\\..\\Resources\\imgs\\";
+		//std::string pathExtension = "\\..\\..\\..\\Resources\\imgs\\";
 #else
 									   // osx/posix use "normal" directory dividers
 		std::string pathExtension = "/Resources/imgs/";
