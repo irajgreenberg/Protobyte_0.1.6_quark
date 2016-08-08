@@ -98,6 +98,7 @@ ProtoGeom3::~ProtoGeom3() {
 void ProtoGeom3::init() {
 	clearVectors(); // empty all vectors in case called by setter
 	createDiffuseMapTexture(diffuseMapImage); // set default diffuse color texture
+	loadBumpMapTexture("white_tile_normal.jpg"); // set default
 	calcVerts();
 	calcInds();
 	calcFaces();

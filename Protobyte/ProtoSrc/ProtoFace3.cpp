@@ -28,7 +28,7 @@ namespace ijg {
 	// overloaded << operator for outputting field values in objects
 
 	std::ostream& operator<<(std::ostream& output, const ProtoFace3& face3) {
-		output << "[ V0: " << *(face3.v0_p) << ", " << *(face3.v1_p) << ", " << *(face3.v2_p) << " ]";
+		output << "V0: " << *(face3.v0_p) << "\nV1: " << *(face3.v1_p) << "\nV2: " << *(face3.v2_p);
 		return output;
 	}
 }
@@ -100,10 +100,11 @@ void ProtoFace3::calcCentroid() {
 void ProtoFace3::calcNorm() {
 	Vec3f v0 = v1_p->pos - v0_p->pos;
 	Vec3f v1 = v2_p->pos - v0_p->pos;
-	// maybe reverse
-	norm = v1.cross(v0);
-	//norm = v0.cross(v1);
+	norm = v0.cross(v1); //normal points to camera
+	//norm = v1.cross(v0);
 	norm.normalize();
+	//trace(*this);
+	//trace("norm =", norm);
 }
 
 // calculates tangent for bump mapping based
@@ -125,21 +126,6 @@ Vec3f ProtoFace3::getTangentBM(){
 	Vec3f tangent = (v0 * uv1.y - v1 * uv0.y)*r;
 	//trace("tangent", tangent);
 	return tangent;
-
-	/*float v0u = v1_p->getUV().elem0 - v0_p->getUV().elem0;
-	float v0v = v2_p->getUV().elem0 - v0_p->getUV().elem0;
-	float v1u = v1_p->getUV().elem1 - v0_p->getUV().elem1;
-	float v1v = v2_p->getUV().elem1 - v0_p->getUV().elem1;
-
-	float coef = 1.0 / (v0u * v1v - v0v * v0u);
-
-	tangentBM = Vec3f(	coef * ((v1.x * v1v) + (v2.x * -v0v)),
-	coef * ((v1.y * v1v) + (v2.y * -v0v)),
-	coef * ((v1.z * v1v) + (v2.z * -v0v)));
-
-	biTangent = norm.cross(tangentBM);
-
-	return tangentBM;*/
 }
 
 

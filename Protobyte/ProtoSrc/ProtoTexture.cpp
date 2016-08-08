@@ -146,6 +146,9 @@ bool ProtoTexture::init() {
 			if (!dib)
 				return false;
 
+			// right image
+			FreeImage_FlipVertical(dib);
+			
 			//retrieve the image data
 			imageData = FreeImage_GetBits(dib);
 			//get the image width and height
@@ -167,6 +170,8 @@ bool ProtoTexture::init() {
 			isWrap ? GL_REPEAT : GL_CLAMP);
 			glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T,
 			isWrap ? GL_REPEAT : GL_CLAMP);*/
+
+			
 			glGenerateMipmap(GL_TEXTURE_2D);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
@@ -205,6 +210,9 @@ bool ProtoTexture::init() {
 			//if the image failed to load, return failure
 			if (!dib)
 				return false;
+
+			// right image
+			FreeImage_FlipVertical(dib);
 
 			//retrieve the image data
 			imageData = FreeImage_GetBits(dib);
@@ -399,12 +407,7 @@ bool ProtoTexture::init() {
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-			//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-			//glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 
-			// build our texture mipmaps
-			//gluBuild2DMipmaps(GL_TEXTURE_2D, GL_LUMINANCE, width, height, GL_LUMINANCE, GL_UNSIGNED_BYTE, normalMapData);
-			//	// glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_BGR, GL_UNSIGNED_BYTE, imageData);
 			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_BGR, GL_UNSIGNED_BYTE, normalMapData);
 
 			// deallocate

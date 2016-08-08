@@ -62,7 +62,7 @@ void ProtoBaseApp::_init() {
 	// START standard transformation matrices: ModelView / Projection / Normal
 	ctx->setModel(glm::mat4(1.0f));
 	// only relavent if draw not invoked
-	ctx->setView(glm::lookAt(glm::vec3(0.0, 0.0, 100), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0)));
+	ctx->setView(glm::lookAt(glm::vec3(0.0, 0.0, 500), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0)));
 
 	float viewAngle = 65.0f*PI / 180.0f;
 	float aspect = float(width) / float(height);
@@ -119,7 +119,7 @@ void ProtoBaseApp::_init() {
 	_createStar();
 
 	//precalculate 3D geometry
-	_createBox();
+	//_createBox();
 
 	//calls init() in derived ProtoController class
 	init();
@@ -674,6 +674,7 @@ void ProtoBaseApp::_run(const Vec2f& mousePos, const Vec4i& windowCoords/*, int 
 
 	// update shadow map texture matrix should light(s) changes position
 	ctx->setLightView(glm::lookAt(glm::vec3(ctx->getLight(0).getPosition().x, ctx->getLight(0).getPosition().y, ctx->getLight(0).getPosition().z), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0)));
+
 	//ctx->concatLightModelView();
 	//ctx->setLightProjectionMatrix(glm::perspective(45.0f, 1.0f, .10f, 1000.0f));
 	//ctx->concatLightModelViewProjection();
@@ -731,6 +732,7 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 		glEnable(GL_CULL_FACE);
 		glCullFace(GL_FRONT);
 
+
 		// shadow blending in fragment shader
 		// controls render pass in shader
 		glUniform1i(ctx->getShaderPassFlag_U(), 1); 
@@ -738,7 +740,6 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 		// render shadow in first pass to FBO
 		ctx->setModel(glm::mat4{ 1.0f }); // reset model matrix to identity
 		ctx->setProjection(glm::ortho<float>(-float(width) / 3, float(width) / 3, -float(height) / 3, float(height) / 3, -0.1f, 3000));
-		//ctx->setLightProjection(glm::ortho<float>(-float(width) / 2, float(width) / 2, -float(height) / 2, float(height) / 2, -0.1f, 3000));
 		
 		// call user defined display
 		display();

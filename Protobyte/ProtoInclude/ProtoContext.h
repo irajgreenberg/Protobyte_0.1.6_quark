@@ -80,7 +80,7 @@ namespace ijg {
 		std::vector<ProtoLight> lights;
 
 		// perspective view 
-		float viewAngle{ 75.0f };
+		float viewAngle{ float(65.0f*PI/180.0f) };
 		float aspect{ 0.0f };
 		float nearDist{ .1f };
 		float farDist{ 1500.0f };
@@ -100,7 +100,7 @@ namespace ijg {
 
 
 	public:
-		static const std::shared_ptr<ProtoContext> getContext(float width = 100.0f, float height = 100.0f);
+		static const std::shared_ptr<ProtoContext> getContext(float width = 1024.0f, float height = 768.0f);
 		void init();
 
 		/*** Geometry Matrices ***/

@@ -19,9 +19,9 @@ void ProtoController::init() {
 	tube.setSpecularMaterial({ 1, 1, 1, 1 });
 	tube.setShininess(5);
 
-	plane = ProtoPlane({}, {}, Dim2f(1000, 800), Col4f(1, 1, 1, 1), 1, 1, "vascular3.jpg");
+	plane = ProtoPlane({}, {}, Dim2f(1000, 800), Col4f(1, 1, 1, 1), 1, 1, "polyTiles.jpg");
 	plane.setDiffuseMaterial({ 1, 1, 1, 1 });
-	plane.loadBumpMapTexture("stone_normalMap.jpg");
+	plane.loadBumpMapTexture("polyTiles_normal.jpg");
 	plane.setTextureScale({ 1.0f, 1.0f });
 	plane.setSpecularMaterial({ 1, 1, 1, 1 });
 	plane.setShininess(5);

@@ -84,6 +84,7 @@ void main(void)
     
 		// Calculate R ready for use in Phong lighting.
 		vec3 R = reflect(-L, N); // ***********multi here
+		//R = vec3(1.0, 1.0, 1.0);
 
 		// Fetch the diffuse color from the texture.
 		diffuse_color = texture(diffuseMap, fs_in.texcoord).rgb;
@@ -103,20 +104,23 @@ void main(void)
 	
 	
 	// shadow map
-	if(shadowMapCoords.w>1) {
+	if(shadowMapCoords.w>1.0) {
 		//check the shadow map texture to see if the fragment is in shadow
+		//shadowMapCoords.w += .3;
 		float shadow = textureProj(shadowMap, shadowMapCoords);
 		//darken the diffuse component apprpriately
 
 
 		diffuse = mix(diffuse, diffuse*shadow, 0.4); 
+		//float diffuse = max(0.0, fndotl) * shadowFactor + 0.2;
+
 	}
 
     // Final color is diffuse + specular + ambient with lightRendering Factors enabling/disabling lighting effects for 2D rendering
 
 	color = vertCol*lightRenderingFactors.w + vec4(diffuse*lightRenderingFactors.x + specular*lightRenderingFactors.y + (vec3(ambientMaterial)*globalAmbientLight)*lightRenderingFactors.z, 1.0);
 
-	//vec3 c = texture(bumpMap, fs_in.texcoord).rgb;
+	vec3 c = texture(bumpMap, fs_in.texcoord).rgb;
 	//color = vec4(c, 1.0);
 	//color = vec4(diffuse_color, 1.0);
 
