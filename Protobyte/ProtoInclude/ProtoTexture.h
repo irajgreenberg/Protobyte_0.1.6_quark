@@ -88,6 +88,7 @@ namespace ijg {
 		GLuint h;
 		bool isWrap;
 		GLuint textureID;
+		float bumpIntensity;
 
 		bool init();
 
@@ -117,7 +118,7 @@ namespace ijg {
         ProtoTexture(); // default
 
 		// overloaded: assumption: image_format:RGB, internal_Forma:RGB, level:0, border0
-		ProtoTexture(const std::string& textureMapImage, TextureMapType textureMapType, GLenum image_format = GL_RGB, GLint internal_format = GL_RGB, GLint level = 0, GLint border = 0); // initialized
+		ProtoTexture(const std::string& textureMapImage, TextureMapType textureMapType, GLenum image_format = GL_RGB, GLint internal_format = GL_RGB, GLint level = 0, GLint border = 0, float bumpIntensity = 0.35f); // initialized
     
 //        ProtoTexture(const std::string& textureURL, GLuint w, GLuint h, bool isWrap);
 //        ProtoTexture(unsigned char*& data, GLuint w, GLuint h, bool isWrap);

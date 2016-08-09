@@ -169,7 +169,7 @@ namespace ijg {
 		// flag for shadowing
 		bool areShadowsEnabled;
 
-		const int SHADOWMAP_WIDTH = 1024, SHADOWMAP_HEIGHT = 1024;
+		const int SHADOWMAP_WIDTH = 2000, SHADOWMAP_HEIGHT = 2000;
 
 		/************************************
 		 **********   FUNCTIONS   ***********

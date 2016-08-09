@@ -64,6 +64,7 @@ void main(void)
     // shadowmap 
 	//shadowMapCoords = shadowModelViewBiasProjectionMatrix*(modelMatrix*vec4(vertexPosition, 1.0));
 	shadowMapCoords = shadowModelViewBiasProjectionMatrix*vec4(vertexPosition, 1.0);
+
    
     // The light vector (L) is the vector from the point of interest to
     // the light. Calculate that and multiply it by the TBN matrix.

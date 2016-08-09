@@ -338,9 +338,13 @@ void ProtoGeom3::setShader(const ProtoShader* shader) {
 void ProtoGeom3::setDiffuseMap(const std::string& diffuseMapImage) {
 	createDiffuseMapTexture(diffuseMapImage);
 }
-void ProtoGeom3::setBumpMap(const std::string& bumpMapImage) {
-	createBumpMapTexture(bumpMapImage);
+void ProtoGeom3::setBumpMap(const std::string& bumpMapImage, float intensity) {
+	createBumpMapTexture(bumpMapImage, intensity);
 }
+void ProtoGeom3::createBumpMap(const std::string& bumpMapImage, float intensity) {
+	createBumpMapTexture(bumpMapImage, intensity);
+}
+
 void ProtoGeom3::setReflectionMap(const std::string& reflectionMapImage) {
 }
 void ProtoGeom3::setRefractionMap(const std::string& refractionMapImage) {
@@ -355,10 +359,12 @@ void ProtoGeom3::createDiffuseMapTexture(const std::string& diffuseMapImage) {//
 	glUniform1i(diffuseMapLoc,0); 
 }
 
-void ProtoGeom3::createBumpMapTexture(const std::string& bumpMapImage) {
-	bumpMapTexture = ProtoTexture(bumpMapImage, ProtoTexture::DIFFUSE_MAP, GL_RGB, GL_RGB, 0, 0);
+void ProtoGeom3::createBumpMapTexture(const std::string& bumpMapImage, float intensity) {
+	bumpMapTexture = ProtoTexture(bumpMapImage, ProtoTexture::BUMP_MAP, GL_RGB, GL_RGB, 0, 0, intensity);
 	bumpMapLoc = glGetUniformLocation(ProtoShader::getID_2(), "bumpMap");
+	//bumpMapIntensityLoc = glGetUniformLocation(ProtoShader::getID_2(), "bumpIntensity");
 	glUniform1i(bumpMapLoc, 1); 
+	//glUniform1i(bumpMapIntensityLoc, 1);
 }
 
 void ProtoGeom3::loadBumpMapTexture(const std::string& bumpMapImage) {

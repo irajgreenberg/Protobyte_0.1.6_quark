@@ -53,8 +53,8 @@ ProtoTexture::ProtoTexture() {
 //}
 
 // one being used
-ProtoTexture::ProtoTexture(const std::string& textureMapImage, TextureMapType textureMapType, GLenum image_format, GLint internal_format, GLint level, GLint border) :
-	textureMapImage(textureMapImage), textureMapType(textureMapType), image_format(image_format), internal_format(internal_format), level(level), border(border) {
+ProtoTexture::ProtoTexture(const std::string& textureMapImage, TextureMapType textureMapType, GLenum image_format, GLint internal_format, GLint level, GLint border, float bumpIntensity):
+	textureMapImage(textureMapImage), textureMapType(textureMapType), image_format(image_format), internal_format(internal_format), level(level), border(border), bumpIntensity(bumpIntensity){
 	// std::cout << "in ProtoTexture class, ProtoTexture::textureID = " <<  ProtoTexture::textureID << std::endl;
 	//trace("textureMapImage =", textureMapImage);
 	init();
@@ -238,9 +238,7 @@ bool ProtoTexture::init() {
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-			//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-			//glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-			//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+
 			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_BGR, GL_UNSIGNED_BYTE, imageData);
 			//gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGB, width, height, GL_BGR, GL_UNSIGNED_BYTE, imageData);
 
@@ -274,7 +272,7 @@ bool ProtoTexture::init() {
 			// get grayscale values(aka height map)
 			unsigned width = FreeImage_GetWidth(dib);
 			unsigned height = FreeImage_GetHeight(dib);
-			float* greyVals = new float[width*height]; // rmember to clean up (near line 400)
+			float* greyVals = new float[width*height]; // remember to clean up (near line 400)
 
 													   //manual conversion to greyscale
 			for (int i = 0; i < height; ++i) {
@@ -305,8 +303,9 @@ bool ProtoTexture::init() {
 				1, 2, 1
 			};
 
-			// smoother <-  .5  -> bumpier - eventually obviously paramerterize
-			float bumpinessFactor = .975;
+			
+		/*	float bumpinessFactor = .975;
+			bumpinessFactor = .275;*/
 
 			// allocate for normal map
 			FIBITMAP* normalMap = FreeImage_Allocate(width, height, 24);
@@ -362,7 +361,9 @@ bool ProtoTexture::init() {
 						greyVals[L] * sobelY[3] + greyVals[C] * sobelY[4] + greyVals[R] * sobelY[5] +
 						greyVals[BL] * sobelY[6] + greyVals[B] * sobelY[7] + greyVals[BR] * sobelY[8];
 					//sqrt(1-(cx*cx+cy*cy))
-					float z = 1.0 / (bumpinessFactor * (1 + pow(2, 1)));
+					
+					// bumpIntensity: smoother <-  .5  -> bumpier 
+					float z = 1.0 / (bumpIntensity * (1 + pow(2, 1)));
 
 					//Vec3f v(x * 2, y * 2, z);
 

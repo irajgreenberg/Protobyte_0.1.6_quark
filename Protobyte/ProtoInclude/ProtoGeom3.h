@@ -91,7 +91,8 @@ namespace ijg {
 		
 		// create Textures - accessed in Fragment Shader
 		virtual void createDiffuseMapTexture(const std::string& diffuseMapImage); // loc 0 (default)
-		virtual void createBumpMapTexture(const std::string& bumpMapImage); // loc 1 // dynamically build normal map
+		//virtual void createBumpMapTexture(const std::string& bumpMapImage); // loc 1 // dynamically build normal map
+		virtual void createBumpMapTexture(const std::string& bumpMapImage, float intensity); // loc 1 // dynamically build normal map
 		virtual void createReflectionMapTexture(const std::string& reflectioneMapImage); // loc 2
 		virtual void createRefractionMapTexture(const std::string& refractionMapImage); // loc 3
 		virtual void createSpecularMapTexture(const std::string& specularMapImage); // loc 4
@@ -258,7 +259,8 @@ namespace ijg {
 		Vec2f getTextureScale() const;
         
 		// public interface for setting maps
-		void setBumpMap(const std::string& bumpMapImage);
+		void setBumpMap(const std::string& bumpMapImage, float intenisty = 0.25f);
+		void createBumpMap(const std::string& bumpMapImage, float intensity = 0.3f);
 		void loadBumpMapTexture(const std::string& bumpMapImage); // loc 1 // pre-made normal map
 		void setDiffuseMap(const std::string& diffuseMapImage);
 		void setReflectionMap(const std::string& reflectionMapImage);

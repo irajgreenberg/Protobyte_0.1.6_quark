@@ -1,29 +1,33 @@
 #include "ProtoController.h"
 
 void ProtoController::init() {
-	setLight(0, { 0, 0, 0 }, { 1, 1, 1 });
+	//setLight(0, { 0, 0, 600 }, { 1, 1, 1 });
 	shadowsOn();
 	std::vector<Vec3> pts;
 	float theta = 0;
 	for (int i = 0; i < 30; i++) {
-		pts.push_back(Vec3f(sin(theta) * 20, -60 + i * 4, cos(theta) * 20));
+		float r = random(14, 30);
+		pts.push_back(Vec3f(sin(theta) * r, -60 + i * 4, cos(theta) * r));
 		theta += TWO_PI * 4 / 30;
 	}
 	Spline3 path(pts, 3, false, 1.0);
 
-	tube = Tube(path, 18, 12, false, "vascular3.jpg");
-	tube.setDiffuseMaterial({ 1.0f, 0.85f, 0.8f });
-	tube.setAmbientMaterial(.3f);
-	tube.loadBumpMapTexture("vascular3_normal2.jpg");
-	tube.setTextureScale({ 0.25f, 0.05f });
-	tube.setSpecularMaterial(1);
-	tube.setShininess(8);
+	tube = Tube(path, 18, 12, ProtoTransformFunction(ProtoTransformFunction::SINUSOIDAL, Tup2(.25, .9), 27), false, "metal_dirty02.jpg");
+	tube.setDiffuseMaterial({ 1.0f, 1, 1 });
+	tube.setAmbientMaterial(0.15f);
+	tube.setBumpMap("goldGate.jpg", .45f);
+	//tube.loadBumpMapTexture("vascular3_normal2.jpg");
+	tube.setTextureScale({ 1, 0.1f });
+	tube.setSpecularMaterial({.8f, .74f, .85f});
+	tube.setShininess(33);
 
-	plane = ProtoPlane({}, {}, Dim2f(0,0), Col4f(1), 1, 1, "corroded_red.jpg");
+
+	plane = ProtoPlane({}, {}, Dim2f(0, 0), Col4f(1), 1, 1, "shipPlate.jpg");
 	plane.setDiffuseMaterial({ 1, 1, 1, 1 });
-	plane.loadBumpMapTexture("corroded_red_normal.jpg");
-	plane.setTextureScale({ .25f, .25f });
-	plane.setSpecularMaterial(1);
+	plane.setBumpMap("shipPlate.jpg", .35);
+	//plane.loadBumpMapTexture("corroded_red_normal.jpg");
+	plane.setTextureScale({ 1, 1 });
+	plane.setSpecularMaterial({ 1, 1, .655f });
 	plane.setShininess(25);
 }
 
@@ -32,25 +36,25 @@ void ProtoController::run() {
 
 void ProtoController::display() {
 
-	setLight(0, { float(sin(getFrameCount()*PI / 180) * 3500) , -150, 1000}, { 1, 1, 1 });
+	//setLight(0, { float(sin(getFrameCount()*PI / 180) * random(1200)) , float(sin(getFrameCount() * PI / 180) * random(1200)), 1000}, { .75f+ random(.25f), .75, .75 });
 
-	//setLight(0, Vec3(0, 0, 0), { 1, 1, 1 });
+	setLight(0, Vec3(-200, 100, 1500), { 1, 1, 1 });
 
-	translate(0, 0, -900);
+	translate(0, 0, -100);
 
 
 	arcBallBegin();
 	push();
-	translate(0, 0, 300);
-	scale(4.75);
-	//rotate(getFrameCount()*.6*PI / 180, { 0, 1, 0 });
+	translate(0, 0, 200);
+	scale(1.75);
+	rotate(getFrameCount()*.6*PI / 180, { .75f, 1, .25f });
 	tube.display();
 	tube.displayTBN();
 	pop();
 
 	push();
-	translate(0, 0, -1000);
-	scale({ 3000, 2500, 1 });
+	translate(0, 0, 0);
+	scale({ 1300, 1250, 1 });
 	plane.display();
 	pop();
 

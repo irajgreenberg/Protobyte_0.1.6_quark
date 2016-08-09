@@ -9,8 +9,9 @@ uniform sampler2DShadow shadowMap;
 uniform sampler2D diffuseMap;
 uniform sampler2D bumpMap;
 
-in vec4 shadowMapCoords;
+//uniform float bumpIntensity;
 
+in vec4 shadowMapCoords;
 
 
 // max 8 lt srcs (fer now...)
@@ -79,48 +80,39 @@ void main(void)
 		// Read the normal from the normal map and normalize it.
 		 N = normalize(texture(bumpMap, fs_in.texcoord).rgb * 2.0f - vec3(1.0));
     
-		// Uncomment this to use surface normals rather than the normal map
-		// N = vec3(0.0, 0.0, 1.0);
-    
 		// Calculate R ready for use in Phong lighting.
-		vec3 R = reflect(-L, N); // ***********multi here
-		//R = vec3(1.0, 1.0, 1.0);
+		vec3 R = reflect(-L, N); 
 
 		// Fetch the diffuse color from the texture.
 		diffuse_color = texture(diffuseMap, fs_in.texcoord).rgb;
-		diffuse += max(dot(N, L), 0.0) * diffuse_color * vec3(diffuseMaterial) * lights[i].intensity; // ***********multi here
-		// Uncomment this to turn off diffuse shading
-		// diffuse = vec3(0.0);
-
-		// Assume that specular color is white - it could also come from a texture
-		//vec3 specular_color = vec3(1.0);
+		diffuse += max(dot(N, L), 0.0) * diffuse_color * vec3(diffuseMaterial) * lights[i].intensity; 
+		
 		// Calculate Phong specular highlight
 		specular += max(pow(dot(R, V), shininess), 0.0) * vec3(specularMaterial) * lights[i].intensity;
-		// Uncomment this to turn off specular highlights
-		// specular = vec3(0.0);
 	}
+	
+	//check the shadow map texture to see if the fragment is in shadow
+	if(shadowMapCoords.w>1.0f) {
 
-	
-	
-	
-	// shadow map
-	if(shadowMapCoords.w>1.0) {
+		vec4 shadCoords = shadowMapCoords;
 		//check the shadow map texture to see if the fragment is in shadow
-		//shadowMapCoords.w += .3;
-		float shadow = textureProj(shadowMap, shadowMapCoords);
+		//shadCoords.z += 10.5f;
+		float shadow = textureProj(shadowMap, shadCoords);
 		//darken the diffuse component apprpriately
 
+		//if(shadCoords.z > 1000.0){
+			//shadow = 0.0;
+		//}
 
-		diffuse = mix(diffuse, diffuse*shadow, 0.4); 
-		//float diffuse = max(0.0, fndotl) * shadowFactor + 0.2;
 
+		diffuse = mix(diffuse, diffuse*shadow, 0.33); 
 	}
 
     // Final color is diffuse + specular + ambient with lightRendering Factors enabling/disabling lighting effects for 2D rendering
 
 	color = vertCol*lightRenderingFactors.w + vec4(diffuse*lightRenderingFactors.x + specular*lightRenderingFactors.y + (vec3(ambientMaterial)*globalAmbientLight)*lightRenderingFactors.z, 1.0);
 
-	vec3 c = texture(bumpMap, fs_in.texcoord).rgb;
+	//vec3 c = texture(bumpMap, fs_in.texcoord).rgb;
 	//color = vec4(c, 1.0);
 	//color = vec4(diffuse_color, 1.0);
 

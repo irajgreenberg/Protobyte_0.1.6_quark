@@ -40,7 +40,7 @@ void ProtoBaseApp::_init() {
 	ctx->init();
 
 	// default global ambient
-	ctx->setGlobalAmbient({ .45f, .45f, .45f });
+	ctx->setGlobalAmbient({ .45f, .45f, .55f });
 
 	// default inital light
 	ctx->setLight(0, { 0, 0, 600 }, { 1, 1, 1 });
@@ -581,33 +581,34 @@ bool ProtoBaseApp::createShadowMap() {
 	glActiveTexture(GL_TEXTURE5);
 	glBindTexture(GL_TEXTURE_2D, ctx->getShadowTexture_U());
 	GLfloat border[] = { 1.0f, .0f, .0f, .0f };
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT16, SHADOWMAP_WIDTH, SHADOWMAP_HEIGHT, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
 
 	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
 	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_MODE, GL_COMPARE_REF_TO_TEXTURE);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_FUNC, GL_LEQUAL);
 	glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, border);
-
-	//trace(SHADOWMAP_WIDTH, SHADOWMAP_HEIGHT);
-	//glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT16, 1024, 1024, 0, GL_DEPTH_COMPONENT, GL_FLOAT, 0);
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT32, SHADOWMAP_WIDTH, SHADOWMAP_HEIGHT, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
+	
 
 	// set up FBO
-	//glGenFramebuffers(1, &shadowBufferID);
-	//trace("before ctx->getShadowBuffer_U()=", ctx->getShadowBuffer_U());
 	glGenFramebuffers(1, &ctx->getShadowBuffer_U());
 	//trace("after ctx->getShadowBuffer_U()=", ctx->getShadowBuffer_U());
 	glBindFramebuffer(GL_FRAMEBUFFER, ctx->getShadowBuffer_U());
 	//trace("ctx->getShadowTexture_U() =", ctx->getShadowTexture_U());
 	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, ctx->getShadowTexture_U(), 0);
 	//glFramebufferTexture(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, ctx->getShadowTexture_U(), 0);
+
+	glDrawBuffer(GL_NONE); // No color buffer is drawn to.
+
 
 	if (glCheckFramebufferStatus(GL_FRAMEBUFFER) == GL_FRAMEBUFFER_COMPLETE) {
 		// unbind fbo
@@ -731,6 +732,17 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 		// enable front face culling for shadowing
 		glEnable(GL_CULL_FACE);
 		glCullFace(GL_FRONT);
+		/*glPolygonOffset(2.5f, 10.0f);*/
+
+		glEnable(GL_POLYGON_OFFSET_FILL);
+		glPolygonOffset(1.0f, 1.0f);
+
+		// doesn't seem to do much
+		//// activate offset for polygons
+		//glEnable(GL_POLYGON_OFFSET_FILL);
+		//// offset by two units equal to smallest value of change in the shadow map
+		//// and offset by two units depending on the slope of the polygon
+		//glPolygonOffset(2.0f, 2.0f);
 
 
 		// shadow blending in fragment shader
@@ -746,13 +758,14 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 
 		// reset backface culling
 		glCullFace(GL_BACK);
+		
 		//glDisable(GL_CULL_FACE);
 
 		// reset default framebuffer
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
-		// not sure what this does
-		glDrawBuffer(GL_BACK_LEFT);
+		// Write to a color buffer (not sure which one to optimally use)
+		glDrawBuffer(GL_FRONT_LEFT);
 		
 		// reset viewport to window view size.
 		// includes optional offset for tiling
@@ -769,7 +782,7 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 		float viewAngle = 65.0f*PI/180.0f;
 		float aspect = float(width) / float(height);
 		float nearDist = 0.1f;
-		float farDist = 3000.0f;
+		float farDist = 6000.0f;
 		// perspective
 		ctx->setProjection(glm::perspective(viewAngle, aspect, nearDist, farDist));
 		//ctx->setProjection(glm::ortho<float>(-float(width)/2, float(width)/2, -float(height) / 2, float(height) / 2, -0.1f, 3000));
@@ -796,7 +809,7 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 		float viewAngle = 65.0f*PI / 180.0f;
 		float aspect = float(width) / float(height);
 		float nearDist = 0.1f;
-		float farDist = 3000.0f;
+		float farDist = 6000.0f;
 		// perspective
 		ctx->setProjection(glm::perspective(viewAngle, aspect, nearDist, farDist));
 
