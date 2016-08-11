@@ -38,23 +38,22 @@ void ProtoController::display() {
 
 	//setLight(0, { float(sin(getFrameCount()*PI / 180) * random(1200)) , float(sin(getFrameCount() * PI / 180) * random(1200)), 1000}, { .75f+ random(.25f), .75, .75 });
 
-	setLight(0, Vec3(-200, 100, 1500), { 1, 1, 1 });
+	setLight(0, Vec3(-1200, 100, 500), { 1, 1, 1 });
 
 	translate(0, 0, -100);
 
 
 	arcBallBegin();
 	push();
-	translate(0, 0, 200);
-	scale(1.75);
+	translate(0, 0, 250);
+	scale(1.95);
 	rotate(getFrameCount()*.6*PI / 180, { .75f, 1, .25f });
 	tube.display();
-	tube.displayTBN();
 	pop();
 
 	push();
-	translate(0, 0, 0);
-	scale({ 1300, 1250, 1 });
+	translate(0, 0, -300);
+	scale({ 3000, 1250, 1 });
 	plane.display();
 	pop();
 
@@ -63,6 +62,7 @@ void ProtoController::display() {
 
 // Key and Mouse Events
 void ProtoController::keyPressed() {
+
 }
 
 void ProtoController::mousePressed() {

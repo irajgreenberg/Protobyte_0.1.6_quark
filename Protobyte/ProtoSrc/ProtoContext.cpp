@@ -204,13 +204,8 @@ void ProtoContext::concat(){
 	glUniformMatrix4fv(modelViewProjection_U, 1, GL_FALSE, &modelViewProjection[0][0]);
 	glUniformMatrix3fv(normal_U, 1, GL_FALSE, &getNormal()[0][0]);
 
-	glm::vec3 ltPos = glm::vec3(lights.at(0).getPosition().x, lights.at(0).getPosition().y, lights.at(0).getPosition().z);
-	//L_MV = glm::lookAt(ltPos, glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
-	lightModelView = glm::lookAt(ltPos, glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
-	lightBiasProjection = lightBias * lightProjection;
-	glm::mat4 temp = lightBiasProjection * lightModelView;
-	lightModelViewBiasProjection = temp * model;
-	glUniformMatrix4fv(lightModelViewBiasProjection_U, 1, GL_FALSE, &lightModelViewBiasProjection[0][0]);
+	// concatenates light view, projection and bias matrices and updates in shader
+	updateLightViewMatrices();
 	
 	//pop();
 }
@@ -266,6 +261,15 @@ void ProtoContext::printModelViewProjectionMatrix() {
 		modelViewProjection[1][0], modelViewProjection[1][1], modelViewProjection[1][2], modelViewProjection[1][3], "\n",
 		modelViewProjection[2][0], modelViewProjection[2][1], modelViewProjection[2][2], modelViewProjection[2][3], "\n",
 		modelViewProjection[3][0], modelViewProjection[3][1], modelViewProjection[3][2], modelViewProjection[3][3], "]");
+}
+
+void ProtoContext::updateLightViewMatrices() {
+	// currently only works for single light source.
+	glm::vec3 ltPos = glm::vec3(lights.at(0).getPosition().x, lights.at(0).getPosition().y, lights.at(0).getPosition().z);
+	lightModelView = glm::lookAt(ltPos, glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
+	lightBiasProjection = lightBias * lightProjection;
+	lightModelViewBiasProjection = lightBiasProjection * lightModelView * model;
+	glUniformMatrix4fv(lightModelViewBiasProjection_U, 1, GL_FALSE, &lightModelViewBiasProjection[0][0]);
 }
 
 

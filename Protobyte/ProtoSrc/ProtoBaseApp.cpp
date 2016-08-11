@@ -676,42 +676,17 @@ void ProtoBaseApp::_run(const Vec2f& mousePos, const Vec4i& windowCoords/*, int 
 	// update shadow map texture matrix should light(s) changes position
 	ctx->setLightView(glm::lookAt(glm::vec3(ctx->getLight(0).getPosition().x, ctx->getLight(0).getPosition().y, ctx->getLight(0).getPosition().z), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0)));
 
-	//ctx->concatLightModelView();
-	//ctx->setLightProjectionMatrix(glm::perspective(45.0f, 1.0f, .10f, 1000.0f));
-	//ctx->concatLightModelViewProjection();
 	ctx->setLightBias(glm::mat4(
 		glm::vec4(.5, 0.0f, 0.0f, 0.0f),
 		glm::vec4(0.0f, .5, 0.0f, 0.0f),
 		glm::vec4(0.0f, 0.0f, .5, 0.0f),
 		glm::vec4(0.5f, 0.5f, 0.5f, 1.0f)
 	));
-	//ctx->concatLightModelViewBiasProjection();
-
-	//glUniformMatrix4fv(ctx->getLightModelViewDepthBiasProjection_U(), 1, GL_FALSE, &ctx->getShadowMatrix()[0][0]);
-	//glUniformMatrix4fv(ctx->getLightModelViewBiasProjection_U(), 1, GL_FALSE, &ctx->getLightModelViewBiasProjection()[0][0]);
-
-	// some help from:http://www.opengl.org/discussion_boards/showthread.php/171184-GLM-to-create-gl_NormalMatrix
-	// update normals
-
-
+	ctx->updateLightViewMatrices();
 
 	// enable  /disable lighting effects ofr 2D rendering
-	//ltRenderingFactors = Vec4f(1.0, 1.0, 1.0, 1.0); // default lighting
-	//glUniform4fv(ctx->getLightRenderingFactors_U(), 1, &ltRenderingFactors.x);
-
 	ctx->setLightRenderingFactors({ 1.0, 1.0, 1.0, 1.0 });
 	glUniform4fv(ctx->getLightRenderingFactors_U(), 1, &ctx->getLightRenderingFactors().x);
-
-
-
-	//glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
-	//glViewport(0, 0, width, height);
-
-	//if (isArcballOn){
-	//push();
-	//rotate(arcballRotX, 1, 0, 0);
-	//rotate(arcballRotY, 0, 1, 0);
-	//}
 
 	run();
 	render();

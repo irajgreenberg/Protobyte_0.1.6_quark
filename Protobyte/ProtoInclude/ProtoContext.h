@@ -178,6 +178,8 @@ namespace ijg {
 		const GLuint& getLightRenderingFactors_U();
 		void setLightRenderingFactors_U(const GLuint& lightRenderingFactors_U);
 
+		void updateLightViewMatrices();
+
 		// shadow mapping texture id's
 		GLuint shadowBuffer_U, shadowTexture_U;
 		void setShadowBuffer_U(const GLuint& shadowBuffer_U);
@@ -334,14 +336,17 @@ namespace ijg {
 	// shadow map
 	inline void ProtoContext::setLightView(const glm::mat4& lightView) {
 		this->lightView = lightView;
+		updateLightViewMatrices();
 	}
 
 	inline void ProtoContext::setLightBias(const glm::mat4& lightBias) {
 		this->lightBias = lightBias;
+		updateLightViewMatrices();
 	}
 
 	inline void ProtoContext::setLightProjection(const glm::mat4& lightProjection) {
 		this->lightProjection = lightProjection;
+		updateLightViewMatrices();
 	}
 
 	//inline void ProtoContext::concatLightModelView() {

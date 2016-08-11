@@ -92,21 +92,21 @@ void main(void)
 	}
 	
 	//check the shadow map texture to see if the fragment is in shadow
-	if(shadowMapCoords.w>1.0f) {
-
-		vec4 shadCoords = shadowMapCoords;
+	//if(shadowMapCoords.w>1.0f) {
+		//vec4 shadCoords = shadowMapCoords;
 		//check the shadow map texture to see if the fragment is in shadow
 		//shadCoords.z += 10.5f;
+		//float shadow = textureProj(shadowMap, shadCoords);
+		//darken the diffuse component appropriately
+		//diffuse = mix(diffuse, diffuse*shadow, 0.33); 
+	//}
+	vec4 shadCoords = shadowMapCoords;
+if ( texture(shadowMap, shadCoords.xyz)  <  shadCoords.z ){
+		//shadCoords.z -= .5f;
 		float shadow = textureProj(shadowMap, shadCoords);
-		//darken the diffuse component apprpriately
-
-		//if(shadCoords.z > 1000.0){
-			//shadow = 0.0;
-		//}
-
-
-		diffuse = mix(diffuse, diffuse*shadow, 0.33); 
-	}
+		//darken the diffuse component appropriately
+		diffuse = mix(diffuse, diffuse*shadow, 0.63); 
+}
 
     // Final color is diffuse + specular + ambient with lightRendering Factors enabling/disabling lighting effects for 2D rendering
 
@@ -114,7 +114,7 @@ void main(void)
 
 	//vec3 c = texture(bumpMap, fs_in.texcoord).rgb;
 	//color = vec4(c, 1.0);
-	//color = vec4(diffuse_color, 1.0);
+	//color = vec4( texture(shadowMap, shadCoords.xyz),  texture(shadowMap, shadCoords.xyz),  texture(shadowMap, shadCoords.xyz), 1.0);
 
 	color.a = vertCol.a;
 

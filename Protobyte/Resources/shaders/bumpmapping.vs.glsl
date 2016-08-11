@@ -62,7 +62,6 @@ void main(void)
     vec3 B = cross(N, T);
 
     // shadowmap 
-	//shadowMapCoords = shadowModelViewBiasProjectionMatrix*(modelMatrix*vec4(vertexPosition, 1.0));
 	shadowMapCoords = shadowModelViewBiasProjectionMatrix*vec4(vertexPosition, 1.0);
 
    
