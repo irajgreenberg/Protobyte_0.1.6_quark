@@ -12,48 +12,42 @@ void ProtoController::init() {
 	}
 	Spline3 path(pts, 3, false, 1.0);
 
-	tube = Tube(path, 18, 12, ProtoTransformFunction(ProtoTransformFunction::SINUSOIDAL, Tup2(.25, .9), 27), false, "metal_dirty02.jpg");
+	tube = Tube(path, 18, 12, ProtoTransformFunction(ProtoTransformFunction::SINUSOIDAL, Tup2(.25, .9), 27), true, "gold01.jpg");
 	tube.setDiffuseMaterial({ 1.0f, 1, 1 });
 	tube.setAmbientMaterial(0.15f);
-	tube.setBumpMap("goldGate.jpg", .45f);
+	tube.setBumpMap("gold01.jpg", .65f);
 	//tube.loadBumpMapTexture("vascular3_normal2.jpg");
 	tube.setTextureScale({ 1, 0.1f });
-	tube.setSpecularMaterial({.8f, .74f, .85f});
-	tube.setShininess(33);
+	tube.setSpecularMaterial({1, 1, 1});
+	tube.setShininess(5);
 
 
-	plane = ProtoPlane({}, {}, Dim2f(0, 0), Col4f(1), 1, 1, "shipPlate.jpg");
+	plane = ProtoPlane({}, {}, Dim2f(0, 0), Col4f(1), 1, 1, "linen.jpg");
 	plane.setDiffuseMaterial({ 1, 1, 1, 1 });
-	plane.setBumpMap("shipPlate.jpg", .35);
-	//plane.loadBumpMapTexture("corroded_red_normal.jpg");
-	plane.setTextureScale({ 1, 1 });
-	plane.setSpecularMaterial({ 1, 1, .655f });
-	plane.setShininess(25);
+	//plane.setBumpMap("woodPlank.jpg", .55);
+	plane.loadBumpMapTexture("crinkled_paper_normal.jpg");
+	plane.setTextureScale({.5f, .5f});
+	plane.setSpecularMaterial({ 1, 1, 1 });
+	plane.setShininess(15);
 }
 
 void ProtoController::run() {
 }
 
 void ProtoController::display() {
-
-	//setLight(0, { float(sin(getFrameCount()*PI / 180) * random(1200)) , float(sin(getFrameCount() * PI / 180) * random(1200)), 1000}, { .75f+ random(.25f), .75, .75 });
-
-	setLight(0, Vec3(-1200, 100, 500), { 1, 1, 1 });
-
-	translate(0, 0, -100);
-
-
+	setLight(0, Vec3(+sin(radians(getFrameCount())) * 90, 0, 400), { 1, 1, 1 });
+	translate(0, 0, -500);
 	arcBallBegin();
 	push();
-	translate(0, 0, 250);
-	scale(1.95);
+	translate(0, 0, 400);
+	scale(3.3);
 	rotate(getFrameCount()*.6*PI / 180, { .75f, 1, .25f });
 	tube.display();
 	pop();
 
 	push();
-	translate(0, 0, -300);
-	scale({ 3000, 1250, 1 });
+	translate(0, 0, -400);
+	scale({ 3000, 1850, 1 });
 	plane.display();
 	pop();
 

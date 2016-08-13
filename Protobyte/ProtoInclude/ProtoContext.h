@@ -349,29 +349,6 @@ namespace ijg {
 		updateLightViewMatrices();
 	}
 
-	//inline void ProtoContext::concatLightModelView() {
-	//	lightModelView = lightView * glm::mat4(1.0);
-	//	// model;
-	//	//lightModelView = lightView * model;
-	//}
-
-	//inline void ProtoContext::concatLightModelViewProjection() {
-	//	lightModelViewProjection = lightProjection * lightModelView;
-	//}
-
-	//inline void ProtoContext::concatenateDepthBiasProjectionMatrix() {
-	//	lightBiasProjection = lightBias * lightProjection;
-	//}
-
-	//inline void ProtoContext::concatLightModelViewBiasProjection() {
-	//	//L_MVBP = L_B*L_MVP
-	//	lightModelViewBiasProjection = lightBias*lightModelViewProjection;
-	//}
-
-	//inline void ProtoContext::concatenateShadowMatrix() {
-	//	lightModelViewBiasProjection*model;
-	//}
-
 	// geometry matrices
 	inline const glm::mat4& ProtoContext::getModel() {
 		return model;
@@ -454,6 +431,11 @@ namespace ijg {
 		lights[index].setIntensity(intensity);
 		glUniform3fv(lights_U[index].position, 1, &lights[index].getPosition().x);
 		glUniform3fv(lights_U[index].intensity, 1, &lights[index].getIntensity().x);
+
+		// update shadow map view matrix
+		setLightView(glm::lookAt(glm::vec3(getLight(0).getPosition().x, getLight(0).getPosition().y, getLight(0).getPosition().z), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0)));
+
+		updateLightViewMatrices();
 	}
 
 	inline const ProtoLight& ProtoContext::getLight(int index) {
@@ -470,6 +452,7 @@ namespace ijg {
 
 	inline void ProtoContext::setLightRenderingFactors(const Vec4f& lightRenderingFactors) {
 		this->lightRenderingFactors = lightRenderingFactors;
+		glUniform4fv(getLightRenderingFactors_U(), 1, &lightRenderingFactors.x);
 	}
 
 	inline const GLuint& ProtoContext::getLightRenderingFactors_U() {

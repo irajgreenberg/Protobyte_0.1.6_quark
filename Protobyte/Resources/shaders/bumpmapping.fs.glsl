@@ -91,22 +91,36 @@ void main(void)
 		specular += max(pow(dot(R, V), shininess), 0.0) * vec3(specularMaterial) * lights[i].intensity;
 	}
 	
-	//check the shadow map texture to see if the fragment is in shadow
-	//if(shadowMapCoords.w>1.0f) {
-		//vec4 shadCoords = shadowMapCoords;
-		//check the shadow map texture to see if the fragment is in shadow
-		//shadCoords.z += 10.5f;
-		//float shadow = textureProj(shadowMap, shadCoords);
-		//darken the diffuse component appropriately
-		//diffuse = mix(diffuse, diffuse*shadow, 0.33); 
-	//}
+	//conditional doesn't seem necessary using shadow perspective projection
 	vec4 shadCoords = shadowMapCoords;
-if ( texture(shadowMap, shadCoords.xyz)  <  shadCoords.z ){
-		//shadCoords.z -= .5f;
+		
+	if ( texture(shadowMap, shadCoords.xyz)  <  shadCoords.z){
 		float shadow = textureProj(shadowMap, shadCoords);
 		//darken the diffuse component appropriately
-		diffuse = mix(diffuse, diffuse*shadow, 0.63); 
-}
+		//diffuse = mix(diffuse, diffuse*shadow, 0.35); 
+
+
+		//vec2 poissonDisk[4] = vec2[](
+		//  vec2( -0.94201624, -0.39906216 ),
+		//  vec2( 0.94558609, -0.76890725 ),
+		//  vec2( -0.094184101, -0.92938870 ),
+		//  vec2( 0.34495938, 0.29387760 )
+		//);
+
+		//float bias = 0.005;
+		//float visibility = 1.0;
+		//for (int i=0;i<4;i++){
+			//texture(shadowMap, shadCoords.xyz)  <  shadCoords.z
+		 // if ( texture( shadowMap, shadowMapCoords.xyz + vec3(poissonDisk[i]/700.0, 0) )  <  shadowMapCoords.z-bias ){
+		//	visibility-=0.2;
+		 // }
+		//}
+
+		//shadow /= 9.0;
+		diffuse = mix(diffuse, diffuse*shadow, 0.35f); 
+
+
+	}
 
     // Final color is diffuse + specular + ambient with lightRendering Factors enabling/disabling lighting effects for 2D rendering
 

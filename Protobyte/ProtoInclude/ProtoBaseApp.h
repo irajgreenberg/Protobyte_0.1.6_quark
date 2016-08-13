@@ -254,6 +254,9 @@ namespace ijg {
 		void push();
 		void pop();
 
+		// some utilities
+		float radians(float degs);
+
 		/***********BEGIN************
 		 2D Automatic Procedural API
 		 ***************************/
