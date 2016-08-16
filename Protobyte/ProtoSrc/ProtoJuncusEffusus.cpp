@@ -364,9 +364,9 @@ void ProtoJuncusEffusus::pulse(int ring, float freq, float force){
 	//for (int i = 0; i < tubuleSpineSegments; ++i) {
 		for (int j = 0; j < tubuleCrossSectionDetail*STRIDE; j += STRIDE) {
 			int index = ring*tubuleCrossSectionDetail*STRIDE + j;
-			tubule.interleavedPrims.at(index) = tubulePrimsOrig.at(index)*max(1, force);
+			tubule.interleavedPrims.at(index) = tubulePrimsOrig.at(index)*fmax(1, force);
 			tubule.interleavedPrims.at(index + 1) = tubulePrimsOrig.at(index + 1);
-			tubule.interleavedPrims.at(index + 2) = tubulePrimsOrig.at(index + 2)*max(1, force);
+			tubule.interleavedPrims.at(index + 2) = tubulePrimsOrig.at(index + 2)*fmax(1, force);
 		}
 	//}
 

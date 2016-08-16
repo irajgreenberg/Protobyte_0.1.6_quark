@@ -74,8 +74,6 @@ void ProtoBaseApp::_init() {
 
 
 	// START Shadow Map Matrices
-	//ctx->setLightViewMatrix(glm::lookAt(glm::vec3(ctx->getLight(0).getPosition().x, ctx->getLight(0).getPosition().y, ctx->getLight(0).getPosition().z), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0)));
-
 	ctx->setLightView(glm::lookAt(glm::vec3(ctx->getLight(0).getPosition().x, ctx->getLight(0).getPosition().y, ctx->getLight(0).getPosition().z), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0)));
 	ctx->setLightProjection(glm::perspective(viewAngle, aspect, nearDist, 5.0f));
 
@@ -92,8 +90,8 @@ void ProtoBaseApp::_init() {
 	ctx->setLightRenderingFactors({ 1.0, 1.0, 1.0, 1.0 });
 
 	// default 2D style states
-	fillColor = Col4f(1, 1, 1, 1);
-	strokeColor = Col4f(0, 0, 0, 1);
+	//fillColor = Col4f(1, 1, 1, 1);
+	//strokeColor = Col4f(0, 0, 0, 1);
 	isFill = true;
 	isStroke = true;
 	lineWidth = 1.0;
@@ -632,6 +630,7 @@ void ProtoBaseApp::_run(const Vec2f& mousePos, const Vec4i& windowCoords/*, int 
 
 	mouseX = mousePos.x;
 	mouseY = mousePos.y;
+
 	// mouse is moving/dragging
 	if (Vec2(mouseX, mouseY) - Vec2(mouseLastFrameX, mouseLastFrameY) != Vec2(0, 0)) {
 		if (isMousePressed) {
@@ -649,54 +648,52 @@ void ProtoBaseApp::_run(const Vec2f& mousePos, const Vec4i& windowCoords/*, int 
 		}
 	}
 
-	//global ambient
+	// update global ambient for shader
 	glUniform3fv(ctx->getGlobalAmbient_U(), 1, &ctx->getGlobalAmbient().r);
 
-	// update all 8 lights in shaders
+	// update all 8 lights for shader
 	for (int i = 0; i < 8; ++i) {
 		glUniform3fv(ctx->getLight_U(i).position, 1, &ctx->getLight(i).getPosition().x);
 		glUniform3fv(ctx->getLight_U(i).intensity, 1, &ctx->getLight(i).getIntensity().x);
 	}
 
 	// I thought I needed this to reset matrix each frame?
-	//ctx->setModel(glm::mat4(1.0f));
 	// was 18
 	ctx->setView(glm::lookAt(glm::vec3(0, 0, 500), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0)));
-	/*ctx->concatModelView();
-	ctx->concatModelViewProjection();*/
-	//ctx->createNormalMatrix();
 
-	/*glUniformMatrix4fv(ctx->getModel_U(), 1, GL_FALSE, &ctx->getModel()[0][0]);
-	glUniformMatrix4fv(ctx->getModelView_U(), 1, GL_FALSE, &ctx->getModelView()[0][0]);
-	glUniformMatrix4fv(ctx->getModelViewProjection_U(), 1, GL_FALSE, &ctx->getModelViewProjection()[0][0]);
-	glUniformMatrix3fv(ctx->getNormal_U(), 1, GL_FALSE, &ctx->getNormal()[0][0]);*/
-
-
-
-	// update shadow map texture matrix should light(s) changes position
+	// update shadow map texture matrix should light(s) changes position (only for light0 for now)
 	ctx->setLightView(glm::lookAt(glm::vec3(ctx->getLight(0).getPosition().x, ctx->getLight(0).getPosition().y, ctx->getLight(0).getPosition().z), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0)));
 
 	ctx->setLightBias(glm::mat4(
-		glm::vec4(.5, 0.0f, 0.0f, 0.0f),
-		glm::vec4(0.0f, .5, 0.0f, 0.0f),
-		glm::vec4(0.0f, 0.0f, .5, 0.0f),
+		glm::vec4(0.5f, 0.0f, 0.0f, 0.0f),
+		glm::vec4(0.0f, 0.5f, 0.0f, 0.0f),
+		glm::vec4(0.0f, 0.0f, 0.5f, 0.0f),
 		glm::vec4(0.5f, 0.5f, 0.5f, 1.0f)
 	));
 	ctx->updateLightViewMatrices();
 
 	// enable  /disable lighting effects ofr 2D rendering
 	ctx->setLightRenderingFactors({ 1.0, 1.0, 1.0, 1.0 });
-	glUniform4fv(ctx->getLightRenderingFactors_U(), 1, &ctx->getLightRenderingFactors().x);
-
-	run();
-	render();
+	
+	run(); // calls run in user defined ProtoController class
+	render(); // handles 2 pass rendering and transformation matrix reset
+	
 	mouseLastFrameX = mouseX;
 	mouseLastFrameY = mouseY;
 }
 
 // Final function call before user defined display() call
 void ProtoBaseApp::render(int x, int y, int scaleFactor) {
+	
+	// reset transformation matrix each frame
+	ctx->setModel(glm::mat4{ 1.0f });
+	float viewAngle = 75.0f*PI / 180.0f;
+	float aspect = float(width) / float(height);
+	float nearDist = 2.0f;
+	float farDist = 3000.0f;
+
 	if (areShadowsEnabled) {
+		// Make shadow frame buffer active
 		glBindFramebuffer(GL_FRAMEBUFFER, ctx->getShadowBuffer_U());
 		glClear(GL_DEPTH_BUFFER_BIT);
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
@@ -712,29 +709,26 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 		glEnable(GL_POLYGON_OFFSET_FILL);
 		glPolygonOffset(1.0f, 1.0f);
 
-		// doesn't seem to do much
-		//// activate offset for polygons
-		//glEnable(GL_POLYGON_OFFSET_FILL);
-		//// offset by two units equal to smallest value of change in the shadow map
-		//// and offset by two units depending on the slope of the polygon
-		//glPolygonOffset(2.0f, 2.0f);
-
-
-		// shadow blending in fragment shader
-		// controls render pass in shader
+		// Flag controls render pass in shader
+		// enable shadow blending
 		glUniform1i(ctx->getShaderPassFlag_U(), 1); 
 
-		// render shadow in first pass to FBO
-		ctx->setModel(glm::mat4{ 1.0f }); // reset model matrix to identity
-		ctx->setProjection(glm::ortho<float>(-float(width) / 3, float(width) / 3, -float(height) / 3, float(height) / 3, -0.1f, 3000));
+		// Pass 1: render depth to FB
+
+		// set Light view matrix
+		//ctx->setLightProjection(glm::ortho<float>(float(-width)/2.0f , float(width)/2.0f, -float(height)/2.0f, float(height)*2.0f, -1.0f, 1.0f));
+		ctx->setLightProjection(glm::perspective(viewAngle, aspect, nearDist, farDist));
 		
-		// call user defined display
+		// call user defined display, renders depth to texture
 		display();
+
+		// Pass 2: render scene to FB
+		
+		// reset transforamtion matrix for 2nd pass
+		ctx->setModel(glm::mat4{ 1.0f });
 
 		// reset backface culling
 		glCullFace(GL_BACK);
-		
-		//glDisable(GL_CULL_FACE);
 
 		// reset default framebuffer
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
@@ -746,25 +740,25 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 		// includes optional offset for tiling
 		glViewport(x*windowFrameSize.w, y*windowFrameSize.h, scaleFactor * windowFrameSize.w, scaleFactor * windowFrameSize.h);
 		
-		// disable shadowing blending in fragment shader
+		// disable shadowing blending
 		glUniform1i(ctx->getShaderPassFlag_U(), 0); // controls render pass in shader
 		
 		// enable 3D lighting by default
 		enableLights();
 
 		// render scene in second pass
-		ctx->setModel(glm::mat4{ 1.0f }); // reset to identity
-		float viewAngle = 65.0f*PI/180.0f;
-		float aspect = float(width) / float(height);
-		float nearDist = 0.1f;
-		float farDist = 6000.0f;
+		//float viewAngle = 65.0f*PI/180.0f;
+		//float aspect = float(width) / float(height);
+		//float nearDist = 0.1f;
+		//float farDist = 6000.0f;
 		// perspective
+		viewAngle = 60.0f*PI / 180.0f; //parameterize eventually
 		ctx->setProjection(glm::perspective(viewAngle, aspect, nearDist, farDist));
-		//ctx->setProjection(glm::ortho<float>(-float(width)/2, float(width)/2, -float(height) / 2, float(height) / 2, -0.1f, 3000));
 		
 		// call user defined display
 		display();
 	}
+	// shadows not enabled
 	else {
 		
 		// flag set to disable shadow implementation in shader
@@ -779,8 +773,6 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 		// reset backface culling
 		glCullFace(GL_BACK);
 
-		// reset transformation matrix
-		ctx->setModel(glm::mat4{ 1.0f }); 
 		float viewAngle = 65.0f*PI / 180.0f;
 		float aspect = float(width) / float(height);
 		float nearDist = 0.1f;
@@ -2591,6 +2583,9 @@ void ProtoBaseApp::pop() {
 	ctx->pop();
 }
 
+float ProtoBaseApp::radians(float degs) {
+	return glm::radians(degs);
+}
 
 
 

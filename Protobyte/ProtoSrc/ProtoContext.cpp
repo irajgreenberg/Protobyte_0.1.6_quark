@@ -78,55 +78,6 @@ void ProtoContext::init(){
 
 		// global ambient light
 		globalAmbient_U = glGetUniformLocation(ProtoShader::getID_2(), "globalAmbientLight");
-		//aspect = width / height;
-	//	ctx->setProjectionMatrix(glm::perspective(viewAngle, aspect, nearDist, farDist));
-	//	ctx->concatenateModelViewProjectionMatrix();
-		//MVP = P * MV;
-
-		// START Shadow Map Matrices
-		
-		//L_MV = glm::lookAt(glm::vec3(lights.at(0).getPosition().x, lights.at(0).getPosition().y, lights.at(0).getPosition().z), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
-		//ctx->setLightViewMatrix(glm::lookAt(glm::vec3(lights.at(0).getPosition().x, lights.at(0).getPosition().y, lights.at(0).getPosition().z), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0)));
-		//L_P = glm::perspective(45.0f, 1.0f, .10f, 1000.0f);
-
-		//L_P = glm::frustum(-.1f, .1f, -.1f, .1f, .1f, 2000.0f);
-		//ctx->setLightProjectionMatrix(glm::frustum(-.1f, .1f, -.1f, .1f, .1f, 2000.0f));
-		//setLightProjectionMatrix(glm::ortho<float>(-10, 10, -10, 10, -10, 20));
-
-
-		//L_P = glm::perspective(50.0f, 1.0f, .10f, 325.0f);
-		//L_B = glm::scale(glm::translate(glm::mat4(1), glm::vec3(.5, .5, .5)), glm::vec3(.5, .5, .5));
-		//L_B = glm::mat4(1.0);
-
-	//	float ratio{ width / height };
-		//L_B = glm::mat4(
-		//	glm::vec4(.35, 0.0f, 0.0f, 0.0f),
-		//	glm::vec4(0.0f, .35, 0.0f, 0.0f),
-		//	glm::vec4(0.0f, 0.0f, 1, 0.0f),
-		//	glm::vec4(0.5f, 0.5f, 0.5f, 1.0f)
-		//);
-
-		//L_B = glm::mat4(
-		//	glm::vec4(.5, 0.0f, 0.0f, 0.0f),
-		//	glm::vec4(0.0f, .5, 0.0f, 0.0f),
-		//	glm::vec4(0.0f, 0.0f, .5, 0.0f),
-		//	glm::vec4(0.5f, 0.5f, 0.5f, 1.0f)
-		//	);
-		//ctx->setLightDepthBiasMatrix(glm::mat4(
-		//	glm::vec4(.5, 0.0f, 0.0f, 0.0f),
-		//	glm::vec4(0.0f, .5, 0.0f, 0.0f),
-		//	glm::vec4(0.0f, 0.0f, .5, 0.0f),
-		//	glm::vec4(0.5f, 0.5f, 0.5f, 1.0f)
-		//	));
-
-
-		//L_BP = L_B*L_P;
-	//	ctx->concatenateDepthBiasProjectionMatrix();
-	//	ctx->concatenateLightModelViewDepthBiasProjectionMatrix();
-		//L_MVBP = L_BP*L_MV;
-		// END Shadow Matrices
-
-		//createShadowMap();
 
 		// Get unifrom locations
 		model_U = glGetUniformLocation(ProtoShader::getID_2(), "modelMatrix");
@@ -153,11 +104,6 @@ void ProtoContext::init(){
 		//shader_ptr->unbind();
 	}
 }
-
-
-
-
-
 
 
 // matrix transformation functions, in style of GL 1.0
@@ -214,12 +160,10 @@ void ProtoContext::push(){
 	// push current transformation matrix onto stack
 	//matrixStack.push(M);
 	matrixStack.push(model);
-
 }
 
 // reset transformation matrix with stored matrix on stack
 void ProtoContext::pop(){
-
 	// reset current transformation matrix with one on top of stack
 	//M = matrixStack.top();
 	model = matrixStack.top();
@@ -265,10 +209,13 @@ void ProtoContext::printModelViewProjectionMatrix() {
 
 void ProtoContext::updateLightViewMatrices() {
 	// currently only works for single light source.
+	// need to annoyingly convert from ijg math to glm math, sigh!
 	glm::vec3 ltPos = glm::vec3(lights.at(0).getPosition().x, lights.at(0).getPosition().y, lights.at(0).getPosition().z);
-	lightModelView = glm::lookAt(ltPos, glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
+
 	lightBiasProjection = lightBias * lightProjection;
-	lightModelViewBiasProjection = lightBiasProjection * lightModelView * model;
+	
+	lightModelViewBiasProjection = lightBiasProjection * lightView * model;
+	
 	glUniformMatrix4fv(lightModelViewBiasProjection_U, 1, GL_FALSE, &lightModelViewBiasProjection[0][0]);
 }
 
