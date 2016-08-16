@@ -115,6 +115,7 @@ void ProtoBaseApp::_init() {
 	_createEllipse();
 	_createPath();
 	_createStar();
+	_createCross();
 
 	//precalculate 3D geometry
 	//_createBox();
@@ -337,6 +338,64 @@ void ProtoBaseApp::_createStar() {
 	glBindVertexArray(0);
 
 	starStrokePrims.clear();
+}
+
+// create cross
+// create default buffers for cross function
+void ProtoBaseApp::_createCross() {
+
+	// interleaved float [] (x, y, 0, r, g, b, a) 7*12 pts
+	float prims[] = {
+		0 + 0.33, 0 - 0.33, 0, fillColor.r, fillColor.g, fillColor.b, fillColor.a,
+		0, 0 - 0.33, 0, fillColor.r, fillColor.g, fillColor.b, fillColor.a,
+		0, 0 - 0.66, 0, fillColor.r, fillColor.g, fillColor.b, fillColor.a,
+		0 + 0.33, 0 - 0.66, 0, fillColor.r, fillColor.g, fillColor.b, fillColor.a,
+		0 + 0.33, 0 - 1.0, 0, fillColor.r, fillColor.g, fillColor.b, fillColor.a,
+		0 + 0.66, 0 - 1.0, 0, fillColor.r, fillColor.g, fillColor.b, fillColor.a,
+		0 + 0.66, 0 - 0.66, 0, fillColor.r, fillColor.g, fillColor.b, fillColor.a,
+		0 + 1.0, 0 - 0.66, 0, fillColor.r, fillColor.g, fillColor.b, fillColor.a,
+		0 + 1.0, 0 - 0.33, 0, fillColor.r, fillColor.g, fillColor.b, fillColor.a,
+		0 + 0.66, 0 - 0.33, 0, fillColor.r, fillColor.g, fillColor.b, fillColor.a,
+		0 + 0.66, 0, 0, fillColor.r, fillColor.g, fillColor.b, fillColor.a,
+		0 + 0.33, 0, 0, fillColor.r, fillColor.g, fillColor.b, fillColor.a,
+
+	};
+	for (int i = 0; i < 94; i++) {
+		crossPrims[i] = prims[i];
+	}
+
+	// vert data
+	// 1. Create and bind VAO
+	glGenVertexArrays(1, &vaoCrossID); // Create VAO
+	glBindVertexArray(vaoCrossID); // Bind VAO (making it active)
+
+								   // 2. Create and bind VBO
+								   // a. Vertex attributes vboID;
+								   //GLuint vboID;
+	glGenBuffers(1, &vboCrossID); // Create the buffer ID
+	glBindBuffer(GL_ARRAY_BUFFER, vboCrossID); // Bind the buffer (vertex array data)
+	int vertsDataSize = sizeof(GLfloat) * 94;
+	glBufferData(GL_ARRAY_BUFFER, vertsDataSize, NULL, GL_STREAM_DRAW); // allocate space
+	glBufferSubData(GL_ARRAY_BUFFER, 0, vertsDataSize, &crossPrims[0]); // upload the data
+
+																		// fill state is true - need to create this
+	glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+	//glPolygonMode(GL_BACK, GL_FILL);
+
+	// draw cross
+	glBindBuffer(GL_ARRAY_BUFFER, vboCrossID);
+
+	glEnableVertexAttribArray(0); // vertices
+	glEnableVertexAttribArray(2); // color
+								  // stride is 7: pos(3) + col(4)
+								  // (x, y, z, r, g, b, a)
+	int stride = 7;
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, stride * sizeof(GLfloat), BUFFER_OFFSET(0)); // pos
+	glVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, stride * sizeof(GLfloat), BUFFER_OFFSET(12)); // col
+
+																								  // Disable buffers
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	glBindVertexArray(0);
 }
 
 // create default buffers for easy path
@@ -1632,6 +1691,142 @@ void ProtoBaseApp::star(int sides, float innerRadius, float outerRadius, Registr
 }
 
 void ProtoBaseApp::star(int sides, const Vec2& radiusAndRatio) {
+}
+
+void ProtoBaseApp::cross(float x, float y, float w, float h) {
+
+	float _x = x, _y = y;
+
+	/*
+	// ensure percentages are between 0 and 100
+	if (leftPL < 0) {leftPL = 0}
+	if (leftPL > 100) {leftPL = 100}
+	if (leftPS < 0) {leftPS = 0}
+	if (leftPS > 100) {leftPS = 100}
+	if (leftPE < 0) {leftPE = 0}
+	if (leftPE > 100) {leftPE = 100}
+
+	if (topPL < 0) {topPL = 0}
+	if (topPL > 100) {topPL = 100}
+	if (topPS < 0) {topPS = 0}
+	if (topPS > 100) {topPS = 100}
+	if (topPE < 0) {topPE = 0}
+	if (topPE > 100) {topPE = 100}
+
+	if (rightPL < 0) {rightPL = 0}
+	if (rightPL > 100) {rightPL = 100}
+	if (rightPS < 0) {rightPS = 0}
+	if (rightPS > 100) {rightPS = 100}
+	if (rightPE < 0) {rightPE = 0}
+	if (rightPE > 100) {rightPE = 100}
+
+	if (bottomPL < 0) {bottomPL = 0}
+	if (bottomPL > 100) {bottomPL = 100}
+	if (bottomPS < 0) {bottomPS = 0}
+	if (bottomPS > 100) {bottomPS = 100}
+	if (bottomPE < 0) {bottomPE = 0}
+	if (bottomPE > 100) {bottomPE = 100}
+	*/
+
+	int stride = 7;
+	int crossPrimCount = 94;
+
+	// fill standardized data for each point with loop
+	for (int i = 0; i < crossPrimCount; i = i + stride) {
+		crossPrims[i + 2] = 0;
+		crossPrims[i + 3] = fillColor.r;
+		crossPrims[i + 4] = fillColor.g;
+		crossPrims[i + 5] = fillColor.b;
+		crossPrims[i + 6] = fillColor.a;
+	}
+
+	// moving ccw around base rect starting at lower left corner
+	// calculate 12 point (4 base rect and 4 for each extension)
+	// lower left corner of base rect
+	crossPrims[0] = _x + (0.33 * h);
+	crossPrims[1] = _y - (0.33 * h);
+	// beginning of left extension bottom
+	crossPrims[7] = _x;
+	crossPrims[8] = _y - (0.33 * h);
+	// beginning of left extension side
+	crossPrims[14] = _x;
+	crossPrims[15] = _y - (0.66 * h);
+	// beginning of left extension top
+	crossPrims[21] = _x + (0.33 * h);
+	crossPrims[22] = _y - (0.66 * h);
+	// end of left extension top
+	crossPrims[28] = _x + (0.33 * h);
+	crossPrims[29] = _y - (1.0 * h);
+	// upper left of base rect
+	crossPrims[35] = _x + (0.66 * h);
+	crossPrims[36] = _y - (1.0 * h);
+	// beginning of top ext left
+	crossPrims[42] = _x + (0.66 * h);
+	crossPrims[43] = _y - (0.66 * h);
+	// top left of top ext
+	crossPrims[49] = _x + (1.0 * h);
+	crossPrims[50] = _y - (0.66 * h);
+	// top rt of top ext
+	crossPrims[56] = _x + (1.0 * h);
+	crossPrims[57] = _y - (0.33 * h);
+	// bottom rt of top ext
+	crossPrims[63] = _x + (0.66 * h);
+	crossPrims[64] = _y - (0.33 * h);
+	// top right of base rect
+	crossPrims[70] = _x + (0.66 * h);
+	crossPrims[71] = _y;
+	// top left of rt ext
+	crossPrims[77] = _x + (0.33 * h);
+	crossPrims[78] = _y;
+
+
+	if (isFill) {
+		for (int i = 0; i < crossPrimCount; i += stride) {
+			crossPrims[i + 3] = fillColor.r;
+			crossPrims[i + 4] = fillColor.g;
+			crossPrims[i + 5] = fillColor.b;
+			crossPrims[i + 6] = fillColor.a;
+		}
+		enable2DRendering();
+		glBindVertexArray(vaoCrossID);
+		// NOTE::this may not be most efficient - eventually refactor
+		glBindBuffer(GL_ARRAY_BUFFER, vboCrossID); // Bind the buffer (vertex array data)
+		int vertsDataSize = sizeof(GLfloat)* crossPrimCount;
+		glBufferData(GL_ARRAY_BUFFER, vertsDataSize, NULL, GL_STREAM_DRAW);// allocate space
+		glBufferSubData(GL_ARRAY_BUFFER, 0, vertsDataSize, &crossPrims[0]); // upload the data
+
+		glDrawArrays(GL_TRIANGLE_FAN, 0, crossPrimCount / stride);
+		disable2DRendering();
+
+		// Disable VAO
+		glBindVertexArray(0);
+	}
+
+	if (isStroke) {
+		for (int i = 0; i < crossPrimCount; i += stride) {
+			crossPrims[i + 3] = strokeColor.r;
+			crossPrims[i + 4] = strokeColor.g;
+			crossPrims[i + 5] = strokeColor.b;
+			crossPrims[i + 6] = strokeColor.a;
+		}
+
+		enable2DRendering();
+		glBindVertexArray(vaoCrossID);
+		// NOTE::this may not be most efficient - eventually refactor
+		glBindBuffer(GL_ARRAY_BUFFER, vboCrossID); // Bind the buffer (vertex array data)
+		int vertsDataSize = sizeof(GLfloat)* crossPrimCount;
+		glBufferData(GL_ARRAY_BUFFER, vertsDataSize, NULL, GL_STREAM_DRAW);// allocate space
+		glBufferSubData(GL_ARRAY_BUFFER, 0, vertsDataSize, &crossPrims[0]); // upload the data
+
+		glLineWidth(lineWidth);
+		glDrawArrays(GL_LINE_LOOP, 0, crossPrimCount / stride);
+
+		disable2DRendering();
+
+		// Disable VAO
+		glBindVertexArray(0);
+	}
+
 }
 
 // PATH
