@@ -74,11 +74,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\..\OtherLibs\glad-4.1.compatibility\include;..\..\OtherLibs\poly2tri\include;..\..\ProtoInclude;..\..\OtherLibs\glfw-3.2.bin.WIN64\include;..\..\OtherLibs\glm-0.9.7.6\glm;..\..\OtherLibs\FreeImage\Dist\x64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\OtherLibs\glad-4.1.compatibility\include;..\..\OtherLibs\poly2tri\include;..\..\ProtoInclude;..\..\OtherLibs\glfw-3.2\include;..\..\OtherLibs\glm-0.9.7.6\glm;..\..\OtherLibs\FreeImage\Dist\x32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>..\..\OtherLibs\glad-4.1.compatibility\src;..\..\OtherLibs\poly2tri\src;..\..\OtherLibs\glfw-3.2.bin.WIN64\lib-vc2015;..\..\OtherLibs\FreeImage\Dist\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glad64.lib;opengl32.lib;glfw3.lib;poly2tri64.lib;FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\OtherLibs\glad-4.1.compatibility\src;..\..\OtherLibs\poly2tri\src;..\..\OtherLibs\glfw-3.2\lib-vc2015;..\..\OtherLibs\FreeImage\Dist\x32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glad32.lib;opengl32.lib;glfw3_32.lib;poly2tri32.lib;FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -86,11 +87,11 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\..\OtherLibs\glad-4.1.compatibility\include;..\..\OtherLibs\poly2tri\include;..\..\ProtoInclude;..\..\OtherLibs\glfw-3.2.bin.WIN64\include;..\..\OtherLibs\glm-0.9.7.6\glm;..\..\OtherLibs\FreeImage\Dist\x64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\OtherLibs\glad-4.1.compatibility\include;..\..\OtherLibs\poly2tri\include;..\..\ProtoInclude;..\..\OtherLibs\glfw-3.2\include;..\..\OtherLibs\glm-0.9.7.6\glm;..\..\OtherLibs\FreeImage\Dist\x64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>..\..\OtherLibs\glad-4.1.compatibility\src;..\..\OtherLibs\poly2tri\src;..\..\OtherLibs\glfw-3.2.bin.WIN64\lib-vc2015;..\..\OtherLibs\FreeImage\Dist\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glad64.lib;opengl32.lib;glfw3.lib;poly2tri64.lib;FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\OtherLibs\glad-4.1.compatibility\src;..\..\OtherLibs\poly2tri\src;..\..\OtherLibs\glfw-3.2\lib-vc2015;..\..\OtherLibs\FreeImage\Dist\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glad64.lib;opengl32.lib;glfw3_64.lib;poly2tri64.lib;FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -100,13 +101,14 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\..\OtherLibs\glad-4.1.compatibility\include;..\..\OtherLibs\poly2tri\include;..\..\ProtoInclude;..\..\OtherLibs\glfw-3.2.bin.WIN64\include;..\..\OtherLibs\glm-0.9.7.6\glm;..\..\OtherLibs\FreeImage\Dist\x64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\OtherLibs\glad-4.1.compatibility\include;..\..\OtherLibs\poly2tri\include;..\..\ProtoInclude;..\..\OtherLibs\glfw-3.2\include;..\..\OtherLibs\glm-0.9.7.6\glm;..\..\OtherLibs\FreeImage\Dist\x32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>..\..\OtherLibs\glad-4.1.compatibility\src;..\..\OtherLibs\poly2tri\src;..\..\OtherLibs\glfw-3.2.bin.WIN64\lib-vc2015;..\..\OtherLibs\FreeImage\Dist\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glad64.lib;opengl32.lib;glfw3.lib;poly2tri64.lib;FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\OtherLibs\glad-4.1.compatibility\src;..\..\OtherLibs\poly2tri\src;..\..\OtherLibs\glfw-3.2\lib-vc2015;..\..\OtherLibs\FreeImage\Dist\x32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glad32.lib;opengl32.lib;glfw3_32.lib;poly2tri32.lib;FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -116,13 +118,13 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\..\OtherLibs\glad-4.1.compatibility\include;..\..\OtherLibs\poly2tri\include;..\..\ProtoInclude;..\..\OtherLibs\glfw-3.2.bin.WIN64\include;..\..\OtherLibs\glm-0.9.7.6\glm;..\..\OtherLibs\FreeImage\Dist\x64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\OtherLibs\glad-4.1.compatibility\include;..\..\OtherLibs\poly2tri\include;..\..\ProtoInclude;..\..\OtherLibs\glfw-3.2\include;..\..\OtherLibs\glm-0.9.7.6\glm;..\..\OtherLibs\FreeImage\Dist\x64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>..\..\OtherLibs\glad-4.1.compatibility\src;..\..\OtherLibs\poly2tri\src;..\..\OtherLibs\glfw-3.2.bin.WIN64\lib-vc2015;..\..\OtherLibs\FreeImage\Dist\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glad64.lib;opengl32.lib;glfw3.lib;poly2tri64.lib;FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\OtherLibs\glad-4.1.compatibility\src;..\..\OtherLibs\poly2tri\src;..\..\OtherLibs\glfw-3.2\lib-vc2015;..\..\OtherLibs\FreeImage\Dist\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glad64.lib;opengl32.lib;glfw3_64.lib;poly2tri64.lib;FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
