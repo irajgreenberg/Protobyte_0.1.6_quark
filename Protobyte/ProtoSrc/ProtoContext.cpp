@@ -88,7 +88,11 @@ void ProtoContext::init(){
 		// shadow map and light transformation matrix for shadowmapping
 		shadowMap_U = glGetUniformLocation(ProtoShader::getID_2(), "shadowMap");
 		lightModelViewBiasProjection_U = glGetUniformLocation(ProtoShader::getID_2(), "shadowModelViewBiasProjectionMatrix");
-		// L_MVBP_U
+
+		// new to allow model view concatentation in shader
+		LV_U = glGetUniformLocation(ProtoShader::getID_2(), "lightViewMatrix");
+		LP_U = glGetUniformLocation(ProtoShader::getID_2(), "lightProjectionMatrix");
+		LB_U = glGetUniformLocation(ProtoShader::getID_2(), "lightBiasMatrix");
 
 		// pass shadow map texture to shader
 		shaderPassFlag_U = glGetUniformLocation(ProtoShader::getID_2(), "shadowPassFlag");
@@ -217,6 +221,12 @@ void ProtoContext::updateLightViewMatrices() {
 	lightModelViewBiasProjection = lightBiasProjection * lightView * model;
 	
 	glUniformMatrix4fv(lightModelViewBiasProjection_U, 1, GL_FALSE, &lightModelViewBiasProjection[0][0]);
+
+	// NEw to allow concatenation in shader
+	glUniformMatrix4fv(LV_U, 1, GL_FALSE, &lightView[0][0]);
+	glUniformMatrix4fv(LP_U, 1, GL_FALSE, &lightProjection[0][0]);
+	glUniformMatrix4fv(LB_U, 1, GL_FALSE, &lightBias[0][0]);
+	
 }
 
 

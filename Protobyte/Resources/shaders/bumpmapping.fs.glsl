@@ -10,7 +10,6 @@ uniform sampler2D diffuseMap;
 uniform sampler2D bumpMap;
 
 //uniform float bumpIntensity;
-
 in vec4 shadowMapCoords;
 
 

@@ -18,6 +18,9 @@ out VS_OUT
 
 // shadow coords
 uniform mat4 shadowModelViewBiasProjectionMatrix;
+uniform mat4 shadowViewMatrix;
+uniform mat4 shadowProjectionMatrix;
+uniform mat4 shadowBiasMatrix;
 out vec4 shadowMapCoords; //shadow coordinates;		
 
 // coord transforms

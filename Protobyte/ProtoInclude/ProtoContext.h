@@ -159,6 +159,7 @@ namespace ijg {
 		GLuint getModelViewProjection_U();
 		GLuint getNormal_U();
 	
+		GLuint LV_U, LP_U, LB_U; // Need to do model view concatenation in shader
 		GLuint L_MVBP_U, lightModelViewBiasProjection_U; // only for Light perspective
 		GLuint shaderPassFlag_U;
 		const GLuint& getShaderPassFlag_U();
