@@ -21,6 +21,13 @@ uniform mat4 shadowModelViewBiasProjectionMatrix;
 uniform mat4 shadowViewMatrix;
 uniform mat4 shadowProjectionMatrix;
 uniform mat4 shadowBiasMatrix;
+
+//new, lose older ones above eventually
+uniform mat4 lightViewMatrix;
+uniform mat4 lightProjectionMatrix;
+uniform mat4 lightBiasMatrix;
+
+
 out vec4 shadowMapCoords; //shadow coordinates;		
 
 // coord transforms
@@ -65,7 +72,11 @@ void main(void)
     vec3 B = cross(N, T);
 
     // shadowmap 
-	shadowMapCoords = shadowModelViewBiasProjectionMatrix*vec4(vertexPosition, 1.0);
+	//b*p*v*m
+	//shadowMapCoords = shadowModelViewBiasProjectionMatrix*vec4(vertexPosition, 1.0);
+	mat4 L_MVP =  lightProjectionMatrix * lightViewMatrix * modelMatrix;
+	mat4 L_MVPB = lightBiasMatrix * L_MVP;
+	shadowMapCoords = L_MVPB*vec4(vertexPosition, 1.0);
 
    
     // The light vector (L) is the vector from the point of interest to
