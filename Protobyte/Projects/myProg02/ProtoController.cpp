@@ -22,6 +22,11 @@ void ProtoController::init() {
 	tube.setShininess(5);
 
 
+	t = Toroid({ 0 }, { 0 }, { 0 }, { 1, 1, 1, 1 }, 36, 12, 400, 25, "vascular3.jpg", {.03f, .03f});
+	t.setSpecularMaterial({ 1, 1, 1 });
+	t.setShininess(46);
+	t.setBumpMap("vascular3.jpg", .65f);
+
 	plane = ProtoPlane({}, {}, Dim2f(0, 0), Col4f(1), 1, 1, "linen.jpg");
 	plane.setDiffuseMaterial({ 1, 1, 1, 1 });
 	//plane.setBumpMap("woodPlank.jpg", .55);
@@ -36,7 +41,7 @@ void ProtoController::run() {
 
 void ProtoController::display() {
 	setLight(0, Vec3(+sin(radians(getFrameCount())) * 90, 0, 400), { 1, 1, 1 });
-	translate(0, 0, -500);
+	translate(200, 0, -900);
 	arcBallBegin();
 	push();
 	translate(0, 0, 400);
@@ -45,9 +50,35 @@ void ProtoController::display() {
 	tube.display();
 	pop();
 
+	push(); 
+	rotate(getFrameCount()*.6*PI / 180, { .75f, -0.5f, .25f });
+	t.display();
+	pop();
+
+	push();
+	translate(-300, 50, 50);
+	scale(0.75f);
+	rotate(getFrameCount()*.6*PI / 180, {- .75f, 0.5f, -.25f });
+	t.display();
+	pop();
+
+	push();
+	translate(-300, 50, 300);
+	scale(1.75f);
+	rotate(getFrameCount()*.6*PI / 180, { -.75f, 0.5f, -.25f });
+	t.display();
+	pop();
+
+	push();
+	translate(0, -50, 600);
+	scale(2.75f);
+	rotate(getFrameCount()*.9*PI / 180, { -.75f, 0.5f, -.25f });
+	t.display();
+	pop();
+
 	push();
 	translate(0, 0, -400);
-	scale({ 3000, 1850, 1 });
+	scale({ 3500, 2250, 1 });
 	plane.display();
 	pop();
 

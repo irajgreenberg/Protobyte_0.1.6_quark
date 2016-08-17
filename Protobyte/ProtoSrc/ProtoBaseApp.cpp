@@ -717,7 +717,7 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 
 		// set Light view matrix
 		//ctx->setLightProjection(glm::ortho<float>(float(-width)/2.0f , float(width)/2.0f, -float(height)/2.0f, float(height)*2.0f, -1.0f, 1.0f));
-		ctx->setLightProjection(glm::perspective(viewAngle, aspect, nearDist, farDist));
+		ctx->setLightProjection(glm::perspective(viewAngle, aspect, nearDist, 100.0f));
 		
 		// call user defined display, renders depth to texture
 		display();

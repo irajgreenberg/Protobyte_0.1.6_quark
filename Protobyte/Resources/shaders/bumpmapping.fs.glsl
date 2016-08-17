@@ -96,7 +96,7 @@ void main(void)
 	if ( texture(shadowMap, shadCoords.xyz)  <  shadCoords.z){
 		float shadow = textureProj(shadowMap, shadCoords);
 		//darken the diffuse component appropriately
-		//diffuse = mix(diffuse, diffuse*shadow, 0.35); 
+		//diffuse = mix(diffuse, diffuse*shadow, 1.0f); 
 
 
 		//vec2 poissonDisk[4] = vec2[](

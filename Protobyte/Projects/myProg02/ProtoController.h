@@ -32,6 +32,7 @@ public:
 	void onClosed();
 
 	Tube tube;
+	Toroid t;
 	ProtoPlane plane;
 
 };
