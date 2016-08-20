@@ -57,10 +57,9 @@ in VS_OUT
 
 
 
-void main(void)
-{
+void main(void) {
 
-	// check for shadow pass
+	// check for shadow pass and write to depth buffer in initial pass
 	if(shadowPassFlag){
 		return;
 	}
@@ -90,46 +89,26 @@ void main(void)
 		specular += max(pow(dot(R, V), shininess), 0.0) * vec3(specularMaterial) * lights[i].intensity;
 	}
 	
-	//conditional doesn't seem necessary using shadow perspective projection
-	vec4 shadCoords = shadowMapCoords;
-		
-	if ( texture(shadowMap, shadCoords.xyz)  <  shadCoords.z){
-		float shadow = textureProj(shadowMap, shadCoords);
-		//darken the diffuse component appropriately
-		//diffuse = mix(diffuse, diffuse*shadow, 1.0f); 
-
-
-		//vec2 poissonDisk[4] = vec2[](
-		//  vec2( -0.94201624, -0.39906216 ),
-		//  vec2( 0.94558609, -0.76890725 ),
-		//  vec2( -0.094184101, -0.92938870 ),
-		//  vec2( 0.34495938, 0.29387760 )
-		//);
-
-		//float bias = 0.005;
-		//float visibility = 1.0;
-		//for (int i=0;i<4;i++){
-			//texture(shadowMap, shadCoords.xyz)  <  shadCoords.z
-		 // if ( texture( shadowMap, shadowMapCoords.xyz + vec3(poissonDisk[i]/700.0, 0) )  <  shadowMapCoords.z-bias ){
-		//	visibility-=0.2;
-		 // }
-		//}
-
-		//shadow /= 9.0;
-		diffuse = mix(diffuse, diffuse*shadow, 0.35f); 
-
-
+	// software PCF (seems to work way better than default hardware approach)
+	// from: http://http.developer.nvidia.com/GPUGems/gpugems_ch11.html
+	float sum = 0, x = 0, y = 0;
+	for (y = -1.5; y <= 1.5; y += 1.0) {
+		for (x = -1.5; x <= 1.5; x += 1.0) {
+				sum += textureProj(shadowMap, vec4(shadowMapCoords.xy + vec2(x, y) * vec2(1.0/1920, 1.0/1080) * shadowMapCoords.w, shadowMapCoords.z, shadowMapCoords.w));
+		}
 	}
-
-    // Final color is diffuse + specular + ambient with lightRendering Factors enabling/disabling lighting effects for 2D rendering
+	float shadow = sum / 16.0;
+	diffuse = mix(diffuse, diffuse*shadow, 0.25f); 
 
 	color = vertCol*lightRenderingFactors.w + vec4(diffuse*lightRenderingFactors.x + specular*lightRenderingFactors.y + (vec3(ambientMaterial)*globalAmbientLight)*lightRenderingFactors.z, 1.0);
-
-	//vec3 c = texture(bumpMap, fs_in.texcoord).rgb;
-	//color = vec4(c, 1.0);
-	//color = vec4( texture(shadowMap, shadCoords.xyz),  texture(shadowMap, shadCoords.xyz),  texture(shadowMap, shadCoords.xyz), 1.0);
 
 	color.a = vertCol.a;
 
 
 }
+
+
+
+
+
+

@@ -40,18 +40,19 @@ void ProtoController::run() {
 }
 
 void ProtoController::display() {
-	setLight(0, Vec3(+sin(radians(getFrameCount())) * 90, 0, 400), { 1, 1, 1 });
+	setLight(0, Vec3(sin(radians(getFrameCount()*.25f)) * 390, 0, 700), { 1, 1, 1 });
+
 	translate(200, 0, -900);
 	arcBallBegin();
 	push();
 	translate(0, 0, 400);
 	scale(3.3);
-	rotate(getFrameCount()*.6*PI / 180, { .75f, 1, .25f });
+	//rotate(getFrameCount()*.6*PI / 180, { .75f, 1, .25f });
 	tube.display();
 	pop();
 
 	push(); 
-	rotate(getFrameCount()*.6*PI / 180, { .75f, -0.5f, .25f });
+	//rotate(getFrameCount()*.6*PI / 180, { .75f, -0.5f, .25f });
 	t.display();
 	pop();
 
@@ -72,12 +73,12 @@ void ProtoController::display() {
 	push();
 	translate(0, -50, 600);
 	scale(2.75f);
-	rotate(getFrameCount()*.9*PI / 180, { -.75f, 0.5f, -.25f });
+	//rotate(getFrameCount()*.9*PI / 180, { -.75f, 0.5f, -.25f });
 	t.display();
 	pop();
 
 	push();
-	translate(0, 0, -400);
+	translate(0, 0, -800);
 	scale({ 3500, 2250, 1 });
 	plane.display();
 	pop();

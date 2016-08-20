@@ -188,6 +188,7 @@ void ProtoPlasm::initGLFW(){
 	glEnable(GL_DEPTH_TEST);
 	glClearStencil(0); // clear stencil buffer
 	glClearDepth(1.0f); // 0 is near, 1 is far
+	
 	glDepthMask(GL_TRUE); 
 	glDepthFunc(GL_LEQUAL);
 	glDepthRange(0.0f, 1.0f);

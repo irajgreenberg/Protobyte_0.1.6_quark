@@ -74,8 +74,10 @@ void main(void)
     // shadowmap 
 	//b*p*v*m
 	//shadowMapCoords = shadowModelViewBiasProjectionMatrix*vec4(vertexPosition, 1.0);
+	
 	mat4 L_MVP =  lightProjectionMatrix * lightViewMatrix * modelMatrix;
 	mat4 L_MVPB = lightBiasMatrix * L_MVP;
+	//mat4 L_MVPB = L_MVP;
 	shadowMapCoords = L_MVPB*vec4(vertexPosition, 1.0);
 
    

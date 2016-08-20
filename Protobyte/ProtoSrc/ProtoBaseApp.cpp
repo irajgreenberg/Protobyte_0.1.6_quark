@@ -32,6 +32,10 @@ void ProtoBaseApp::setWindowFrameSize(const Dim2i& windowFrameSize) {
 
 void ProtoBaseApp::_init() {
 
+	SHADOWMAP_WIDTH = width;
+	SHADOWMAP_HEIGHT = height;
+	trace(width, height);
+		
 	shader3D = ProtoShader("bumpmapping.vs.glsl", "bumpmapping.fs.glsl");
 	shader3D.bind();
 
@@ -43,7 +47,7 @@ void ProtoBaseApp::_init() {
 	ctx->setGlobalAmbient({ .45f, .45f, .55f });
 
 	// default inital light
-	ctx->setLight(0, { 0, 0, 600 }, { 1, 1, 1 });
+	ctx->setLight(0, { 0, 300, 600 }, { 1, 1, 1 });
 	ctx->setLight(1, { 0, 0, 1 }, { 0, 0, 0 });
 	ctx->setLight(2, { 0, 0, 1 }, { 0, 0, 0 });
 	ctx->setLight(3, { 0, 0, 1 }, { 0, 0, 0 });
@@ -581,20 +585,17 @@ bool ProtoBaseApp::createShadowMap() {
 	GLfloat border[] = { 1.0f, .0f, .0f, .0f };
 
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT16, SHADOWMAP_WIDTH, SHADOWMAP_HEIGHT, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
-
-	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 
+	//PCF in hardware
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+	// depth compare in hardware
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_MODE, GL_COMPARE_REF_TO_TEXTURE);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_FUNC, GL_LEQUAL);
-	glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, border);
+	//glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, border);
 	
 
 	// set up FBO
@@ -707,7 +708,7 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 		/*glPolygonOffset(2.5f, 10.0f);*/
 
 		glEnable(GL_POLYGON_OFFSET_FILL);
-		glPolygonOffset(1.0f, 1.0f);
+		glPolygonOffset(1.1, 4.0);
 
 		// Flag controls render pass in shader
 		// enable shadow blending
@@ -716,9 +717,12 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 		// Pass 1: render depth to FB
 
 		// set Light view matrix
-		//ctx->setLightProjection(glm::ortho<float>(float(-width)/2.0f , float(width)/2.0f, -float(height)/2.0f, float(height)*2.0f, -1.0f, 1.0f));
-		ctx->setLightProjection(glm::perspective(viewAngle, aspect, nearDist, 100.0f));
+		ctx->setLightProjection(glm::ortho<float>(float(-width) , float(width), -float(height), float(height), -1.0f, 1.0f));
+		///ctx->setLightProjection(glm::perspective(viewAngle, aspect, nearDist, 100.0f));
 		
+		glDrawBuffer(GL_NONE);
+		glReadBuffer(GL_NONE);
+
 		// call user defined display, renders depth to texture
 		display();
 
@@ -729,6 +733,7 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 
 		// reset backface culling
 		glCullFace(GL_BACK);
+		glDisable(GL_CULL_FACE);
 
 		// reset default framebuffer
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
