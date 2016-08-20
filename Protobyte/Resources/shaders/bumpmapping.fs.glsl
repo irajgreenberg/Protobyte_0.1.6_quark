@@ -6,6 +6,8 @@ out vec4 color;
 // Texture maps
 uniform bool shadowPassFlag;
 uniform sampler2DShadow shadowMap;
+uniform vec2 shadowSharpness;
+//uniform int shadowSharpness;
 uniform sampler2D diffuseMap;
 uniform sampler2D bumpMap;
 
@@ -92,9 +94,10 @@ void main(void) {
 	// software PCF (seems to work way better than default hardware approach)
 	// from: http://http.developer.nvidia.com/GPUGems/gpugems_ch11.html
 	float sum = 0, x = 0, y = 0;
+	vec2 texScale = vec2(1.0/shadowSharpness.x, 1.0/shadowSharpness.y);
 	for (y = -1.5; y <= 1.5; y += 1.0) {
 		for (x = -1.5; x <= 1.5; x += 1.0) {
-				sum += textureProj(shadowMap, vec4(shadowMapCoords.xy + vec2(x, y) * vec2(1.0/1920, 1.0/1080) * shadowMapCoords.w, shadowMapCoords.z, shadowMapCoords.w));
+				sum += textureProj(shadowMap, vec4(shadowMapCoords.xy + vec2(x, y) * texScale * shadowMapCoords.w, shadowMapCoords.z, shadowMapCoords.w));
 		}
 	}
 	float shadow = sum / 16.0;

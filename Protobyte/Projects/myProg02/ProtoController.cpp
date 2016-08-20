@@ -3,6 +3,7 @@
 void ProtoController::init() {
 	//setLight(0, { 0, 0, 600 }, { 1, 1, 1 });
 	shadowsOn();
+	//setShadowSharpness(1024, 1024);
 	std::vector<Vec3> pts;
 	float theta = 0;
 	for (int i = 0; i < 30; i++) {
@@ -47,12 +48,12 @@ void ProtoController::display() {
 	push();
 	translate(0, 0, 400);
 	scale(3.3);
-	//rotate(getFrameCount()*.6*PI / 180, { .75f, 1, .25f });
+	rotate(getFrameCount()*.6*PI / 180, { .75f, 1, .25f });
 	tube.display();
 	pop();
 
 	push(); 
-	//rotate(getFrameCount()*.6*PI / 180, { .75f, -0.5f, .25f });
+	rotate(getFrameCount()*.6*PI / 180, { .75f, -0.5f, .25f });
 	t.display();
 	pop();
 
@@ -73,7 +74,7 @@ void ProtoController::display() {
 	push();
 	translate(0, -50, 600);
 	scale(2.75f);
-	//rotate(getFrameCount()*.9*PI / 180, { -.75f, 0.5f, -.25f });
+	rotate(getFrameCount()*.9*PI / 180, { -.75f, 0.5f, -.25f });
 	t.display();
 	pop();
 

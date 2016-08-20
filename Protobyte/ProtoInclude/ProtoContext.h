@@ -134,7 +134,6 @@ namespace ijg {
 		void printModelViewMatrix();
 		void printModelViewProjectionMatrix();
 
-
 		/*** Shadow Map Matrices ***/
 		glm::mat4 lightView; // Light View
 		glm::mat4 lightModelView; // Light ModelView
@@ -146,6 +145,10 @@ namespace ijg {
 		glm::mat4 shadow;
 		/*** Matrices (3x3) ***/
 		// Normal
+
+		// for shadow detail/sharpness
+		GLuint shadowSharpness_U;
+		void setShadowSharpness(int shadowSharpnessWidth, int shadowSharpnessHeight);
 		
 
 		// flags for shader locations
@@ -192,7 +195,7 @@ namespace ijg {
 		// flag for shadowing
 		bool areShadowsEnabled;
 
-		const int SHADOWMAP_WIDTH = 4096, SHADOWMAP_HEIGHT = 4096;
+		//const int SHADOWMAP_WIDTH = 4096, SHADOWMAP_HEIGHT = 4096;
 
 		bool areShadowsOn;
 		void setShadowsOn(bool areShadowsOn);

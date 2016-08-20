@@ -171,7 +171,6 @@ bool ProtoTexture::init() {
 			glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T,
 			isWrap ? GL_REPEAT : GL_CLAMP);*/
 
-			
 			glGenerateMipmap(GL_TEXTURE_2D);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);

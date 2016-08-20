@@ -31,10 +31,6 @@ void ProtoBaseApp::setWindowFrameSize(const Dim2i& windowFrameSize) {
 
 
 void ProtoBaseApp::_init() {
-
-	SHADOWMAP_WIDTH = width;
-	SHADOWMAP_HEIGHT = height;
-	trace(width, height);
 		
 	shader3D = ProtoShader("bumpmapping.vs.glsl", "bumpmapping.fs.glsl");
 	shader3D.bind();
@@ -88,6 +84,10 @@ void ProtoBaseApp::_init() {
 		glm::vec4(0.0f, 0.0f, 0.5, 0.0f),
 		glm::vec4(0.5f, 0.5f, 0.5f, 1.0f)
 	));
+
+	// set size of shadow map (default 256 x 256)
+	setShadowSharpness();
+
 	createShadowMap();
 
 	// for 2D rendering - enables/disables lighting effects
@@ -584,7 +584,7 @@ bool ProtoBaseApp::createShadowMap() {
 	glBindTexture(GL_TEXTURE_2D, ctx->getShadowTexture_U());
 	GLfloat border[] = { 1.0f, .0f, .0f, .0f };
 
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT16, SHADOWMAP_WIDTH, SHADOWMAP_HEIGHT, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT16, 256, 256, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 
@@ -620,6 +620,16 @@ bool ProtoBaseApp::createShadowMap() {
 	}
 
 	return false;
+}
+
+void ProtoBaseApp::setShadowSharpness(int shadowSharpnessWidth, int shadowSharpnessHeight) {
+	this->shadowSharpnessWidth = shadowSharpnessWidth;
+	this->shadowSharpnessHeight = shadowSharpnessHeight;
+	ctx->setShadowSharpness(shadowSharpnessWidth, shadowSharpnessHeight);
+}
+
+Tup2i ProtoBaseApp::getShadowSharpness() const {
+	return {shadowSharpnessWidth, shadowSharpnessHeight};
 }
 
 void ProtoBaseApp::_run(const Vec2f& mousePos, const Vec4i& windowCoords/*, int mouseBtn, int key*/) {
@@ -700,7 +710,7 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
 		//set viewport to the shadow map view size
-		glViewport(0, 0, SHADOWMAP_WIDTH, SHADOWMAP_HEIGHT);
+		glViewport(0, 0, shadowSharpnessWidth, shadowSharpnessHeight);
 		
 		// enable front face culling for shadowing
 		glEnable(GL_CULL_FACE);

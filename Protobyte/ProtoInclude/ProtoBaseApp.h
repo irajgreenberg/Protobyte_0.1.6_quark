@@ -103,6 +103,7 @@ namespace ijg {
 		int frameCount;
 		float frameRate;
 		Col3f bgColor;
+		int shadowSharpnessWidth, shadowSharpnessHeight;
 
 	public:
 		void _initUniforms(ProtoShader* shader_ptr); // temporarily here. put back in private eventually
@@ -169,7 +170,7 @@ namespace ijg {
 		// flag for shadowing
 		bool areShadowsEnabled;
 
-		int SHADOWMAP_WIDTH, SHADOWMAP_HEIGHT;
+		//int SHADOWMAP_WIDTH, SHADOWMAP_HEIGHT;
 
 		/************************************
 		 **********   FUNCTIONS   ***********
@@ -180,6 +181,9 @@ namespace ijg {
 		virtual void display() = 0;
 
 		virtual bool ProtoBaseApp::createShadowMap();
+		// controls size of shadow map
+		void setShadowSharpness(int shadowSharpnessWidth = 256, int shadowSharpnessHeight = 256);
+		Tup2i getShadowSharpness() const;
 
 		// mouse/key events
 		virtual void keyPressed();

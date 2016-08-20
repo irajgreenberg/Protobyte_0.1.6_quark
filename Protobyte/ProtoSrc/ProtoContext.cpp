@@ -109,6 +109,12 @@ void ProtoContext::init(){
 	}
 }
 
+void  ProtoContext::setShadowSharpness(int shadowSharpnessWidth, int shadowSharpnessHeight) {
+	shadowSharpness_U = glGetUniformLocation(ProtoShader::getID_2(), "shadowSharpness");
+	glm::vec2 sharpness = glm::vec2(float(shadowSharpnessWidth), float(shadowSharpnessHeight));
+	glUniform2fv(shadowSharpness_U, 1, &sharpness.x);
+	//glUniform1i(shadowSharpness_U, shadowSharpnessWidth);
+}
 
 // matrix transformation functions, in style of GL 1.0
 void ProtoContext::translate(float tx, float ty, float tz){
