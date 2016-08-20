@@ -101,7 +101,7 @@ void main(void) {
 		}
 	}
 	float shadow = sum / 16.0;
-	diffuse = mix(diffuse, diffuse*shadow, 0.25f); 
+	diffuse = mix(diffuse, diffuse*shadow, 0.35f); 
 
 	color = vertCol*lightRenderingFactors.w + vec4(diffuse*lightRenderingFactors.x + specular*lightRenderingFactors.y + (vec3(ambientMaterial)*globalAmbientLight)*lightRenderingFactors.z, 1.0);
 

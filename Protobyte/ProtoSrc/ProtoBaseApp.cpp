@@ -84,10 +84,7 @@ void ProtoBaseApp::_init() {
 		glm::vec4(0.0f, 0.0f, 0.5, 0.0f),
 		glm::vec4(0.5f, 0.5f, 0.5f, 1.0f)
 	));
-
-	// set size of shadow map (default 256 x 256)
-	setShadowSharpness();
-
+	// sets size/edge blur and texture creation
 	createShadowMap();
 
 	// for 2D rendering - enables/disables lighting effects
@@ -576,6 +573,12 @@ void ProtoBaseApp::setAmbientMaterial(const Col4f& amb) {
 //}
 
 bool ProtoBaseApp::createShadowMap() {
+	
+	//  (defaults to GLFW window size)
+	setShadowMapSize(width, height);
+	
+	// For PCF (default 256 x 256)
+	setShadowSharpness(256, 256);
 
 	//set up shadow texture object
 	glGenTextures(1, &ctx->getShadowTexture_U());
@@ -584,7 +587,7 @@ bool ProtoBaseApp::createShadowMap() {
 	glBindTexture(GL_TEXTURE_2D, ctx->getShadowTexture_U());
 	GLfloat border[] = { 1.0f, .0f, .0f, .0f };
 
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT16, 256, 256, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT16, shadowMapWidth, shadowMapHeight, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 
@@ -626,6 +629,11 @@ void ProtoBaseApp::setShadowSharpness(int shadowSharpnessWidth, int shadowSharpn
 	this->shadowSharpnessWidth = shadowSharpnessWidth;
 	this->shadowSharpnessHeight = shadowSharpnessHeight;
 	ctx->setShadowSharpness(shadowSharpnessWidth, shadowSharpnessHeight);
+}
+
+void ProtoBaseApp::setShadowMapSize(int shadowMapWidth, int shadowMapHeight) {
+	this->shadowMapWidth = shadowMapWidth;
+	this->shadowMapHeight = shadowMapHeight;
 }
 
 Tup2i ProtoBaseApp::getShadowSharpness() const {
@@ -710,7 +718,7 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
 		//set viewport to the shadow map view size
-		glViewport(0, 0, shadowSharpnessWidth, shadowSharpnessHeight);
+		glViewport(0, 0, shadowMapWidth, shadowMapHeight);
 		
 		// enable front face culling for shadowing
 		glEnable(GL_CULL_FACE);
@@ -728,7 +736,7 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 
 		// set Light view matrix
 		ctx->setLightProjection(glm::ortho<float>(float(-width) , float(width), -float(height), float(height), -1.0f, 1.0f));
-		///ctx->setLightProjection(glm::perspective(viewAngle, aspect, nearDist, 100.0f));
+		//ctx->setLightProjection(glm::perspective(viewAngle, aspect, nearDist, 100.0f));
 		
 		glDrawBuffer(GL_NONE);
 		glReadBuffer(GL_NONE);
@@ -754,6 +762,7 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 		// reset viewport to window view size.
 		// includes optional offset for tiling
 		glViewport(x*windowFrameSize.w, y*windowFrameSize.h, scaleFactor * windowFrameSize.w, scaleFactor * windowFrameSize.h);
+		//glViewport(0, 0, width, height);
 		
 		// disable shadowing blending
 		glUniform1i(ctx->getShaderPassFlag_U(), 0); // controls render pass in shader

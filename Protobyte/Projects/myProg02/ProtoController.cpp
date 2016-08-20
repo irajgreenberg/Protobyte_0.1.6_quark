@@ -3,7 +3,7 @@
 void ProtoController::init() {
 	//setLight(0, { 0, 0, 600 }, { 1, 1, 1 });
 	shadowsOn();
-	//setShadowSharpness(1024, 1024);
+	setShadowSharpness(256, 256);
 	std::vector<Vec3> pts;
 	float theta = 0;
 	for (int i = 0; i < 30; i++) {
