@@ -575,7 +575,7 @@ void ProtoBaseApp::setAmbientMaterial(const Col4f& amb) {
 bool ProtoBaseApp::createShadowMap() {
 	
 	//  (defaults to GLFW window size)
-	setShadowMapSize(width, height);
+	setShadowMapSize(getWidth(), getHeight());
 	
 	// For PCF (default 256 x 256)
 	setShadowSharpness(256, 256);
@@ -585,7 +585,7 @@ bool ProtoBaseApp::createShadowMap() {
 	//trace("&ctx->getShadowTexture_U()", &ctx->getShadowTexture_U());
 	glActiveTexture(GL_TEXTURE5);
 	glBindTexture(GL_TEXTURE_2D, ctx->getShadowTexture_U());
-	GLfloat border[] = { 1.0f, .0f, .0f, .0f };
+	GLfloat border[] = { 0.0f, .0f, .0f, .0f };
 
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT16, shadowMapWidth, shadowMapHeight, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
@@ -598,7 +598,7 @@ bool ProtoBaseApp::createShadowMap() {
 	// depth compare in hardware
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_MODE, GL_COMPARE_REF_TO_TEXTURE);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_FUNC, GL_LEQUAL);
-	//glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, border);
+	glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, border);
 	
 
 	// set up FBO
@@ -723,7 +723,6 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 		// enable front face culling for shadowing
 		glEnable(GL_CULL_FACE);
 		glCullFace(GL_FRONT);
-		/*glPolygonOffset(2.5f, 10.0f);*/
 
 		glEnable(GL_POLYGON_OFFSET_FILL);
 		glPolygonOffset(1.1, 4.0);
@@ -750,8 +749,9 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 		ctx->setModel(glm::mat4{ 1.0f });
 
 		// reset backface culling
+		glEnable(GL_CULL_FACE);
 		glCullFace(GL_BACK);
-		glDisable(GL_CULL_FACE);
+		//glDisable(GL_CULL_FACE);
 
 		// reset default framebuffer
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
@@ -778,7 +778,6 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 		// perspective
 		viewAngle = 60.0f*PI / 180.0f; //parameterize eventually
 		ctx->setProjection(glm::perspective(viewAngle, aspect, nearDist, farDist));
-		
 		// call user defined display
 		display();
 	}

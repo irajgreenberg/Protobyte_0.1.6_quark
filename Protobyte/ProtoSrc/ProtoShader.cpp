@@ -79,10 +79,10 @@ void ProtoShader::init() {
 
 #if defined(_WIN32)
 	// use protobyte resources instead of project resources
-	/*vShaderURL = url + "\\..\\..\\..\\Resources\\shaders\\"+vShader;
-	fShaderURL = url + "\\..\\..\\..\\Resources\\shaders\\"+fShader;*/
-	vShaderURL = url + "\\..\\..\\Resources\\shaders\\" + vShader;
-	fShaderURL = url + "\\..\\..\\Resources\\shaders\\" + fShader;
+	vShaderURL = url + "\\..\\..\\..\\Resources\\shaders\\"+vShader;
+	fShaderURL = url + "\\..\\..\\..\\Resources\\shaders\\"+fShader;
+	//vShaderURL = url + "\\..\\..\\Resources\\shaders\\" + vShader;
+	//fShaderURL = url + "\\..\\..\\Resources\\shaders\\" + fShader;
 	//trace("vShaderURL =", vShaderURL);
 #else
 	vShaderURL = url + "/resources/shaders/" + vShader;
