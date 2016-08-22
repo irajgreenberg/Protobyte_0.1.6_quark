@@ -681,6 +681,8 @@ void ProtoBaseApp::_run(const Vec2f& mousePos, const Vec4i& windowCoords/*, int 
 	ctx->setView(glm::lookAt(glm::vec3(0, 0, 500), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0)));
 
 	// update shadow map texture matrix should light(s) changes position (only for light0 for now)
+	/*ctx->setLightView(glm::lookAt(glm::normalize(glm::vec3(ctx->getLight(0).getPosition().x, ctx->getLight(0).getPosition().y, ctx->getLight(0).getPosition().z)), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0)));*/
+
 	ctx->setLightView(glm::lookAt(glm::vec3(ctx->getLight(0).getPosition().x, ctx->getLight(0).getPosition().y, ctx->getLight(0).getPosition().z), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0)));
 
 	ctx->setLightBias(glm::mat4(

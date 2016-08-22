@@ -328,7 +328,11 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\Resources\shaders\bumpmapping.fs.glsl" />
-    <None Include="..\..\..\Resources\shaders\bumpmapping.vs.glsl" />
+    <None Include="..\..\..\Resources\shaders\bumpmapping.fs.glsl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\Resources\shaders\bumpmapping.vs.glsl">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -41,7 +41,7 @@ void ProtoController::run() {
 }
 
 void ProtoController::display() {
-	setLight(0, Vec3(sin(radians(getFrameCount()*.25f)) * 390, 0, 200), { 1, 1, 1 });
+	//setLight(0, Vec3(sin(radians(getFrameCount()*.25f)) * 390, 0, 200), { 1, 1, 1 });
 
 	translate(0, 0, 0);
 	arcBallBegin();

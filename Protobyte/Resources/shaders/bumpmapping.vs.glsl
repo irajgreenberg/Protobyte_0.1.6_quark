@@ -71,14 +71,18 @@ void main(void)
     // vectors.
     vec3 B = cross(N, T);
 
-    // shadowmap 
+    // shadowmap (3 ways all have same results with self shadowing)
 	//b*p*v*m
 	//shadowMapCoords = shadowModelViewBiasProjectionMatrix*vec4(vertexPosition, 1.0);
 	
-	mat4 L_MVP =  lightProjectionMatrix * lightViewMatrix * modelMatrix;
-	mat4 L_MVPB = lightBiasMatrix * L_MVP;
+	vec4 world_pos = modelMatrix * vec4(vertexPosition, 1.0);
+	mat4 shadowMatrix = lightBiasMatrix *  lightProjectionMatrix * lightViewMatrix;
+	shadowMapCoords = shadowMatrix * world_pos;
+	
+	//mat4 L_MVP =  lightProjectionMatrix * lightViewMatrix * modelMatrix;
+	//mat4 L_MVPB = lightBiasMatrix * L_MVP;
 	//mat4 L_MVPB = L_MVP;
-	shadowMapCoords = L_MVPB*vec4(vertexPosition, 1.0);
+	//shadowMapCoords = L_MVPB*vec4(vertexPosition, 1.0);
 
    
     // The light vector (L) is the vector from the point of interest to
