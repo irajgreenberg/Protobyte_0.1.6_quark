@@ -1,0 +1,8 @@
+﻿  sweep_context.cc
+  sweep.cc
+  cdt.cc
+  advancing_front.cc
+  main.cpp
+  shapes.cc
+  Generating Code...
+  poly2tri.vcxproj -> D:\Dev\Protobyte_0.1.6_quark\Protobyte\Utils\poly2tri\x64\Debug\poly2tri.lib

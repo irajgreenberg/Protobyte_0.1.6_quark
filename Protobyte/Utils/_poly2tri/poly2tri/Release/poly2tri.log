@@ -1,0 +1,7 @@
+﻿  shapes.cc
+  main.cpp
+  advancing_front.cc
+  cdt.cc
+  sweep.cc
+  sweep_context.cc
+  poly2tri.vcxproj -> D:\Dev\Protobyte_0.1.6_quark\Protobyte\Utils\poly2tri\Release\poly2tri.lib
