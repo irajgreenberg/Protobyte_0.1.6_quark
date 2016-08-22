@@ -31,6 +31,7 @@ public:
 	void onResized();
 	void onClosed();
 
+	Plane plane;
 	std::vector<Tube> tendrils;
 
 };

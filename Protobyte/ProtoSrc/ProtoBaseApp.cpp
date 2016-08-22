@@ -603,13 +603,13 @@ bool ProtoBaseApp::createShadowMap() {
 
 	// set up FBO
 	glGenFramebuffers(1, &ctx->getShadowBuffer_U());
-	//trace("after ctx->getShadowBuffer_U()=", ctx->getShadowBuffer_U());
 	glBindFramebuffer(GL_FRAMEBUFFER, ctx->getShadowBuffer_U());
-	//trace("ctx->getShadowTexture_U() =", ctx->getShadowTexture_U());
 	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, ctx->getShadowTexture_U(), 0);
 	//glFramebufferTexture(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, ctx->getShadowTexture_U(), 0);
 
-	glDrawBuffer(GL_NONE); // No color buffer is drawn to.
+
+	// No color buffer is drawn to.
+	glDrawBuffer(GL_NONE); 
 
 
 	if (glCheckFramebufferStatus(GL_FRAMEBUFFER) == GL_FRAMEBUFFER_COMPLETE) {
@@ -736,7 +736,7 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 		// Pass 1: render depth to FB
 
 		// set Light view matrix
-		ctx->setLightProjection(glm::ortho<float>(float(-width) , float(width), -float(height), float(height), -1.0f, 1.0f));
+		ctx->setLightProjection(glm::ortho<float>(float(-width) , float(width), -float(height), float(height), -.1f, 510.0f));
 		//ctx->setLightProjection(glm::perspective(viewAngle, aspect, nearDist, 100.0f));
 		
 		glDrawBuffer(GL_NONE);

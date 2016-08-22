@@ -8,7 +8,7 @@ Ira Greenberg 2016
 void ProtoController::init() {
 
 	shadowsOn();
-	setShadowSharpness(256, 256);
+	setShadowSharpness(512, 512);
 	std::vector<Vec3> pts;
 	float theta = 0;
 	for (int i = 0; i < 30; i++) {
@@ -27,16 +27,38 @@ void ProtoController::init() {
 	tendrils.at(0).setSpecularMaterial({ 1, 1, 1 });
 	tendrils.at(0).setShininess(5);
 
+	plane = ProtoPlane({}, {}, Dim2f(0, 0), Col4f(1), 1, 1, "linen.jpg");
+	plane.setDiffuseMaterial({ 1, 1, 1, 1 });
+	//plane.setBumpMap("woodPlank.jpg", .55);
+	plane.loadBumpMapTexture("crinkled_paper_normal.jpg");
+	plane.setTextureScale({ .5f, .5f });
+	plane.setSpecularMaterial({ 1, 1, 1 });
+	plane.setShininess(15);
+
 }
 
 void ProtoController::run() {
 }
 
 void ProtoController::display() {
+
+	setLight(0, Vec3(sin(radians(getFrameCount()*.25f)) * 90, 0, 200), { 1, 1, 1 });
+	beginArcBall();
+	push();
 	translate(0, 0, -400);
+	scale({1920, 1080, 1});
+	plane.display();
+	pop();
+	
+	push();
+	translate(0, 0, -200);
 	scale(3);
 	rotate(getFrameCount()*PI / 180, { 0, 1, 0 });
 	tendrils.at(0).display();
+	pop();
+	endArcball();
+
+	
 }
 
 // Key and Mouse Events
