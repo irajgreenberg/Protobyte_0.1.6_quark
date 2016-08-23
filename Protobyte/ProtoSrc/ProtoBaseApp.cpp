@@ -734,10 +734,8 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 		glUniform1i(ctx->getShaderPassFlag_U(), 1); 
 
 		// Pass 1: render depth to FB
-
 		// set Light view matrix
-		ctx->setLightProjection(glm::ortho<float>(float(-width) , float(width), -float(height), float(height), -.1f, 510.0f));
-		//ctx->setLightProjection(glm::perspective(viewAngle, aspect, nearDist, 100.0f));
+		ctx->setLightProjection(glm::frustum(-1, 1, -1, 1, 1, 4000));
 		
 		glDrawBuffer(GL_NONE);
 		glReadBuffer(GL_NONE);

@@ -9,6 +9,15 @@ void ProtoController::init() {
 
 	shadowsOn();
 	setShadowSharpness(512, 512);
+
+	toroid = Toroid({ 0 }, { 0 }, { 0 }, { 1, 1, 1, 1 }, 18, 18, 80, 25, "dirt.jpg", {.1f, .1f});
+	toroid.setDiffuseMaterial({ 1.0f, 1, 1 });
+	toroid.setAmbientMaterial(0.55f);
+	toroid.setBumpMap("dirt.jpg", .95f);
+	//tube.loadBumpMapTexture("vascular3_normal2.jpg");
+	toroid.setSpecularMaterial({ 1, 1, 1 });
+	toroid.setShininess(5);
+
 	std::vector<Vec3> pts;
 	float theta = 0;
 	for (int i = 0; i < 30; i++) {
@@ -27,13 +36,24 @@ void ProtoController::init() {
 	tendrils.at(0).setSpecularMaterial({ 1, 1, 1 });
 	tendrils.at(0).setShininess(5);
 
+
+	tendrils.push_back(Tube(path, 4, 12, ProtoTransformFunction(ProtoTransformFunction::SINUSOIDAL, Tup2(.55, .81), 20), true, "vascular3.jpg"));
+	tendrils.at(1).setDiffuseMaterial({ 1.0f, 1, 1 });
+	tendrils.at(1).setAmbientMaterial(0.35f);
+	tendrils.at(1).setBumpMap("vascular3.jpg", .45f);
+	tendrils.at(1).setTextureScale({ 1, 0.1f });
+	tendrils.at(1).setSpecularMaterial({ 1, 1, 1 });
+	tendrils.at(1).setShininess(67);
+
+
+
 	plane = ProtoPlane({}, {}, Dim2f(0, 0), Col4f(1), 1, 1, "linen.jpg");
 	plane.setDiffuseMaterial({ 1, 1, 1, 1 });
 	//plane.setBumpMap("woodPlank.jpg", .55);
 	plane.loadBumpMapTexture("crinkled_paper_normal.jpg");
 	plane.setTextureScale({ .5f, .5f });
 	plane.setSpecularMaterial({ 1, 1, 1 });
-	plane.setShininess(15);
+	plane.setShininess(5);
 
 }
 
@@ -56,6 +76,23 @@ void ProtoController::display() {
 	rotate(getFrameCount()*PI / 180, { 0, 1, 0 });
 	tendrils.at(0).display();
 	pop();
+
+	push();
+	translate(0, 0, 150);
+	scale(2.24);
+	rotate(-getFrameCount()*PI / 180*.25f, {.75f, 1, .25f });
+	tendrils.at(1).display();
+	pop();
+
+	push();
+	translate(0, 0, 0);
+	rotate(getFrameCount()*PI / 180 * .125f, { .65f, 1, -.35f });
+	scale(1.25);
+	rotate(getFrameCount()*PI / 180, { 0, 1, .5f });
+	toroid.display();
+	pop();
+
+
 	endArcball();
 
 	

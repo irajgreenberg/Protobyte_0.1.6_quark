@@ -32,6 +32,7 @@ public:
 	void onClosed();
 
 	Plane plane;
+	Toroid toroid;
 	std::vector<Tube> tendrils;
 
 };
