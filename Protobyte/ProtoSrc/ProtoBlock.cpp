@@ -79,16 +79,23 @@ ProtoBlock::ProtoBlock(const Vec3f& pos, const Vec3f& rot, const ProtoDimension3
 //Uses uuplicate vertices to allow proper texture mapping
 
 void ProtoBlock::calcVerts() {
+	//convenience
+	auto px = pos.x;
+	auto py = pos.y;
+	auto pz = pos.z;
+	auto w = size.w;
+	auto h = size.h;
+	auto d = size.d;
 
     Vec3f vs[8];
-    vs[0] = Vec3f(-.5, .5, .5);
-    vs[1] = Vec3f(-.5, -.5, .5);
-    vs[2] = Vec3f(.5, -.5, .5);
-    vs[3] = Vec3f(.5, .5, .5);
-    vs[4] = Vec3f(.5, .5, -.5);
-    vs[5] = Vec3f(.5, -.5, -.5);
-    vs[6] = Vec3f(-.5, -.5, -.5);
-    vs[7] = Vec3f(-.5, .5, -.5);
+    vs[0] = Vec3f(px+-.5*w, py + .5*h, pz+.5*d);
+    vs[1] = Vec3f(px + -.5*w, py + -.5*h, pz + .5*d);
+    vs[2] = Vec3f(px + .5*w, py + -.5*h, pz + .5*d);
+    vs[3] = Vec3f(px + .5*w, py + .5*h, pz + .5*d);
+    vs[4] = Vec3f(px + .5*w, py + .5*h, pz + -.5*d);
+    vs[5] = Vec3f(px + .5*w, py + -.5*h, pz + -.5*d);
+    vs[6] = Vec3f(px + -.5*w, py + -.5*h, pz + -.5*d);
+    vs[7] = Vec3f(px + -.5*w, py + .5*h, pz + -.5*d);
 
 
     verts.resize(36);

@@ -10,33 +10,31 @@ void ProtoController::init() {
 	shadowsOn();
 	setShadowSharpness(512, 512);
 
-	toroid = Toroid({ 0 }, { 0 }, { 0 }, { 1, 1, 1, 1 }, 18, 18, 80, 25, "dirt.jpg", {.1f, 1});
-	toroid.setDiffuseMaterial({ 1.0f, 1, 1 });
-	toroid.setAmbientMaterial(0.55f);
-	toroid.setBumpMap("dirt.jpg", .95f);
-	//tube.loadBumpMapTexture("vascular3_normal2.jpg");
-	toroid.setSpecularMaterial({ 1, 1, 1 });
-	toroid.setShininess(5);
 
 	std::vector<Vec3> pts;
+	float ht = 65.0f;
 	float theta = 0;
-	for (int i = 0; i < 30; i++) {
-		float r = random(2, 4);
-		pts.push_back(Vec3f(sin(theta) * r, -60 + i * 4, cos(theta + random(PI/130.0)) * r*.25));
-		theta += TWO_PI * 4 / 30;
+	int ptCount = 8;
+	for (int i = 0; i < ptCount; i++) {
+		float r = 6+random(3, 8);
+		pts.push_back(Vec3f(sin(theta) * r, -ht/2.0 + ht/ptCount*i, cos(theta) * random(r, r+.25)));
+		theta += TWO_PI / ptCount*1.5  ;
 	}
-	Spline3 path(pts, 3, false, 1.0);
+	Spline3 path(pts, 6, false, 1.0);
 
-	tendrils.push_back(Tube(path, 18, 12, ProtoTransformFunction(ProtoTransformFunction::SINUSOIDAL, Tup2(.35, .51), 10), true, "gold01.jpg"));
+	//tendrils.push_back(Tube(path, 18, 16, ProtoTransformFunction(ProtoTransformFunction::SINUSOIDAL, Tup2(random(.325, .435), random(.456, 2.875)), 1), true, "humanSkin01.jpg"));
+
+	tendrils.push_back(Tube(path, 18, 16, ProtoTransformFunction(ProtoTransformFunction::SINUSOIDAL, Tup2(.001, 1.65f), 1), true, "humanSkin02.jpg"));
+	tendrils.at(0).setPerturbation({.05f, .01f, .02f});
 	tendrils.at(0).setDiffuseMaterial({ 1.0f, 1, 1 });
 	tendrils.at(0).setAmbientMaterial(0.15f);
-	tendrils.at(0).setBumpMap("gold01.jpg", .95f);
+	tendrils.at(0).setBumpMap("humanSkin02.jpg", 1.2f);
 	//tube.loadBumpMapTexture("vascular3_normal2.jpg");
-	tendrils.at(0).setTextureScale({ 1, 0.1f });
+	tendrils.at(0).setTextureScale({ .25f, 0.08f });
 	tendrils.at(0).setSpecularMaterial({ 1, 1, 1 });
-	tendrils.at(0).setShininess(5);
+	tendrils.at(0).setShininess(95);
 
-
+	/*
 	tendrils.push_back(Tube(path, 4, 12, ProtoTransformFunction(ProtoTransformFunction::SINUSOIDAL, Tup2(.55, .81), 20), true, "vascular3.jpg"));
 	tendrils.at(1).setDiffuseMaterial({ 1.0f, 1, 1 });
 	tendrils.at(1).setAmbientMaterial(0.35f);
@@ -44,8 +42,9 @@ void ProtoController::init() {
 	tendrils.at(1).setTextureScale({ 1, 0.1f });
 	tendrils.at(1).setSpecularMaterial({ 1, 1, 1 });
 	tendrils.at(1).setShininess(67);
+	*/
 
-
+/*
 	theta = 0;
 	pts.clear();
 	float ht = 300;
@@ -64,7 +63,7 @@ void ProtoController::init() {
 	tendrils.at(2).setBumpMap("vascular3.jpg", .95f);
 	tendrils.at(2).setTextureScale({ 1, 0.03f });
 	tendrils.at(2).setSpecularMaterial({ 1, 1, 1 });
-	tendrils.at(2).setShininess(10);
+	tendrils.at(2).setShininess(10)*/
 
 
 	plane = ProtoPlane({}, {}, Dim2f(0, 0), Col4f(1), 1, 1, "linen.jpg");
@@ -82,7 +81,7 @@ void ProtoController::run() {
 
 void ProtoController::display() {
 
-	setLight(0, Vec3(sin(radians(getFrameCount()*.25f)) * 90, 0, 500), { 1, 1, 1 });
+	setLight(0, Vec3(sin(radians(getFrameCount()*.25f)) * 90, 0, 200), { 1, 1, 1 });
 	beginArcBall();
 	push();
 	translate(0, 0, -400);
@@ -93,27 +92,19 @@ void ProtoController::display() {
 	push();
 	translate(0, 0, -200);
 	push();
-	scale(3);
-	rotate(getFrameCount()*PI / 180, { 0, 1, 0 });
+	scale(5);
+	rotate(getFrameCount()*PI / 180*.25f, { .25f, 1, .15f });
 	tendrils.at(0).display();
 	pop();
 	rotate(-getFrameCount()*PI / 1080, { 0, 1, 0 });
-	tendrils.at(2).display();
+	//tendrils.at(2).display();
 	pop();
 
 	push();
 	translate(0, 0, 150);
 	scale(2.24);
 	rotate(-getFrameCount()*PI / 180*.25f, {.75f, 1, .25f });
-	tendrils.at(1).display();
-	pop();
-
-	push();
-	translate(0, 0, 0);
-	rotate(getFrameCount()*PI / 180 * .125f, { .65f, 1, -.35f });
-	scale(1.25);
-	rotate(getFrameCount()*PI / 180, { 0, 1, .5f });
-//	toroid.display();
+	//tendrils.at(1).display();
 	pop();
 
 	

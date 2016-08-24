@@ -264,6 +264,7 @@ namespace ijg {
 #define ProtoDimension3d ProtoDimension3<double>
 #define ProtoDimension3i ProtoDimension3<int>
     
+#define Dim3 ProtoDimension3<float>
 #define Dim3f ProtoDimension3<float>
 #define Dim3d ProtoDimension3<double>
 #define Dim3i ProtoDimension3<int>

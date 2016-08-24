@@ -710,7 +710,7 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 	ctx->setModel(glm::mat4{ 1.0f });
 	float viewAngle = 75.0f*PI / 180.0f;
 	float aspect = float(width) / float(height);
-	float nearDist = 2.0f;
+	float nearDist = .5f;
 	float farDist = 3000.0f;
 
 	if (areShadowsEnabled) {
@@ -735,7 +735,7 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 
 		// Pass 1: render depth to FB
 		// set Light view matrix
-		ctx->setLightProjection(glm::frustum(-1, 1, -1, 1, 1, 5000));
+		ctx->setLightProjection(glm::frustum(-1.0f, 1.0f, -1.0f, 1.0f, 1.0f, 710.0f));
 		
 		glDrawBuffer(GL_NONE);
 		glReadBuffer(GL_NONE);
