@@ -10,7 +10,7 @@ void ProtoController::init() {
 	shadowsOn();
 	setShadowSharpness(512, 512);
 
-	toroid = Toroid({ 0 }, { 0 }, { 0 }, { 1, 1, 1, 1 }, 18, 18, 80, 25, "dirt.jpg", {.1f, .1f});
+	toroid = Toroid({ 0 }, { 0 }, { 0 }, { 1, 1, 1, 1 }, 18, 18, 80, 25, "dirt.jpg", {.1f, 1});
 	toroid.setDiffuseMaterial({ 1.0f, 1, 1 });
 	toroid.setAmbientMaterial(0.55f);
 	toroid.setBumpMap("dirt.jpg", .95f);
@@ -46,6 +46,26 @@ void ProtoController::init() {
 	tendrils.at(1).setShininess(67);
 
 
+	theta = 0;
+	pts.clear();
+	float ht = 300;
+	int loops = 10;
+	int ptCount = 100;
+	for (int i = 0; i < ptCount; i++) {
+		float r = 20+random(36, 50);
+		pts.push_back(Vec3f(sin(theta) * r, -ht/2.0+ht/ptCount*i, cos(theta) * r));
+		theta += TWO_PI / ptCount * loops;
+	}
+	path = Spline3(pts, 3, false, 1.0);
+
+	tendrils.push_back(Tube(path, 4, 12, ProtoTransformFunction(ProtoTransformFunction::SINUSOIDAL, Tup2(1.55, 3.21), 90), true, "vascular3.jpg"));
+	tendrils.at(2).setDiffuseMaterial({ 1.0f, 1, 1 });
+	tendrils.at(2).setAmbientMaterial(0.35f);
+	tendrils.at(2).setBumpMap("vascular3.jpg", .95f);
+	tendrils.at(2).setTextureScale({ 1, 0.03f });
+	tendrils.at(2).setSpecularMaterial({ 1, 1, 1 });
+	tendrils.at(2).setShininess(10);
+
 
 	plane = ProtoPlane({}, {}, Dim2f(0, 0), Col4f(1), 1, 1, "linen.jpg");
 	plane.setDiffuseMaterial({ 1, 1, 1, 1 });
@@ -62,7 +82,7 @@ void ProtoController::run() {
 
 void ProtoController::display() {
 
-	setLight(0, Vec3(sin(radians(getFrameCount()*.25f)) * 90, 0, 200), { 1, 1, 1 });
+	setLight(0, Vec3(sin(radians(getFrameCount()*.25f)) * 90, 0, 500), { 1, 1, 1 });
 	beginArcBall();
 	push();
 	translate(0, 0, -400);
@@ -72,9 +92,13 @@ void ProtoController::display() {
 	
 	push();
 	translate(0, 0, -200);
+	push();
 	scale(3);
 	rotate(getFrameCount()*PI / 180, { 0, 1, 0 });
 	tendrils.at(0).display();
+	pop();
+	rotate(-getFrameCount()*PI / 1080, { 0, 1, 0 });
+	tendrils.at(2).display();
 	pop();
 
 	push();
@@ -89,9 +113,10 @@ void ProtoController::display() {
 	rotate(getFrameCount()*PI / 180 * .125f, { .65f, 1, -.35f });
 	scale(1.25);
 	rotate(getFrameCount()*PI / 180, { 0, 1, .5f });
-	toroid.display();
+//	toroid.display();
 	pop();
 
+	
 
 	endArcball();
 

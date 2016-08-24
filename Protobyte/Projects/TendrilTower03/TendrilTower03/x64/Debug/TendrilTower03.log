@@ -1,4 +1,29 @@
-﻿  ProtoBaseApp.cpp
+﻿  ProtoController.cpp
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\otherlibs\poly2tri\include\sweep\sweep_context.h(161): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(18): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protolight.h(93): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(50): warning C4005: 'GetCurrentDir': macro redefinition
+  c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototoroid.h(62): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocephalopod.h(128): warning C4244: 'return': conversion from 'time_t' to 'long', possible loss of data
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(485): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(25): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(25): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(26): warning C4305: '+=': truncation from 'double' to 'float'
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(30): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(40): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(57): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(61): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(97): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(100): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(106): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(107): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(113): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(115): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  ProtoBaseApp.cpp
 c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\otherlibs\poly2tri\include\sweep\sweep_context.h(161): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
 c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(18): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protolight.h(93): warning C4305: '=': truncation from 'double' to 'float'
@@ -65,5 +90,6 @@ c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1955
 c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1959): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
 c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1963): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
 c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(2500): warning C4101: 'gl_texID': unreferenced local variable
+  Generating Code...
   TendrilTower03.vcxproj -> C:\Users\Frys\Dev\Protobyte_0.1.6_quark\Protobyte\Projects\TendrilTower03\x64\Debug\TendrilTower03.exe
   TendrilTower03.vcxproj -> C:\Users\Frys\Dev\Protobyte_0.1.6_quark\Protobyte\Projects\TendrilTower03\x64\Debug\TendrilTower03.pdb (Partial PDB)

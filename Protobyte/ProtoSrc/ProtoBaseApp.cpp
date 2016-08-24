@@ -735,7 +735,7 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 
 		// Pass 1: render depth to FB
 		// set Light view matrix
-		ctx->setLightProjection(glm::frustum(-1, 1, -1, 1, 1, 4000));
+		ctx->setLightProjection(glm::frustum(-1, 1, -1, 1, 1, 5000));
 		
 		glDrawBuffer(GL_NONE);
 		glReadBuffer(GL_NONE);
