@@ -220,8 +220,8 @@ void ProtoContext::printModelViewProjectionMatrix() {
 void ProtoContext::updateLightViewMatrices() {
 	// currently only works for single light source.
 	// need to annoyingly convert from ijg math to glm math, sigh!
-	/*glm::vec3 ltPos = glm::vec3(lights.at(0).getPosition().x, lights.at(0).getPosition().y, lights.at(0).getPosition().z);
-	lightView = glm::lookAt(-ltPos, glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));*/
+	glm::vec3 ltPos = glm::vec3(lights.at(0).getPosition().x, lights.at(0).getPosition().y, lights.at(0).getPosition().z);
+	lightView = glm::lookAt(ltPos, glm::vec3(0, 0, 0), glm::vec3(0, 1, 0));
 
 	lightBiasProjection = lightBias * lightProjection;
 	

@@ -25,7 +25,7 @@ void ProtoController::init() {
 	//tendrils.push_back(Tube(path, 18, 16, ProtoTransformFunction(ProtoTransformFunction::SINUSOIDAL, Tup2(random(.325, .435), random(.456, 2.875)), 1), true, "humanSkin01.jpg"));
 
 	tendrils.push_back(Tube(path, 18, 16, ProtoTransformFunction(ProtoTransformFunction::SINUSOIDAL, Tup2(.001, 1.65f), 1), true, "humanSkin02.jpg"));
-	tendrils.at(0).setPerturbation({.05f, .01f, .02f});
+	tendrils.at(0).setPerturbation({.08f, .04f, .06f});
 	tendrils.at(0).setDiffuseMaterial({ 1.0f, 1, 1 });
 	tendrils.at(0).setAmbientMaterial(0.15f);
 	tendrils.at(0).setBumpMap("humanSkin02.jpg", 1.2f);
@@ -90,11 +90,15 @@ void ProtoController::display() {
 	pop();
 	
 	push();
-	translate(0, 0, -200);
+	translate(0, 0, -190);
 	push();
 	scale(5);
 	rotate(getFrameCount()*PI / 180*.25f, { .25f, 1, .15f });
+	push();
+	scale(.98f);
 	tendrils.at(0).display();
+	pop();
+	tendrils.at(0).display(WIREFRAME, 3);
 	pop();
 	rotate(-getFrameCount()*PI / 1080, { 0, 1, 0 });
 	//tendrils.at(2).display();

@@ -578,7 +578,7 @@ bool ProtoBaseApp::createShadowMap() {
 	setShadowMapSize(getWidth(), getHeight());
 	
 	// For PCF (default 256 x 256)
-	setShadowSharpness(256, 256);
+	setShadowSharpness(512, 512);
 
 	//set up shadow texture object
 	glGenTextures(1, &ctx->getShadowTexture_U());
@@ -735,7 +735,9 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 
 		// Pass 1: render depth to FB
 		// set Light view matrix
-		ctx->setLightProjection(glm::frustum(-1.0f, 1.0f, -1.0f, 1.0f, 1.0f, 710.0f));
+		ctx->setLightProjection(glm::frustum(-1.2f, 1.2f, -1.2f, 1.2f, 1.0f, 710.0f));
+		//ctx->setLightProjection(glm::ortho(-float(getWidth()*.4), float(getWidth()*.4), -float(getHeight()*.4), float(getHeight()*.4), -.01f, 1.0f));
+		//ctx->setLightProjection(glm::frustum(-.05f, .05f, -.05f, .05f, 1.0f, 710.0f));
 		
 		glDrawBuffer(GL_NONE);
 		glReadBuffer(GL_NONE);
@@ -751,7 +753,7 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 		// reset backface culling
 		glEnable(GL_CULL_FACE);
 		glCullFace(GL_BACK);
-		//glDisable(GL_CULL_FACE);
+		glDisable(GL_CULL_FACE);
 
 		// reset default framebuffer
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
