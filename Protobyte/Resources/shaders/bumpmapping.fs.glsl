@@ -93,17 +93,22 @@ void main(void) {
 	
 	// software PCF (seems to work way better than default hardware approach)
 	// from: http://http.developer.nvidia.com/GPUGems/gpugems_ch11.html
-	float sum = 0, x = 0, y = 0;
-	vec2 texScale = vec2(1.0/shadowSharpness.x, 1.0/shadowSharpness.y);
-	vec4 shadowCoords = shadowMapCoords;
-	for (y = -1.5; y <= 1.5; y += 1.0) {
-		for (x = -1.5; x <= 1.5; x += 1.0) {
-				sum += textureProj(shadowMap, vec4(shadowCoords.xy + vec2(x, y) * texScale *shadowCoords.w, shadowCoords.z, shadowCoords.w));
+	if ( textureProj(shadowMap, shadowMapCoords) == 0 ){
+
+		float sum = 0, x = 0, y = 0;
+		vec2 texScale = vec2(1.0/shadowSharpness.x, 1.0/shadowSharpness.y);
+		vec4 shadowCoords = shadowMapCoords;
+		for (y = -1.5; y <= 1.5; y += 1.0) {
+			for (x = -1.5; x <= 1.5; x += 1.0) {
+					sum += textureProj(shadowMap, vec4(shadowCoords.xy + vec2(x, y) * texScale *shadowCoords.w, shadowCoords.z, shadowCoords.w));
+			}
 		}
+		float shadow = sum / 16.0;
+
+	
+		diffuse = mix(diffuse, diffuse*shadow, 0.35f); 
+		specular = mix(specular, specular*shadow, 0.35f); 
 	}
-	float shadow = sum / 16.0;
-	diffuse = mix(diffuse, diffuse*shadow, 0.35f); 
-	specular = mix(specular, specular*shadow, 0.35f); 
 
 	color = vertCol*lightRenderingFactors.w + vec4(diffuse*lightRenderingFactors.x + specular*lightRenderingFactors.y + (vec3(ambientMaterial)*globalAmbientLight)*lightRenderingFactors.z, 1.0);
 

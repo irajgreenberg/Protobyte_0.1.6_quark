@@ -62,7 +62,7 @@ void ProtoBaseApp::_init() {
 	// START standard transformation matrices: ModelView / Projection / Normal
 	ctx->setModel(glm::mat4(1.0f));
 	// only relavent if draw not invoked
-	ctx->setView(glm::lookAt(glm::vec3(0.0, 0.0, 500), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0)));
+	ctx->setView(glm::lookAt(glm::vec3(0.0, 0.0, 50), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0)));
 
 	float viewAngle = 65.0f*PI / 180.0f;
 	float aspect = float(width) / float(height);
@@ -678,7 +678,7 @@ void ProtoBaseApp::_run(const Vec2f& mousePos, const Vec4i& windowCoords/*, int 
 
 	// I thought I needed this to reset matrix each frame?
 	// was 18
-	ctx->setView(glm::lookAt(glm::vec3(0, 0, .1), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0)));
+	ctx->setView(glm::lookAt(glm::vec3(0, 0, 50), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0)));
 
 	// update shadow map texture matrix should light(s) changes position (only for light0 for now)
 	/*ctx->setLightView(glm::lookAt(glm::normalize(glm::vec3(ctx->getLight(0).getPosition().x, ctx->getLight(0).getPosition().y, ctx->getLight(0).getPosition().z)), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0)));*/
@@ -721,13 +721,13 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 
 		//set viewport to the shadow map view size
 		glViewport(0, 0, shadowMapWidth, shadowMapHeight);
-		
+
 		// enable front face culling for shadowing
 		glEnable(GL_CULL_FACE);
 		glCullFace(GL_FRONT);
 
 		glEnable(GL_POLYGON_OFFSET_FILL);
-		//glPolygonOffset(1.1, 4.0);
+		glPolygonOffset(1.1, 4.0);
 
 		// Flag controls render pass in shader
 		// enable shadow blending
@@ -735,9 +735,11 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 
 		// Pass 1: render depth to FB
 		// set Light view matrix
-		//ctx->setLightProjection(glm::frustum(-width/2.0f, width / 2.0f, -height / 2.0f, height / 2.0f, 1.0f, 705.0f));
-		ctx->setLightProjection(glm::ortho(-getWidth()/2.0f, getWidth() / 2.0f, -getHeight()/2.0f, getHeight()/2.0f, .1f, 400.0f));
-		//ctx->setLightProjection(glm::frustum(-.05f, .05f, -.05f, .05f, 1.0f, 710.0f));
+		viewAngle = 60.0f*PI / 180.0f; //parameterize eventually
+		//ctx->setLightProjection(glm::perspective(viewAngle, aspect, -1.0f, 1.0f));
+		//ctx->setLightProjection(glm::ortho(-getWidth()/2.0f, getWidth() / 2.0f, -getHeight()/2.0f, getHeight()/2.0f, .1f, 5.0f));
+		//ctx->setLightProjection(glm::ortho(-65.0f, 65.0f, -40.0f, 40.0f, .1f, 116.0f));
+		ctx->setLightProjection(glm::frustum(-.25f, .25f, -.145f, .145f, 1.0f, 300.0f));
 		
 		glDrawBuffer(GL_NONE);
 		glReadBuffer(GL_NONE);

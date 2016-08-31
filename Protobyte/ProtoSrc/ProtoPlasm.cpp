@@ -118,13 +118,18 @@ void ProtoPlasm::initGLFW(){
 	case 4:
 		/* Centers in top monitor
 		   in 1/3 configuration:
-		       [ ]
+		       [x]
 		    [ ][ ][ ]
 		*/
 		glfwSetWindowPos(window, (mode->width - appWidth) / 2, -mode->height + (mode->height-appHeight) / 2);
 		break;
 	case 6:
-		glfwSetWindowPos(window, (mode->width - appWidth) / 2, (mode->height - appHeight) / 2);
+		/* Centers in top monitor
+		in 1/3 configuration:
+		[ ][x][ ]
+		[ ][ ][ ]
+		*/
+		glfwSetWindowPos(window, (mode->width - appWidth) / 2, -mode->height + (mode->height - appHeight) / 2);
 		break;
 	default:
 		glfwSetWindowPos(window, (mode->width - appWidth) / 2, (mode->height - appHeight) / 2);
@@ -190,8 +195,8 @@ void ProtoPlasm::initGLFW(){
 	glClearDepth(1.0f); // 0 is near, 1 is far
 	
 	glDepthMask(GL_TRUE); 
-	//glDepthFunc(GL_LEQUAL);
-	glDepthFunc(GL_LESS);
+	glDepthFunc(GL_LEQUAL);
+	//glDepthFunc(GL_LESS);
 	//glDepthRange(0.0f, 1.0f);
 
 	int w = 0, h = 0;
