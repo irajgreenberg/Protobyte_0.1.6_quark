@@ -76,6 +76,7 @@ void main(void)
 	//shadowMapCoords = shadowModelViewBiasProjectionMatrix*vec4(vertexPosition, 1.0);
 	
 	vec4 world_pos = modelMatrix * vec4(vertexPosition, 1.0);
+	//vec4 world_pos = vec4(vertexPosition, 1.0);
 	mat4 shadowMatrix = lightBiasMatrix *  lightProjectionMatrix * lightViewMatrix;
 	shadowMapCoords = shadowMatrix * world_pos;
 	

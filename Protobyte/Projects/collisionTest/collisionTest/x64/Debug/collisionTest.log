@@ -1,4 +1,4 @@
-﻿  ProtoBaseApp.cpp
+﻿  ProtoController.cpp
 c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\otherlibs\poly2tri\include\sweep\sweep_context.h(161): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
 c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(18): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protolight.h(93): warning C4305: '=': truncation from 'double' to 'float'
@@ -8,62 +8,7 @@ c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(50)
 c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototoroid.h(62): warning C4305: 'initializing': truncation from 'double' to 'float'
 c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocephalopod.h(128): warning C4244: 'return': conversion from 'time_t' to 'long', possible loss of data
 c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(485): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(67): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(252): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(264): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(308): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(320): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(419): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(420): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(421): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(424): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(425): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(426): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(427): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(431): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(432): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(433): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(436): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(438): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(439): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(442): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(443): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(444): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(449): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(450): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(451): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(711): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(730): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(781): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(801): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(850): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(851): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1427): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1428): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1434): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1449): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1453): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1471): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1476): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1578): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1593): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1594): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1617): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1621): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1639): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1644): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1761): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1904): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1917): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1922): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1928): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1937): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1942): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1953): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1957): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1961): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1965): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(2502): warning C4101: 'gl_texID': unreferenced local variable
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\projects\collisiontest\collisiontest\protocontroller.cpp(12): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\projects\collisiontest\collisiontest\protocontroller.cpp(25): warning C4305: 'argument': truncation from 'double' to 'float'
   collisionTest.vcxproj -> C:\Users\Frys\Dev\Protobyte_0.1.6_quark\Protobyte\Projects\collisionTest\x64\Debug\collisionTest.exe
   collisionTest.vcxproj -> C:\Users\Frys\Dev\Protobyte_0.1.6_quark\Protobyte\Projects\collisionTest\x64\Debug\collisionTest.pdb (Partial PDB)

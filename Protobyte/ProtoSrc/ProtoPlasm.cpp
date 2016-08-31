@@ -190,8 +190,9 @@ void ProtoPlasm::initGLFW(){
 	glClearDepth(1.0f); // 0 is near, 1 is far
 	
 	glDepthMask(GL_TRUE); 
-	glDepthFunc(GL_LEQUAL);
-	glDepthRange(0.0f, 1.0f);
+	//glDepthFunc(GL_LEQUAL);
+	glDepthFunc(GL_LESS);
+	//glDepthRange(0.0f, 1.0f);
 
 	int w = 0, h = 0;
 	glfwGetFramebufferSize(window, &w, &h);

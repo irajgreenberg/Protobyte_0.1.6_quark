@@ -19,7 +19,7 @@ void ProtoController::init() {
 	for (size_t i = 0; i < BLOCK_COUNT; ++i) {
 		//blocks.push_back(Block({ -getWidth() / 2.0f + random(getWidth() ), random(-100, 100), random(-200, -800) }, { 0, 0, 0 }, { 50, 50, 50 }, Col4f(.5f, .5f,.5f, 1), "metal_blue.jpg", { 1, 1 }));
 
-		blocks.push_back(Block({ random(-getWidth()/4.0f, getWidth()/4.0f), random(-300, 300), 25 }, { 0, 0, 0 }, { 50, 50, 50 }, Col4f(.5f, .5f, .5f, 1), "metal_blue.jpg", { 1, 1 }));
+		blocks.push_back(Block({ random(-getWidth()/4.0f, getWidth()/4.0f), random(-300, 300), 25 }, { 0, 0, 0 }, { 25, 25, 25 }, Col4f(.5f, .5f, .5f, 1), "metal_blue.jpg", { 1, 1 }));
 
 		blocks.at(i).setDiffuseMaterial({ 1, 1, 1, 1 });
 		blocks.at(i).setBumpMap("metal_blue.jpg", .55);
@@ -36,18 +36,21 @@ void ProtoController::run() {
 }
 
 void ProtoController::display() {
-	setLight(0, {sin(radians(getFrameCount())*.25f)*20, sin(radians(-getFrameCount())*.125f) * 20, 100 }, { 1, 1, 1});
-	translate(0, 0, -500);
+	//setLight(0, {sin(radians(getFrameCount())*.25f)*20, sin(radians(-getFrameCount())*.125f) * 20, 100 }, { 1, 1, 1});
+	setLight(0, { 0, 0, 10 }, { 1, 1, 1 });
+	translate(0, 0, -50);
 	//rotate(PI/2.0f, { 1, 0, 0 });
 
 	beginArcBall();
-
 	push();
+	translate(0, 0, -12.5f);
 	for (size_t i = 0; i < blocks.size(); ++i) {
 		blocks.at(i).display();
 	}
+	pop();
 
-	scale(3000, 1800, 1);
+	push();
+	scale(400, 200, 1);
 	plane.display();
 	pop();
 
