@@ -6,7 +6,7 @@ Ira Greenberg 2016
 #include "ProtoController.h"
 
 void ProtoController::init() {
-
+	setBackground({ .125f, .125f, .125f, 1.0f });
 	shadowsOn();
 	setShadowSharpness(512, 512);
 
@@ -17,7 +17,7 @@ void ProtoController::init() {
 	int ptCount = 8;
 	for (int i = 0; i < ptCount; i++) {
 		float r = 6+random(3, 8);
-		pts.push_back(Vec3f(sin(theta) * r, -ht/2.0 + ht/ptCount*i, cos(theta) * random(r, r+.25)));
+		pts.push_back(Vec3f(sin(theta) * r, -ht/2.0 + ht/ptCount*i*1.25f, cos(theta) * random(r, r+.25)));
 		theta += TWO_PI / ptCount*1.5  ;
 	}
 	Spline3 path(pts, 6, false, 1.0);
@@ -80,22 +80,21 @@ void ProtoController::run() {
 }
 
 void ProtoController::display() {
-
-	setLight(0, Vec3(sin(radians(getFrameCount()*.25f)) * 90, 0, 200), { 1, 1, 1 });
+	setLight(0, Vec3(sin(radians(getFrameCount()*.25f)) * 2, 0, 10), { 1, 1, 1 });
 	beginArcBall();
 	push();
-	translate(0, 0, -400);
-	scale({1920, 1080, 1});
-	plane.display();
+	translate(0, 0, -500);
+	scale({1920/3.0f, 1080/3.0f, 1});
+	//plane.display();
 	pop();
 	
 	push();
-	translate(0, 0, -190);
+	translate(0, 0, -150);
 	push();
-	scale(5);
+
 	rotate(getFrameCount()*PI / 180*.25f, { .25f, 1, .15f });
 	push();
-	scale(.98f);
+	scale(.97f);
 	tendrils.at(0).display();
 	pop();
 	tendrils.at(0).display(WIREFRAME, 3);
@@ -106,7 +105,7 @@ void ProtoController::display() {
 
 	push();
 	translate(0, 0, 150);
-	scale(2.24);
+	scale(1.24);
 	rotate(-getFrameCount()*PI / 180*.25f, {.75f, 1, .25f });
 	//tendrils.at(1).display();
 	pop();
