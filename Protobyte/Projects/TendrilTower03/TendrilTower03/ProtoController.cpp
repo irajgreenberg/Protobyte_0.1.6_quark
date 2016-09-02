@@ -11,21 +11,30 @@ void ProtoController::init() {
 	setShadowSharpness(512, 512);
 
 
+	plane = ProtoPlane({}, {}, Dim2f(0, 0), Col4f(1), 1, 1, "linen.jpg");
+	plane.setDiffuseMaterial({ 1, 1, 1, 1 });
+	//plane.setBumpMap("woodPlank.jpg", .55);
+	plane.loadBumpMapTexture("crinkled_paper_normal.jpg");
+	plane.setTextureScale({ .5f, .5f });
+	plane.setSpecularMaterial({ 1, 1, 1 });
+	plane.setShininess(5);
+
+
 	std::vector<Vec3> pts;
 	float ht = 65.0f;
 	float theta = 0;
 	int ptCount = 8;
 	for (int i = 0; i < ptCount; i++) {
-		float r = 6+random(3, 8);
-		pts.push_back(Vec3f(sin(theta) * r, -ht/2.0 + ht/ptCount*i*1.25f, cos(theta) * random(r, r+.25)));
-		theta += TWO_PI / ptCount*1.5  ;
+		float r = 6 + random(3, 8);
+		pts.push_back(Vec3f(sin(theta) * r, -ht / 2.0 + ht / ptCount*i*1.25f, cos(theta) * random(r, r + .25)));
+		theta += TWO_PI / ptCount*1.5;
 	}
 	Spline3 path(pts, 6, false, 1.0);
 
 	//tendrils.push_back(Tube(path, 18, 16, ProtoTransformFunction(ProtoTransformFunction::SINUSOIDAL, Tup2(random(.325, .435), random(.456, 2.875)), 1), true, "humanSkin01.jpg"));
 
 	tendrils.push_back(Tube(path, 18, 16, ProtoTransformFunction(ProtoTransformFunction::SINUSOIDAL, Tup2(.001, 1.65f), 1), true, "humanSkin02.jpg"));
-	tendrils.at(0).setPerturbation({.08f, .04f, .06f});
+	tendrils.at(0).setPerturbation({ .08f, .04f, .06f });
 	tendrils.at(0).setDiffuseMaterial({ 1.0f, 1, 1 });
 	tendrils.at(0).setAmbientMaterial(0.15f);
 	tendrils.at(0).setBumpMap("humanSkin02.jpg", 1.2f);
@@ -34,45 +43,45 @@ void ProtoController::init() {
 	tendrils.at(0).setSpecularMaterial({ 1, 1, 1 });
 	tendrils.at(0).setShininess(95);
 
-	/*
-	tendrils.push_back(Tube(path, 4, 12, ProtoTransformFunction(ProtoTransformFunction::SINUSOIDAL, Tup2(.55, .81), 20), true, "vascular3.jpg"));
+	
+
+	// create darts
+	// use organism ht
+	const int DART_COUNT = 5;
+	const int rots = 3, waves = 1;
+	float r1 = 30, r2 = ht*.25f;
+	float th1 = 0, th2 = 0;
+
+	std::vector<Face3> faces = tendrils.at(0).getFaces();
+	for (int i = 0; i < DART_COUNT; ++i) {
+		darts.push_back({ sin(th1)*r1, sin(th2)*r2 , cos(th1)*r1 });
+		Vec3 ds = darts.at(i);
+		ds.normalize();
+		ds *= 10;
+		dartsSpd.push_back({ ds.x, ds.y, ds.y });
+		th1 += TWO_PI / DART_COUNT * rots;
+		th2 += TWO_PI / DART_COUNT * waves;
+	}
+	//throw darts
+	for (int i = 0; i < DART_COUNT; ++i) {
+		if (fabs(dartsSpd.at(i).mag()) > 1) {
+		for (int j = 0; j < faces.size(); ++j) {
+				while (darts.at(i).dist(faces.at(j).getCentroid()) > 100) {
+					darts.at(i) *= .98f;
+				}
+			}
+		}
+	}
+
+	path = Spline3(darts, 3, false, 1.0);
+
+	tendrils.push_back(Tube(path, 4, 12, ProtoTransformFunction(ProtoTransformFunction::SINUSOIDAL, Tup2(.1f, .4), 3), true, "vascular3.jpg"));
 	tendrils.at(1).setDiffuseMaterial({ 1.0f, 1, 1 });
 	tendrils.at(1).setAmbientMaterial(0.35f);
-	tendrils.at(1).setBumpMap("vascular3.jpg", .45f);
-	tendrils.at(1).setTextureScale({ 1, 0.1f });
+	tendrils.at(1).setBumpMap("vascular3.jpg", .95f);
+	tendrils.at(1).setTextureScale({ 1, 0.03f });
 	tendrils.at(1).setSpecularMaterial({ 1, 1, 1 });
-	tendrils.at(1).setShininess(67);
-	*/
-
-/*
-	theta = 0;
-	pts.clear();
-	float ht = 300;
-	int loops = 10;
-	int ptCount = 100;
-	for (int i = 0; i < ptCount; i++) {
-		float r = 20+random(36, 50);
-		pts.push_back(Vec3f(sin(theta) * r, -ht/2.0+ht/ptCount*i, cos(theta) * r));
-		theta += TWO_PI / ptCount * loops;
-	}
-	path = Spline3(pts, 3, false, 1.0);
-
-	tendrils.push_back(Tube(path, 4, 12, ProtoTransformFunction(ProtoTransformFunction::SINUSOIDAL, Tup2(1.55, 3.21), 90), true, "vascular3.jpg"));
-	tendrils.at(2).setDiffuseMaterial({ 1.0f, 1, 1 });
-	tendrils.at(2).setAmbientMaterial(0.35f);
-	tendrils.at(2).setBumpMap("vascular3.jpg", .95f);
-	tendrils.at(2).setTextureScale({ 1, 0.03f });
-	tendrils.at(2).setSpecularMaterial({ 1, 1, 1 });
-	tendrils.at(2).setShininess(10)*/
-
-
-	plane = ProtoPlane({}, {}, Dim2f(0, 0), Col4f(1), 1, 1, "linen.jpg");
-	plane.setDiffuseMaterial({ 1, 1, 1, 1 });
-	//plane.setBumpMap("woodPlank.jpg", .55);
-	plane.loadBumpMapTexture("crinkled_paper_normal.jpg");
-	plane.setTextureScale({ .5f, .5f });
-	plane.setSpecularMaterial({ 1, 1, 1 });
-	plane.setShininess(5);
+	tendrils.at(1).setShininess(10);
 
 }
 
@@ -84,37 +93,31 @@ void ProtoController::display() {
 	beginArcBall();
 	push();
 	translate(0, 0, -500);
-	scale({1920/3.0f, 1080/3.0f, 1});
+	scale({ 1920 / 3.0f, 1080 / 3.0f, 1 });
 	//plane.display();
 	pop();
-	
+
 	push();
 	translate(0, 0, -150);
 	push();
 
-	rotate(getFrameCount()*PI / 180*.25f, { .25f, 1, .15f });
+	rotate(getFrameCount()*PI / 180 * .25f, { .25f, 1, .15f });
 	push();
 	scale(.97f);
 	tendrils.at(0).display();
 	pop();
 	tendrils.at(0).display(WIREFRAME, 3);
+	tendrils.at(1).display();
 	pop();
 	rotate(-getFrameCount()*PI / 1080, { 0, 1, 0 });
 	//tendrils.at(2).display();
 	pop();
 
-	push();
-	translate(0, 0, 150);
-	scale(1.24);
-	rotate(-getFrameCount()*PI / 180*.25f, {.75f, 1, .25f });
-	//tendrils.at(1).display();
-	pop();
 
-	
 
 	endArcball();
 
-	
+
 }
 
 // Key and Mouse Events

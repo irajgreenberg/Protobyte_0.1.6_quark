@@ -35,6 +35,9 @@ public:
 	Toroid toroid;
 	std::vector<Tube> tendrils;
 
+	std::vector<Vec3> darts;
+	std::vector<Vec3> dartsSpd;
+
 };
 
 #endif //__PROTOCONTROLLER_H__

@@ -1,19 +1,71 @@
-﻿  ProtoController.cpp
-d:\dev\protobyte_0.1.6_quark\protobyte\otherlibs\poly2tri\include\sweep\sweep_context.h(161): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(18): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protolight.h(93): warning C4305: '=': truncation from 'double' to 'float'
-d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(50): warning C4005: 'GetCurrentDir': macro redefinition
-  d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
-d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototoroid.h(62): warning C4305: 'initializing': truncation from 'double' to 'float'
-d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocephalopod.h(128): warning C4244: 'return': conversion from 'time_t' to 'long', possible loss of data
-d:\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(485): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-d:\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-d:\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(21): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-d:\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(27): warning C4305: 'argument': truncation from 'double' to 'float'
-d:\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(95): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-d:\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(102): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-d:\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(108): warning C4305: 'argument': truncation from 'double' to 'float'
-d:\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(109): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  TendrilTower03.vcxproj -> D:\Dev\Protobyte_0.1.6_quark\Protobyte\Projects\TendrilTower03\x64\Debug\TendrilTower03.exe
-  TendrilTower03.vcxproj -> D:\Dev\Protobyte_0.1.6_quark\Protobyte\Projects\TendrilTower03\x64\Debug\TendrilTower03.pdb (Partial PDB)
+﻿Build started 9/2/2016 3:02:11 PM.
+     1>Project "C:\Users\C3\Dev\Protobyte_0.1.6_quark\Protobyte\Projects\TendrilTower03\TendrilTower03\TendrilTower03.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /I"..\..\..\OtherLibs\glad-4.1.compatibility\include" /I..\..\..\OtherLibs\poly2tri\include /I..\..\..\ProtoInclude /I"..\..\..\OtherLibs\glfw-3.2\include" /I"..\..\..\OtherLibs\glm-0.9.7.6\glm" /I..\..\..\OtherLibs\FreeImage\Dist\x64 /ZI /nologo /W3 /WX- /sdl /Od /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt ProtoController.cpp
+         ProtoController.cpp
+     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\otherlibs\poly2tri\include\sweep\sweep_context.h(161): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(18): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protolight.h(93): warning C4305: '=': truncation from 'double' to 'float'
+     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(50): warning C4005: 'GetCurrentDir': macro redefinition
+         c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototoroid.h(62): warning C4305: 'initializing': truncation from 'double' to 'float'
+     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocephalopod.h(128): warning C4244: 'return': conversion from 'time_t' to 'long', possible loss of data
+     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(485): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(29): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(30): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(36): warning C4305: 'argument': truncation from 'double' to 'float'
+     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(62): warning C4305: '+=': truncation from 'double' to 'float'
+     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(63): warning C4305: '+=': truncation from 'double' to 'float'
+     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(78): warning C4305: 'argument': truncation from 'double' to 'float'
+     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(104): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+     1>c:\users\c3\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(112): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\C3\Dev\Protobyte_0.1.6_quark\Protobyte\Projects\TendrilTower03\x64\Debug\TendrilTower03.exe" /INCREMENTAL /NOLOGO /LIBPATH:"..\..\..\OtherLibs\glad-4.1.compatibility\src" /LIBPATH:..\..\..\OtherLibs\poly2tri\src /LIBPATH:"..\..\..\OtherLibs\glfw-3.2\lib-vc2015" /LIBPATH:..\..\..\OtherLibs\FreeImage\Dist\x64 glad64.lib opengl32.lib glfw3_64.lib poly2tri64.lib FreeImage.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG:FASTLINK /PDB:"C:\Users\C3\Dev\Protobyte_0.1.6_quark\Protobyte\Projects\TendrilTower03\x64\Debug\TendrilTower03.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\C3\Dev\Protobyte_0.1.6_quark\Protobyte\Projects\TendrilTower03\x64\Debug\TendrilTower03.lib" /MACHINE:X64 x64\Debug\ProtoBaseApp.obj
+         x64\Debug\ProtoBlock.obj
+         x64\Debug\ProtoCephalopod.obj
+         x64\Debug\ProtoCilia.obj
+         x64\Debug\ProtoContext.obj
+         x64\Debug\ProtoCurve3.obj
+         x64\Debug\ProtoCylinder.obj
+         x64\Debug\ProtoEllipse.obj
+         x64\Debug\ProtoException.obj
+         x64\Debug\ProtoFace3.obj
+         x64\Debug\ProtoFrenetFrame.obj
+         x64\Debug\ProtoGeom2.obj
+         x64\Debug\ProtoGeom3.obj
+         x64\Debug\ProtoGeomComposite.obj
+         x64\Debug\ProtoGeosphere.obj
+         x64\Debug\ProtoGroundPlane.obj
+         x64\Debug\ProtoJuncusEffusus.obj
+         x64\Debug\ProtoLight.obj
+         x64\Debug\ProtoMath.obj
+         x64\Debug\ProtoPath2.obj
+         x64\Debug\ProtoPath3.obj
+         x64\Debug\ProtoPlane.obj
+         x64\Debug\ProtoPlasm.obj
+         x64\Debug\ProtoQuaternion.obj
+         x64\Debug\ProtoRectangle.obj
+         x64\Debug\ProtoRenderer.obj
+         x64\Debug\ProtoRootBall.obj
+         x64\Debug\ProtoShader.obj
+         x64\Debug\ProtoShape3.obj
+         x64\Debug\ProtoSphere.obj
+         x64\Debug\ProtoSpline3.obj
+         x64\Debug\ProtoTentacle.obj
+         x64\Debug\ProtoTexture.obj
+         x64\Debug\ProtoToroid.obj
+         x64\Debug\ProtoTransformFunction.obj
+         x64\Debug\ProtoTube.obj
+         x64\Debug\ProtoUtility.obj
+         x64\Debug\ProtoVerletBall.obj
+         x64\Debug\ProtoVerletStick.obj
+         x64\Debug\ProtoVertex3.obj
+         x64\Debug\ProtoController.obj
+         x64\Debug\ProtoMain.obj
+         TendrilTower03.vcxproj -> C:\Users\C3\Dev\Protobyte_0.1.6_quark\Protobyte\Projects\TendrilTower03\x64\Debug\TendrilTower03.exe
+     1>Done Building Project "C:\Users\C3\Dev\Protobyte_0.1.6_quark\Protobyte\Projects\TendrilTower03\TendrilTower03\TendrilTower03.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.15
