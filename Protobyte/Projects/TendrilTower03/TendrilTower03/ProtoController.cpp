@@ -89,28 +89,24 @@ void ProtoController::run() {
 }
 
 void ProtoController::display() {
-	setLight(0, Vec3(sin(radians(getFrameCount()*.25f)) * 2, 0, 10), { 1, 1, 1 });
+	setLight(0, Vec3(sin(radians(getFrameCount()*.25f)) * 2, 0, 600), { 1, 1, 1 });
 	beginArcBall();
 	push();
-	translate(0, 0, -500);
-	scale({ 1920 / 3.0f, 1080 / 3.0f, 1 });
-	//plane.display();
+	translate(0, 0, -400);
+	scale({ 1920 / 1.25f, 1080 / 1.25f, 1 });
+	plane.display();
 	pop();
 
 	push();
-	translate(0, 0, -150);
-	push();
 
+	translate(0, 0, 25);
 	rotate(getFrameCount()*PI / 180 * .25f, { .25f, 1, .15f });
-	push();
-	scale(.97f);
+	scale(2.37f);
 	tendrils.at(0).display();
-	pop();
+	scale(1.05f);
 	tendrils.at(0).display(WIREFRAME, 3);
 	tendrils.at(1).display();
-	pop();
-	rotate(-getFrameCount()*PI / 1080, { 0, 1, 0 });
-	//tendrils.at(2).display();
+
 	pop();
 
 

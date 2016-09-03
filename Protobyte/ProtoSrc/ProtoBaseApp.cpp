@@ -62,20 +62,21 @@ void ProtoBaseApp::_init() {
 	// START standard transformation matrices: ModelView / Projection / Normal
 	ctx->setModel(glm::mat4(1.0f));
 	// only relavent if draw not invoked
-	ctx->setView(glm::lookAt(glm::vec3(0.0, 0.0, 150), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0)));
+	ctx->setView(glm::lookAt(glm::vec3(0.0, 0.0, defaultCameraDepth), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0)));
 
 	float viewAngle = 65.0f*PI / 180.0f;
-	float aspect = float(width) / float(height);
+	//float aspect = float(width) / float(height);
+	aspectRatio = float(width) / float(height);
 	float nearDist = 0.1f;
 	float farDist = 3000.0f;
 	// perspective
-	ctx->setProjection(glm::perspective(viewAngle, aspect, nearDist, farDist));
+	ctx->setProjection(glm::perspective(viewAngle, aspectRatio, nearDist, farDist));
 	// END Model / View / Projection data
 
 
 	// START Shadow Map Matrices
 	ctx->setLightView(glm::lookAt(glm::vec3(ctx->getLight(0).getPosition().x, ctx->getLight(0).getPosition().y, ctx->getLight(0).getPosition().z), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0)));
-	ctx->setLightProjection(glm::perspective(viewAngle, aspect, nearDist, 5.0f));
+	ctx->setLightProjection(glm::perspective(viewAngle, aspectRatio, nearDist, 5.0f));
 
 	//ctx->concatLightModelViewProjection();
 	ctx->setLightBias(glm::mat4(
@@ -678,7 +679,7 @@ void ProtoBaseApp::_run(const Vec2f& mousePos, const Vec4i& windowCoords/*, int 
 
 	// I thought I needed this to reset matrix each frame?
 	// was 18
-	ctx->setView(glm::lookAt(glm::vec3(0, 0, 50), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0)));
+	ctx->setView(glm::lookAt(glm::vec3(0, 0, defaultCameraDepth), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0)));
 
 	// update shadow map texture matrix should light(s) changes position (only for light0 for now)
 	/*ctx->setLightView(glm::lookAt(glm::normalize(glm::vec3(ctx->getLight(0).getPosition().x, ctx->getLight(0).getPosition().y, ctx->getLight(0).getPosition().z)), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0)));*/
@@ -709,7 +710,7 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 	// reset transformation matrix each frame
 	ctx->setModel(glm::mat4{ 1.0f });
 	float viewAngle = 75.0f*PI / 180.0f;
-	float aspect = float(width) / float(height);
+	//float aspect = float(width) / float(height);
 	float nearDist = .5f;
 	float farDist = 3000.0f;
 
@@ -740,7 +741,7 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 		//ctx->setLightProjection(glm::ortho(-getWidth()/2.0f, getWidth() / 2.0f, -getHeight()/2.0f, getHeight()/2.0f, .1f, 5.0f));
 		//ctx->setLightProjection(glm::ortho(-65.0f, 65.0f, -40.0f, 40.0f, .1f, 116.0f));
 		//ctx->setLightProjection(glm::frustum(-.25f, .25f, -.145f, .145f, 1.0f, 300.0f));
-		ctx->setLightProjection(glm::frustum(-1.0f, 1.0f, -1.0f, 1.0f, 1.0f, 800.0f));
+		ctx->setLightProjection(glm::frustum(-1.0f, 1.0f, -1/aspectRatio, 1/aspectRatio, 1.0f, 2000.0f));
 		
 		glDrawBuffer(GL_NONE);
 		glReadBuffer(GL_NONE);
@@ -756,7 +757,7 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 		// reset backface culling
 		glEnable(GL_CULL_FACE);
 		glCullFace(GL_BACK);
-		//glDisable(GL_CULL_FACE);
+		glDisable(GL_CULL_FACE);
 
 		// reset default framebuffer
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
@@ -782,7 +783,7 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 		//float farDist = 6000.0f;
 		// perspective
 		viewAngle = 60.0f*PI / 180.0f; //parameterize eventually
-		ctx->setProjection(glm::perspective(viewAngle, aspect, nearDist, farDist));
+		ctx->setProjection(glm::perspective(viewAngle, aspectRatio, nearDist, farDist));
 		// call user defined display
 		display();
 	}
@@ -799,14 +800,15 @@ void ProtoBaseApp::render(int x, int y, int scaleFactor) {
 		glViewport(x*windowFrameSize.w, y*windowFrameSize.h, scaleFactor * windowFrameSize.w, scaleFactor * windowFrameSize.h);
 
 		// reset backface culling
-		glCullFace(GL_BACK);
+		//glCullFace(GL_BACK);
+		glDisable(GL_CULL_FACE);
 
 		float viewAngle = 65.0f*PI / 180.0f;
-		float aspect = float(width) / float(height);
+		//float aspect = float(width) / float(height);
 		float nearDist = 0.1f;
 		float farDist = 6000.0f;
 		// perspective
-		ctx->setProjection(glm::perspective(viewAngle, aspect, nearDist, farDist));
+		ctx->setProjection(glm::perspective(viewAngle, aspectRatio, nearDist, farDist));
 
 		// call user defined display
 		display();

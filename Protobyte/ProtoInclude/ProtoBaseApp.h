@@ -106,6 +106,11 @@ namespace ijg {
 		int shadowSharpnessWidth, shadowSharpnessHeight;
 		int shadowMapWidth, shadowMapHeight;
 
+		// for relatively accurate pixel values in 2D
+		float defaultCameraDepth = 400.0f;
+
+		float aspectRatio;
+
 
 	public:
 		void _initUniforms(ProtoShader* shader_ptr); // temporarily here. put back in private eventually
