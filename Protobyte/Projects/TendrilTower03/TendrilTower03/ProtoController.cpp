@@ -47,10 +47,10 @@ void ProtoController::init() {
 
 	// create darts
 	// use organism ht
-	const int DART_COUNT = 5;
-	const int rots = 3, waves = 1;
-	float r1 = 30, r2 = ht*.25f;
-	float th1 = 0, th2 = 0;
+	const int DART_COUNT = 40;
+	const int rots = 6, waves = 3;
+	float r1 = 80, r2 = ht;
+	float th1 = 0, th2 = PI/2.0f;
 
 	std::vector<Face3> faces = tendrils.at(0).getFaces();
 	for (int i = 0; i < DART_COUNT; ++i) {
@@ -60,26 +60,26 @@ void ProtoController::init() {
 		ds *= 10;
 		dartsSpd.push_back({ ds.x, ds.y, ds.y });
 		th1 += TWO_PI / DART_COUNT * rots;
-		th2 += TWO_PI / DART_COUNT * waves;
+		th2 += PI / DART_COUNT *.9f;
 	}
 	//throw darts
 	for (int i = 0; i < DART_COUNT; ++i) {
-		if (fabs(dartsSpd.at(i).mag()) > 1) {
+		//if (fabs(dartsSpd.at(i).mag()) > 1) {
 		for (int j = 0; j < faces.size(); ++j) {
-				while (darts.at(i).dist(faces.at(j).getCentroid()) > 100) {
+				while (darts.at(i).dist(faces.at(j).getCentroid()) > 90) {
 					darts.at(i) *= .98f;
 				}
 			}
-		}
+		//}
 	}
 
 	path = Spline3(darts, 3, false, 1.0);
 
-	tendrils.push_back(Tube(path, 4, 12, ProtoTransformFunction(ProtoTransformFunction::SINUSOIDAL, Tup2(.1f, .4), 3), true, "vascular3.jpg"));
+	tendrils.push_back(Tube(path, 4, 5, ProtoTransformFunction(ProtoTransformFunction::SINUSOIDAL, Tup2(.1f, .2), 3), true, "metal_flaky_blue.jpg"));
 	tendrils.at(1).setDiffuseMaterial({ 1.0f, 1, 1 });
 	tendrils.at(1).setAmbientMaterial(0.35f);
-	tendrils.at(1).setBumpMap("vascular3.jpg", .95f);
-	tendrils.at(1).setTextureScale({ 1, 0.03f });
+	tendrils.at(1).setBumpMap("metal_flaky_blue.jpg", .95f);
+	tendrils.at(1).setTextureScale({ 1, 0.001f });
 	tendrils.at(1).setSpecularMaterial({ 1, 1, 1 });
 	tendrils.at(1).setShininess(10);
 
