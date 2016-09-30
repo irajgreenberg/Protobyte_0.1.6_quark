@@ -118,6 +118,10 @@ void ProtoBaseApp::_init() {
 	_createPath();
 	_createStar();
 	_createCross();
+<<<<<<< HEAD
+=======
+	_createGear();
+>>>>>>> 33b20e0fda1a7b90809d47645e382985c0862696
 
 	//precalculate 3D geometry
 	//_createBox();
@@ -342,12 +346,16 @@ void ProtoBaseApp::_createStar() {
 	starStrokePrims.clear();
 }
 
+<<<<<<< HEAD
 // create cross
+=======
+>>>>>>> 33b20e0fda1a7b90809d47645e382985c0862696
 // create default buffers for cross function
 void ProtoBaseApp::_createCross() {
 
 	// interleaved float [] (x, y, 0, r, g, b, a) 7*12 pts
 	float prims[] = {
+<<<<<<< HEAD
 		0 + 0.33, 0 - 0.33, 0, fillColor.r, fillColor.g, fillColor.b, fillColor.a,
 		0, 0 - 0.33, 0, fillColor.r, fillColor.g, fillColor.b, fillColor.a,
 		0, 0 - 0.66, 0, fillColor.r, fillColor.g, fillColor.b, fillColor.a,
@@ -363,6 +371,23 @@ void ProtoBaseApp::_createCross() {
 
 	};
 	for (int i = 0; i < 94; i++) {
+=======
+		0 - 0.16667, 0 + 0.16667, 0, fillColor.r, fillColor.g, fillColor.b, fillColor.a,
+		0 - 0.5, 0 + 0.16667, 0, fillColor.r, fillColor.g, fillColor.b, fillColor.a,
+		0 - 0.5, 0 - 0.16667, 0, fillColor.r, fillColor.g, fillColor.b, fillColor.a,
+		0 - 0.16667, 0 - 0.16667, 0, fillColor.r, fillColor.g, fillColor.b, fillColor.a,
+		0 - 0.16667, 0 - 0.5, 0, fillColor.r, fillColor.g, fillColor.b, fillColor.a,
+		0 + 0.16667, 0 - 0.5, 0, fillColor.r, fillColor.g, fillColor.b, fillColor.a,
+		0 + 0.16667, 0 - 0.16667, 0, fillColor.r, fillColor.g, fillColor.b, fillColor.a,
+		0 + 0.5, 0 - 0.16667, 0, fillColor.r, fillColor.g, fillColor.b, fillColor.a,
+		0 + 0.5, 0 + 0.16667, 0, fillColor.r, fillColor.g, fillColor.b, fillColor.a,
+		0 + 0.16667, 0 + 0.16667, 0, fillColor.r, fillColor.g, fillColor.b, fillColor.a,
+		0 + 0.16667, 0 + 0.5, 0, fillColor.r, fillColor.g, fillColor.b, fillColor.a,
+		0 - 0.16667, 0 + 0.5, 0, fillColor.r, fillColor.g, fillColor.b, fillColor.a,
+
+	};
+	for (int i = 0; i < 84; i++) {
+>>>>>>> 33b20e0fda1a7b90809d47645e382985c0862696
 		crossPrims[i] = prims[i];
 	}
 
@@ -376,7 +401,11 @@ void ProtoBaseApp::_createCross() {
 								   //GLuint vboID;
 	glGenBuffers(1, &vboCrossID); // Create the buffer ID
 	glBindBuffer(GL_ARRAY_BUFFER, vboCrossID); // Bind the buffer (vertex array data)
+<<<<<<< HEAD
 	int vertsDataSize = sizeof(GLfloat) * 94;
+=======
+	int vertsDataSize = sizeof(GLfloat) * 84;
+>>>>>>> 33b20e0fda1a7b90809d47645e382985c0862696
 	glBufferData(GL_ARRAY_BUFFER, vertsDataSize, NULL, GL_STREAM_DRAW); // allocate space
 	glBufferSubData(GL_ARRAY_BUFFER, 0, vertsDataSize, &crossPrims[0]); // upload the data
 
@@ -397,7 +426,68 @@ void ProtoBaseApp::_createCross() {
 
 																								  // Disable buffers
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
+<<<<<<< HEAD
 	glBindVertexArray(0);
+=======
+	//glBindVertexArray(0);
+}
+
+// create default buffers for gear function
+void ProtoBaseApp::_createGear() {
+	int toothCount = 20;
+	float theta = TWO_PI / toothCount;
+	float innerRadius = .85f;
+	float outerRadius = 1.0f;
+	float gw = getMin(TWO_PI / 32, TWO_PI / toothCount);
+	for (int i = 0; i < toothCount; i++) {
+		gearStrokePrims.push_back(cos(((i + 1) * (theta))) * innerRadius);
+		gearStrokePrims.push_back(sin(((i + 1) * (theta))) * innerRadius);
+		gearStrokePrims.push_back(cos(((i + 1) * (theta)) + (0.2 * gw)) * outerRadius);
+		gearStrokePrims.push_back(sin((i + 1) * ((theta)) + (0.2 * gw)) * outerRadius);
+		gearStrokePrims.push_back(cos((i + 1) * ((theta)) + (0.8 * gw)) * outerRadius);
+		gearStrokePrims.push_back(sin((i + 1) * ((theta)) + (0.8 * gw)) * outerRadius);
+		gearStrokePrims.push_back(cos(((i + 1) * theta) + gw) * innerRadius);
+		gearStrokePrims.push_back(sin(((i + 1) * theta) + gw) * innerRadius);
+	}
+	gearStrokePrims.push_back(0);
+	gearStrokePrims.push_back(fillColor.r);
+	gearStrokePrims.push_back(fillColor.g);
+	gearStrokePrims.push_back(fillColor.b);
+	gearStrokePrims.push_back(fillColor.a);
+	//		theta += TWO_PI / pts;
+
+
+// vert data
+// 1. Create and bind VAO
+glGenVertexArrays(1, &vaoGearID); // Create VAO
+glBindVertexArray(vaoGearID); // Bind VAO (making it active)
+
+							  // 2. Create and bind VBO
+							  // a. Vertex attributes vboID;
+glGenBuffers(1, &vboGearID); // Create the buffer ID
+glBindBuffer(GL_ARRAY_BUFFER, vboGearID); // Bind the buffer (vertex array data)
+int vertsDataSize = sizeof(GLfloat)* gearStrokePrims.size();
+glBufferData(GL_ARRAY_BUFFER, vertsDataSize, NULL, GL_STREAM_DRAW);// allocate space
+glBufferSubData(GL_ARRAY_BUFFER, 0, vertsDataSize, &gearStrokePrims[0]); // upload the data
+
+																		 // fill state is true - need to create this
+glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+
+glEnableVertexAttribArray(0); // vertices
+glEnableVertexAttribArray(2); // color
+
+							  // stride is 7: pos(3) + col(4)
+							  // (x, y, z, r, g, b, a)
+int stride = 7;
+glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, stride * sizeof(GLfloat), BUFFER_OFFSET(0)); // pos
+glVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, stride * sizeof(GLfloat), BUFFER_OFFSET(12)); // col
+
+																							  // Disable buffers
+glBindBuffer(GL_ARRAY_BUFFER, 0);
+glBindVertexArray(0);
+
+gearStrokePrims.clear();
+>>>>>>> 33b20e0fda1a7b90809d47645e382985c0862696
 }
 
 // create default buffers for easy path
@@ -1725,6 +1815,7 @@ void ProtoBaseApp::star(int sides, const Vec2& radiusAndRatio) {
 
 void ProtoBaseApp::cross(float x, float y, float w, float h) {
 
+<<<<<<< HEAD
 	float _x = x, _y = y;
 
 	/*
@@ -1760,6 +1851,10 @@ void ProtoBaseApp::cross(float x, float y, float w, float h) {
 
 	int stride = 7;
 	int crossPrimCount = 94;
+=======
+	int stride = 7;
+	int crossPrimCount = 84;
+>>>>>>> 33b20e0fda1a7b90809d47645e382985c0862696
 
 	// fill standardized data for each point with loop
 	for (int i = 0; i < crossPrimCount; i = i + stride) {
@@ -1773,6 +1868,7 @@ void ProtoBaseApp::cross(float x, float y, float w, float h) {
 	// moving ccw around base rect starting at lower left corner
 	// calculate 12 point (4 base rect and 4 for each extension)
 	// lower left corner of base rect
+<<<<<<< HEAD
 	crossPrims[0] = _x + (0.33 * h);
 	crossPrims[1] = _y - (0.33 * h);
 	// beginning of left extension bottom
@@ -1817,6 +1913,51 @@ void ProtoBaseApp::cross(float x, float y, float w, float h) {
 			crossPrims[i + 5] = fillColor.b;
 			crossPrims[i + 6] = fillColor.a;
 		}
+=======
+	crossPrims[0] = x - (0.16667 * w);
+	crossPrims[1] = y + (0.16667 * h);
+	// left extension bottom
+	crossPrims[7] = x - (0.5 * w);
+	crossPrims[8] = y + (0.16667 * h);
+	// left extension top
+	crossPrims[14] = x - (0.5 * w);
+	crossPrims[15] = y - (0.16667 * h);
+	// upper left of base rect 
+	crossPrims[21] = x - (0.16667 * w);
+	crossPrims[22] = y - (0.16667 * h);
+	// top extension left
+	crossPrims[28] = x - (0.16667 * w);
+	crossPrims[29] = y - (0.5 * h);
+	// top extension right
+	crossPrims[35] = x + (0.16667 * w);
+	crossPrims[36] = y - (0.5 * h);
+	// top right of base rect
+	crossPrims[42] = x + (0.16667 * w);
+	crossPrims[43] = y - (0.16667 * h);
+	// top right extension
+	crossPrims[49] = x + (0.5 * w);
+	crossPrims[50] = y - (0.16667 * h);
+	// bottom of right extension
+	crossPrims[56] = x + (0.5 * w);
+	crossPrims[57] = y + (0.16667 * h);
+	// bottom rt of base rect
+	crossPrims[63] = x + (0.16667 * w);
+	crossPrims[64] = y + (0.16667 * h);
+	// right of bottom extension
+	crossPrims[70] = x + (0.16667 * w);
+	crossPrims[71] = y + (0.5 * h);
+	// left of bottom extension
+	crossPrims[77] = x - (0.16667 * w);
+	crossPrims[78] = y + (0.5 * h);
+
+	if (isFill) {
+	//	for (int i = 0; i < crossPrimCount; i += stride) {
+	//		crossPrims[i + 3] = fillColor.r;
+	//		crossPrims[i + 4] = fillColor.g;
+	//		crossPrims[i + 5] = fillColor.b;
+	//		crossPrims[i + 6] = fillColor.a;
+	//	}
+>>>>>>> 33b20e0fda1a7b90809d47645e382985c0862696
 		enable2DRendering();
 		glBindVertexArray(vaoCrossID);
 		// NOTE::this may not be most efficient - eventually refactor
@@ -1838,6 +1979,10 @@ void ProtoBaseApp::cross(float x, float y, float w, float h) {
 			crossPrims[i + 4] = strokeColor.g;
 			crossPrims[i + 5] = strokeColor.b;
 			crossPrims[i + 6] = strokeColor.a;
+<<<<<<< HEAD
+=======
+			
+>>>>>>> 33b20e0fda1a7b90809d47645e382985c0862696
 		}
 
 		enable2DRendering();
@@ -1859,6 +2004,131 @@ void ProtoBaseApp::cross(float x, float y, float w, float h) {
 
 }
 
+<<<<<<< HEAD
+=======
+void ProtoBaseApp::gear(int toothCount, float innerRadius, float outerRadius) {
+	if (gearPrims.size() > 0) {
+		gearPrims.clear();
+	}
+
+	if (gearStrokePrims.size() > 0) {
+		gearStrokePrims.clear();
+	}
+
+	float _x = 0, _y = 0;
+
+
+	//Calculate p2t points and tessellate:
+	std::vector<p2t::Point*> polyline;
+
+	int stride = 7;
+	float theta = TWO_PI / toothCount;
+	float gw = getMin(TWO_PI / 32, TWO_PI / toothCount);
+
+	for (int i = 0; i < toothCount; i++) {
+		polyline.push_back(new p2t::Point(_x + cos(((i + 1) * (theta))) * innerRadius, _y + sin(((i + 1) * (theta))) * innerRadius));
+		polyline.push_back(new p2t::Point(_x + cos(((i + 1) * (theta)) + (0.2 * gw)) * outerRadius, _y + sin((i + 1) * ((theta)) + (0.2 * gw)) * outerRadius));
+		polyline.push_back(new p2t::Point(_x + cos((i + 1) * ((theta)) + (0.8 * gw)) * outerRadius, _y + sin((i + 1) * ((theta)) + (0.8 * gw)) * outerRadius));
+		polyline.push_back(new p2t::Point(_x + cos(((i + 1) * theta) + gw) * innerRadius, _y + sin(((i + 1) * theta) + gw) * innerRadius));
+
+		// Required for outline
+		gearStrokePrims.push_back(_x + cos(((i + 1) * (theta))) * innerRadius);
+		gearStrokePrims.push_back(_y + sin(((i + 1) * (theta))) * innerRadius);
+		gearStrokePrims.push_back(_x + cos(((i + 1) * (theta)) + (0.2 * gw)) * outerRadius);
+		gearStrokePrims.push_back(_y + sin((i + 1) * ((theta)) + (0.2 * gw)) * outerRadius);
+		gearStrokePrims.push_back(_x + cos((i + 1) * ((theta)) + (0.8 * gw)) * outerRadius);
+		gearStrokePrims.push_back(_y + sin((i + 1) * ((theta)) + (0.8 * gw)) * outerRadius);
+		gearStrokePrims.push_back(_x + cos(((i + 1) * theta) + gw) * innerRadius);
+		gearStrokePrims.push_back(_y + sin(((i + 1) * theta) + gw) * innerRadius);
+
+		// Required for outline
+		gearStrokePrims.push_back(0); //z
+		gearStrokePrims.push_back(fillColor.r);
+		gearStrokePrims.push_back(fillColor.g);
+		gearStrokePrims.push_back(fillColor.b);
+		gearStrokePrims.push_back(fillColor.a);
+
+	}
+
+	//Tessellate for fill
+	p2t::CDT* cdt = new p2t::CDT(polyline);
+	cdt->Triangulate();
+
+	// Get triangles
+	std::vector<p2t::Triangle*> triangles;
+	triangles = cdt->GetTriangles();
+
+	// TO DO: refactor (too many loops)
+	// populate primitives arr
+	for (int i = 0; i < triangles.size(); i++) {
+		for (int j = 0; j < 3; j++) {
+			float x = triangles.at(i)->GetPoint(j)->x;
+			float y = triangles.at(i)->GetPoint(j)->y;
+			gearPrims.push_back(x);
+			gearPrims.push_back(y);
+			gearPrims.push_back(0); //z
+			gearPrims.push_back(fillColor.r);
+			gearPrims.push_back(fillColor.g);
+			gearPrims.push_back(fillColor.b);
+			gearPrims.push_back(fillColor.a);
+		}
+	}
+
+	if (isFill) {
+		for (int i = 0; i < gearPrims.size(); i += stride) {
+			gearPrims.at(i + 3) = fillColor.r;
+			gearPrims.at(i + 4) = fillColor.g;
+			gearPrims.at(i + 5) = fillColor.b;
+			gearPrims.at(i + 6) = fillColor.a;
+		}
+
+		enable2DRendering();
+		glBindVertexArray(vaoGearID);
+		// NOTE::this may not be most efficient - eventually refactor
+		glBindBuffer(GL_ARRAY_BUFFER, vboGearID); // Bind the buffer (vertex array data)
+		int vertsDataSize = sizeof(GLfloat)* gearPrims.size();
+		glBufferData(GL_ARRAY_BUFFER, vertsDataSize, NULL, GL_STREAM_DRAW);// allocate space
+		glBufferSubData(GL_ARRAY_BUFFER, 0, vertsDataSize, &gearPrims[0]); // upload the data
+
+		glDrawArrays(GL_TRIANGLES, 0, gearPrims.size() / stride);
+		disable2DRendering();
+
+		// Disable VAO
+		glBindVertexArray(0);
+	}
+	if (isStroke) {
+		for (int i = 0; i < gearStrokePrims.size(); i += stride) {
+			gearStrokePrims.at(i + 3) = strokeColor.r;
+			gearStrokePrims.at(i + 4) = strokeColor.g;
+			gearStrokePrims.at(i + 5) = strokeColor.b;
+			gearStrokePrims.at(i + 6) = strokeColor.a;
+		}
+		// note: reusing star id's with different collection of primitives
+		enable2DRendering();
+		glBindVertexArray(vaoGearID);
+		// NOTE::this may not be most efficient - eventually refactor
+		glBindBuffer(GL_ARRAY_BUFFER, vboStarID); // Bind the buffer (vertex array data)
+		int vertsDataSize = sizeof(GLfloat)* gearStrokePrims.size();
+		glBufferData(GL_ARRAY_BUFFER, vertsDataSize, NULL, GL_STREAM_DRAW);// allocate space
+		glBufferSubData(GL_ARRAY_BUFFER, 0, vertsDataSize, &gearStrokePrims[0]); // upload the data
+
+		glLineWidth(lineWidth);
+		glDrawArrays(GL_LINE_LOOP, 0, starStrokePrims.size() / stride);
+
+		disable2DRendering();
+
+		// Disable VAO
+		glBindVertexArray(0);
+	}
+
+	// clean up heap, from poly2tri tessellation
+	for (int i = 0; i < polyline.size(); i++) {
+		delete polyline.at(i);
+	}
+	delete cdt;
+}
+
+>>>>>>> 33b20e0fda1a7b90809d47645e382985c0862696
 // PATH
 void ProtoBaseApp::beginPath(PathRenderMode pathRenderMode) {
 	this->pathRenderMode = pathRenderMode;

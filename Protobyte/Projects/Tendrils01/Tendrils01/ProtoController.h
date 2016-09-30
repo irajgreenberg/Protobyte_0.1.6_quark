@@ -31,9 +31,9 @@ public:
 	void onResized();
 	void onClosed();
 
-	Tube tube;
-	Toroid t;
-	ProtoPlane plane;
+	//Tube tube;
+	//Toroid t;
+	//ProtoPlane plane;
 
 };
 
