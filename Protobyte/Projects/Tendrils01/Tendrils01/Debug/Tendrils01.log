@@ -1,13 +1,2 @@
-﻿  ProtoMain.cpp
-c:\users\dave\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(18): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-c:\users\dave\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protolight.h(93): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\dave\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-c:\users\dave\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(50): warning C4005: 'GetCurrentDir': macro redefinition
-  c:\users\dave\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
-c:\users\dave\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protogeomset.h(63): warning C4018: '<': signed/unsigned mismatch
-c:\users\dave\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protogeom3.h(330): warning C4018: '<': signed/unsigned mismatch
-c:\users\dave\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototoroid.h(62): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\dave\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocephalopod.h(128): warning C4244: 'return': conversion from 'time_t' to 'long', possible loss of data
-c:\users\dave\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(497): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-  Tendrils01.vcxproj -> C:\Users\dave\dev\Protobyte_0.1.6_quark\Protobyte\Projects\Tendrils01\Debug\Tendrils01.exe
+﻿  Tendrils01.vcxproj -> C:\Users\dave\dev\Protobyte_0.1.6_quark\Protobyte\Projects\Tendrils01\Debug\Tendrils01.exe
   Tendrils01.vcxproj -> C:\Users\dave\dev\Protobyte_0.1.6_quark\Protobyte\Projects\Tendrils01\Debug\Tendrils01.pdb (Partial PDB)

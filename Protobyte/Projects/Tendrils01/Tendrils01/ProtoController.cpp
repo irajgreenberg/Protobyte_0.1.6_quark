@@ -13,7 +13,7 @@ void ProtoController::display() {
 	noStroke();
 	scale(100);
 //	rect(0, 0, 1, 1, CENTER);
-	gear(20, 0.85, 1);
+	gear(20, .85, 1);
 	endArcBall();
 }
 
