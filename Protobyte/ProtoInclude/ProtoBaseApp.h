@@ -333,11 +333,23 @@ namespace ijg {
 		void _createStar();
 
 		// cross buffer ids
+<<<<<<< HEAD
 		float crossPrims[94];
 		std::vector<float> crossStrokePrims;
 		GLuint vaoCrossID, vboCrossID;
 		void _createCross();
 
+=======
+		float crossPrims[84];
+		GLuint vaoCrossID, vboCrossID;
+		void _createCross();
+
+		// gear buffer ids
+		std::vector<float> gearPrims, gearStrokePrims;
+		GLuint vaoGearID, vboGearID;
+		void _createGear();
+
+>>>>>>> 33b20e0fda1a7b90809d47645e382985c0862696
 		// path buffer ids (for begin(), vertex(), end())
 		bool isPathRecording;
 
@@ -399,6 +411,10 @@ namespace ijg {
 		void star(int sides, float innerRadius, float outerRadius, Registration reg = CENTER);
 		void star(int sides, const Vec2& radiusAndRatio);
 		void cross(float x, float y, float w, float h);
+<<<<<<< HEAD
+=======
+		void gear(int teethCount, float innerRadius, float outRadius);
+>>>>>>> 33b20e0fda1a7b90809d47645e382985c0862696
 
 		// 3D Primitives
 		void box(float sz, Registration reg = CENTER);
