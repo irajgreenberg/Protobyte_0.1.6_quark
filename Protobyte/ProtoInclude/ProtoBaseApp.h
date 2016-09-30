@@ -332,6 +332,12 @@ namespace ijg {
 		GLuint vaoStarID, vboStarID;
 		void _createStar();
 
+		// cross buffer ids
+		float crossPrims[94];
+		std::vector<float> crossStrokePrims;
+		GLuint vaoCrossID, vboCrossID;
+		void _createCross();
+
 		// path buffer ids (for begin(), vertex(), end())
 		bool isPathRecording;
 
@@ -392,6 +398,7 @@ namespace ijg {
 		void poly(int sides, float radius1, float radius2);
 		void star(int sides, float innerRadius, float outerRadius, Registration reg = CENTER);
 		void star(int sides, const Vec2& radiusAndRatio);
+		void cross(float x, float y, float w, float h);
 
 		// 3D Primitives
 		void box(float sz, Registration reg = CENTER);
