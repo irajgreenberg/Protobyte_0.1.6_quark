@@ -1896,6 +1896,28 @@ void ProtoBaseApp::endPath(bool isClosed) {
 		}
 	}
 
+
+	//// rotate geometry prior to tesslelation
+	////1. get face normal
+	//p2t::Point p0 = *polyline.at(0);
+	//p2t::Point p1 = *polyline.at(1);
+	//p2t::Point p2 = *polyline.at(2);
+	//p2 -= p0;
+	//p1 -= p0;
+	//p2.Normalize();
+	//p1.Normalize();
+
+
+
+	//Vec3 rot_axis = normalize(cross(axis_z, triangle_normal))
+	//	the rot_angle that you already calculated :
+
+	//rot_angle = acos(dot(axis_z, triangle_normal))
+
+
+
+
+
 	//Tessellate for fill
 	cdt = new p2t::CDT(polyline);
 	cdt->Triangulate();
