@@ -31,7 +31,7 @@ public:
 	void onResized();
 	void onClosed();
 
-	Tube tube, tube2;
+	Tube tube, tube2, tube3;
 
 };
 
