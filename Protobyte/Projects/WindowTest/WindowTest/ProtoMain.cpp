@@ -8,6 +8,7 @@ Ira Greenberg 2016
 #include <iostream>
 
 int main(int argc, char const** argv) {
-		new ijg::ProtoPlasm (1024, 768, "ProtoController", new ProtoController());
+		// default = 1024x768
+		new ijg::ProtoPlasm (500, 768, "ProtoController", new ProtoController());
 		return EXIT_SUCCESS;
 }

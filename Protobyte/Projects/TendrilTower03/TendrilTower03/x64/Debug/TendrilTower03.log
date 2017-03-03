@@ -1,20 +1,492 @@
-﻿  ProtoController.cpp
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\otherlibs\poly2tri\include\sweep\sweep_context.h(161): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(18): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protolight.h(93): warning C4305: '=': truncation from 'double' to 'float'
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(50): warning C4005: 'GetCurrentDir': macro redefinition
-  c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protoinclude\prototoroid.h(62): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protocephalopod.h(128): warning C4244: 'return': conversion from 'time_t' to 'long', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(490): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(29): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(30): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(36): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(53): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(62): warning C4305: '+=': truncation from 'double' to 'float'
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(63): warning C4305: '+=': truncation from 'double' to 'float'
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(78): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\frys\dev\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(103): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  TendrilTower03.vcxproj -> C:\Users\Frys\Dev\Protobyte_0.1.6_quark\Protobyte\Projects\TendrilTower03\x64\Debug\TendrilTower03.exe
-  TendrilTower03.vcxproj -> C:\Users\Frys\Dev\Protobyte_0.1.6_quark\Protobyte\Projects\TendrilTower03\x64\Debug\TendrilTower03.pdb (Partial PDB)
+﻿  ProtoMain.cpp
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\otherlibs\poly2tri\include\sweep\sweep_context.h(161): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(18): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protolight.h(93): warning C4305: '=': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(50): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\prototoroid.h(62): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protocephalopod.h(128): warning C4244: 'return': conversion from 'time_t' to 'long', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(490): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  ProtoController.cpp
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\otherlibs\poly2tri\include\sweep\sweep_context.h(161): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(18): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protolight.h(93): warning C4305: '=': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(50): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\prototoroid.h(62): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protocephalopod.h(128): warning C4244: 'return': conversion from 'time_t' to 'long', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(490): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(29): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(30): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(36): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(53): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(62): warning C4305: '+=': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(63): warning C4305: '+=': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(78): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\projects\tendriltower03\tendriltower03\protocontroller.cpp(103): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  ProtoVertex3.cpp
+  ProtoVerletStick.cpp
+  ProtoVerletBall.cpp
+  ProtoUtility.cpp
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoutility.cpp(212): warning C4101: 'length_of_arg': unreferenced local variable
+  ProtoTube.cpp
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(50): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototube.cpp(44): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototube.cpp(63): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototube.cpp(84): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototube.cpp(105): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototube.cpp(449): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototube.cpp(450): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototube.cpp(477): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototube.cpp(477): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototube.cpp(500): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototube.cpp(507): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototube.cpp(525): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototube.cpp(530): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototube.cpp(531): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  ProtoTransformFunction.cpp
+  ProtoToroid.cpp
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(50): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\prototoroid.h(62): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototoroid.cpp(73): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototoroid.cpp(74): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  ProtoTexture.cpp
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(287): warning C4018: '<': signed/unsigned mismatch
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(288): warning C4018: '<': signed/unsigned mismatch
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(294): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(327): warning C4018: '<': signed/unsigned mismatch
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(328): warning C4018: '<': signed/unsigned mismatch
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(375): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(381): warning C4244: '=': conversion from 'float' to 'BYTE', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(382): warning C4244: '=': conversion from 'float' to 'BYTE', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototexture.cpp(383): warning C4244: '=': conversion from 'float' to 'BYTE', possible loss of data
+  ProtoTentacle.cpp
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(50): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototentacle.cpp(61): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototentacle.cpp(209): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototentacle.cpp(224): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototentacle.cpp(270): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototentacle.cpp(271): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototentacle.cpp(281): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototentacle.cpp(282): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototentacle.cpp(283): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototentacle.cpp(293): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototentacle.cpp(303): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototentacle.cpp(320): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototentacle.cpp(349): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototentacle.cpp(358): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototentacle.cpp(430): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototentacle.cpp(431): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\prototentacle.cpp(434): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  ProtoSpline3.cpp
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(70): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(189): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(211): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(251): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(262): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(300): warning C4305: '+=': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(317): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protospline3.cpp(319): warning C4305: '+=': truncation from 'double' to 'float'
+  ProtoSphere.cpp
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(50): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protosphere.cpp(70): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protosphere.cpp(82): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protosphere.cpp(83): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protosphere.cpp(86): warning C4305: '+=': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protosphere.cpp(97): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protosphere.cpp(98): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protosphere.cpp(116): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protosphere.cpp(118): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protosphere.cpp(204): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protosphere.cpp(244): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protosphere.cpp(245): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protosphere.cpp(252): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protosphere.cpp(255): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+  ProtoShape3.cpp
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(50): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+  ProtoShader.cpp
+  ProtoRootBall.cpp
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(50): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protorootball.cpp(144): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protorootball.cpp(155): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protorootball.cpp(161): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protorootball.cpp(164): warning C4305: '+=': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protorootball.cpp(171): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protorootball.cpp(173): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  ProtoRenderer.cpp
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(50): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+  ProtoRectangle.cpp
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(50): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+  ProtoQuaternion.cpp
+  ProtoPlasm.cpp
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\otherlibs\poly2tri\include\sweep\sweep_context.h(161): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(18): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protolight.h(93): warning C4305: '=': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(50): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\prototoroid.h(62): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protocephalopod.h(128): warning C4244: 'return': conversion from 'time_t' to 'long', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(490): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoplasm.cpp(252): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protovector4.h(214): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protovector4.h(212): note: while compiling class template member function 'ijg::ProtoVector4<int>::ProtoVector4(T,T,T,T,ijg::ProtoVector4<T>::RandFlag)'
+          with
+          [
+              T=int
+          ]
+  d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoplasm.cpp(255): note: see reference to function template instantiation 'ijg::ProtoVector4<int>::ProtoVector4(T,T,T,T,ijg::ProtoVector4<T>::RandFlag)' being compiled
+          with
+          [
+              T=int
+          ]
+  d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(97): note: see reference to class template instantiation 'ijg::ProtoVector4<int>' being compiled
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protovector4.h(214): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protovector4.h(215): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protovector4.h(215): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protovector4.h(216): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protovector4.h(216): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protovector4.h(217): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protovector4.h(217): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
+  Compiling...
+  ProtoPlane.cpp
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(50): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+  ProtoPath3.cpp
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(50): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+  ProtoPath2.cpp
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\otherlibs\poly2tri\include\sweep\sweep_context.h(161): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(18): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protolight.h(93): warning C4305: '=': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(50): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\prototoroid.h(62): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protocephalopod.h(128): warning C4244: 'return': conversion from 'time_t' to 'long', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(490): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protopath2.cpp(70): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protopath2.cpp(214): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protopath2.cpp(218): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protopath2.cpp(225): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+  ProtoMath.cpp
+  ProtoLight.cpp
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protolight.h(93): warning C4305: '=': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protolight.cpp(30): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protolight.cpp(49): warning C4305: 'argument': truncation from 'double' to 'float'
+  ProtoJuncusEffusus.cpp
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(50): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(30): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(71): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(79): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(80): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(121): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(125): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(138): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(144): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(150): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(160): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(163): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(166): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(169): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(172): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(179): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(206): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(209): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(216): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(219): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(232): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(238): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(251): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(251): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(255): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(260): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(265): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(266): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(295): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(299): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(303): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(367): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(369): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(374): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(410): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(424): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(429): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protojuncuseffusus.cpp(444): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  ProtoGroundPlane.cpp
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(50): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+  ProtoGeosphere.cpp
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(50): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeosphere.cpp(68): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeosphere.cpp(69): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeosphere.cpp(70): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeosphere.cpp(71): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeosphere.cpp(72): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeosphere.cpp(73): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeosphere.cpp(74): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeosphere.cpp(75): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeosphere.cpp(76): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeosphere.cpp(77): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeosphere.cpp(78): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeosphere.cpp(79): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  ProtoGeomComposite.cpp
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protolight.h(93): warning C4305: '=': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(50): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\prototoroid.h(62): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeomcomposite.cpp(50): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeomcomposite.cpp(50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeomcomposite.cpp(56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeomcomposite.cpp(62): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeomcomposite.cpp(62): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  ProtoGeom3.cpp
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(50): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeom3.cpp(35): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeom3.cpp(40): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeom3.cpp(109): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeom3.cpp(164): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeom3.cpp(646): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeom3.cpp(672): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeom3.cpp(681): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeom3.cpp(682): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeom3.cpp(685): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeom3.cpp(694): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeom3.cpp(695): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeom3.cpp(699): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  ProtoGeom2.cpp
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(50): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeom2.cpp(103): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeom2.cpp(531): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeom2.cpp(557): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeom2.cpp(566): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeom2.cpp(567): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeom2.cpp(570): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeom2.cpp(579): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeom2.cpp(580): warning C4244: '*=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protogeom2.cpp(584): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  ProtoFrenetFrame.cpp
+  ProtoFace3.cpp
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoface3.cpp(79): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoface3.cpp(82): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoface3.cpp(85): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+  ProtoException.cpp
+  ProtoEllipse.cpp
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(50): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoellipse.cpp(24): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoellipse.cpp(31): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  ProtoCylinder.cpp
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(50): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocylinder.cpp(85): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocylinder.cpp(94): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocylinder.cpp(110): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocylinder.cpp(111): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocylinder.cpp(112): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocylinder.cpp(125): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocylinder.cpp(134): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocylinder.cpp(151): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocylinder.cpp(153): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  ProtoCurve3.cpp
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocurve3.cpp(171): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocurve3.cpp(172): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocurve3.cpp(173): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  ProtoContext.cpp
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protolight.h(93): warning C4305: '=': truncation from 'double' to 'float'
+  ProtoCilia.cpp
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  ProtoCephalopod.cpp
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(50): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protocephalopod.h(128): warning C4244: 'return': conversion from 'time_t' to 'long', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(31): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(63): warning C4244: 'argument': conversion from 'time_t' to 'long', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(75): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(78): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(88): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(92): warning C4305: '+=': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(93): warning C4305: '-=': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(97): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(98): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(99): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(102): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(102): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(102): warning C4244: 'argument': conversion from 'float' to 'short', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(103): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(103): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(103): warning C4244: 'argument': conversion from 'float' to 'short', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(162): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(163): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(168): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(169): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(171): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(175): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(179): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(187): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(191): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(195): warning C4305: '+=': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(196): warning C4305: '-=': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(200): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(201): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(202): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(207): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(208): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(213): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(214): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(226): warning C4244: 'argument': conversion from 'float' to 'short', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(226): warning C4305: 'argument': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(227): warning C4244: 'argument': conversion from 'float' to 'short', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protocephalopod.cpp(227): warning C4305: 'argument': truncation from 'double' to 'float'
+  Generating Code...
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protocontext.h(379): warning C4172: returning address of local variable or temporary
+  Compiling...
+  ProtoBlock.cpp
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(50): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(91): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(92): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(93): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(94): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(95): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(96): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(97): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(98): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(104): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(105): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(108): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(109): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(113): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(114): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(117): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(118): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(122): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(123): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(126): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(127): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(131): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(132): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(135): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(136): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(140): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(141): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(144): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(145): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(149): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(150): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(153): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protoblock.cpp(154): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  ProtoBaseApp.cpp
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\otherlibs\poly2tri\include\sweep\sweep_context.h(161): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(18): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protolight.h(93): warning C4305: '=': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protodimension3.h(28): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(50): warning C4005: 'GetCurrentDir': macro redefinition
+  d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoutility.h(62): note: see previous definition of 'GetCurrentDir'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\prototoroid.h(62): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protocephalopod.h(128): warning C4244: 'return': conversion from 'time_t' to 'long', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(490): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(67): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(253): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(265): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(309): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(321): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(420): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(421): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(422): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(425): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(426): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(427): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(428): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(432): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(433): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(434): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(437): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(439): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(440): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(443): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(444): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(445): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(450): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(451): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(452): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(712): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(731): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(785): warning C4305: '=': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(806): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(855): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(856): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1432): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1433): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1439): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1454): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1458): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1476): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1481): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1583): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1598): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1599): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1622): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1626): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1644): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1649): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1766): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1931): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1944): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1949): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1955): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1964): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1969): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1980): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1984): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1988): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(1992): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protosrc\protobaseapp.cpp(2529): warning C4101: 'gl_texID': unreferenced local variable
+  Generating Code...
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+glad64.lib(glad.obj) : warning LNK4099: PDB 'gladLibCompiler.pdb' was not found with 'glad64.lib(glad.obj)' or at 'D:\Dev\Protobyte\Protobyte_0.1.6_quark\Protobyte\Projects\TendrilTower03\x64\Debug\gladLibCompiler.pdb'; linking object as if no debug info
+poly2tri64.lib(shapes.obj) : warning LNK4099: PDB 'tesselator.pdb' was not found with 'poly2tri64.lib(shapes.obj)' or at 'D:\Dev\Protobyte\Protobyte_0.1.6_quark\Protobyte\Projects\TendrilTower03\x64\Debug\tesselator.pdb'; linking object as if no debug info
+poly2tri64.lib(advancing_front.obj) : warning LNK4099: PDB 'tesselator.pdb' was not found with 'poly2tri64.lib(advancing_front.obj)' or at 'D:\Dev\Protobyte\Protobyte_0.1.6_quark\Protobyte\Projects\TendrilTower03\x64\Debug\tesselator.pdb'; linking object as if no debug info
+poly2tri64.lib(cdt.obj) : warning LNK4099: PDB 'tesselator.pdb' was not found with 'poly2tri64.lib(cdt.obj)' or at 'D:\Dev\Protobyte\Protobyte_0.1.6_quark\Protobyte\Projects\TendrilTower03\x64\Debug\tesselator.pdb'; linking object as if no debug info
+poly2tri64.lib(sweep.obj) : warning LNK4099: PDB 'tesselator.pdb' was not found with 'poly2tri64.lib(sweep.obj)' or at 'D:\Dev\Protobyte\Protobyte_0.1.6_quark\Protobyte\Projects\TendrilTower03\x64\Debug\tesselator.pdb'; linking object as if no debug info
+poly2tri64.lib(sweep_context.obj) : warning LNK4099: PDB 'tesselator.pdb' was not found with 'poly2tri64.lib(sweep_context.obj)' or at 'D:\Dev\Protobyte\Protobyte_0.1.6_quark\Protobyte\Projects\TendrilTower03\x64\Debug\tesselator.pdb'; linking object as if no debug info
+  TendrilTower03.vcxproj -> D:\Dev\Protobyte\Protobyte_0.1.6_quark\Protobyte\Projects\TendrilTower03\x64\Debug\TendrilTower03.exe
+  TendrilTower03.vcxproj -> D:\Dev\Protobyte\Protobyte_0.1.6_quark\Protobyte\Projects\TendrilTower03\x64\Debug\TendrilTower03.pdb (Partial PDB)

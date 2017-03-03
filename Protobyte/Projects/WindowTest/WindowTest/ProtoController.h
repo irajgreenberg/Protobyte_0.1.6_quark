@@ -12,6 +12,16 @@ Ira Greenberg 2016
 using namespace ijg;
 
 class ProtoController : public ProtoBaseApp {
+	struct B_Ellipse {
+		int x, y, xSpeed, ySpeed;
+		B_Ellipse() {}
+
+		B_Ellipse(int x, int y, int xSpeed, int ySpeed):
+		x(x), y(y), xSpeed(xSpeed), ySpeed(ySpeed) {
+		}
+	};
+
+	B_Ellipse e1;
 
 public:
 	void init();

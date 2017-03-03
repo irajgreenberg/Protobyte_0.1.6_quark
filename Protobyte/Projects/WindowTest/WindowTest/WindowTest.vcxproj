@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{}</ProjectGuid>
+    <ProjectGuid>{4A843E36-701C-46E0-BCF2-066648F3F150}</ProjectGuid>
     <RootNamespace>__Protobyte_Project_Template__</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
