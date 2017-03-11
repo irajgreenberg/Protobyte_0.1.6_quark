@@ -62,6 +62,7 @@ void ProtoBaseApp::_init() {
 	// START standard transformation matrices: ModelView / Projection / Normal
 	ctx->setModel(glm::mat4(1.0f));
 	// only relavent if draw not invoked
+	defaultCameraDepth = height - height / 4.75;
 	ctx->setView(glm::lookAt(glm::vec3(0.0, 0.0, defaultCameraDepth), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0)));
 
 	float viewAngle = 65.0f*PI / 180.0f;

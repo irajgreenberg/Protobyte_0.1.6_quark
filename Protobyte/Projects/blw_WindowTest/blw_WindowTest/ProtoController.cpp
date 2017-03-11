@@ -50,6 +50,8 @@ void ProtoController::ellipse2() {
 void ProtoController::init() {
 	e1 = BLW::Ellipse(0, 0, 0.1, 0);
 	e2 = BLW::Ellipse(0, 0, 0, 0.1);
+	println(getWidth());
+	println(getHeight());
 }
 
 void ProtoController::run() {

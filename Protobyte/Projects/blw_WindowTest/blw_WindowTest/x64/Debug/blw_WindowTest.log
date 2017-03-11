@@ -1,4 +1,4 @@
-﻿  ProtoController.cpp
+﻿  ProtoMain.cpp
 d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\otherlibs\poly2tri\include\sweep\sweep_context.h(161): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
 d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(18): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protolight.h(93): warning C4305: '=': truncation from 'double' to 'float'
@@ -8,10 +8,5 @@ d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protoshape3.h(50):
 d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\prototoroid.h(62): warning C4305: 'initializing': truncation from 'double' to 'float'
 d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protocephalopod.h(128): warning C4244: 'return': conversion from 'time_t' to 'long', possible loss of data
 d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\protoinclude\protobaseapp.h(490): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\projects\blw_windowtest\blw_windowtest\protocontroller.cpp(51): warning C4305: 'argument': truncation from 'double' to 'float'
-d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\projects\blw_windowtest\blw_windowtest\protocontroller.cpp(52): warning C4305: 'argument': truncation from 'double' to 'float'
-d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\projects\blw_windowtest\blw_windowtest\protocontroller.cpp(63): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\projects\blw_windowtest\blw_windowtest\protocontroller.cpp(64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-d:\dev\protobyte\protobyte_0.1.6_quark\protobyte\projects\blw_windowtest\blw_windowtest\protocontroller.cpp(64): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   blw_WindowTest.vcxproj -> D:\Dev\Protobyte\Protobyte_0.1.6_quark\Protobyte\Projects\blw_WindowTest\x64\Debug\blw_WindowTest.exe
   blw_WindowTest.vcxproj -> D:\Dev\Protobyte\Protobyte_0.1.6_quark\Protobyte\Projects\blw_WindowTest\x64\Debug\blw_WindowTest.pdb (Partial PDB)
