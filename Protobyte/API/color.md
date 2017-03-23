@@ -33,16 +33,17 @@ red, green, blue
   - `ProtoColor3<float>`
     - `ProtoColor3f`
     - `Col3f`
-  - `ProtoColor3<unsigned char>`
-    - `ProtoColor3b`
-    - `Col3b`
   - `ProtoColor3<int>`
     - `ProtoColor3i`
     - `Col3i`
+  - `ProtoColor3<unsigned char>`
+    - `ProtoColor3b`
+    - `Col3b`
+
 
 ### Notes
 
-## ProtoColor4
+## ProtoColor4 (Template)
 
 red, green, blue, alpha
 
@@ -57,5 +58,21 @@ red, green, blue, alpha
 ### Overloaded Operators
 
 ### Aliases
+  - `ProtoColor4<float>`
+    - `ProtoColor4f`
+    - `Col4f`
+    - `Col4`
+  - `ProtoColor4<double>`
+    - `Col4d`
+  - `ProtoColor4<int>
+    - `ProtoColor4i`
+    - `Col4i`
+  - `ProtoColor4<long>`
+    - `Col4L`
+  - `ProtoColor4<short>`
+    - `Col4s`
+  - `ProtoColor<unsigned char>`
+    - `ProtoColor4b`
+    - `Col4b`
 
 ### Notes
