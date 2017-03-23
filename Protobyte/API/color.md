@@ -45,3 +45,17 @@ red, green, blue
 ## ProtoColor4
 
 red, green, blue, alpha
+
+### Public Members
+
+### Constructors
+
+### Getters
+
+### Setters
+
+### Overloaded Operators
+
+### Aliases
+
+### Notes
