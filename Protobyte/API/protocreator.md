@@ -16,5 +16,10 @@ ProtoCreator is a bash file used to create new Protobyte projects.
 4. Execute the following command
 
     ``````sh
-      ./ProtoCreator.sh <filename>
+      ./ProtoCreator.sh <ProjectName>
     ``````
+    * After executing, a File Explorer window will open to the Project Directory
+
+5. Open the `ProjectName.vcxproj` file
+
+6. Happy coding!
