@@ -4,7 +4,7 @@ ProtoCreator is a bash file used to create new Protobyte projects.
 
 ## Instructions
 
-1. Open UNIX shell
+1. Open a UNIX shell
     * GitBash
     * MinGW
 
