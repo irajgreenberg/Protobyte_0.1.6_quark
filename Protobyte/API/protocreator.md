@@ -15,6 +15,6 @@ ProtoCreator is a bash file used to create new Protobyte projects.
 
 4. Execute the following command
 
-``````shell
+``````sh
     ./ProtoCreator.sh <filename>
 ``````
