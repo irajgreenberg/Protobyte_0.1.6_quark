@@ -5,11 +5,11 @@ ProtoCreator is a bash file used to create new Protobyte projects.
 ## Instructions
 
 1. Open a UNIX shell
-    * GitBash
-    * MinGW
+    - GitBash
+    - MinGW
 
 2. `cd` into `Protobyte` directory
-   * `ls` command should show `API`, `Projects`, and `ProtoCreator` directories
+   - `ls` command should show `API`, `Projects`, and `ProtoCreator` directories
 
 3. `cd` into `ProtoCreator` directory
 
@@ -18,7 +18,7 @@ ProtoCreator is a bash file used to create new Protobyte projects.
     ``````sh
       ./ProtoCreator.sh <ProjectName>
     ``````
-    * After executing, a File Explorer window will open to the Project Directory
+    - After executing, a File Explorer window will open to the Project Directory
 
 5. Open the `ProjectName.vcxproj` file
 
