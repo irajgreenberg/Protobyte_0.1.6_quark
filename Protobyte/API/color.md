@@ -33,9 +33,19 @@ red, green, blue
   - `ProtoColor3<float>`
     - `ProtoColor3f`
     - `Col3f`
+    - `Col3`
   - `ProtoColor3<int>`
     - `ProtoColor3i`
     - `Col3i`
+  - `ProtoColor3<double>
+    - `ProtoColor3d`
+    - `Col3d`
+  - `ProtoColor3<long>`
+    - `ProtoColor3L`
+    - `Col3L`
+  - `ProtoColor3<short>`
+    - `ProtoColor3s`
+    - `Col3s`
   - `ProtoColor3<unsigned char>`
     - `ProtoColor3b`
     - `Col3b`
@@ -83,14 +93,17 @@ red, green, blue, alpha
     - `ProtoColor4f`
     - `Col4f`
     - `Col4`
-  - `ProtoColor4<double>`
-    - `Col4d`
-  - `ProtoColor4<int>
+  - `ProtoColor4<int>`
     - `ProtoColor4i`
     - `Col4i`
+  - `ProtoColor4<double>`
+    - `ProtoColor4d`
+    - `Col4d`
   - `ProtoColor4<long>`
+    - `ProtoColor4L`
     - `Col4L`
   - `ProtoColor4<short>`
+    - `ProtoColor4s`
     - `Col4s`
   - `ProtoColor<unsigned char>`
     - `ProtoColor4b`
