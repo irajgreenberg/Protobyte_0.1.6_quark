@@ -30,12 +30,25 @@
 namespace ijg {
 
 	template <class T> class ProtoColor4;
+
+	typedef ProtoColor4<float> ProtoColor4f;
 	typedef ProtoColor4<float> Col4f;
 	typedef Col4f Col4; // most common usage
-	typedef ProtoColor4<double> Col4d;
+
+	typedef ProtoColor4<int> ProtoColor4i;
 	typedef ProtoColor4<int> Col4i;
+
+	typedef ProtoColor4<double> ProtoColor4d;
+	typedef ProtoColor4<double> Col4d;
+
+	typedef ProtoColor4<long> ProtoColor4L;
 	typedef ProtoColor4<long> Col4L;
+
+	typedef ProtoColor4<short> ProtoColor4s;
 	typedef ProtoColor4<short> Col4s;
+
+	typedef ProtoColor4<unsigned char> ProtoColor4b;
+	typedef ProtoColor4<unsigned char> Col4b;
 
     template <class T>
     class ProtoColor4 {
@@ -147,15 +160,6 @@ namespace ijg {
         return output;
     }
 
-
-    // most common usages
-#define ProtoColor4f ProtoColor4<float>
-#define ProtoColor4b ProtoColor4<unsigned char>
-#define ProtoColor4i ProtoColor4<int>
-        
-#define Col4f ProtoColor4<float>
-#define Col4b ProtoColor4<unsigned char>
-#define Col4i ProtoColor4<int>
 }
 #endif /* defined(PROTO_COLOR4_h) */
 
