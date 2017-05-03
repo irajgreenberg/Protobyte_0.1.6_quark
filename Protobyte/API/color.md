@@ -38,7 +38,7 @@ red, green, blue
   - `ProtoColor3<int>`
     - `ProtoColor3i`
     - `Col3i`
-  - `ProtoColor3<double>
+  - `ProtoColor3<double>`
     - `ProtoColor3d`
     - `Col3d`
   - `ProtoColor3<long>`
