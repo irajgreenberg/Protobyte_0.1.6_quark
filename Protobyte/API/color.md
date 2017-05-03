@@ -14,7 +14,7 @@ red, green, blue
 
 ### Constructors
   - `ProtoColor3();`
-  - `ProtoColor3(T c);
+  - `ProtoColor3(T c);`
   - `ProtoColor3(T r, T g, T b);`
 
 ### Getters
@@ -78,7 +78,7 @@ red, green, blue, alpha
   - `T getR() const;`
   - `T getG() const;`
   - `T getB() const;`
-  - `T getA() const;
+  - `T getA() const;`
 
 ### Setters
   - `void setR(T r);`
