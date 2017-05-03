@@ -223,8 +223,11 @@ namespace ijg {
 		void setBackground(float r, float g, float b);
 		void setBackground(float c);
 		void setBackground(const Col3f& col);
-		void setBackground(const Col4f& col);
+		//void setBackground(const Col4f& col);  // removed by bw
 
+		Col3f toCol3f(const Col4f& col);
+		Col4f toCol4f(const Col3f& col);
+	
 		bool areShadowsOn;
 		void setShadowsOn(bool areShadowsOn);
 		void shadowsOn();

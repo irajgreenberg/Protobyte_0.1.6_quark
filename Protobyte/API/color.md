@@ -14,6 +14,7 @@ red, green, blue
 
 ### Constructors
   - `ProtoColor3();`
+  - `ProtoColor3(T c);
   - `ProtoColor3(T r, T g, T b);`
 
 ### Getters

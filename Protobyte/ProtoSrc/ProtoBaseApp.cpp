@@ -880,8 +880,19 @@ void ProtoBaseApp::setBackground(const Col3f& col) {
 	setBackground(col.getR(), col.getG(), col.getB());
 }
 
-void ProtoBaseApp::setBackground(const Col4f& col) {
-	setBackground(col.getR(), col.getG(), col.getB());
+// removed by bw
+//void ProtoBaseApp::setBackground(const Col4f& col) {
+//	setBackground(col.getR(), col.getG(), col.getB());
+//}
+
+Col3f ProtoBaseApp::toCol3f(const Col4f& col) {
+	Col3f col3 = Col3f(col.getR(), col.getG(), col.getB());
+	return col3;
+}
+
+Col4f ProtoBaseApp::toCol4f(const Col3f& col) {
+	Col4f col4 = Col4f(col.getR(), col.getG(), col.getB());
+	return col4;
 }
 
 // END background

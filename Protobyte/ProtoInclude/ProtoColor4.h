@@ -85,12 +85,12 @@ namespace ijg {
 
     template <class T>
     inline ProtoColor4<T>::ProtoColor4() :
-    r(0), g(0), b(0), a(1) {
+    r(0), g(0), b(0), a(1.0) {
     }
 
 	template <class T>
 	inline ProtoColor4<T>::ProtoColor4(T c) :
-		r(c), g(c), b(c), a(1) {
+		r(c), g(c), b(c), a(1.0) {
 	}
 
 	template <class T>

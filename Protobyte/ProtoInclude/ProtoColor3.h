@@ -63,6 +63,7 @@ namespace ijg {
         friend std::ostream& operator<<(std::ostream& output, const ProtoColor3<U>& col3);
 
         ProtoColor3();
+		ProtoColor3(T c);
         ProtoColor3(T r, T g, T b);
 
         void setR(T r);
@@ -81,6 +82,11 @@ namespace ijg {
     inline ProtoColor3<T>::ProtoColor3() :
     r(0), g(0), b(0) {
     }
+
+	template <class T>
+	inline ProtoColor3<T>::ProtoColor3(T c):
+	r(c), g(c), b(c) {
+	}
 
     template <class T>
     inline ProtoColor3<T>::ProtoColor3(T r, T g, T b) :
