@@ -26,23 +26,23 @@ void ProtoController::init() {
 	}
 	Spline3 path(pts, 5, true, 1.0);
 
-	tube = Tube(path, 4, 4, ProtoTransformFunction(ProtoTransformFunction::SINUSOIDAL, Tup2(.5, 1.9), 24), false, "gold01.jpg");
+	tube = Tube(path, 4, 4, ProtoTransformFunction(ProtoTransformFunction::SINUSOIDAL, Tup2(.5, 1.9), 24), false, "linen.jpg");
 	tube.setDiffuseMaterial({ 1.0f, 1, 1 });
 	tube.setAmbientMaterial(0.15f);
-	tube.setBumpMap("gold01.jpg", .65f);
+	tube.setBumpMap("silverSwirl.jpg", .65f);
 	//tube.loadBumpMapTexture("vascular3_normal2.jpg");
 	tube.setTextureScale({ 1, 0.03f });
 	tube.setSpecularMaterial({ 1, 1, 1 });
 	tube.setShininess(5);
 
-	tube2 = Tube(path, 4, 4, ProtoTransformFunction(ProtoTransformFunction::SINUSOIDAL, Tup2(.5, 1.9), 24), false, "gold01.jpg");
-	tube2.setDiffuseMaterial({ 1.0f, 1, 1 });
-	tube2.setAmbientMaterial(0.15f);
-	tube2.setBumpMap("gold01.jpg", .65f);
-	//tube.loadBumpMapTexture("vascular3_normal2.jpg");
-	tube2.setTextureScale({ 1, 0.03f });
-	tube2.setSpecularMaterial({ 1, 1, 1 });
-	tube2.setShininess(5);
+	//tube2 = Tube(path, 4, 4, ProtoTransformFunction(ProtoTransformFunction::SINUSOIDAL, Tup2(.5, 1.9), 24), false, "white2.jpg");
+	//tube2.setDiffuseMaterial({ 1.0f, 1, 1 });
+	//tube2.setAmbientMaterial(0.15f);
+	//tube2.setBumpMap("silverSwirl.jpg", .65f);
+	////tube.loadBumpMapTexture("vascular3_normal2.jpg");
+	//tube2.setTextureScale({ 1, 0.03f });
+	//tube2.setSpecularMaterial({ 1, 1, 1 });
+	//tube2.setShininess(5);
 }
 
 void ProtoController::run() {
@@ -53,7 +53,7 @@ void ProtoController::display() {
 	tube.display();
 	push();
 	rotate(PI / 2, { 0, .5, .5 });
-	tube2.display();
+	//tube2.display();
 	pop();
 	endArcBall();
 }
