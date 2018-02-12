@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 #TargetFrameworkVersion=v4.0:PlatformToolSet=v140:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit:WindowsTargetPlatformVersion=8.1
 Debug|x64|D:\Dev\Protobyte_0.1.6_quark\Protobyte\Projects\bundle_01\|
+=======
+#TargetFrameworkVersion=v4.0:PlatformToolSet=v140:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit
+Debug|x64|C:\Users\C3\Dev\Protobyte_0.1.6_quark\Protobyte\Projects\bundle_01\|
+>>>>>>> 9825590ca5365178f0cb158b59aae76e9f41d0a8
