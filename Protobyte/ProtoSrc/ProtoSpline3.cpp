@@ -129,10 +129,10 @@ void ProtoSpline3::init() {
 		curveVertsPrims.push_back(i.x);
 		curveVertsPrims.push_back(i.y);
 		curveVertsPrims.push_back(i.z);
-		curveVertsPrims.push_back(random()); //r
-		curveVertsPrims.push_back(random()); //g
-		curveVertsPrims.push_back(random()); //b
-		curveVertsPrims.push_back(1); //a
+		curveVertsPrims.push_back(.5); //r
+		curveVertsPrims.push_back(.5); //g
+		curveVertsPrims.push_back(.5); //b
+		curveVertsPrims.push_back(.35); //a
 	}
 
 	//for (int i = 0; i < verts.size(); i++) {
@@ -191,7 +191,6 @@ void ProtoSpline3::display(float strokeWeight) {
 	glBufferSubData(GL_ARRAY_BUFFER, 0, vertsDataSize, &curveVertsPrims[0]); // upload the data
 
 	glLineWidth(strokeWeight);
-
 	// closed path
 	//if (pathRenderMode){
 	//	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);

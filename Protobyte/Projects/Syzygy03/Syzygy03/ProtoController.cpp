@@ -10,21 +10,17 @@ void ProtoController::init() {
 
 
 	abacusW = 1800;
-	abacusH = 1200;
-	abacusD = 1800;
+	abacusH = 1800;
+	abacusD = 1200;
 	beadGap = 40;
 
 	float beadW = (abacusW - beadGap * 8) / 18;
 	float beadH = (abacusH - beadGap * 8) / 18;
 	float beadD = (abacusD - beadGap * 8) / 18;
-	//t = Toroid(8, 8, beadW/2, beadW*.125);
-	//int ringCount, int ringDetail, float ringRadius, float ringThickness, const std::string& textureImageURL, const Vec2f& textureScale)
-	t = Toroid(Vec3(), Vec3(), Dim3(), Col4(.20, .155, .25, 1), 32, 32, beadW / 2, beadW / 2 *.125, "metal_plate.jpg", Vec2(.65, 1));
+	t = Toroid(Vec3(), Vec3(), Dim3(), Col4(.20, .155, .25, 1), 32, 32, beadW / 2, beadW / 2 *.145, "metal_plate.jpg", Vec2(.65, 1));
 	t.setDiffuseMaterial({ 1.0f, 1, 1 });
 	t.setAmbientMaterial(0.15f);
 	t.setBumpMap("metal_plate.jpg", 1.2f);
-	//t.loadBumpMapTexture("stone_normalMap.jpg");
-	//t.setTextureScale({ .25f, 0.08f });
 	t.setSpecularMaterial({ 1, 1, 1 });
 	t.setShininess(5);
 	for (int i = 0; i<9; i++) {
@@ -33,7 +29,7 @@ void ProtoController::init() {
 				float x = -abacusW / 2 + (beadW*2 + beadGap)*i;
 				float y = -abacusH / 2 + (beadH*2 + beadGap)*j;
 				float z = -abacusD / 2 + (beadD*2 + beadGap)*k;
-				vecs[i][j][k] = Vec3(x, y, z);
+				vecs[i][j][k] = Vec3(x, z, y);
 				rots[i][j][k] = random(PI/100);
 			}
 		}
@@ -46,23 +42,48 @@ void ProtoController::run() {
 void ProtoController::display() {
 	beginArcBall();
 	push();
-	translate(0, 0, -1300);
-	rotate(getFrameCount()*PI/180*.2, Vec3(.0123, .125, .03));
+	translate(0, 0, -1500);
+	rotate(getFrameCount()*PI/180*5, Vec3(0, .5, 0
+	));
 	for (int i = 0; i<9; i++) {
 		for (int j = 0; j<9; j++) {
 			push();
-			
-			for (int k = 0; k<9; k++){ 
+			//beginShape(LINES);
+			stroke(1.0);
+
+			Spline3 string;
+			std::vector<Vec3> pts;
+			for (int k = 0; k < 9; k++) {
 				push();
-				translate(vecs[i][j][k]);
-				rotate(rotAng[i][j][k], Vec3(.2, .3, .15));
-				if (j==0 && k == 2) {
-					scale(Vec3(1.0+abs(sin(getFrameCount()*16*PI / 180)*2)));
+
+				// bead connections
+				
+
+
+				translate(vecs[i][j][k].x, vecs[i][j][k].y, vecs[i][j][k].z);
+
+				pts.push_back(vecs[i][j][k]);
+				if (k == 8) {
+					pts.push_back(vecs[i][j][k]);
 				}
+				//rotate(rotAng[i][j][k], Vec3(.2, .3, .15));
+				
+				if (j==0 && k == 2) {
+					//scale(Vec3(1.0+abs(sin(getFrameCount()*16*PI / 180)*2)));
+				}
+				
+				
+		
+				// toroids
+				rotate(PI/4, Vec3(0, 1, 0));
 				t.display();
+
 				pop();
 				rotAng[i][j][k] += rots[i][j][k];
 			}
+			string = Spline3(pts, 1, false, .5);
+			string.display();
+			//endShape();
 			pop();
 		}
 	}
