@@ -9,10 +9,10 @@ void ProtoController::init() {
 	setBackground({ .125f, .125f, .125f, 1.0f });
 
 
-	abacusW = 1800;
+	abacusW = 2400;
 	abacusH = 1800;
 	abacusD = 1200;
-	beadGap = 40;
+	beadGap = 80;
 
 	float beadW = (abacusW - beadGap * 8) / 18;
 	float beadH = (abacusH - beadGap * 8) / 18;
@@ -42,8 +42,8 @@ void ProtoController::run() {
 void ProtoController::display() {
 	beginArcBall();
 	push();
-	translate(0, 0, -1500);
-	rotate(getFrameCount()*PI/180*5, Vec3(0, .5, 0
+	translate(0, 0, -1500+getFrameCount());
+	rotate(getFrameCount()*PI/180*.125, Vec3(0, .5, 0
 	));
 	for (int i = 0; i<9; i++) {
 		for (int j = 0; j<9; j++) {
