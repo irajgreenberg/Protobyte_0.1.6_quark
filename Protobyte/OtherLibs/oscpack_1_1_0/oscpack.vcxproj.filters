@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\Dev\Protobyte_0.1.6_quark\Protobyte\OtherLibs\oscpack_1_1_0\ip\IpEndpointName.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Dev\Protobyte_0.1.6_quark\Protobyte\OtherLibs\oscpack_1_1_0\ip\win32\NetworkingUtils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Dev\Protobyte_0.1.6_quark\Protobyte\OtherLibs\oscpack_1_1_0\ip\win32\UdpSocket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Dev\Protobyte_0.1.6_quark\Protobyte\OtherLibs\oscpack_1_1_0\osc\OscTypes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Dev\Protobyte_0.1.6_quark\Protobyte\OtherLibs\oscpack_1_1_0\osc\OscReceivedElements.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Dev\Protobyte_0.1.6_quark\Protobyte\OtherLibs\oscpack_1_1_0\osc\OscPrintReceivedElements.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Dev\Protobyte_0.1.6_quark\Protobyte\OtherLibs\oscpack_1_1_0\osc\OscOutboundPacketStream.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\Dev\Protobyte_0.1.6_quark\Protobyte\OtherLibs\oscpack_1_1_0\ip\IpEndpointName.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Dev\Protobyte_0.1.6_quark\Protobyte\OtherLibs\oscpack_1_1_0\ip\NetworkingUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Dev\Protobyte_0.1.6_quark\Protobyte\OtherLibs\oscpack_1_1_0\ip\UdpSocket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Dev\Protobyte_0.1.6_quark\Protobyte\OtherLibs\oscpack_1_1_0\ip\PacketListener.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Dev\Protobyte_0.1.6_quark\Protobyte\OtherLibs\oscpack_1_1_0\ip\TimerListener.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Dev\Protobyte_0.1.6_quark\Protobyte\OtherLibs\oscpack_1_1_0\osc\OscTypes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Dev\Protobyte_0.1.6_quark\Protobyte\OtherLibs\oscpack_1_1_0\osc\OscHostEndianness.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Dev\Protobyte_0.1.6_quark\Protobyte\OtherLibs\oscpack_1_1_0\osc\OscException.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Dev\Protobyte_0.1.6_quark\Protobyte\OtherLibs\oscpack_1_1_0\osc\OscPacketListener.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Dev\Protobyte_0.1.6_quark\Protobyte\OtherLibs\oscpack_1_1_0\osc\MessageMappingOscPacketListener.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Dev\Protobyte_0.1.6_quark\Protobyte\OtherLibs\oscpack_1_1_0\osc\OscReceivedElements.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Dev\Protobyte_0.1.6_quark\Protobyte\OtherLibs\oscpack_1_1_0\osc\OscPrintReceivedElements.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Dev\Protobyte_0.1.6_quark\Protobyte\OtherLibs\oscpack_1_1_0\osc\OscOutboundPacketStream.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Dev\Protobyte_0.1.6_quark\Protobyte\OtherLibs\oscpack_1_1_0\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{43BC2E4C-F031-41CF-8846-692279871397}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{E0FD5246-CB44-4B51-A6C9-53F0F97D4FAF}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
