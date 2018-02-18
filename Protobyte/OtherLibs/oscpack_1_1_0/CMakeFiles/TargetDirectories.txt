@@ -1,9 +1,0 @@
-D:/Dev/Protobyte_0.1.6_quark/Protobyte/OtherLibs/oscpack_1_1_0/CMakeFiles/oscpack.dir
-D:/Dev/Protobyte_0.1.6_quark/Protobyte/OtherLibs/oscpack_1_1_0/CMakeFiles/SimpleReceive.dir
-D:/Dev/Protobyte_0.1.6_quark/Protobyte/OtherLibs/oscpack_1_1_0/CMakeFiles/ALL_BUILD.dir
-D:/Dev/Protobyte_0.1.6_quark/Protobyte/OtherLibs/oscpack_1_1_0/CMakeFiles/OscSendTests.dir
-D:/Dev/Protobyte_0.1.6_quark/Protobyte/OtherLibs/oscpack_1_1_0/CMakeFiles/OscReceiveTest.dir
-D:/Dev/Protobyte_0.1.6_quark/Protobyte/OtherLibs/oscpack_1_1_0/CMakeFiles/ZERO_CHECK.dir
-D:/Dev/Protobyte_0.1.6_quark/Protobyte/OtherLibs/oscpack_1_1_0/CMakeFiles/SimpleSend.dir
-D:/Dev/Protobyte_0.1.6_quark/Protobyte/OtherLibs/oscpack_1_1_0/CMakeFiles/OscDump.dir
-D:/Dev/Protobyte_0.1.6_quark/Protobyte/OtherLibs/oscpack_1_1_0/CMakeFiles/OscUnitTests.dir

@@ -31,6 +31,7 @@ public:
 	void onResized();
 	void onClosed();
 	Toroid t;
+	ProtoSphere s;
 	Vec3 vecs[9][9][9];
 	float rotAng[9][9][9];
 	float rots[9][9][9];
