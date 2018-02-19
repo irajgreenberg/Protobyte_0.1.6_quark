@@ -7,6 +7,7 @@ Ira Greenberg 2016
 
 void ProtoController::init() {
 	setBackground({ .125f, .125f, .125f, 1.0f });
+	oscObj.receive(7000);
 
 
 	abacusW = 2400;
@@ -34,9 +35,12 @@ void ProtoController::init() {
 			}
 		}
 	}
+
+
 }
 
 void ProtoController::run() {
+	
 }
 
 void ProtoController::display() {

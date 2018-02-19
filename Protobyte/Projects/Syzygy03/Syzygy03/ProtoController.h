@@ -8,6 +8,7 @@ Ira Greenberg 2016
 
 #include <iostream>
 #include "ProtoBaseApp.h"
+#include "ProtoOSC.h"
 
 using namespace ijg;
 
@@ -39,6 +40,8 @@ public:
 	float abacusH = 0;
 	float abacusD = 0;
 	float beadGap = 0;
+
+	ProtoOSC oscObj;
 };
 
 #endif //__PROTOCONTROLLER_H__

@@ -55,6 +55,7 @@ using ::__strcmp__;  // avoid error: E2316 '__strcmp__' is not a member of 'std'
 namespace osc{
 
 class OscReceiveTestPacketListener : public OscPacketListener{
+
 protected:
 
     void ProcessMessage( const osc::ReceivedMessage& m, 

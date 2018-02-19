@@ -147,6 +147,12 @@
     <ClCompile Include="..\..\..\ProtoSrc\ProtoVertex3.cpp">
       <Filter>ProtoLib\.cpp</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoOSC.cpp">
+      <Filter>ProtoLib\.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoOSCListener.cpp">
+      <Filter>ProtoLib\.cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ProtoController.h">
@@ -324,6 +330,12 @@
       <Filter>ProtoLib\.h</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\ProtoInclude\ProtoVertex3.h">
+      <Filter>ProtoLib\.h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoOSC.h">
+      <Filter>ProtoLib\.h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoOSCListener.h">
       <Filter>ProtoLib\.h</Filter>
     </ClInclude>
   </ItemGroup>
