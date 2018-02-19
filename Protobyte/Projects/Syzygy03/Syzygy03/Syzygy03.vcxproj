@@ -168,6 +168,7 @@
     <ClCompile Include="..\..\..\ProtoSrc\ProtoVerletBall.cpp" />
     <ClCompile Include="..\..\..\ProtoSrc\ProtoVerletStick.cpp" />
     <ClCompile Include="..\..\..\ProtoSrc\ProtoVertex3.cpp" />
+    <ClCompile Include="NonusHarp.cpp" />
     <ClCompile Include="ProtoController.cpp" />
     <ClCompile Include="ProtoMain.cpp" />
   </ItemGroup>
@@ -232,6 +233,7 @@
     <ClInclude Include="..\..\..\ProtoInclude\ProtoVerletBall.h" />
     <ClInclude Include="..\..\..\ProtoInclude\ProtoVerletStick.h" />
     <ClInclude Include="..\..\..\ProtoInclude\ProtoVertex3.h" />
+    <ClInclude Include="NonusHarp.h" />
     <ClInclude Include="ProtoController.h" />
   </ItemGroup>
   <ItemGroup>
