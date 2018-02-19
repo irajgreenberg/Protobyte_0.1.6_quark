@@ -9,6 +9,7 @@ Ira Greenberg 2016
 #include <iostream>
 #include "ProtoBaseApp.h"
 #include "ProtoOSC.h"
+#include "NonusHarp.h"
 
 using namespace ijg;
 
@@ -33,6 +34,7 @@ public:
 	void onClosed();
 	Toroid t;
 	ProtoSphere s;
+	NonusHarp* harp;
 	Vec3 vecs[9][9][9];
 	float rotAng[9][9][9];
 	float rots[9][9][9];
