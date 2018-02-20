@@ -47,7 +47,7 @@ void ProtoController::keyPressed() {
 }
 
 void ProtoController::mousePressed() {
-	harp->strike({100, 100, 100, 100, 100, 100, 100, 100, 100});
+	harp->strike({130, 180, 200, 100, 80, 100, 50, 100, 100});
 }
 
 void ProtoController::mouseRightPressed() {

@@ -24,6 +24,8 @@ void NonusHarp::_init() {
 	geom->setSpecularMaterial({ 1, 1, 1 });
 	geom->setShininess(5);
 	for (int i = 0; i < 9; i++) {
+		_stringVibrations[i] = PI / random(.75, 2.25);
+		_strumDampings[i] = random(.65, .85);
 		for (int j = 0; j < 9; j++) {
 			for (int k = 0; k < 9; k++) {
 				float x = -dim.w / 2 + (beadW * 2 + gap)*i;
@@ -45,9 +47,9 @@ void NonusHarp::vibrate(int row, int column, int layer) {
 
 void NonusHarp::vibrate(int row, int column) {
 	for (int i = 0; i < 9; i++) {
-		_spd[row][column][i] = Vec3(cos(theta)*_strumForce[i], 0, 0);
+		_spd[row][column][i] = Vec3(cos(_theta[i])*_strumForce[i], sin(_theta[i])*_strumForce[i], 0);
 		_vecs[row][column][i] = _initVecs[row][column][i] + _spd[row][column][i];
-		_theta[i] += stringVibration;
+		_theta[i] += _stringVibrations[i];
 	}
 }
 
@@ -108,7 +110,7 @@ void NonusHarp::display() {
 			//endShape();
 			app->pop();
 		}
-		_strumForce[i] *= strumDamping;
+		_strumForce[i] *= _strumDampings[i];
 	}
 	strumForce *= strumDamping;
 }

@@ -33,6 +33,8 @@ namespace ijg {
 		float _theta[9];
 		//float _strumForce[9];
 		std::array<float, 9> _strumForce;
+		float _stringVibrations[9];
+		float _strumDampings[9];
 
 		// fields
 		Vec3 pos;
@@ -43,8 +45,8 @@ namespace ijg {
 		ProtoBaseApp* app;
 		float theta = 0;
 		float strumForce = 0.0;
-		float stringVibration = PI/2.75f;
-		float strumDamping = .98;
+		float stringVibration = PI/.75f;
+		float strumDamping = .78;
 
 	public:
 		//Toroid* t;
