@@ -26,8 +26,12 @@ namespace ijg {
 		Vec3 _initVecs[9][9][9]; 
 		Vec3 _vecs[9][9][9];
 		Vec3 _spd[9][9][9];
-		float _rotAng[9][9][9];
+		Vec3 _initScales[9][9][9];
+		Vec3 _scales[9][9][9];
+		//float _rotAng[9][9][9];
+		float _initRots[9][9][9];
 		float _rots[9][9][9];
+		
 
 		// to vibrate an entire string
 		float _theta[9];

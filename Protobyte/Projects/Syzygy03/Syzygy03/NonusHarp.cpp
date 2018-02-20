@@ -18,14 +18,9 @@ void NonusHarp::_init() {
 	float beadW = (dim.w - gap * 8) / 18;
 	float beadH = (dim.h - gap * 8) / 18;
 	float beadD = (dim.d - gap * 8) / 18;
-	geom->setDiffuseMaterial({ 1.0f, 1, 1 });
-	geom->setAmbientMaterial(0.15f);
-	geom->setBumpMap("metal_plate.jpg", 1.2f);
-	geom->setSpecularMaterial({ 1, 1, 1 });
-	geom->setShininess(5);
 	for (int i = 0; i < 9; i++) {
 		_stringVibrations[i] = PI / random(.75, 2.25);
-		_strumDampings[i] = random(.65, .85);
+		_strumDampings[i] = random(.68, .75);
 		for (int j = 0; j < 9; j++) {
 			for (int k = 0; k < 9; k++) {
 				float x = -dim.w / 2 + (beadW * 2 + gap)*i;
@@ -33,7 +28,10 @@ void NonusHarp::_init() {
 				float z = -dim.d / 2 + (beadD * 2 + gap)*k;
 				_vecs[i][j][k] = Vec3(x, z, y); // get strummed
 				_initVecs[i][j][k] = Vec3(x, z, y); // captuer original position
-				_rots[i][j][k] = random(PI / 100);
+				_initScales[i][j][k] = Vec3(1);
+				_scales[i][j][k] = Vec3(1);
+				_rots[i][j][k] = 0.0f;
+				_initRots[i][j][k] = 0.0f;
 			}
 		}
 	}
@@ -49,7 +47,9 @@ void NonusHarp::vibrate(int row, int column) {
 	for (int i = 0; i < 9; i++) {
 		_spd[row][column][i] = Vec3(cos(_theta[i])*_strumForce[i], sin(_theta[i])*_strumForce[i], 0);
 		_vecs[row][column][i] = _initVecs[row][column][i] + _spd[row][column][i];
+		_scales[row][column][i] = _initScales[row][column][i] + Vec3(abs(cos(_theta[i])*_strumForce[i]*.03), abs(sin(_theta[i])*_strumForce[i] * .03), abs(sin(_theta[i])*_strumForce[i]*.03));
 		_theta[i] += _stringVibrations[i];
+		_rots[row][column][i] = _initRots[row][column][i] + cos(_theta[i])*_strumForce[i] * .03;
 	}
 }
 
@@ -73,7 +73,7 @@ void NonusHarp::display() {
 	for (int i = 0; i < 9; i++) {
 		for (int j = 0; j < 9; j++) {
 			app->push();
-			//beginShape(LINES);
+
 			app->stroke(1.0);
 
 			Spline3 string;
@@ -83,31 +83,23 @@ void NonusHarp::display() {
 
 				// bead connections
 				app->translate(_vecs[i][j][k].x, _vecs[i][j][k].y, _vecs[i][j][k].z);
-
+				app->scale(_scales[i][j][k].x, _scales[i][j][k].y, _scales[i][j][k].z);
+				app->rotate(_rots[i][j][k], Vec3(1, 1, 0));
 				pts.push_back(_vecs[i][j][k]);
 				if (k == 8) {
 					pts.push_back(_vecs[i][j][k]);
 				}
-				//rotate(rotAng[i][j][k], Vec3(.2, .3, .15));
-
-				if (j == 0 && k == 2) {
-					//scale(Vec3(1.0+abs(sin(getFrameCount()*16*PI / 180)*2)));
-				}
-
-
-
+				
 				// toroids
 				app->rotate(PI / 4, Vec3(0, 1, 0));
+		
 				geom->display();
 
 				app->pop();
-				_rotAng[i][j][k] += _rots[i][j][k];
-
-				
 			}
-			string = Spline3(pts, 1, false, .5);
+			string = Spline3(pts, 2, false, .5);
 			string.display();
-			//endShape();
+
 			app->pop();
 		}
 		_strumForce[i] *= _strumDampings[i];

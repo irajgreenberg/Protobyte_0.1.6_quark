@@ -16,10 +16,12 @@ void ProtoController::init() {
 	float beadW = (abacusW - beadGap * 8) / 18;
 	float beadH = (abacusH - beadGap * 8) / 18;
 	float beadD = (abacusD - beadGap * 8) / 18;
-	Toroid* t = new Toroid(Vec3(), Vec3(), Dim3(), Col4(.20, .155, .25, 1), 32, 32, beadW / 2, beadW / 2 * .145, "metal_plate.jpg", Vec2(.65, 1));
-	t->setDiffuseMaterial({ 1.0f, 1, 1 });
+	Toroid* t = new Toroid(Vec3(), Vec3(), Dim3(), Col4(.25, .10, .2, 1), 32, 32, beadW / 6, beadW / 4 * .145, "royal.jpg", Vec2(1, 1));
+	//ProtoSphere* t = new ProtoSphere(Vec3(), Vec3(), Dim3(30), Col4(.20, .155, .55, 1), "metalic.jpg", 1, 32, 32);
+		
+	t->setDiffuseMaterial({ 1.0f, .65f, 1 });
 	t->setAmbientMaterial(0.15f);
-	t->setBumpMap("metal_plate.jpg", 1.2f);
+	t->setBumpMap("orange.jpg", 1.2f);
 	t->setSpecularMaterial({ 1, 1, 1 });
 	t->setShininess(5); 
 	harp = new NonusHarp(this, {}, {}, { abacusW, abacusH, abacusD }, beadGap, t);
@@ -31,11 +33,12 @@ void ProtoController::run() {
 }
 
 void ProtoController::display() {
+	setLight(0, Vec3(sin(radians(getFrameCount()*.25f)) * 2, 0, 100), { 1, 1, 1 });
 	beginArcBall();
 	push();
 	//translate(0, 0, -1900+getFrameCount());
 	translate(0, 0, -1900);
-	//rotate(getFrameCount()*PI/180*.125, Vec3(0, .5, 0));
+	rotate(getFrameCount()*PI/180*.125, Vec3(0, .5, 0));
 	harp->display();
 	harp->vibrate(0, 8);
 	pop();
