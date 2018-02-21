@@ -204,6 +204,7 @@
     <ClInclude Include="..\..\..\ProtoInclude\ProtoMatrix4.h" />
     <ClInclude Include="..\..\..\ProtoInclude\ProtoOSC.h" />
     <ClInclude Include="..\..\..\ProtoInclude\ProtoOSCListener.h" />
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoOSCMessage.h" />
     <ClInclude Include="..\..\..\ProtoInclude\ProtoPath2.h" />
     <ClInclude Include="..\..\..\ProtoInclude\ProtoPath3.h" />
     <ClInclude Include="..\..\..\ProtoInclude\ProtoPlane.h" />

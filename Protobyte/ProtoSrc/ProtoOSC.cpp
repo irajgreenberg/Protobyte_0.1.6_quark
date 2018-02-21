@@ -38,11 +38,14 @@ namespace std {
 
 using namespace ijg;
 
-ProtoOSC::ProtoOSC() {}
+ProtoOSC::ProtoOSC() {
+	// after insatiation create msg pointer
+	// which gets sent to listener
+	
+	msg = new ProtoOSCMessage();
+	listener = new ProtoOSCListener(msg);
+}
 
-//// overloaded cstr
-//ProtoOSC::ProtoOSC() {
-//}
 
 ProtoOSC::~ProtoOSC() {
 	stop_thread = true;
@@ -56,10 +59,10 @@ void ProtoOSC::send() {
 }
 
 
-void ProtoOSC::runOSC(ijg::ProtoOSCListener listener) {
+void ProtoOSC::runOSC(ijg::ProtoOSCListener* listener) {
 	UdpListeningReceiveSocket s(
 		IpEndpointName(IpEndpointName::ANY_ADDRESS, port),
-		&listener);
+		listener);
 
 	std::cout << "listening for input on port " << port << "...\n";
 	std::cout << "press ctrl-c to end\n";
@@ -71,8 +74,12 @@ void ProtoOSC::runOSC(ijg::ProtoOSCListener listener) {
 
 void ProtoOSC::receive(int port) {
 	this->port = port;
-	ijg::ProtoOSCListener listener;
+	
 	the_thread = std::thread(&ProtoOSC::runOSC, this, listener);
 }
 
+
+ProtoOSCMessage ProtoOSC::getMsg() {
+	return listener->getMsg();
+}
 

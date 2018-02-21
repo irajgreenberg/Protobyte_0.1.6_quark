@@ -28,6 +28,7 @@
 #include <cstring>
 #include <iostream>
 #include "ProtoGeom3.h"
+#include "ProtoOSCMessage.h"
 
 #include "ProtoOSCListener.h"
 #include "osc/OscReceivedElements.h"
@@ -44,27 +45,32 @@ namespace ijg {
 	private:
 		int port;
 		void _init();
-		void runOSC(ijg::ProtoOSCListener listener);
-		void add(ProtoGeom3& geom);
+		void runOSC(ijg::ProtoOSCListener* listener);
 
 		//need seperate thread for osc so doesn't block GLFW draw loop
 		std::thread the_thread;
 		bool stop_thread = false;
+		ijg::ProtoOSCListener* listener;
+		ProtoOSCMessage* msg;
 
 	public:
 		//friend std::ostream& operator<<(std::ostream& output, const ProtoOSC& oscObj);
 
 		// default cstr
 		ProtoOSC();
+		
+		
+		// lame ass approach
+		//ProtoOSC();
 
-		// overloaded cstr
-		//ProtoOSC(int port);
 
 		// need to stop thread
 		~ProtoOSC();
 		
 		void receive(int port); // client
 		void send(); // server
+
+		ProtoOSCMessage getMsg();
 
 	};
 }

@@ -201,7 +201,6 @@ void ProtoSpline3::display(float strokeWeight) {
 	//	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	//	glDrawArrays(GL_LINE_STRIP, 0, pathPrims.size() / stride);
 	//}
-
 	// turn off lighting
 	Vec4f ltRenderingFactors(0.0, 0.0, 0.0, 1.0);
 	glUniform4fv(lightRenderingFactors_U, 1, &ltRenderingFactors.x);

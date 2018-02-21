@@ -27,6 +27,7 @@
 #include <cstdlib>
 #include <cstring>
 #include <iostream>
+#include "ProtoOSCMessage.h"
 
 #include "osc/OscReceivedElements.h"
 
@@ -41,7 +42,18 @@ namespace std {
 
 namespace ijg {
 
-	class ProtoOSCListener : public osc::OscPacketListener {
+	//class ProtoOSCMessage {
+	//public:
+	//	
+	//	int32_t a1, id;
+	//	float a3, amp;
+	//	ProtoOSCMessage() {}
+	//	ProtoOSCMessage(int32_t a1, int32_t id, float a3, float amp):
+	//		a1(a1), id(id), a3(a3), amp(amp) {}
+	//};
+		
+	
+		class ProtoOSCListener : public osc::OscPacketListener {
 
 	private:
 		int port;
@@ -50,14 +62,18 @@ namespace ijg {
 		void ProcessMessage(const osc::ReceivedMessage& m,
 			const IpEndpointName& remoteEndpoint);
 	public:
-		//friend std::ostream& operator<<(std::ostream& output, const ProtoOSC& oscObj);
+		ProtoOSCMessage* msg;
+			
+			//friend std::ostream& operator<<(std::ostream& output, const ProtoOSC& oscObj);
 
 		// default cstr
 		ProtoOSCListener();
 
 		// overloaded cstr
-		ProtoOSCListener(int port);
+		ProtoOSCListener(ProtoOSCMessage* msg);
 
+
+		ProtoOSCMessage getMsg();
 
 		//void receive(int port);
 
@@ -65,6 +81,7 @@ namespace ijg {
 		//void init();
 		//void receive(); // client
 		//void send(); // server
+
 
 	};
 }

@@ -31,8 +31,8 @@ using namespace ijg;
 ProtoOSCListener::ProtoOSCListener() {}
 
 // overloaded cstr
-ProtoOSCListener::ProtoOSCListener(int port) :
-	port(port) {
+ProtoOSCListener::ProtoOSCListener(ProtoOSCMessage* msg) :
+	msg(msg) {
 }
 
 
@@ -53,18 +53,20 @@ void ijg::ProtoOSCListener::ProcessMessage(const osc::ReceivedMessage& m,
 		osc::ReceivedMessageArgumentStream args = m.ArgumentStream();
 		osc::ReceivedMessage::const_iterator arg = m.ArgumentsBegin();
 
-		if (std::strcmp(m.AddressPattern(), "/test1") == 0) {
+		if (std::strcmp(m.AddressPattern(), "/reich") == 0) {
 
-			// example #1:
 			// parse an expected format using the argument stream interface:
-			bool a1;
-			osc::int32 a2;
-			float a3;
-			const char *a4;
+			osc::int32 a1, a2;
+			float a3, a4;
+			
+			// populate vars with passed values
 			args >> a1 >> a2 >> a3 >> a4 >> osc::EndMessage;
+			
+			msg->a1 = a1;
+			msg->a3 = a2;
+			msg->amp = a3;
+			msg->id = a4;
 
-			std::cout << "received '/test1' message with arguments: "
-				<< a1 << " " << a2 << " " << a3 << " " << a4 << "\n";
 
 		}
 		else if (std::strcmp(m.AddressPattern(), "/test2") == 0) {
@@ -241,7 +243,9 @@ void ijg::ProtoOSCListener::ProcessMessage(const osc::ReceivedMessage& m,
 
 
 
-
+ProtoOSCMessage ProtoOSCListener::getMsg() {
+	return *msg;
+}
 
 
 

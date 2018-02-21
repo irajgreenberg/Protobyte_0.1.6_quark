@@ -344,6 +344,9 @@
     <ClInclude Include="NonusHarp.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoOSCMessage.h">
+      <Filter>ProtoLib\.h</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\Resources\shaders\bumpmapping.fs.glsl">

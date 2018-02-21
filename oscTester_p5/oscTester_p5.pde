@@ -12,7 +12,7 @@ NetAddress myRemoteLocation;
 
 void setup() {
   size(400,400);
-  frameRate(25);
+  frameRate(5);
   /* start oscP5, listening for incoming messages at port 12000 */
   oscP5 = new OscP5(this,12000);
   
@@ -29,16 +29,39 @@ void setup() {
 
 void draw() {
   background(0);  
+  
+  OscMessage myMessage = new OscMessage("/reich");
+  
+  myMessage.add(0); /* add an int to the osc message */
+  myMessage.add(int(random(81)));
+  myMessage.add((float)random(60, 210));
+  myMessage.add(0.0f);
+
+  /* send the message */
+  oscP5.send(myMessage, myRemoteLocation); 
 }
 
 void mousePressed() {
   /* in the following different ways of creating osc messages are shown by example */
-  OscMessage myMessage = new OscMessage("/test1");
+  OscMessage myMessage = new OscMessage("/reich");
   
-  myMessage.add(true); /* add an int to the osc message */
-  myMessage.add(123);
-  myMessage.add(4.5f);
-  myMessage.add("hello");
+  myMessage.add(0); /* add an int to the osc message */
+  myMessage.add(int(random(81)));
+  myMessage.add((float)random(60, 210));
+  myMessage.add(0.0f);
+
+  /* send the message */
+  oscP5.send(myMessage, myRemoteLocation); 
+}
+
+void mouseReleased() {
+  /* in the following different ways of creating osc messages are shown by example */
+  OscMessage myMessage = new OscMessage("/reich");
+  
+  myMessage.add(0); /* add an int to the osc message */
+  myMessage.add(0);
+  myMessage.add(0);
+  myMessage.add(0.0f);
 
   /* send the message */
   oscP5.send(myMessage, myRemoteLocation); 

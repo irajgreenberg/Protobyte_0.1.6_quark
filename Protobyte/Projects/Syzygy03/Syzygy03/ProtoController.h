@@ -43,7 +43,7 @@ public:
 	float abacusD = 0;
 	float beadGap = 0;
 
-	ProtoOSC oscObj;
+	ProtoOSC* oscObj;
 };
 
 #endif //__PROTOCONTROLLER_H__
