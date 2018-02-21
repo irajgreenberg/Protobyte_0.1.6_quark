@@ -53,19 +53,36 @@ void ijg::ProtoOSCListener::ProcessMessage(const osc::ReceivedMessage& m,
 		osc::ReceivedMessageArgumentStream args = m.ArgumentStream();
 		osc::ReceivedMessage::const_iterator arg = m.ArgumentsBegin();
 
-		if (std::strcmp(m.AddressPattern(), "/reich") == 0) {
+		if (std::strcmp(m.AddressPattern(), "/dataForMatt") == 0) {
 
 			// parse an expected format using the argument stream interface:
 			osc::int32 a1, a2;
 			float a3, a4;
 			
+
+			// osc::int32 a1;
+			// osc::int32 id;
+			// float a3;
+			// float amp;            
+			// args >> a1 >> id >> a3 >> amp >> osc::EndMessage;
+
+
 			// populate vars with passed values
 			args >> a1 >> a2 >> a3 >> a4 >> osc::EndMessage;
-			
+
 			msg->a1 = a1;
-			msg->a3 = a2;
-			msg->amp = a3;
-			msg->id = a4;
+			msg->id = a2;
+			msg->a3 = a3;
+			msg->amp = a4;
+
+			if (msg->amp > 0) {
+				std::cout << "a1 = " << msg->a1 << std::endl;
+				std::cout << "id = " << msg->id << std::endl;
+				std::cout << "a3 = " << msg->a3 << std::endl;
+				std::cout << "amp = " << msg->amp << std::endl;
+				/*if()
+				std::cout << msg->id << std::endl;*/
+			}
 
 
 		}

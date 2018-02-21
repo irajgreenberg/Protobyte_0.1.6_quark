@@ -8,7 +8,7 @@ Ira Greenberg 2016
 void ProtoController::init() {
 	setBackground({ .025f, .025f, .045f, 1.0f });
 	oscObj = new ProtoOSC();  // on heap
-	oscObj->receive(7000);
+	oscObj->receive(12002);
 
 	abacusW = 2400;
 	abacusH = 1400;
@@ -41,14 +41,14 @@ void ProtoController::display() {
 	beginArcBall();
 	push();
 	translate(0, 0, -1920);
-	translate(100, 0, sin(getFrameCount()*3*PI/180)*-2400);
+	//translate(100, 0, sin(getFrameCount()*3*PI/180)*-2400);
 	//translate(100, 0, 800);
 	//rotate(PI/4, Vec3(0, 1, 0));
-	rotate(getFrameCount()*PI/180*5, Vec3(.75, .85, .95));
+	//rotate(getFrameCount()*PI/180*5, Vec3(.75, .85, .95));
 	harp->display();
 	//harp->vibrate(0, oscObj->getMsg().a3);
 	harp->vibrate();
-	harp->strike(oscObj->getMsg().amp, oscObj->getMsg().a3);
+	harp->strike(oscObj->getMsg().amp*100, oscObj->getMsg().id);
 	//harp->strike({ 130, 180, 200, 100, 80, 100, 50, 100, 100 });
 	//harp->strike(oscObj->getMsg().a3, oscObj->getMsg().amp);
 	pop();

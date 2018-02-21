@@ -24,7 +24,7 @@ void NonusHarp::_init() {
 			for (int k = 0; k < 9; k++) {
 				//initialize fields
 				_stringVibrations[i][j][k] = PI / random(.75, 2.25);
-				_strumDampings[i][j][k] = random(.68, .75);
+				_strumDampings[i][j][k] = random(.35, .59);
 		/*		_stringVibrations[i][j][k] = 0;*/
 				
 				float x = -dim.w / 2 + (beadW * 2 + gap)*i;
