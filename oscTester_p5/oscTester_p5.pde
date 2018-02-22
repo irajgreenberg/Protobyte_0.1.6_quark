@@ -23,19 +23,19 @@ void setup() {
    * and the port of the remote location address are the same, hence you will
    * send messages back to this sketch.
    */
-  myRemoteLocation = new NetAddress("127.0.0.1",7000);
+  myRemoteLocation = new NetAddress("127.0.0.1",12002);
 }
 
 
 void draw() {
   background(0);  
   
-  OscMessage myMessage = new OscMessage("/reich");
+  OscMessage myMessage = new OscMessage("/dataForMatt");
   
   myMessage.add(0); /* add an int to the osc message */
   myMessage.add(int(random(81)));
-  myMessage.add((float)random(60, 210));
   myMessage.add(0.0f);
+  myMessage.add((float)random(1, 4));
 
   /* send the message */
   oscP5.send(myMessage, myRemoteLocation); 
@@ -43,12 +43,12 @@ void draw() {
 
 void mousePressed() {
   /* in the following different ways of creating osc messages are shown by example */
-  OscMessage myMessage = new OscMessage("/reich");
+  OscMessage myMessage = new OscMessage("/dataForMatt");
   
   myMessage.add(0); /* add an int to the osc message */
   myMessage.add(int(random(81)));
-  myMessage.add((float)random(60, 210));
   myMessage.add(0.0f);
+  myMessage.add((float)random(60, 210));
 
   /* send the message */
   oscP5.send(myMessage, myRemoteLocation); 

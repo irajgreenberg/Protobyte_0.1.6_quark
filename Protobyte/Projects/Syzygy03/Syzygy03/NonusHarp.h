@@ -68,7 +68,7 @@ namespace ijg {
 		void strike(float strumForce);
 		void strike(std::array<float, 9>);
 		void strike(float amp, int id);
-
+		void setGeom(ProtoGeom3* geom);
 		void display();
 
 	};

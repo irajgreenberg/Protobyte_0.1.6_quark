@@ -17,10 +17,16 @@ void ProtoController::init() {
 	float beadW = (abacusW - beadGap * 8) / 18;
 	float beadH = (abacusH - beadGap * 8) / 18;
 	float beadD = (abacusD - beadGap * 8) / 18;
-	Toroid* t = new Toroid(Vec3(), Vec3(), Dim3(), Col4(.02f, .01f, .05f, 1.0f), 32, 32, beadW / 6, beadW / 4 * .245, "metalic.jpg", Vec2(.25f, .125f));
+	t = new Toroid(Vec3(), Vec3(), Dim3(), Col4(.02f, .01f, .05f, 1.0f), 32, 32, beadW / 6, beadW / 4 * .245, "metalic.jpg", Vec2(.25f, .125f));
 	//Toroid* t = new Toroid(Vec3(), Vec3(), Dim3(), Col4(.2, .15, 0, .95), 32, 32, beadW / 6, beadW / 4 * .245, "leather2.jpg", Vec2(.2, .2));
-	//ProtoSphere* t = new ProtoSphere(Vec3(), Vec3(), Dim3(30), Col4(.20, .155, .55, 1), "metalic.jpg", 1, 32, 32);
-		
+	s = new ProtoSphere(Vec3(), Vec3(), Dim3(30), Col4(.02f, .02f, .02f, 1), "street_reflection.jpg", 1, 32, 32);
+	s->setDiffuseMaterial({ 1, 1, 1 });
+	s->setAmbientMaterial(0.15f);
+	s->setBumpMap("white.jpg", .95f);
+	s->setSpecularMaterial({ 1, 1, .95f });
+	s->setShininess(12); 
+	
+	
 	t->setDiffuseMaterial({ 1, 1, 1 });
 	t->setAmbientMaterial(0.15f);
 	t->setBumpMap("corroded_red.jpg", .95f);
@@ -57,10 +63,13 @@ void ProtoController::display() {
 
 // Key and Mouse Events
 void ProtoController::keyPressed() {
+	
 }
 
 void ProtoController::mousePressed() {
-	
+	//t->setShininess(1);
+	//t->setColor({.1f, .3f, .1f, 1.0f});
+	harp->setGeom(s);
 }
 
 void ProtoController::mouseRightPressed() {

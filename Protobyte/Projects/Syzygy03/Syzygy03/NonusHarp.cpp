@@ -105,6 +105,11 @@ void NonusHarp::strike(float amp, int id) {
 	}
 }
 
+
+void NonusHarp::setGeom(ProtoGeom3* geom) {
+	this->geom = geom;
+}
+
 void NonusHarp::display() {
 
 	for (int i = 0; i < 9; i++) {
