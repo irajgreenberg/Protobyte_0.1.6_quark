@@ -19,7 +19,7 @@ void ProtoController::init() {
 	float beadW = (abacusW - beadGap * 8) / 18;
 	float beadH = (abacusH - beadGap * 8) / 18;
 	float beadD = (abacusD - beadGap * 8) / 18;
-	
+
 	i = new ProtoIcosahedron(Vec3(), Vec3(), Dim3(30), Col4(.02f, .02f, .09f, 1), "ship_plate_rainbow.jpg", { 1, 1 });
 	//i->setTextureScale({ 1, 1 });
 	i->setDiffuseMaterial({ 1, 1, 1 });
@@ -27,19 +27,19 @@ void ProtoController::init() {
 	i->setBumpMap("corroded.jpg", .95f);
 	i->setSpecularMaterial({ 1, 1, .95f });
 	i->setShininess(20);
-	
-	
-	
+
+
+
 	//t = new Toroid(Vec3(), Vec3(), Dim3(), Col4(.095f, .01f, .02f, 1.0f), 32, 32, beadW / 6, beadW / 4 * .245, "metalic.jpg", Vec2(.25f, .125f)); 
 	t = new Toroid(Vec3(), Vec3(), Dim3(), Col4(.01f, .01f, .01f, 1.0f), 32, 32, beadW / 6, beadW / 4 * .245, "shipPlate_yellow.jpg", Vec2(.25f, .125f));
 	t->setDiffuseMaterial({ 1, 1, 1 });
 	t->setAmbientMaterial(0.15f);
 	t->setBumpMap("corroded_red.jpg", .95f);
 	t->setSpecularMaterial({ 1, 1, .95f });
-	t->setShininess(12); 
+	t->setShininess(12);
 
 	s = new ProtoSphere(Vec3(), Vec3(), Dim3(30), Col4(.02f, .02f, .09f, 1), "ship_plate_rainbow.jpg", 1, 32, 32);
-	s->setTextureScale({1, 1});
+	s->setTextureScale({ 1, 1 });
 	s->setDiffuseMaterial({ 1, 1, 1 });
 	s->setAmbientMaterial(0.15f);
 	s->setBumpMap("corroded.jpg", .95f);
@@ -54,12 +54,12 @@ void ProtoController::init() {
 	b->setSpecularMaterial({ 1, 1, .95f });
 	b->setShininess(5);
 
-	harp = new NonusHarp(this, {}, {}, { abacusW, abacusH, abacusD }, beadGap, i);
+	harp = new NonusHarp(this, {}, {}, { abacusW, abacusH, abacusD }, beadGap, b);
 
 }
 
 void ProtoController::run() {
-	
+
 }
 
 void ProtoController::display() {
@@ -68,27 +68,35 @@ void ProtoController::display() {
 	setLight(0, Vec3(sin(getFrameCount()*PI / 180.0f * 2)* lt0Radius, 900, cos(getFrameCount()*PI / 180.0f * 2)* lt0Radius), { 1, .70f, 1 });
 	//setLight(1, Vec3(sin(getFrameCount()*PI / 180.0f * 20)* lt0Radius, 900, cos(getFrameCount()*PI / 180.0f * 20)* lt0Radius), { 1, .75f, 1 });
 	setLight(2, Vec3(600, cos(radians(getFrameCount()*2.0f)) * -1500, sin(radians(getFrameCount()*2.0f)) * 100), { 1, .75f, .75f });
+
+	// add light
+
 	//trace(oscObj->getMsg());
 	beginArcBall();
 	push();
 	//translate(0, 0, -6020);
-	translate(0, 0, 200);
+	translate(_x, _y, _z);
 	//translate(100, 0, sin(getFrameCount()*3*PI/180)*-2400);
 	//translate(100, 0, 800);
 	//rotate(PI/4, Vec3(0, 1, 0));
-	rotate(getFrameCount()*PI/180*.25, Vec3(0, 1, 0));
+	rotate(getFrameCount()*PI / 180 * .25, Vec3(0, 1, 0));
 	harp->display();
 	//harp->vibrate(0, oscObj->getMsg().a3);
 	harp->vibrate();
-	harp->strike(oscObj->getMsg().amp*100, oscObj->getMsg().id);
+	harp->strike(oscObj->getMsg().amp * 100, oscObj->getMsg().id);
 	//harp->strike({ 130, 180, 200, 100, 80, 100, 50, 100, 100 });
 	//harp->strike(oscObj->getMsg().a3, oscObj->getMsg().amp);
 	pop();
 	endArcBall();
+	_x += _spdX;
+	_y += _spdY;
+	_z += _spdZ;
 }
 
 // Key and Mouse Events
 void ProtoController::keyPressed() {
+	
+	// interactive controls
 	switch (key) {
 	case 49:
 		harp->setGeom(b);
@@ -103,13 +111,43 @@ void ProtoController::keyPressed() {
 		harp->setGeom(b);
 		break;
 	}
+
+	switch (key) {
+	case 262:
+		_spdX++;
+		break;
+	case 263:
+		_spdX--;
+		break;
+	default:
+		break;
+	}
+
+	switch (key) {
+	case 264:
+		_spdY--;
+		break;
+	case 265:
+		_spdY++;
+		break;
+	default:
+		break;
+	}
 	
+	// z-axis
+	switch(key) {
+	case 81:
+		_spdZ--;
+		break;
+	case 65:
+		_spdZ++;
+		break;
+	default:
+		break;
+	}
 }
 
 void ProtoController::mousePressed() {
-	//t->setShininess(1);
-	//t->setColor({.1f, .3f, .1f, 1.0f});
-	//harp->setGeom(s);
 }
 
 void ProtoController::mouseRightPressed() {

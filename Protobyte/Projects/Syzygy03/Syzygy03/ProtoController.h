@@ -50,7 +50,8 @@ public:
 
 	float lt0Radius = 0;
 
-	float moveRt = 0, moveLeft = 0, moveUp = 0, moveDown = 0;
+	float _x = 0, _y = 0, _z = 0;
+	float _spdX = 0, _spdY = 0, _spdZ = 0;
 };
 
 #endif //__PROTOCONTROLLER_H__

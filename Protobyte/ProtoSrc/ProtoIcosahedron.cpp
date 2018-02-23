@@ -44,7 +44,8 @@ ProtoIcosahedron::ProtoIcosahedron(const Vec3f& pos, const Vec3f& rot, const Pro
 void ProtoIcosahedron::calcVerts() {
 
 	// vertex position and color information for icosahedron
-	float vals[] = { -0.26286500f, 0.0000000f, 0.42532500f,
+	float vals[] = { 
+			-0.26286500f, 0.0000000f, 0.42532500f,
 			0.26286500f, 0.0000000f, 0.42532500f,
 			-0.26286500f, 0.0000000f, -0.42532500f,
 			0.26286500f, 0.0000000f, -0.42532500f,
@@ -60,7 +61,7 @@ void ProtoIcosahedron::calcVerts() {
 
 
 	for (int i = 0; i < 36; i+=3) {
-		verts.push_back(ProtoVertex3(Vec3f(vals[i]*size.w / 2, vals[i+1] * size.h / 2, vals[i+2] * size.d / 2), Col4f(col4.getR(), col4.getG(), col4.getB(), col4.getA()), ProtoTuple2f(vals[i + 1], vals[i])));
+		verts.push_back(ProtoVertex3(Vec3f(vals[i+2]*size.w / 2, vals[i+1] * size.h / 2, vals[i] * size.d / 2), Col4f(col4.getR(), col4.getG(), col4.getB(), col4.getA()), ProtoTuple2f(vals[i + 1]/ vals[i + 2], vals[i]/ vals[i + 2])));
 	}
 }
 
