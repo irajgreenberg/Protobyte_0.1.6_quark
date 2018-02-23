@@ -94,10 +94,10 @@ void ProtoPlasm::initGLFW(){
 	glfwWindowHint(GLFW_SAMPLES, 2);
 
 	// genereate sized GLFW window with title
-	window = glfwCreateWindow(appWidth, appHeight, appTitle.c_str(), nullptr, nullptr);
+	//window = glfwCreateWindow(appWidth, appHeight, appTitle.c_str(), nullptr, nullptr);
 
-	// full size
-	//window = glfwCreateWindow(appWidth, appHeight, appTitle.c_str(), glfwGetPrimaryMonitor(), nullptr);
+	// full size     
+	window = glfwCreateWindow(appWidth, appHeight, appTitle.c_str(), glfwGetPrimaryMonitor(), nullptr);
 
 
 	// connected monitors
