@@ -80,8 +80,8 @@ void ijg::ProtoOSCListener::ProcessMessage(const osc::ReceivedMessage& m,
 				std::cout << "id = " << msg->id << std::endl;
 				std::cout << "a3 = " << msg->a3 << std::endl;
 				std::cout << "amp = " << msg->amp << std::endl;
-				/*if()
-				std::cout << msg->id << std::endl;*/
+				
+				std::cout << msg->amp << std::endl;
 			}
 
 

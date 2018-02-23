@@ -57,7 +57,7 @@ void ProtoContext::init(){
 	//	ctx->concatenateModelViewMatrix();
 	//	ctx->createNormalMatrix();
 
-		for (int i = 0; i < 1; ++i){
+		for (int i = 0; i < 8; ++i){
 			std::string pos = "lights[" + std::to_string(i) + "].position"; 
 			//trace("pos =", pos);
 			lights_U[i].position = glGetUniformLocation(ProtoShader::getID_2(), pos.c_str());

@@ -242,17 +242,18 @@ void ProtoSphere::calcVerts() {
             Vec3f tmp(tempX, y, tempZ);
             tmp.normalize();
             u = .5 + atan2(tmp.z, tmp.x) / (2 * PI);
-            v = .5 - 2.0 * asin(tmp.y) / (2 * PI);
+           // v = .5 - 2.0 * asin(tmp.y) / (2 * PI);
+			v = .5 - asin(tmp.y) / (PI);
             
             verts.at(spines*i + j) = ProtoVertex3(Vec3f(tempX, y, tempZ),
                                                   ProtoColor4f(col4.getR(), col4.getG(), col4.getB(), col4.getA()),
                                                   ProtoTuple2f(u, v));
             //std::cout << "ProtoTuple2f(u, v) = " << ProtoTuple2f(u, v) << std::endl;
             
-            phi += PI * 2.0 / (spines-1);
+            phi += PI * 2.0 / (spines-4); // ****NOTE*** technically should be spines-1
             //std::cout << "phi = " << (phi*180.0/PI)  << std::endl;
         }
-        theta -= PI / (spineNodes - 1);
+        theta -= PI / (spineNodes - 1);// ****NOTE*** technically should be spineNodes-2
     }
 }
 

@@ -156,6 +156,9 @@
     <ClCompile Include="NonusHarp.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\ProtoSrc\ProtoIcosahedron.cpp">
+      <Filter>ProtoLib\.cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ProtoController.h">
@@ -345,6 +348,9 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\ProtoInclude\ProtoOSCMessage.h">
+      <Filter>ProtoLib\.h</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ProtoInclude\ProtoIcosahedron.h">
       <Filter>ProtoLib\.h</Filter>
     </ClInclude>
   </ItemGroup>

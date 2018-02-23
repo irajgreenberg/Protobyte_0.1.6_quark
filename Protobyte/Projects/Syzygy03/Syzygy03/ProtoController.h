@@ -10,6 +10,7 @@ Ira Greenberg 2016
 #include "ProtoBaseApp.h"
 #include "ProtoOSC.h"
 #include "NonusHarp.h"
+#include "ProtoIcosahedron.h"
 
 using namespace ijg;
 
@@ -34,6 +35,8 @@ public:
 	void onClosed();
 	Toroid* t;
 	ProtoSphere* s;
+	ProtoBlock* b;
+	ProtoIcosahedron* i;
 	NonusHarp* harp;
 	Vec3 vecs[9][9][9];
 	float rotAng[9][9][9];
@@ -44,6 +47,10 @@ public:
 	float beadGap = 0;
 
 	ProtoOSC* oscObj;
+
+	float lt0Radius = 0;
+
+	float moveRt = 0, moveLeft = 0, moveUp = 0, moveDown = 0;
 };
 
 #endif //__PROTOCONTROLLER_H__
