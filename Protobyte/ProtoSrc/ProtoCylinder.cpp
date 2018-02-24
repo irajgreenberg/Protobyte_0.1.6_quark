@@ -66,6 +66,12 @@ ProtoGeom3(pos, Vec3f(), size, Col4f(1), textureImageURL, Vec2(1)), detail(detai
 	init();
 }
 
+ProtoCylinder::ProtoCylinder(const Vec3& pos, const Dim3f& size, int detail, const Col4f& col, const std::string& textureImageURL, Registration reg) :
+	ProtoGeom3(pos, Vec3f(), size, Col4f(col), textureImageURL, Vec2(1)), detail(detail), registration(reg) {
+	init();
+}
+
+
 
 void ProtoCylinder::calcVerts() {
 	//trace(verts.size());
@@ -87,10 +93,10 @@ void ProtoCylinder::calcVerts() {
 			z = cos(theta)*size.d;
 			x = sin(theta)*size.w;
 			verts.push_back(ProtoVertex3(Vec3f(x, y, z),
-				ProtoColor4f(col4.getR(), col4.getG(), col4.getB(), col4.getA()), ProtoTuple2f(x / size.w, y / size.h)));
+				ProtoColor4f(col4.getR(), col4.getG(), col4.getB(), col4.getA()), ProtoTuple2f(cos(theta), sin(theta))));
 
 			verts.push_back(ProtoVertex3(Vec3f(x, size.h, z),
-				ProtoColor4f(col4.getR(), col4.getG(), col4.getB(), col4.getA()), ProtoTuple2f(x / size.w, y / size.h)));
+				ProtoColor4f(col4.getR(), col4.getG(), col4.getB(), col4.getA()), ProtoTuple2f(cos(theta), sin(theta))));
 			theta += TWO_PI / detail;
 		}
 		break;

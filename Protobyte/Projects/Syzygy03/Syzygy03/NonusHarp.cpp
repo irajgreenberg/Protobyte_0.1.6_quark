@@ -24,7 +24,7 @@ void NonusHarp::_init() {
 			for (int k = 0; k < 9; k++) {
 				//initialize fields
 				_stringVibrations[i][j][k] = PI / random(.75, 2.25);
-				_strumDampings[i][j][k] = random(.35, .59);
+				_strumDampings[i][j][k] = random(.45f, .65f);
 		/*		_stringVibrations[i][j][k] = 0;*/
 				
 				float x = -dim.w / 2 + (beadW * 2 + gap)*i;
@@ -133,7 +133,7 @@ void NonusHarp::display() {
 
 				// toroids
 				app->rotate(PI / 4, Vec3(0, 1, 0));
-
+				//app->noStroke();
 				geom->display();
 
 				app->pop();
@@ -141,7 +141,8 @@ void NonusHarp::display() {
 				_strumForces[i][j][k] *= _strumDampings[i][j][k];
 			}
 			strings = Spline3(pts, 4, false, .5);
-			strings.display(1.25f);
+			app->stroke(1.0f, 1.0f, 1.0f, 1.0f);
+			strings.display(2.25f);
 
 			app->pop();
 		}

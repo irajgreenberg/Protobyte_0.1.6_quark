@@ -8,6 +8,6 @@ Ira Greenberg 2016
 #include <iostream>
 
 int main(int argc, char const** argv) {
-		new ijg::ProtoPlasm (1800, 950, "ProtoController", new ProtoController());
+		new ijg::ProtoPlasm (2120, 1090, "ProtoController", new ProtoController());
 		return EXIT_SUCCESS;
 }

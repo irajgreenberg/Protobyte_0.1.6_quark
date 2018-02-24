@@ -37,6 +37,7 @@ public:
 	ProtoSphere* s;
 	ProtoBlock* b;
 	ProtoIcosahedron* i;
+	ProtoCylinder* c;
 	NonusHarp* harp;
 	Vec3 vecs[9][9][9];
 	float rotAng[9][9][9];
@@ -52,6 +53,13 @@ public:
 
 	float _x = 0, _y = 0, _z = 0;
 	float _spdX = 0, _spdY = 0, _spdZ = 0;
+
+	float _xR = 0, _yR = 0, _zR = 0;
+	float _spdRotX = 0, _spdRotY = 0, _spdRotZ = 0;
+	float tranSpdInterval = 0.0;
+	float rotSpdInterval = 0.0;
+	float killDamping = 0.0;
+
 };
 
 #endif //__PROTOCONTROLLER_H__
