@@ -1,11 +1,24 @@
 /*
+SYZYGY Project 2018, 2/232018
+Moody Hall Dallas
+
 Protobyte Library 0.1.6
-Ira Greenberg 2016
+Ira Greenberg 2018
 */
 
 #include "ProtoController.h"
 
 void ProtoController::init() {
+
+	/*
+	Interactive Controls:
+	arrow keys: x and ytranslation
+	q a: z translation
+
+	. / X-axis rotation
+	; ' y-axis rotation
+	[ ] z-axis rotation
+	*/
 	setBackground({ 0, 0, 0, 1.0f });
 	oscObj = new ProtoOSC();  // on heap
 	oscObj->receive(12002);
@@ -62,7 +75,7 @@ void ProtoController::init() {
 	b->setShininess(5);
 
 	harp = new NonusHarp(this, {}, {}, { abacusW, abacusH, abacusD }, beadGap, b);
-	
+
 	_x = 150;
 	_y = 1500;
 	_z = -5500;
@@ -128,7 +141,7 @@ void ProtoController::display() {
 void ProtoController::keyPressed() {
 
 	// reset and kill
-	if (key == 82){
+	if (key == 82) {
 		_x = 0.0;
 		_y = 1500;
 		_z = -5500;
@@ -171,7 +184,7 @@ void ProtoController::keyPressed() {
 
 	switch (key) {
 	case 262:
-		_spdX+= tranSpdInterval;
+		_spdX += tranSpdInterval;
 		break;
 	case 263:
 		_spdX -= tranSpdInterval;
