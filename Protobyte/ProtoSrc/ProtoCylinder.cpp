@@ -27,42 +27,42 @@ using namespace ijg;
 
 // default cstr
 ProtoCylinder::ProtoCylinder() :
-ProtoGeom3(Vec3f(), Vec3f(), Dim3f(1), Col4f(1), "white_tile.jpg", Vec2(1)), detail(12), registration(CENTER) {
+	ProtoGeom3(Vec3f(), Vec3f(), Dim3f(1), Col4f(1), "white_tile.jpg", Vec2(1)), detail(12), registration(CENTER) {
 	//init();
 }
 
 //overloaded cstr's
 ProtoCylinder::ProtoCylinder(int detail, Registration reg) :
-ProtoGeom3(Vec3f(), Vec3f(), Dim3f(1), Col4f(1), "white_tile.jpg", Vec2(1)), detail(detail), registration(reg) {
+	ProtoGeom3(Vec3f(), Vec3f(), Dim3f(1), Col4f(1), "white_tile.jpg", Vec2(1)), detail(detail), registration(reg) {
 	//setBumpMap("white_tile.jpg");
 	init();
 }
 ProtoCylinder::ProtoCylinder(const Vec3& pos, int detail, Registration reg) :
-ProtoGeom3(pos, Vec3f(), Dim3f(1), Col4f(1), "white_tile.jpg", Vec2(1)), detail(detail), registration(reg) {
+	ProtoGeom3(pos, Vec3f(), Dim3f(1), Col4f(1), "white_tile.jpg", Vec2(1)), detail(detail), registration(reg) {
 	init();
 }
 ProtoCylinder::ProtoCylinder(const Dim3f& size, int detail, Registration reg) :
-ProtoGeom3(Vec3f(), Vec3f(), size, Col4f(1), "white_tile.jpg", Vec2(1)), detail(detail), registration(reg) {
+	ProtoGeom3(Vec3f(), Vec3f(), size, Col4f(1), "white_tile.jpg", Vec2(1)), detail(detail), registration(reg) {
 	init();
 }
 ProtoCylinder::ProtoCylinder(const Vec3& pos, const Dim3f& size, int detail, Registration reg) :
-ProtoGeom3(pos, Vec3f(), size, Col4f(1), "white_tile.jpg", Vec2(1)), detail(detail), registration(reg) {
+	ProtoGeom3(pos, Vec3f(), size, Col4f(1), "white_tile.jpg", Vec2(1)), detail(detail), registration(reg) {
 	init();
 }
 ProtoCylinder::ProtoCylinder(int detail, const std::string& textureImageURL, Registration reg) :
-ProtoGeom3(Vec3f(), Vec3f(), Dim3f(1), Col4f(1), textureImageURL, Vec2(1)), detail(detail), registration(reg) {
+	ProtoGeom3(Vec3f(), Vec3f(), Dim3f(1), Col4f(1), textureImageURL, Vec2(1)), detail(detail), registration(reg) {
 	init();
 }
 ProtoCylinder::ProtoCylinder(const Vec3& pos, int detail, const std::string& textureImageURL, Registration reg) :
-ProtoGeom3(pos, Vec3f(), Dim3f(1), Col4f(1), textureImageURL, Vec2(1)), detail(detail), registration(reg) {
+	ProtoGeom3(pos, Vec3f(), Dim3f(1), Col4f(1), textureImageURL, Vec2(1)), detail(detail), registration(reg) {
 	init();
 }
 ProtoCylinder::ProtoCylinder(const Dim3f& size, int detail, const std::string& textureImageURL, Registration reg) :
-ProtoGeom3(Vec3f(), Vec3f(), size, Col4f(1), textureImageURL, Vec2(1)), detail(detail), registration(reg) {
+	ProtoGeom3(Vec3f(), Vec3f(), size, Col4f(1), textureImageURL, Vec2(1)), detail(detail), registration(reg) {
 	init();
 }
 ProtoCylinder::ProtoCylinder(const Vec3& pos, const Dim3f& size, int detail, const std::string& textureImageURL, Registration reg) :
-ProtoGeom3(pos, Vec3f(), size, Col4f(1), textureImageURL, Vec2(1)), detail(detail), registration(reg) {
+	ProtoGeom3(pos, Vec3f(), size, Col4f(1), textureImageURL, Vec2(1)), detail(detail), registration(reg) {
 	init();
 }
 
@@ -95,12 +95,12 @@ void ProtoCylinder::calcVerts() {
 		*/
 		// top center point
 		verts.push_back(ProtoVertex3(Vec3f(0, size.h / 2.0f, 0), col4, ProtoTuple2f(0, 0)));
-		
+
 		// bottem center point
 		verts.push_back(ProtoVertex3(Vec3f(0, -size.h / 2.0f, 0), col4, ProtoTuple2f(0, 0)));
-		
+
 		// BEGIN edge points
-		
+
 		// top edge points
 		for (int i = 0; i < detail; ++i) {
 			z = cos(theta)*size.d;
@@ -109,12 +109,12 @@ void ProtoCylinder::calcVerts() {
 			/*float u = len / detail*i;
 			float v = 0;*/
 			//verts.push_back(ProtoVertex3(Vec3f(x, y, z), col4, ProtoTuple2f(cos(theta), sin(theta))));
-			verts.push_back(ProtoVertex3(Vec3f(x, y, z), col4, ProtoTuple2f((1.0/detail*i)*4, .5f*2)));
-			trace(1.0 / detail*i);
+			verts.push_back(ProtoVertex3(Vec3f(x, y, z), col4, ProtoTuple2f((1.0 / detail*i) * 4, .5f * 2)));
+			//trace(1.0 / detail*i);
 			theta -= TWO_PI / detail;
 		}
-			
-		
+
+
 		// bottem edge points
 		theta = 0; // reset theta
 		for (int i = 0; i < detail; ++i) {
@@ -124,8 +124,8 @@ void ProtoCylinder::calcVerts() {
 			/*float u = len - (len / detail*i);
 			float v = 1;*/
 			//verts.push_back(ProtoVertex3(Vec3f(x, y, z), col4, ProtoTuple2f(cos(theta), sin(theta))));
-			verts.push_back(ProtoVertex3(Vec3f(x, y, z), col4, ProtoTuple2f((1.0-1.0 / detail*i)*2, -.5f*3)));
-			theta += TWO_PI / detail; // Note wind reverse
+			verts.push_back(ProtoVertex3(Vec3f(x, y, z), col4, ProtoTuple2f((1.0 - 1.0 / detail*i) * 2, -.5f * 3)));
+			theta -= TWO_PI / detail; // Note wind reverse
 		}
 
 	case BOTTEM:
@@ -192,21 +192,36 @@ void ProtoCylinder::calcInds() {
 			inds.push_back(ProtoTuple3i(detail + i + 2, 1, detail + 2));
 		}
 	}
-	
+
 	//body
-	int end = detail * 2 + 2 -1;
+	int end = detail * 2 + 2 - 1;
 	for (int i = 0; i < detail; ++i) {
 		int j = i + 2;
 
-		if (i>0 && i < detail - 1) {
-			inds.push_back(ProtoTuple3i(j, j+1, end-i));
-			inds.push_back(ProtoTuple3i(j + 1, end - (i+1), end-i));
+		if (detail - 1) {
+			//	inds.push_back(ProtoTuple3i(j, j + 1, end-i));
+				//inds.push_back(ProtoTuple3i(j + 1, end - (i+1), end-i));
 		}
 
 		/*else {
 			inds.push_back(ProtoTuple3i(j, j + 1, end - i));
 		}*/
 	}
+	/*inds.push_back(ProtoTuple3i(2, 6, 5));
+	inds.push_back(ProtoTuple3i(5, 6, 7));*/
+
+	//inds.push_back(ProtoTuple3i(5, 7, 4));
+	//inds.push_back(ProtoTuple3i(4, 7, 8));
+
+	//inds.push_back(ProtoTuple3i(4, 8, 3));
+	//inds.push_back(ProtoTuple3i(3, 8, 9));
+
+	//inds.push_back(ProtoTuple3i(3, 9, 2));
+	//inds.push_back(ProtoTuple3i(2, 9, 6));
+
+	//inds.push_back(ProtoTuple3i(j, j + 1, end - i));
+	//inds.push_back(ProtoTuple3i(j, j + 1, end - i));
+
 	//inds.push_back(ProtoTuple3i(2, detail+1, end - 1));
 
 	/*inds.push_back(ProtoTuple3i(2, 3, end-1));
@@ -236,4 +251,17 @@ void ProtoCylinder::calcInds() {
 	//		}
 	//	}
 	//}
+
+	inds.push_back(ProtoTuple3i(2, 6, 5)); j, j+detail, j+detail+1
+	inds.push_back(ProtoTuple3i(5, 6, 9)); detail+1, detail+2, detail*2 + 1
+
+	inds.push_back(ProtoTuple3i(5, 9, 4));
+	inds.push_back(ProtoTuple3i(4, 9, 8));
+
+	inds.push_back(ProtoTuple3i(4, 8, 3));
+	inds.push_back(ProtoTuple3i(3, 8, 7));
+
+	inds.push_back(ProtoTuple3i(3, 7, 2));
+	inds.push_back(ProtoTuple3i(2, 7, 6));
+
 }
