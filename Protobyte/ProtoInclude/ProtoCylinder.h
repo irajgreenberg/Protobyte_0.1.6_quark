@@ -37,9 +37,9 @@ namespace ijg {
 
 	public:
 		enum Registration {
-			LEFT,
+			TOP,
 			CENTER,
-			RIGHT
+			BOTTEM
 		};
 
 		// critical params

@@ -74,75 +74,98 @@ ProtoCylinder::ProtoCylinder(const Vec3& pos, const Dim3f& size, int detail, con
 
 
 void ProtoCylinder::calcVerts() {
-	//trace(verts.size());
-
-	// pack terminals up front in 0, 1 positions
-
-	float theta = 0;
+	float theta = 0.0f;
+	// NOTE:: packs terminals in verts at 0, 1 verts locations
 	float x = 0;
 	float y = 0;
 	float z = 0;
-	switch (registration) {
-	case LEFT:
-		// terminals
-		verts.push_back(ProtoVertex3(Vec3f(0, 0, 0),
-			ProtoColor4f(col4.getR(), col4.getG(), col4.getB(), col4.getA()), ProtoTuple2f(0, 0)));
-		verts.push_back(ProtoVertex3(Vec3f(0, size.h, 0),
-			ProtoColor4f(col4.getR(), col4.getG(), col4.getB(), col4.getA()), ProtoTuple2f(0, 1.0 / size.h)));
-		for (int i = 0; i < detail; ++i){
-			z = cos(theta)*size.d;
-			x = sin(theta)*size.w;
-			verts.push_back(ProtoVertex3(Vec3f(x, y, z),
-				ProtoColor4f(col4.getR(), col4.getG(), col4.getB(), col4.getA()), ProtoTuple2f(cos(theta), sin(theta))));
 
-			verts.push_back(ProtoVertex3(Vec3f(x, size.h, z),
-				ProtoColor4f(col4.getR(), col4.getG(), col4.getB(), col4.getA()), ProtoTuple2f(cos(theta), sin(theta))));
-			theta += TWO_PI / detail;
-		}
+
+	float len = size.w*PI;
+
+	switch (registration) {
+	case TOP:
+		// to do
 		break;
 	case CENTER:
-		for (int i = 0; i < 2; ++i){
-			theta = 0;
-			for (int j = 0; j < detail; ++j){
-				y = cos(theta);
-				z = sin(theta);
-				//verts.push_back(ProtoVertex3(Vec3f(-.5 + (1 * i), y, z),
-				//	ProtoColor4f(col4.getR(), col4.getG(), col4.getB(), col4.getA()), ProtoTuple2f(theta / TWO_PI, (i*detail + j) / (detail * 2.0f))));
-				trace(theta / TWO_PI);
-			//verts.push_back(ProtoVertex3(Vec3f(-.5 + (1 * i), y, z),
-			//	ProtoColor4f(col4.getR(), col4.getG(), col4.getB(), col4.getA()), ProtoTuple2f(theta / TWO_PI, -.5 + (i*i))));
-			//		theta += TWO_PI / (detail-1);
-
-					verts.push_back(ProtoVertex3(Vec3f(-.5 + (1 * i), y, z),
-						ProtoColor4f(col4.getR(), col4.getG(), col4.getB(), col4.getA()), ProtoTuple2f(theta / TWO_PI, -.5 + (i*i))));
-					theta += TWO_PI / (detail - 1);
-			}
+		/*
+		| |
+		|.|
+		| |
+		*/
+		// top center point
+		verts.push_back(ProtoVertex3(Vec3f(0, size.h / 2.0f, 0), col4, ProtoTuple2f(0, 0)));
+		
+		// bottem center point
+		verts.push_back(ProtoVertex3(Vec3f(0, -size.h / 2.0f, 0), col4, ProtoTuple2f(0, 0)));
+		
+		// BEGIN edge points
+		
+		// top edge points
+		for (int i = 0; i < detail; ++i) {
+			z = cos(theta)*size.d;
+			y = size.h / 2.0f;
+			x = sin(theta)*size.w;
+			/*float u = len / detail*i;
+			float v = 0;*/
+			//verts.push_back(ProtoVertex3(Vec3f(x, y, z), col4, ProtoTuple2f(cos(theta), sin(theta))));
+			verts.push_back(ProtoVertex3(Vec3f(x, y, z), col4, ProtoTuple2f((1.0/detail*i)*4, .5f*2)));
+			trace(1.0 / detail*i);
+			theta -= TWO_PI / detail;
 		}
-		verts.push_back(ProtoVertex3(Vec3f(-.5, 0, 0),
-			ProtoColor4f(col4.getR(), col4.getG(), col4.getB(), col4.getA()), ProtoTuple2f(-.5, 0)));
-		verts.push_back(ProtoVertex3(Vec3f(.5, 0, 0),
-			ProtoColor4f(col4.getR(), col4.getG(), col4.getB(), col4.getA()), ProtoTuple2f(.5, 0)));
-		break;
-	case RIGHT:
-		//terminals
-		verts.push_back(ProtoVertex3(Vec3f(0, 0, 0),
-			ProtoColor4f(col4.getR(), col4.getG(), col4.getB(), col4.getA()), ProtoTuple2f(0, 0)));
-		verts.push_back(ProtoVertex3(Vec3f(-size.w, 0, 0),
-			ProtoColor4f(col4.getR(), col4.getG(), col4.getB(), col4.getA()), ProtoTuple2f(1.0 / -size.w, 0)));
-		for (int i = 0; i < detail; ++i){
-			y = cos(theta)*size.h;
-			z = sin(theta)*size.d;
-			verts.push_back(ProtoVertex3(Vec3f(0, y, z),
-				ProtoColor4f(col4.getR(), col4.getG(), col4.getB(), col4.getA()), ProtoTuple2f(x, y / size.h)));
-
-			verts.push_back(ProtoVertex3(Vec3f(-size.w, y, z),
-				ProtoColor4f(col4.getR(), col4.getG(), col4.getB(), col4.getA()), ProtoTuple2f(x / -size.w, y / size.h)));
-			theta += TWO_PI / detail;
+			
+		
+		// bottem edge points
+		theta = 0; // reset theta
+		for (int i = 0; i < detail; ++i) {
+			z = cos(theta)*size.d;
+			y = -size.h / 2.0f;
+			x = sin(theta)*size.w;
+			/*float u = len - (len / detail*i);
+			float v = 1;*/
+			//verts.push_back(ProtoVertex3(Vec3f(x, y, z), col4, ProtoTuple2f(cos(theta), sin(theta))));
+			verts.push_back(ProtoVertex3(Vec3f(x, y, z), col4, ProtoTuple2f((1.0-1.0 / detail*i)*2, -.5f*3)));
+			theta += TWO_PI / detail; // Note wind reverse
 		}
+
+	case BOTTEM:
+		// to do
 
 		break;
 
 	default:
+		/*
+		| |
+		|.|
+		| |
+		*/
+		// top center point
+		verts.push_back(ProtoVertex3(Vec3f(0, size.h / 2.0f, 0), col4, ProtoTuple2f(0, 0)));
+
+		// bottem center point
+		verts.push_back(ProtoVertex3(Vec3f(0, -size.h / 2.0f, 0), col4, ProtoTuple2f(0, 0)));
+
+		// BEGIN edge points
+
+		// top edge points
+		for (int i = 0; i < detail; ++i) {
+			z = cos(theta);
+			y = size.h / 2.0f;
+			x = sin(theta);
+			verts.push_back(ProtoVertex3(Vec3f(x, y, z), col4, ProtoTuple2f(z, x)));
+			theta += TWO_PI / detail;
+		}
+
+
+		// bottem edge points
+		theta = 0; // reset theta
+		for (int i = 0; i < detail; ++i) {
+			z = cos(theta);
+			y = -size.h / 2.0f;
+			x = sin(theta);
+			verts.push_back(ProtoVertex3(Vec3f(x, y, z), col4, ProtoTuple2f(z, x)));
+			theta += TWO_PI / detail; // Note wind reverse
+		}
 		break;
 	}
 
@@ -150,26 +173,67 @@ void ProtoCylinder::calcVerts() {
 
 
 void ProtoCylinder::calcInds() {
-	int len = detail;
+	// top cap
 	for (int i = 0; i < detail; ++i) {
-		if (i<detail-1){
-			// left cap
-			inds.push_back(ProtoTuple3i(i, verts.size()-2, i+1)); // change
-			// right cap
-			inds.push_back(ProtoTuple3i(i + len + 1, verts.size() - 1, i + len)); 
-			// body
-			inds.push_back(ProtoTuple3i(i+1, i + len, i));
-			inds.push_back(ProtoTuple3i(i + len + 1, i + len, i + 1));
+		if (i < detail - 1) {
+			inds.push_back(ProtoTuple3i(i + 2, 0, i + 3));
 		}
-		else { // close cylinder
-			// left cap
-			//inds.push_back(ProtoTuple3i(i, verts.size() - 2, 0));
-			//// right cap
-			//inds.push_back(ProtoTuple3i(len, verts.size() - 1, i+len));
-			//// body
-			//inds.push_back(ProtoTuple3i(0, i + len, i));
-			//inds.push_back(ProtoTuple3i(len, i + len, 0));
+		else {
+			inds.push_back(ProtoTuple3i(i + 2, 0, 2));
+		}
+	}
+
+	//bottem cap
+	for (int i = 0; i < detail; ++i) {
+		if (i < detail - 1) {
+			inds.push_back(ProtoTuple3i(detail + i + 2, 1, detail + i + 3));
+		}
+		else {
+			inds.push_back(ProtoTuple3i(detail + i + 2, 1, detail + 2));
+		}
+	}
+	
+	//body
+	int end = detail * 2 + 2 -1;
+	for (int i = 0; i < detail; ++i) {
+		int j = i + 2;
+
+		if (i>0 && i < detail - 1) {
+			inds.push_back(ProtoTuple3i(j, j+1, end-i));
+			inds.push_back(ProtoTuple3i(j + 1, end - (i+1), end-i));
 		}
 
+		/*else {
+			inds.push_back(ProtoTuple3i(j, j + 1, end - i));
+		}*/
 	}
+	//inds.push_back(ProtoTuple3i(2, detail+1, end - 1));
+
+	/*inds.push_back(ProtoTuple3i(2, 3, end-1));
+	inds.push_back(ProtoTuple3i(end-1, end-2, 3));*/
+
+	//for (int i = 0; i < 2; ++i) {
+	//	for (int j = 0; j < detail; ++j) {
+	//		int k = i*detail + j;
+	//		// top cap
+	//		if (i == 0) {
+	//			if (j < detail - 1) {
+	//				inds.push_back(ProtoTuple3i(i*detail + j + 2, 0, i*detail + j + 3));
+	//			}
+	//			else {
+	//				inds.push_back(ProtoTuple3i(i*detail + j + 2, 0, i*detail)); //back to starting point
+	//			}
+	//		}
+	//		// i == 1
+	//		else {
+	//			if (j < detail - 1) {
+	//				inds.push_back(ProtoTuple3i(i*detail + j + 2, 0, i*detail + j + 3));
+	//			}
+	//			else {
+	//				inds.push_back(ProtoTuple3i(i*detail + j + 2, 0, i*detail)); //back to starting point
+	//			}
+
+	//		}
+	//	}
+	//}
 }

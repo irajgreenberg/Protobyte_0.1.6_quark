@@ -111,13 +111,13 @@ void ProtoPlasm::initGLFW(){
 	// for Syzygy 2018, turned off
 	switch (monitors){
 	case 1:
-		//glfwSetWindowPos(window, (mode->width - appWidth) / 2, (mode->height - appHeight) / 2);
+		glfwSetWindowPos(window, (mode->width - appWidth) / 2, (mode->height - appHeight) / 2);
 		break;
 	case 2:
-		//glfwSetWindowPos(window, (mode->width - appWidth) / 2, (mode->height - appHeight) / 2);
+		glfwSetWindowPos(window, (mode->width - appWidth) / 2, (mode->height - appHeight) / 2);
 		break;
 	case 3:
-		//glfwSetWindowPos(window, (mode->width - appWidth) / 2, (mode->height - appHeight) / 2);
+		glfwSetWindowPos(window, (mode->width - appWidth) / 2, (mode->height - appHeight) / 2);
 		break;
 	case 4:
 		/* Centers in top monitor
@@ -125,7 +125,7 @@ void ProtoPlasm::initGLFW(){
 		       [x]
 		    [ ][ ][ ]
 		*/
-		//glfwSetWindowPos(window, (mode->width - appWidth) / 2, -mode->height + (mode->height-appHeight) / 2);
+		glfwSetWindowPos(window, (mode->width - appWidth) / 2, -mode->height + (mode->height-appHeight) / 2);
 		break;
 	case 6:
 		/* Centers in top monitor
@@ -133,14 +133,14 @@ void ProtoPlasm::initGLFW(){
 		[ ][x][ ]
 		[ ][ ][ ]
 		*/
-		//glfwSetWindowPos(window, (mode->width - appWidth) / 2, -mode->height + (mode->height - appHeight) / 2);
+		glfwSetWindowPos(window, (mode->width - appWidth) / 2, -mode->height + (mode->height - appHeight) / 2);
 		break;
 	default:
 		glfwSetWindowPos(window, (mode->width - appWidth) / 2, (mode->height - appHeight) / 2);
 	}
 	//HERE, HERE, HERE, HERE
 	// ONLY for SYZYGY
-	glfwSetWindowPos(window, 1850, 0);
+	//glfwSetWindowPos(window, 1850, 0);
 
 
 	glfwSetWindowUserPointer(window, baseApp); // enable callback funcs to speak to baseApp
