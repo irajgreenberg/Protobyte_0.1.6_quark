@@ -9,7 +9,7 @@ void ProtoController::init() {
 
 	setBackground({ 0, 0, 0, 1.0f });
 
-	c = new Cylinder(Vec3(), Dim3(40, 300, 40), 32, Col4(.02f, .02f, .09f, 1), "metal_flaky_blue.jpg");
+	c = new Cylinder(Vec3(), Dim3(20, 300, 20), 32, Col4(.02f, .02f, .09f, 1), "metal_flaky_blue.jpg");
 	c->setTextureScale({ 1, 1 });
 	c->setDiffuseMaterial({ 1, 1, 1 });
 	c->setAmbientMaterial(0.15f);
