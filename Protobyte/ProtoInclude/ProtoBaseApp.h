@@ -26,6 +26,7 @@
 #include "ProtoColor3.h"
 #include "ProtoColor4.h"
 #include "ProtoBlock.h"
+#include "ProtoLathe.h"
 #include "ProtoMath.h"
 #include "ProtoVector2.h"
 #include "ProtoVector3.h"
