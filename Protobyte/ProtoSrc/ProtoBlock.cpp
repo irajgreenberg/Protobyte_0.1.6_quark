@@ -40,7 +40,7 @@ using namespace ijg;
 ProtoBlock::ProtoBlock() {
 }
 
-ProtoBlock::ProtoBlock(const Vec3f& pos, const Vec3f& rot, const ProtoDimension3f& size,
+ProtoBlock::ProtoBlock(const Vec3f& pos, const Vec3f& rot, const Dim3f& size,
         const Col4f& col4):
 ProtoGeom3(pos, rot, size, col4) {
     textureScale = Vec2f(1, 1);
@@ -50,7 +50,7 @@ ProtoGeom3(pos, rot, size, col4) {
     init();
 }
 
-ProtoBlock::ProtoBlock(const Vec3f& pos, const Vec3f& rot, const ProtoDimension3f& size,
+ProtoBlock::ProtoBlock(const Vec3f& pos, const Vec3f& rot, const Dim3f& size,
 	const Col4f& col4, const std::string& textureImageURL, const Vec2f& textureScale) :
 ProtoGeom3(pos, rot, size, col4, textureImageURL, textureScale) {
 	for (int i = 0; i < 8; ++i){
@@ -69,7 +69,7 @@ ProtoBlock::ProtoBlock(const Vec3f& pos, const Vec3f& rot, const Dim3f& size,
 
 /*!
 * Constructor */
-ProtoBlock::ProtoBlock(const Vec3f& pos, const Vec3f& rot, const ProtoDimension3f& size,
+ProtoBlock::ProtoBlock(const Vec3f& pos, const Vec3f& rot, const Dim3f& size,
 	const std::vector<Col4f>& cols4, const std::string& textureImageURL, const Vec2f& textureScale) :
 	ProtoGeom3(pos, rot, size, cols4, textureImageURL, textureScale) {
 	init();
